@@ -1,0 +1,31 @@
+= License
+
+== License
+
+In order to use GraphStudio, you need a valid TigerGraph license that enables GraphStudio access. Please contact sales@tigergraph.com for license related questions.
+
+Click the Information iconimage:../../.gitbook/assets/information_btn.png[], and the current TigerGraph license status will pop up. If a TigerGraph license key has not been added, the license status will look like this:
+
+image::../../.gitbook/assets/screen-shot-2019-05-16-at-11.41.47-am.png[]
+
+Without a valid license, it is not possible to navigate to the Design Schema, Map Data To Graph, Load Data, Explore Graph, Build Graph Patterns or Write Queries pages.
+
+=== Update a TigerGraph License Key +++<a id="TigerGraphGraphStudioUIGuide-ApplyingaGraphStudioLicenseKey">++++++</a>+++
+
+Click theimage:../../.gitbook/assets/update_license_btn.png[]link on the bottom of the license status to go to Admin Portal license page to update a TigerGraph license key:
+
+image::../../.gitbook/assets/no-license.png[]
+
+Click the SELECT FILE button and choose the license text file, then click UPDATE button. The license detail will be loaded like below:
+
+image::../../.gitbook/assets/license_updated%20%283%29.png[]
+
+Please note that the GraphStudio item under Applications section needs to be lightened like above. If it looks like this grayed icon: image:../../.gitbook/assets/graphstudio_disabled%20%281%29.png[], it means GraphStudio is not enabled in the provided license, and you won't be able to use GraphStudio in this case. You can upgrade your license to enable GraphStudio access, contact sales@tigergraph.com for more information.
+
+Clickimage:../../.gitbook/assets/goto_graphstudio.png[]at the top-right corner of the page to go back to GraphStudio. If you click the Info iconimage:../../.gitbook/assets/information_btn.png[]again, you should see the updated license. Now you can start to use GraphStudio.
+
+image::../../.gitbook/assets/screen-shot-2019-05-16-at-11.45.07-am.png[]
+
+The Developer Edition package includes a pre-installed license. Please note that Developer Edition may not be used for production use.
+
+image::../../.gitbook/assets/screen-shot-2019-05-16-at-11.45.34-am.png[]

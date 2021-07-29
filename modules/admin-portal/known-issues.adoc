@@ -1,0 +1,31 @@
+= Known Issues
+
+[discrete]
+=== Solution import from version lower than v3.1 is not compatible with v3.1
+
+Since TigerGraph supports HA for the application server in v3.1, GraphStudio and Admin Portal data storage has to be updated. The HA enhancement caused a known compatibility issue during solution import process from GraphStudio: a solution that is created from "Export Current Solution" from a version released prior to v3.1 cannot be imported into v3.1. A solution exported from v3.1 will work with v3.1 and can be imported through "Import An Existing Solution". Contact support@tigergraph.com for a detailed workaround if you want to import a solution tarball prior to TG3.1.
+
+[discrete]
+=== Users with Admin role cannot Create/Edit/Delete users
+
+Due to the difference in users' information display compared to GSQL, Admin Portal doesn't allow users with admin role to a graph to create/edit/delete users or assign a user with a role to a graph. Superuser can manage users in this case. Users with Admin role to a local graph can revoke roles to other users for this local graph.
+
+[discrete]
+=== Proxy user's roles might still exist after revoking
+
+Admin Portal shows a combination of roles for proxy users. Proxy user which belongs to a proxy group inherits all the roles from the proxy group plus all the roles the proxy user has. Therefore, if you want to revoke a role from a proxy user, you need to revoke the role from the proxy group first. Then you might need to revoke the same role from the proxy user if the proxy user also has that role.
+
+[discrete]
+=== After upgrading to v3.1, downgrading from HTTPS to HTTP (turn on/off SSL) will result in user authentication failure
+
+In v3.1, TigerGraph enhanced the security configuration for cookie by setting a secure flag when SSL is enabled, which may trigger an issue when using Chrome to turn off SSL. Due to this security feature, when downgrading from HTTPS to HTTP, Chrome will not allow setting the same cookie. This will result in user authentication failure because the cookie fails to be set. To solve this problem, users can clear the cache from Chrome and refresh the browser. Enabling from HTTP to HTTPS will work as expected.
+
+[discrete]
+=== Monitoring Dashboard in Admin Portal is not Continuous Available (Highly Available) in TG3.1
+
+In v3.1,  Cluster Monitoring Dashboard on Admin Portal with various metrics is not highly available, as an exception to the continuous availability feature for Admin Portal. This is because TS3 component which collects the metrics through TS3 API is not highly available.
+
+[discrete]
+=== Report bugs to us
+
+If you find any bugs, please report them to link:mailto:support@tigergraph.com.[support@tigergraph.com.]We really appreciate it!

@@ -1,0 +1,133 @@
+= Load Data
+
+== Load Data +++<a id="TigerGraphGraphStudioUIGuide-LoadData">++++++</a>+++
+
+After mapping data files to the graph schema, you can start loading data. Click "Load Data" on the left side menu bar to go to the Load Data page.
+
+image::../../.gitbook/assets/load-data.png[]
+
+The "Load Data" interface is separated into three parts:
+
+* Data Mapping Overview
+ ** Provides a general view of the graph and the data mapping.
+ ** Shows the loading progress of each data file.
+* Toolbar (above Data Mapping)
+ ** Start/pause/resume/stop data loading and clear graph data buttons.
+* Statistics
+ ** Graph statistics: displays the numbers of vertices and edges in total and per type, with real-time loading progress.
+ ** Loading statistics: displays the total number of vertices and edges loader vs. time.
+
+{% hint style="warning" %}
+To display real-time graph statistics, this page checks the number of vertices and edges every 10 seconds, which adds overhead. To maximize loading performance, move to a different page after starting loading, and only come back here occasionally to check the progress.
+{% endhint %}
+
+=== Start Loading +++<a id="TigerGraphGraphStudioUIGuide-StartLoading">++++++</a>+++
+
+GraphStudio provides two types of loading:
+
+* Partial Loading: load a subset of the data files which the user selects.
+* Full Loading: load all of the data files.
+
+==== Load Some Data Files +++<a id="TigerGraphGraphStudioUIGuide-LoadSomeDataSources">++++++</a>+++
+
+Select one or more data files (holding down the "shift" key to select multiple data files), and click on the "start loading" buttonimage:../../.gitbook/assets/start_loading.png[]on the toolbar.
+
+image::../../.gitbook/assets/screen-shot-2019-05-16-at-3.32.04-pm.png[]
+
+==== Load All Data Sources +++<a id="TigerGraphGraphStudioUIGuide-LoadAllDataSources">++++++</a>+++
+
+Click on a blank space in the data mapping overview panel to unselect the data sources, and click on the "start/resume loading" buttonimage:../../.gitbook/assets/start_loading.png[]on the toolbar.  While loading is in progress a green hatched bar will appear over each data file to show its real time progress.
+
+image::../../.gitbook/assets/screen-shot-2019-05-16-at-3.55.10-pm.png[]
+
+=== Pause Loading +++<a id="TigerGraphGraphStudioUIGuide-StopLoading">++++++</a>+++
+
+Similar to Start Loading, you can pause loading some of the data files, or all loading data files.
+
+Select one or more data files (holding down the "shift" key to select multiple data files), and click on the "pause loading" buttonimage:../../.gitbook/assets/screen-shot-2019-05-16-at-4.01.58-pm%20%282%29.png[]on the toolbar. In the Paused state, the progress bar will change to a solid orange color.
+
+image::../../.gitbook/assets/screen-shot-2019-05-16-at-4.02.44-pm.png[]
+
+=== Resume Loading
+
+You can resume loading some or all loading data files which have been paused.
+
+Select one or more data files (holding down the "shift" key to select multiple data files), and click on the "start/resume loading" buttonimage:../../.gitbook/assets/start_loading.png[]on the toolbar. After resuming, the data file loading will continue from where it was paused:
+
+image::../../.gitbook/assets/screen-shot-2019-05-16-at-5.47.43-pm.png[]
+
+=== Stop Loading +++<a id="TigerGraphGraphStudioUIGuide-StopLoading">++++++</a>+++
+
+After loading has been started or paused, you can stop loading from these data files by clicking the "stop load" buttonimage:../../.gitbook/assets/stop_loading.png[]. Similar to Start Loading, you can stop loading some or all loading data files. After stopping, the loading status of the data files will become "Stopped":
+
+image::../../.gitbook/assets/loading_stopped.png[]
+
+=== Statistics Panel
+
+The Statistics panel contains two tabs: Graph Statistics (1st tab) and Data Loading Statistics (2nd tab).
+
+image::../../.gitbook/assets/screen-shot-2019-05-16-at-6.00.53-pm.png[]
+
+==== Graph Statistics
+
+By default if no data file is selected, the Statistics panel will show Graph Statistics.
+
+image::../../.gitbook/assets/screen-shot-2019-05-16-at-6.07.42-pm.png[]
+
+The table at the top shows the total number of vertices and edges in the current graph, and the number of each vertex type and edge type as well. The line chart at the bottom shows the number of vertices and edges over time, when loading is in progress.
+
+==== Data Loading Statistics
+
+If you click on one data file, the Statistics panel will change to show Data Loading Statistics:
+
+image::../../.gitbook/assets/loading_statistics.png[]
+
+The table at the top shows the detailed loading information of the selected data file, including:
+
+* Status (RUNNING, PAUSED, STOPPED, etc)
+* Loaded percentage (for files on server) or loaded size (for S3 file)
+* Loading speed
+* Average loading speed
+* Number of loaded lines
+* Number of missing token lines
+* Number of oversize lines
+* Loading start time
+* Loading duration
+
+The area chart in the middle shows the real-time loading speed (lines per second) for this data file.
+
+The pie chart at the bottom shows the distribution of data lines, among three categories:
+
+* Loaded lines
+* Missing token lines (the lines contain fewer tokens than required by the data mapping)
+* Oversize lines (some tokens are too large)
+
+{% hint style="warning" %}
+The number of loaded lines doesn't mean all these lines are successfully loaded. Some issues during Data Mapping (like mapping a non-numeric column to an integer attribute) or because of dirty data may cause some of these lines not to be loaded. +
+{% endhint %}
+
+If data file loading encounters any issues and gets an error message, the error message will be shown at the bottom:
+
+image::../../.gitbook/assets/screen-shot-2019-05-16-at-6.28.54-pm.png[]
+
+=== Clear Graph Data +++<a id="TigerGraphGraphStudioUIGuide-ClearGraphData">++++++</a>+++
+
+Click on the "clear graph data" buttonimage:../../.gitbook/assets/delete_forever.png[]on the toolbar to clear the graph data. This operation will take approximately 1 minute or more, depending on the size of your graph and the hardware.
+
+{% hint style="warning" %}
+*Caution:* Clear Graph Data deletes all data from your database. The schema and queries will remain. This deletion is irreversible. Please confirm the impact before you proceed with clearing graph data operation.
+{% endhint %}
+
+{% hint style="success" %}
+*Tip:* Only users with superuser role can clear graph. You can consider assigning other roles to your team to avoid accidental data deletion.
+{% endhint %}
+
+{% hint style="success" %}
+*Tip:* If you clear graph data by accident, you can reload the data into the database by clicking on the "start/resume loading" buttonimage:../../.gitbook/assets/start_loading.png[]on the toolbar. The data files are still in the filesystem, as long as you do not deliberately delete the data files from the filesystem.
+{% endhint %}
+
+After the clear operation, the graph vertex and edge number statistics will both drop to 0.
+
+image::../../.gitbook/assets/graph_trend.png[]
+
+After data has been loaded, you can go to the Explore Graph or Write Queries pages.

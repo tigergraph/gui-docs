@@ -1,0 +1,330 @@
+= Map Data To Graph
+:pp: {plus}{plus}
+
+== Map Data To Graph +++<a id="TigerGraphGraphStudioUIGuide-MapDataToGraph">++++++</a>+++
+
+After you have created a graph schema, the next major step is to map your data to the schema. Click "Map Data To Graph" on the left side menu bar. The working panel is split into a left panel and a right panel. Initially when there is no data mapping yet, the left panel will display only the graph schema.
+
+image::../../.gitbook/assets/map-data-to-graph-overview%20%281%29.png[]
+
+The main steps are
+
+. Select a data source.
+. Add data file(s)
+. Map data file(s) to vertex/edge types
+. Map data file columns to vertex/edge fields
+. Publish data mapping
+
+== 1 Select a Data Source
+
+Beginning with v2.4, GraphStudio supports loading data from either local files on the TigerGraph server or files stored on Amazon S3. In future releases, GraphStudio will support loading from other data sources.
+
+Click the data file type selector button on the banner of Add Data File window, and choose either File or S3 from the list:
+
+image::../../.gitbook/assets/screen-shot-2020-01-29-at-2.15.45-pm.png[]
+
+* If you select *File*, no more configuration is needed. Skip the sections for external sources and go to  link:map-data-to-graph.md#TigerGraphGraphStudioUIGuide-map_source_to_typeMapDataSourceToVertexTypeOrEdgeType[Map Data To Graph].
+* If you select *S3*, then read the section link:map-data-to-graph.md#create-s3-data-source[Create S3 Data Source].
+
+== 2 Add Data Files
+
+This section contains a subsection for each of the different data sources. Read the section which pertains to your data source:
+
+* Local File System - link:map-data-to-graph.md#add-local-data-file[Add Local Data File]
+* AWS S3 - link:map-data-to-graph.md#create-s3-data-source[Create S3 File Source]
+
+=== Add Local Data File
+
+In this step, you inform GraphStudio about your data files. A data file is a file containing structured data to be loaded into the graph, creating vertex and/or edge instances. The first step for data mapping is to specify your data files. Click the Add Data File buttonimage:../../.gitbook/assets/add_data_source_btn.png[]to add data files. The Add Data File window will pop up:
+
+image::../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf0zwnpgkbc0uw_zrvy_screen-shot-2019-05-16-at-11.52.29-am.png[]
+
+Initially, there are no data files in the server data folder.
+
+==== Upload File To Server +++<a id="TigerGraphGraphStudioUIGuide-UploadFileToServer">++++++</a>+++
+
+Click the Upload File button image:../../.gitbook/assets/upload_file_btn.png[] . A file selection window will appear. Choose the data files you want to use. The files will be uploaded to the server data folder:
+
+image::../../.gitbook/assets/upload-files.png[]
+
+If all the files are uploaded successfully, the progress window will close automatically, otherwise the window will stay open to notify users of any errors.
+
+Once the files are uploaded to the server, it will appear in the "Files on server" list on the left side of the Add Data Files window.
+
+{% hint style="info" %}
+*Data Files must be .csv files to allow data mapping in GraphStudio ( .json file upload is allowed in TigerGraph V3.0.5+ through GraphStudio)*
+
+The Add Data File box will only upload files which end in ".csv". If you manually place files in the <TigerGraph_root_dir>/data/gui/loading_data folder, please don't put any files into subfolders because they will be ignored.
+
+In TigerGraph V3.0.5, you can upload files which end in ".json". This allows users to upload ".json" files to the filesystems and use a remote GSQL client, or GSQL web shell in TigerGraph Cloud to map data to the graph using GSQL commands. Currently, data mapping for ".json" files through GraphStudio UI is not supported.
+{% endhint %}
+
+==== Configure the File Parser +++<a id="TigerGraphGraphStudioUIGuide-ConfiguretheFileParser">++++++</a>+++
+
+In this step, you tell GraphStudio how to parse your data file. If your data file is in tabular format, the parser will split each line into a series of _tokens_. Click on one file from the file list to choose it. The parsing result for the first line of data is shown as a *preview* table on the right side:
+
+image::../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf111c7fe8u3ier-tzo_screen-shot-2019-05-16-at-12.03.19-pm.png[]
+
+If the parsing is not correct, click on the down arrow in a table column to choose a different option for file format, delimiter, or end of line. The file will immediately be re-parsed when you change a setting. The enclosing character is used to mark the boundaries of a token, overriding the delimiter character. For example, if your delimiter is comma (,), but you have commas in some strings, then you can define either double quotes (") or single quotes (') as the enclosing character to mark the endpoints of your string tokens. It is not necessary for every token to have enclosing characters; the parser will use enclosing characters when it encounters them.
+
+GraphStudio allows users to edit the header line of the parsing result, to make the data mapping more intuitive. This doesn't affect the data loading because the header line will be ignored.
+
+image::../../.gitbook/assets/edit-header.png[]
+
+Once you are satisfied with the file parsing configuration, click the add buttonimage:../../.gitbook/assets/add_vertex_type_btn.png[]to add the data file into left working panel. The data file will be shown as a file icon on the working panel:
+
+image::../../.gitbook/assets/added_file_icon.png[]
+
+Once you think a file is no longer needed, you can remove it from server by clicking the delete buttonimage:../../.gitbook/assets/delete_forever.png[]to the left of each file. Please note that you also need to manually remove data mapping using this file as data file, otherwise when you load data later, a "file not found" error will be triggered.
+
+image::../../.gitbook/assets/file-not-on-server.png[]
+
+After adding all your data files, continue with link:map-data-to-graph.md#3-map-data-files-to-vertex-type-or-edge-type[Step 3 Map Data to Vertex/Edge Types]
+
+=== Create S3 data source
+
+After you click the S3 data source icon, you should see the following window:
+
+image::../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf15ub6_fv8dme6lsw7_screen-shot-2019-05-16-at-12.23.02-pm%20%282%29.png[]
+
+Initially, there are no S3 data sources in the system.
+
+A data source is an appropriately configured connection to some remote source of data file(s). When the data file type is switched to S3, you can configure connection to your S3 buckets.
+
+Click the Add new data source button image:../../.gitbook/assets/upload_file_btn.png[], then the new S3 data source window will pop up. Give a name to the data source, and provide the access key id and secret access key to connect to S3. Then click the ADD button:
+
+image::../../.gitbook/assets/s3-connection.png[]
+
+The data source will be created and shown in the Data Source list:
+
+image::../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf1airkv9bdfve8lpca_screen-shot-2019-05-16-at-12.44.52-pm.png[]
+
+Click the data source to list all the buckets the credentials can access, and click the Expand icon to see all the buckets or folders within the buckets. The file hierarchy will be shown as a tree. Choose the file you want to add, and change the parsing options if necessary. (See link:map-data-to-graph.md#TigerGraphGraphStudioUIGuide-ConfiguretheFileParser[Configure the file parser.])
+
+image::../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf1d-1wslbwckzs4fah_screen-shot-2019-05-16-at-12.56.32-pm.png[]
+
+{% hint style="info" %}
+Data files, after decompression, must be in either csv or parquet format.
+{% endhint %}
+
+{% hint style="success" %}
+TigerGraph supports loading from archived and compressed S3 files directly. Currently supported file extensions includes zip, tar.gz, tgz and tar. GraphStudio detects the file extension and automatically chooses the corresponding file format. If the file is encoded with one of these formats but has a non-standard file extension, you can manually specify the File format.
+{% endhint %}
+
+After clicking the ADD button, an S3 file icon will appear on the working panel:
+
+image::../../.gitbook/assets/screen-shot-2019-05-16-at-1.03.41-pm.png[]
+
+After adding all your s3 data files, continue with link:map-data-to-graph.md#3-map-data-files-to-vertex-type-or-edge-type[Step 3 Map Data Files to Vertex/Edge Types]
+
+== 3 Map Data Files To Vertex Type Or Edge Type
+
+In this step, you link (map) a data file to a target vertex type or edge type. The mapping can be many-to-many, which means one data file can map to multiple vertex and / or edge types, and multiple data files can map to the same vertex or edge type. Click the map data file to vertex or edge buttonimage:../../.gitbook/assets/map_file_to_ve.png[]to enter _map data file to vertex or edge_ mode. When you finish mapping the data files, click the button again to exit this mode.
+
+Then, click the data file icon. A hint will appear over the icon:
+
+image::../../.gitbook/assets/screen-shot-2019-05-16-at-1.05.30-pm.png[]
+
+Next, click the target vertex type circle or edge type link. A dashed link will appear between the data file and the target vertex or edge type:
+
+image::../../.gitbook/assets/screen-shot-2019-05-16-at-2.20.53-pm.png[]
+
+A red hint will appear if the target type has not yet received a mapping for its primary id(s).
+
+== 4 Map Data Columns To Vertex Or Edge Attributes
+
+In this step, you link particular columns of a data file to particular ids or attributes of a vertex type or edge type. First, choose one data mapping from one data file to one vertex or edge type (represented as a dashed green link on the left working panel). When selected, the dashed line becomes orange (active), and the right working panel will show two tables. The left table shows the data file columns along with the first row's tokens as sample data. The right table shows the fields of the target vertex or edge. For a vertex, its fields are primary id and attributes. For an edge, its fields are source vertex, target vertex, and attributes.
+
+image::../../.gitbook/assets/1.png[]
+
+In order to a column in the data file to a vertex or edge field, first click the row representing the data column in the left side data file table:
+
+image::../../.gitbook/assets/2%20%282%29.png[]
+
+Then, click the row representing the target field in the right side table. A green arrow appears to show the mapping. Repeat as needed to create all the mappings for this table-to-vertex/edge pair. Since many-to-one mapping is allowed, it is not necessary for one table to provide a mapping for every field in the target vertex/edge.
+
+image::../../.gitbook/assets/3%20%283%29.png[]
+
+=== Using a Token Function
+
+GraphStudio gives you access to both a set of built-in functions and user-defined token functions to preprocess data file tokens before loading them in to the graph. For example, you can concatenate two columns in the data file and load them as an attribute. This section describes how to use these token functions.
+
+First click the add token function buttonimage:../../.gitbook/assets/add_token_function_btn.png[]. The Add Token Function window will pop up. Click the down arrow to see the list of available token functions and select one. For some functions, you may also specify the number of input parameters. (Most token functions have a fixed number of input parameters; gsql_concat can accept any positive number of inputs). Click Add.
+
+image::../../.gitbook/assets/add_token_function_window.png[]
+
+GraphStudio currently does not support creating new user-defined functions.  If a user-defined function has been added via the GSQL interface, it will be listed here. To use a user-defined token function, you must manually specify the number of input parameters. The C{pp} code is shown in the Description section for your reference:
+
+image::../../.gitbook/assets/user_defined_token_functions.png[]
+
+A token function table will be added to the attribute mapping panel. You can drag the tables to re-arrange them. Token functions act as intermediate steps in the mapping. Create mappings from the data file table to the token function table, and then from the token function table to the vertex/attribute table. The final result looks like below:
+
+image::../../.gitbook/assets/4.png[]
+
+=== Auto Mapping
+
+If the data file columns and the vertex/edge attributes have very similar names (only capitalization and hyphen differences), you can click the auto mapping buttonimage:../../.gitbook/assets/auto_mapping_btn.png[]. All similar columns will be mapped automatically.
+
+=== Map A Constant Value To An Attribute Or Token Function Input +++<a id="TigerGraphGraphStudioUIGuide-map_const_value_to_attributeMapAConstantValueToAnAttributeOrTokenFunctionInput">++++++</a>+++
+
+Sometimes, a user may need to load a constant value to an id or attribute. Here we show how to do this in GraphStudio.
+
+==== Loading A Constant to An Attribute
+
+In the right working panel, double-click on the target id or attribute (in the left column of the right table). In the example below, the attribute "label" has been double-clicked:
+
+image::../../.gitbook/assets/6.png[]
+
+This will cause the Load Constant window to pop up. Type in the constant value, and click the Add button to apply the mapping.
+
+image::../../.gitbook/assets/load_constant_panel.png[]
+
+After adding the constant value, the attribute's label will change to *id/attribute = "(your valid input value)"* .
+
+image::../../.gitbook/assets/7.png[]
+
+To modify or remove a constant mapping, double-click the id/attribute again. In the Load Constant window, enter the new value, or erase the value if you want to remove the mapping. Click the Add button to apply.
+
+==== Use A Constant Input for a Token Function
+
+First add the token function. Then double-click on the target input (in the left column of the token function table). In the example below, "Input 0" has been double-clicked.
+
+image::../../.gitbook/assets/double_click_token_function_input.png[]
+
+This will cause the Load Constant window to pop up. Type in the constant value and click the Add button to apply the mapping. After adding the constant value, the input's label will change to *Input = "(your input value)"* .
+
+image::../../.gitbook/assets/token_function_with_constant_input.png[]
+
+The constant value can be modified or removed by double-clicking the label and editing the value in the Load Constant window.
+
+=== Add Data Filter +++<a id="TigerGraphGraphStudioUIGuide-data_filterAddDataFilter">++++++</a>+++
+
+You can add a data filter to a data mapping so that only data records which meet conditions that you specify will be loaded into the graph.  This is equivalent to the WHERE clause in a GSQL load statement.
+
+You can add one data filter for each data mapping from a data file to a vertex type or edge type, and the data filter only applies to that one mapping. Consider the following data mapping:
+
+image::../../.gitbook/assets/8.png[]
+
+By default, there is no data filter. Click the Data Filter buttonimage:../../.gitbook/assets/filter%20%282%29%20%281%29%20%282%29.png[]to start creating a data filter. The Add Data Filter window will appear.  The window contains three parts:
+
+. The top section shows one row of sample data from your file, as a handy reference to the file's contents.
+. The middle sections shows what the data filter looks like when it is converted a to GSQL WHERE clause. For more details, see the *WHERE Clause* section in the link:../../dev/gsql-ref/ddl-and-loading/[GSQL Language Reference Part 1 - Defining Graphs and Loading Data]
+. The bottom section is where you define your data filter. The data filter will be converted to a GSQL WHERE clause and shown in real time.
+
+image::../../.gitbook/assets/add_data_filter_window.png[]
+
+A data filter condition is a Boolean expression, which can be a nested set of conditions. TigerGraph data loader evaluates the condition for each line in your input file. If the condition evaluates to be true, then the line of data is loaded.
+
+First, click the Build Data Filter chooser (with default value "None"). A menu will appear, with many Boolean expression templates. Choose one of the options. If you plan to build a nested condition, start with your top level. The first several options are for comparison expressions:
+
+image::../../.gitbook/assets/data_filter_choose_expression.png[]
+
+After this are several more options, using operators such as AND, OR, NOT, IN, BETWEEN...AND, IS NUMERIC, and IS EMPTY.
+
+image::../../.gitbook/assets/data_filter_choose_operator.png[]
+
+Note that each of these expressions calls for 1, 2, 3, or a list of operands, and the operands themselves can be expressions. When you select an expression, additional choosers will appear below for you to specify the operand expressions.  The operand choices are context-sensitive, but typically they include
+
+* a Data Column from the input file
+* A constant value
+* If the operator is AND, OR, or NOT, then the operand can be another condition. Thus is how conditions can be nested.
+
+Suppose you are loading friendship edges where the input data fields are (person1, person2, friendship_start_date).  You want to load only the records where person1 is Tom and the friendship began on or before 2017-06-10. The data filter looks like the following:
+
+image::../../.gitbook/assets/complete_data_filter.png[]
+
+After adding the data filter, the right working panel will look like this:
+
+image::../../.gitbook/assets/9.png[]
+
+Hovering the mouse over the data filter indicatorimage:../../.gitbook/assets/data_filter_indicator.png[]will make the data filter condition appear. If you want to modify the data filter, click the Data Filter buttonimage:../../.gitbook/assets/filter%20%282%29%20%281%29%20%282%29.png[]or double-click the data filter indicator​. The Add Data Filter panel will appear.
+
+To remove a data filter, select "None" at the top level dropdown of Build Data Filter section and then click Add. The data filter will be deleted.
+
+image::../../.gitbook/assets/remove_data_filter.png[]
+
+=== Advanced Features +++<a id="TigerGraphGraphStudioUIGuide-map_const_value_to_attributeMapAConstantValueToAnAttributeOrTokenFunctionInput">++++++</a>+++
+
+More advanced data mapping features are grouped in the dropdown list underimage:../../.gitbook/assets/more-data-mapping.png[].
+
+==== Map data to a map type attribute
+
+Click image:../../.gitbook/assets/map-widget-btn.png[]in the dropdown list, then choose key type and value type. The types must match the key type and value type of the attribute you are mapping towards.
+
+image::../../.gitbook/assets/screen-shot-2020-01-21-at-5.41.40-pm.png[]
+
+A Map widget will be added to the attribute mapping panel.
+
+image::../../.gitbook/assets/screen-shot-2020-01-21-at-5.43.15-pm.png[]
+
+Create the mapping from the data columns to the Map widget, and from the Map widget to the attribute.
+
+image::../../.gitbook/assets/screen-shot-2020-01-21-at-5.44.41-pm.png[]
+
+==== Map data to a UDT type attribute
+
+Click image:../../.gitbook/assets/udt-widget-btn.png[]in the dropdown list, then choose UDT name. The name must match the UDT type of the attribute you are mapping towards.
+
+image::../../.gitbook/assets/screen-shot-2020-01-21-at-5.46.32-pm.png[]
+
+A UDT widget will be added to the attribute mapping panel.
+
+image::../../.gitbook/assets/screen-shot-2020-01-21-at-5.47.29-pm.png[]
+
+Create the mapping from the data columns to the UDT widget, and from the UDT widget to the attribute.
+
+image::../../.gitbook/assets/screen-shot-2020-01-21-at-5.47.42-pm.png[]
+
+==== Map data to a map type attribute with UDT value type
+
+If you want to map data to an attribute of map type with UDT value type, you have to combine a Map widget with a UDT widget.
+
+Choose UDT as the value type and then choose the UDT name when adding the Map widget.
+
+image::../../.gitbook/assets/screen-shot-2020-01-21-at-5.50.41-pm.png[]
+
+Create data mapping between data columns, the UDT widget, the Map widget, and the attribute.
+
+image::../../.gitbook/assets/screen-shot-2020-01-21-at-5.53.30-pm.png[]
+
+=== Delete Options +++<a id="TigerGraphGraphStudioUIGuide-delete_optionsDeleteOptions">++++++</a>+++
+
+In the Map Data To Graph page, you can delete anything that you added. Choose what you want to delete, then click the delete buttonimage:../../.gitbook/assets/delete_btn.png[]. Press the "Shift" key to select multiple icons you want to delete. Note that you cannot delete vertex or edge types in this page.
+
+==== Delete Data Files +++<a id="TigerGraphGraphStudioUIGuide-DeleteDataSource">++++++</a>+++
+
+Select the data file icon(s), then click the delete button.
+
+image::../../.gitbook/assets/screen-shot-2019-05-16-at-2.35.00-pm.png[]
+
+==== Delete Data File To Vertex Or Edge Mapping +++<a id="TigerGraphGraphStudioUIGuide-DeleteDataSourceToVertexOrEdgeMapping">++++++</a>+++
+
+Select the dashed green link(s) between data file and mapped vertex/edge type, then click the delete button.
+
+image::../../.gitbook/assets/screen-shot-2019-05-16-at-2.36.18-pm.png[]
+
+==== Delete Data Column To Vertex Or Edge Attribute Mapping +++<a id="TigerGraphGraphStudioUIGuide-DeleteDataColumnToVertexOrEdgeAttributeMapping">++++++</a>+++
+
+Select the green arrow(s) between data file table and vertex/edge attributes table, then click the delete button.
+
+image::../../.gitbook/assets/5%20%281%29.png[]
+
+==== Delete Token Functions +++<a id="TigerGraphGraphStudioUIGuide-DeleteTokenFunctions">++++++</a>+++
+
+Select the token function table(s), then click the delete button.
+
+image::../../.gitbook/assets/delete_token_functions.png[]
+
+=== Undo And Redo +++<a id="TigerGraphGraphStudioUIGuide-UndoAndRedo">++++++</a>+++
+
+You can undo or redo changes by clicking the Back or Forward buttons, respectively:image:../../.gitbook/assets/redo_undo_btn.png[]. The whole history since the time you entered the Map Data To Graph page is recorded.
+
+== 5 Publish Data Mapping
+
+Once you are satisfied with the data loading procedure, click the publish schema buttonimage:../../.gitbook/assets/publish_btn.png[]to publish the data loading procedure to the TigerGraph system. It takes about 2 to 3 seconds for publishing each data file mapping.
+
+=== Expand Panels +++<a id="TigerGraphGraphStudioUIGuide-ExpandPanels">++++++</a>+++
+
+The following three buttons allow you to expand the left or right working panel:image:../../.gitbook/assets/split-view.png[].
+
+By default, the two panels have equal widths. Click the left button to expand the left working panel, or click the right button to expand the right working panel.

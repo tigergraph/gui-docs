@@ -1,0 +1,195 @@
+= Design Schema
+
+== Design Schema +++<a id="TigerGraphGraphStudioUIGuide-DesignSchema">++++++</a>+++
+
+Beginning with Version 3.0, GraphStudio can support modifying multiple graphs within one TigerGraph instance. Read more about multigraph at xref:../../tigergraph-platform-overview/multigraph-overview.adoc[MultiGraph - An Overview].
+
+Designing the graph schema is the first and most important step of solving a business problem. The graph schema is the model of the problem, and all of the subsequent steps depend on the graph schema. If you are not on the Design Schema page yet, click "Design Schema" on the left side menu bar.
+
+{% hint style="warning" %}
+Only certain roles have the privilege to modify a graph schema.
+
+. Only the superuser and globaldesigner roles can modify the global graph schema, including creating local graphs.
+. Only the superuser, globaldesigner, and designer roles can modify a local graph schema.
+{% endhint %}
+
+When there is no graph schema in the system, this page will show some hints:
+
+. Only the superuser and globaldesigner roles can modify the global graph schema, including creating local graphs.
+. Only the superuser, globaldesigner, and designer roles modify a local graph schema.
+
+image::../../.gitbook/assets/design-schema-no-graph-globalview.png[]
+
+Otherwise this page will visualize the schema:
+
+image::../../.gitbook/assets/schema.png[]
+
+Each circle represents a vertex type, and each link represents an edge type. You can drag the circles to change their positions. There are two ways to zoom in and out. If you have a touchpad, two-finger moving up zooms in; two-finger moving down zooms out. Similarly, if your mouse has a scroll wheel, spinning forward zooms in, and spinning backward zooms out.
+
+NOTE: The relationship between a vertex type and a vertex instance of a graph is like the relationship between a table and one record of a table in the relational database world. The relationship between an edge type and an edge instance is similar. In the Design Schema step, the user defines vertex types and edge types to model the data schema. After the schema has been created, the next two steps, Map Data To Graph and Load Data, are for loading data into the graph.
+
+=== Global View vs. Graph View
+
+For superuser and globaldesigner, they can modify global vertex and edge types under Global View. Under global view, the toolbar area only contains "Publish schema", "Add a vertex type", "Add an edge type",  "Edit", "Delete", "Undo" and "Redo" buttons. There will be a warning message in the working panel saying user is under global view.
+
+image::../../.gitbook/assets/screen-shot-2020-06-10-at-13.01.14.png[]
+
+{% hint style="warning" %}
+
+. If under global view, other pages except Home and Design Schema will be disabled.
+. Users other than superuser and globaldesigner cannot access global view.
+{% endhint %}
+
+Users can modify a graph schema under graph view. In a graph, there is one more in the toolbar area - "View global vertex and edge types". And for global vertex and edge types used in a graph, a little global icon is attached to them.
+
+image::../../.gitbook/assets/schema-local.png[]
+
+=== Add A Vertex Type +++<a id="TigerGraphGraphStudioUIGuide-AddAVertexType">++++++</a>+++
+
+Click the add vertex type buttonimage:../../.gitbook/assets/add_vertex_type.png[]to add a vertex type. The working space will enter Add Vertex mode and the button color will change to greenimage:../../.gitbook/assets/add-vertex-mode-on.png[]. Click the button again to exit Add Vertex mode. The add vertex type panel in the right:
+
+image::../../.gitbook/assets/add-vertex-panel.png[]
+
+In this window you specify a vertex type name, primary id name. GraphStudio will automatically select a color for your vertex type icon. You can change the vertex type color by clicking the value under the "Color hex" label. A color palette window will pop up allowing you to choose a new color:
+
+image::../../.gitbook/assets/color-picker.png[]
+
+Once you are satisfied with the color, click anywhere outside of the color palette window to set the color. +
+You can also choose an icon for the vertex type by clicking the Select Icon buttonimage:../../.gitbook/assets/select_icon_btn.png[]. Then a Select Icon window will pop up. Select an icon that fits the vertex type semantic best. You can type in keywords to help filter the icons and find the best match faster.
+
+image::../../.gitbook/assets/select_icons.png[]
+
+You can also upload your own icons by clicking the Upload Icon button, choosing a PNG image, giving a name and click Upload:
+
+image::../../.gitbook/assets/upload_icon.png[]
+
+Then you can use your uploaded icons:
+
+image::../../.gitbook/assets/select_icon_with_user_upload.png[]
+
+*Adding and Deleting Attributes* +
+To add an attribute, click the green plus sign at the right of the Attributes section:
+
+image::../../.gitbook/assets/add-attribute.png[]
+
+Provide a name and data type for your new attribute. Optionally, you can specify a default value for the attribute. (If you do not specify, every data type has a system default value. For example, the default value for an integer is 0.)
+
+For some types of attributes (INT, UINT, STRING, STRING COMPRESS, DATETIME), you can add an index, which will improve query performance when accessing these attributes.
+
+image::../../.gitbook/assets/attribute-with-index.png[]
+
+Click the red minus sign to the right of the attribute to delete an existing attribute.
+
+Once you are satisfied with the vertex type settings, click the Add buttonimage:../../.gitbook/assets/add-btn.png[]to add the vertex type. A new circle will appear in the working panel. You can drag the circle to any desired position.
+
+{% hint style="danger" %}
+Note:  PRIMARY KEY and COMPOSITE KEY is not supported in GraphStudio. If you decide to use these features, you will only be able to use command line interface.
+{% endhint %}
+
+=== Add An Edge Type +++<a id="TigerGraphGraphStudioUIGuide-AddAnEdgeType">++++++</a>+++
+
+Click the add edge type buttonimage:../../.gitbook/assets/add_edge_type.png[]to add an edge type. The working space will enter Add Edge mode and the button color will change to greenimage:../../.gitbook/assets/add_edge_type_active.png[]. Click the button again to exit Add Edge mode.
+
+Each edge type has one or many source vertex types and target vertex types. First, click the source vertex type. A hint will appear on the vertex type circle:
+
+image::../../.gitbook/assets/click_edge_type_source_vertex.png[]
+
+Then click the target vertex type. The add edge type panel will be in the right:
+
+image::../../.gitbook/assets/add-edge-panel.png[]
+
+You must specify an edge type name. The source vertex type and target vertex type are selected based on your clicking action. However, you can change that by choosing another vertex type in the dropdown list.
+
+You can also click the green plus sign at the right of the source and target vertex types section to add more source and target vertex types of the edge type.
+
+image::../../.gitbook/assets/edge-multi-pair.png[]
+
+By default, the edge type is undirected. To make the edge type directed, mark the Directed checkbox:
+
+image::../../.gitbook/assets/directed-edge.png[]
+
+If Directed is checked, another checkbox will appear for you to choose whether the edge type should include reverse edges. Including reverse edges provides more flexibility when designing queries. Unselect the reverse edge checkbox ONLY IF your machine memory is very tight, because if there is no reverse edge, queries will not be able to traverse backwards along this directed edge type, from the target vertex to the source vertex.
+
+Editing edge type attributes is the same as editing vertex type attributes.
+
+Once you are satisfied with the edge type settings, click the Add buttonimage:../../.gitbook/assets/add-btn.png[]to add the edge type. A new link between the selected source vertex type circle(s) and target vertex type circle(s) will appear in the working panel.
+
+You can add multiple edge types between the same source vertex type and target vertex type pair. Moreover, an edge can use the same vertex type for both its source vertex type and its target vertex type, e.g., a Friendship edge from Person vertex to Person vertex.
+
+=== Edit Vertex Or Edge Type +++<a id="TigerGraphGraphStudioUIGuide-EditVertexOrEdgeType">++++++</a>+++
+
+You can edit the vertex types or edge types at any time after you add them. Just click one vertex type circle or one edge link, and then click the edit buttonimage:../../.gitbook/assets/edit.png[](double clicking on the selected vertex/edge will have the same effect). The working space will enter Edit mode and the button color will change to greenimage:../../.gitbook/assets/edit-mode-on.png[]. Click the button again to exit Edit mode. The Edit Attributes panel in the right:
+
+image::../../.gitbook/assets/edit-panel.png[]
+
+Once you are satisfied with the change, click the Update buttonimage:../../.gitbook/assets/add-btn.png[].
+
+In graph mode, you can only edit the style of a global vertex or edge type:
+
+image::../../.gitbook/assets/view-panel.png[]
+
+=== Delete Vertex Or Edge Type +++<a id="TigerGraphGraphStudioUIGuide-DeleteVertexOrEdgeType">++++++</a>+++
+
+You can delete a vertex type or an edge type by first choosing the vertex type circles or edge type links, then clicking the delete buttonimage:../../.gitbook/assets/delete_btn.png[]. In order to delete multiple vertex types and edge types, hold down the "Shift" key while you select multiple items.
+
+{% hint style="warning" %}
+Note that user cannot delete a global vertex or edge type using delete button in a graph.
+{% endhint %}
+
+=== Redo And Undo +++<a id="TigerGraphGraphStudioUIGuide-RedoAndUndo">++++++</a>+++
+
+You can redo and undo your changes by clicking the two buttons:image:../../.gitbook/assets/redo_undo_btn.png[]. The whole history since the time you entered Design Schema page is recorded.
+
+=== View Global Vertex And Edge Types
+
+Click the view global vertex and edge types buttonimage:../../.gitbook/assets/view-global-type-button.png[]to assign global vertex and edge types to a graph, or drop them from a graph. The working space will enter View Global Vertex and Edge Types mode and the button color will change to greenimage:../../.gitbook/assets/view-global-types-mode-on.png[]. Click the button again to exit View Global Vertex and Edge Types mode. The add vertex type panel in the right:
+
+image::../../.gitbook/assets/view-global-types-panel.png[]
+
+{% hint style="warning" %}
+Only superuser or globaldesigner can modify global types in a graph. The view global vertex and edge types button will be disabled for other users.
+{% endhint %}
+
+=== Publish Schema +++<a id="TigerGraphGraphStudioUIGuide-PublishSchema">++++++</a>+++
+
+Once you are satisfied with the graph schema, click the publish schema buttonimage:../../.gitbook/assets/publish_btn.png[]to publish the schema to the TigerGraph system. If you are publishing a brand new schema, a progress bar will show:
+
+image::../../.gitbook/assets/installing_schema_enterprise.png[]
+
+{% hint style="warning" %}
+Note that *Publish Schema* applies to both creating a new schema as well as modifying an existing schema.  If you have already loaded data into or created queries for an existing graph, please note that GraphStudio's Publish Schema is only able to retain your existing data in some circumstances. Read the following section carefully.
+{% endhint %}
+
+If you are editing an existing graph schema, GraphStudio will analyze your changes. If the change to a vertex or edge type is to remove some attributes and / or to add some new attributes, or add or remove index to some attributes, GraphStudio will employ a GSQL SCHEMA_CHANGE job in order to retain the graph data you already loaded.
+
+All other types of changes, including *renaming* the vertex or edge type, ***changing **attribute name or data type*, changing *edge direction*, adding or removing *reverse edge* will result in removing the old vertex or edge type and then adding the new one with your desired configurations. In that case, the loaded data to that vertex or edge type will be erased. Please think twice before you do this type of changes.
+
+{% hint style="warning" %}
+If a vertex type will be removed in order to change the schema, all edge types connected to that vertex type will also be removed.
+{% endhint %}
+
+When you are editing a graph schema, a warning message in the top-left side of the working panel will show which old vertex and edge types will be removed. Make sure to check the message periodically to make sure it is as you expect:
+
+image::../../.gitbook/assets/affected_ve_types.png[]
+
+Finally, when you click publish schema buttonimage:../../.gitbook/assets/publish_btn.png[], a pop up window will summarize your changes to the schema. The vertex and edge types that will be removed are highlighted. Make sure you confirm the changes before continue:
+
+image::../../.gitbook/assets/screen-shot-2019-01-24-at-11.28.29-am.png[]
+
+Click continue button, and GraphStudio will start changing your schema:
+
+image::../../.gitbook/assets/changing_schema.png[]
+
+If you have already created a data mapping and written queries, GraphStudio will try its best to preserve your work when you publish your modified schema:
+
+. All your queries will be saved as query drafts, so you can install the queries again after you change your schema. If a query has a conflict with the new schema (e.g., referring to a vertex type that is deleted), you need to fix it before installing the query.
+. GraphStudio will migrate your data mapping based on your changes to the schema. Since GraphStudio records your whole operation history, the migration is smart enough to cover most cases. The basic migration rules are the following:
+ .. Rename vertex types and edge types
+ .. Remove mappings to deleted vertex types and edge types.
+ .. Remove mappings to deleted or modified attributes.
+ .. New vertex types, edge types and new attributes won't be mapped.
+ .. After the schema is successfully published, GraphStudio will instruct you to go to the Map Data To Graph page to verify and publish the revised data mapping. If any mapping is not correct, you can fix it. You *must publish* the migrated data mapping; otherwise, it will be lost.
+
+If you have published some data mapping through GraphStudio, then after schema is changed successfully, a pop up window will guide you to go to the Map Data To Graph page to confirm and publish the migrated data mapping:
+
+image::../../.gitbook/assets/migrate_data_mapping.png[]

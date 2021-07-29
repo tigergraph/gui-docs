@@ -1,0 +1,63 @@
+= Keyboard Shortcuts
+
+The page lists the keyboard shortcuts for common actions in GraphStudio.
+
+== Windows
+
+=== Application
+
+|===
+| Action | Shortcut
+
+| Switch focus
+| Tab
+|===
+
+=== Graph Canvas
+
+In order to use these shortcuts, make sure you first select the graph canvas with the tab key. When the graph canvas is selected, the edges of the canvas will be highlighted with a blue box:
+
+image::https://lh4.googleusercontent.com/0pf-4dosA1NMkyPjur6CwgeM_zYLUiggWMUk-FTc935-Yo8EIn99kpDnUXsmNBayQaHoujtRy_RbFkELU2toIwLGhSonzEGUof8eM5Cxdaln6MRkriUUv5qHXh3Zculdq8ym7rA_[View when the graph canvas is selected]
+
+|===
+| Action | Shortcut
+
+| Pick a vertex/edge
+| Ctrl + Alt + P
+
+| Switch hover over vertex/edge (must have picked a vertex/edge first)
+| Ctrl + Alt + W/A/S/D
+
+| Edit/show a vertex
+| Ctrl + Alt + C
+|===
+
+== Mac
+
+=== Application
+
+|===
+| Action | Shortcut
+
+| Switch focus
+| Tab
+|===
+
+=== Graph Canvas
+
+In order to use these shortcuts, make sure you first select the graph canvas with the tab key. When the graph canvas is selected, the edges of the canvas will be highlighted with a blue box:
+
+image::https://lh4.googleusercontent.com/0pf-4dosA1NMkyPjur6CwgeM_zYLUiggWMUk-FTc935-Yo8EIn99kpDnUXsmNBayQaHoujtRy_RbFkELU2toIwLGhSonzEGUof8eM5Cxdaln6MRkriUUv5qHXh3Zculdq8ym7rA_[View when the graph canvas is selected]
+
+|===
+| Action | Shortcut
+
+| Pick a vertex/edge
+| Ctrl + Option + P
+
+| Switch hover over vertex/edge (must have picked a vertex/edge first)
+| Ctrl + Option + W/A/S/D
+
+| Edit/show a vertex
+| Ctrl + Option  + C
+|===

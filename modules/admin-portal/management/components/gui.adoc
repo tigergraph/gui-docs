@@ -1,0 +1,33 @@
+= Application Server (GUI)
+
+== Application Server (GUI) Page
+
+You can configure Application Server (GUI) settings through this page. Application Server is the backend component powering both GraphStudio and Admin Portal. Allowed setting includes: Query return size.
+
+image::../../../../.gitbook/assets/gui-page.png[]
+
+When you don't have any changes, the DISCARD and APPLY buttons are disabled.
+
+image::../../../../.gitbook/assets/discard-apply.png[]
+
+You can clear your changes by clicking the DISCARD button at the bottom right corner of the page.
+
+image::../../../../.gitbook/assets/discard.png[]
+
+If you want to get the default data again, you can click the refresh button in the upper right corner of the page.
+
+image::../../../../.gitbook/assets/refresh-button.png[]
+
+The fields with * in the label are required entries. When users do not fill in the required items and click the APPLY button, the following error will appear:
+
+image::../../../../.gitbook/assets/gui-reqiured-error.png[]
+
+If everything is ready, click the APPLY button and a confirmation box will pop up.
+
+image::../../../../.gitbook/assets/confirm-config-pop.png[]
+
+Click the CANCEL button, the pop-up window will be closed. Click the OK button, it will prompt the success message.Since configuration change requires restarting the server service, a pop-up box will appear to confirm whether to restart the service. After clicking the OK button, it will take a while for the configuration changes and server restart. You will be notified after all the process is completed.
+
+image::../../../../.gitbook/assets/nginx-confirm-server%20%281%29.png[]
+
+image::../../../../.gitbook/assets/nginx-finished.png[]

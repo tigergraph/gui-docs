@@ -1,0 +1,17 @@
+= License
+
+== License Page +++<a id="TigerGraphAdminPortalUIGuide-ConfigurationPageconfiguration">++++++</a>+++
+
+You can go to License page to update TigerGraph license key. If no TigerGraph license key is provided during TigerGraph installation time, the license page will look like this:
+
+image::../../../.gitbook/assets/no-license-updated.png[]
+
+Click the SELECT FILE button and choose the license text file, then click UPDATE button. The license detail will be loaded like below:
+
+image::../../../.gitbook/assets/license_updated%20%282%29.png[]
+
+Please note that the GraphStudio item under Applications section needs to be lightened like above. If it looks like the grayed icon here: image:../../../.gitbook/assets/graphstudio_disabled%20%282%29.png[], it means GraphStudio is not enabled in the provided license, and you won't be able to use GraphStudio in this case. You can upgrade your license to enable GraphStudio access, please contact sales@tigergraph.com for more information.
+
+You can click more details to show more information about the license:
+
+image::../../../.gitbook/assets/license-with-detail-updated.png[]

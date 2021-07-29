@@ -1,0 +1,137 @@
+= User Management
+
+== User Management Page +++<a id="TigerGraphAdminPortalUIGuide-DashboardPagedashboard">++++++</a>+++
+
+The User Management page has three tabs: My Profile, All Users and Role Management.
+
+=== My Profile
+
+All users can access the My Profile tab to manage themselves.
+
+image::../../../.gitbook/assets/my-profile-updated.png[]
+
+There are three information cards at the top: Username shows the user's username; Accessible graph shows how many graphs the user can access, and Password allows user to change password by clicking the key iconimage:../../../.gitbook/assets/key.png[]:
+
+image::../../../.gitbook/assets/change-password.png[]
+
+Below the cards are secret management section. You can create as many secrets for each graph as you want, but remember to copy the secret value out at the creation time. Once you refresh the page or go to another page and come back, the actual secret value will be masked for security. You need to provide an alias for the secret, and click the green plus sign to add the secret.
+
+image::../../../.gitbook/assets/secret-management.png[]
+
+When token authentication is enabled, you need to use the secrets to request tokens and add the tokens in the HTTP request headers to call TigerGraph RESTful endpoints. Read more at: link:../../../admin/admin-guide/user-access/user-privileges-and-authentication.md#rest-authentication[User Privileges and Authentication].
+
+=== All Users
+
+{% hint style="warning" %}
+Due to the difference in users' information display compared to GSQL, Admin Portal doesn't allow users with admin role to a graph to create/edit/delete users or assign a user with a role to a graph. Superuser can manage users in this case. Users with Admin role to a local graph can revoke roles to other users for this local graph.
+{% endhint %}
+
+{% hint style="info" %}
+Both native users and proxy users are displayed in the User section. However, you can only change password for native users.
+{% endhint %}
+
+Only superuser can access this tab. Superuser can add new users, change other users' password, delete users, create proxy groups, change proxy rules of the groups, and delete proxy groups.
+
+image::../../../.gitbook/assets/all-users-updated.png[]
+
+Clickimage:../../../.gitbook/assets/add-user-btn.png[]to add new users:
+
+image::../../../.gitbook/assets/all-users%20%281%29.png[]
+
+Clickimage:../../../.gitbook/assets/change-others-password-btn.png[]to change other users' password:
+
+image::../../../.gitbook/assets/change-others-password.png[]
+
+Clickimage:../../../.gitbook/assets/delete_btn.png[]to delete a user.
+
+Clickimage:../../../.gitbook/assets/proxy-groups-tab.png[]to see all proxy groups:
+
+image::../../../.gitbook/assets/proxy-groups.png[]
+
+Clickimage:../../../.gitbook/assets/add-group-btn.png[]to add new proxy groups:
+
+image::../../../.gitbook/assets/add-proxy-group.png[]
+
+Clickimage:../../../.gitbook/assets/edit.png[]to edit the proxy rule of an existing proxy group:
+
+image::../../../.gitbook/assets/edit-proxy-group.png[]
+
+Clickimage:../../../.gitbook/assets/delete_btn.png[]to delete a proxy group.
+
+Read more about proxy group at link:../../../admin/admin-guide/user-access/user-privileges-and-authentication.md#creating-and-managing-proxy-groups[User Privileges and Authentication].
+
+=== Role Management
+
+{% hint style="warning" %}
+Admin Portal does not indicate whether a user belongs a proxy group. You can find out more from GSQL client.
+
+Admin Portal shows a combination of roles for proxy users. Proxy user which belongs to a proxy group inherits all the roles from the proxy group plus all the roles the proxy user has. Therefore, if you want to revoke a role from a proxy user, you need to revoke the role from the proxy group first. Then you might need to revoke the same role from the proxy user if the proxy user also has that role.
+{% endhint %}
+
+Superusers and Admin users can access this tab to assign different roles to users on different graphs. Superusers can assign superuser role to other users, while admin users cannot.
+
+image::../../../.gitbook/assets/role-management-updated.png[]
+
+==== Select a graph
+
+You can use the dropdown menu at the top left corner to select on which graph you want to assign different roles to different users:
+
+image::../../../.gitbook/assets/select-graph.png[]
+
+==== Search user
+
+You can type in text to search for users:
+
+image::../../../.gitbook/assets/search-user.png[]
+
+==== Settings for users
+
+You can sort the users by alphabetic order or number of roles they have:
+
+image::../../../.gitbook/assets/sort-users.png[]
+
+You can choose to show all users, show the users who have role(s), or show the users who don't have a role:
+
+image::../../../.gitbook/assets/show-users.png[]
+
+==== Grant a new role to a user
+
+You have two ways to grant a new role to a user.
+
+The first way is drag-and-drop. You can drag a user from the right section to under the role you want to grant.
+
+image::../../../.gitbook/assets/assign-by-dnd-updated.png[]
+
+After the role is granted successfully, the user's name will appear under the corresponding role, and the role's color will appear on the user at the right section. You can grant multiple roles to the same user, and multiple colors will show on the user at the right section to indicate these roles.
+
+The second way is right click a user, and choose the role you want to grant:
+
+image::../../../.gitbook/assets/grant-roles.png[]
+
+==== Revoke a role from a user
+
+You have two ways to revoke a role from a user.
+
+The first way is drag-and-drop. You can drag a user from the role you want to revoke to the right section:
+
+image::../../../.gitbook/assets/revoke-dnd-updated.png[]
+
+After the role is revoked successfully, the user's name will disappear under the corresponding role, and the role's color will disappear from the user at the right section.
+
+The second way is right click a user, and choose the role you want to revoke:
+
+image::../../../.gitbook/assets/revoke-a-role.png[]
+
+==== Change a user's role
+
+You can drag a user from under one role to under another role at the left section. This is a shortcut to change the user's role:
+
+image::../../../.gitbook/assets/change-role-updated.png[]
+
+Similarly, you can also clickimage:../../../.gitbook/assets/proxy-groups%20%281%29.png[]to switch to proxy groups and manage their roles.
+
+image::../../../.gitbook/assets/manage-groups.png[]
+
+{% hint style="success" %}
+*Tip:* If you manage users through GSQL, please click on refresh button on the top right corner to reflect the changes in Admin Portal.
+{% endhint %}

@@ -1,0 +1,47 @@
+= LDAP
+
+== LDAP Page +++<a id="TigerGraphAdminPortalUIGuide-DashboardPagedashboard">++++++</a>+++
+
+You can set up and configure LDAP settings through this page.
+
+image::../../../../.gitbook/assets/ldap-page.png[]
+
+When you don't have any changes, the DISCARD and APPLY buttons are disabled.
+
+image::../../../../.gitbook/assets/discard-apply.png[]
+
+You can clear your changes by clicking the DISCARD button at the bottom right corner of the page.
+
+image::../../../../.gitbook/assets/discard.png[]
+
+For security reason, password is masked by default:
+
+image::../../../../.gitbook/assets/password-hide.png[]
+
+If you want to see your password, click the button at the end of the input box
+
+image::../../../../.gitbook/assets/password-show.png[]
+
+Truststore can be updated by uploading files. Click the file upload button next to the input box, and a drop-down for uploading files will appear. Click the upload file option to upload the desired file, and you can see the file content in the input box.
+
+image::../../../../.gitbook/assets/ldap-file-uploading.png[]
+
+image::../../../../.gitbook/assets/ldap-file-uploaded.png[]
+
+If you want to get the default data again, you can click the refresh button on the upper right corner of the page.
+
+image::../../../../.gitbook/assets/refresh-button.png[]
+
+The fields with * in the label are required entries.When users do not fill the required items and click the APPLY button, the following error message will appear:
+
+image::../../../../.gitbook/assets/reqired-error.png[]
+
+If everything is ready, click the APPLY button and a confirmation box will pop up
+
+image::../../../../.gitbook/assets/confirm-config-pop.png[]
+
+Click the CANCEL button, the pop-up window will be closed. Click the OK button, it will prompt the success message. Since configuration modification requires restarting the server service, a pop-up box will appear to confirm whether to restart the service. After clicking the OK button, it will take a while for configuration changes and server restart. You will be notified when all the process is completed.
+
+image::../../../../.gitbook/assets/ldap-confirm-serve.png[]
+
+image::../../../../.gitbook/assets/ldap-finished.png[]

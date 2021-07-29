@@ -1,0 +1,9 @@
+name: tigergraph-gui
+title: TigerGraph Web UI Guide
+version: 3.2
+start_page: graphstudio:overview.adoc
+
+nav:
+- modules/graphstudio/overview
+- modules/graphstudio/design-schemaa.adoc
+- modules/graphstudio/explore-graph.adoc

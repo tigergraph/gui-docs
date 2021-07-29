@@ -1,0 +1,239 @@
+= Visual Pattern Examples
+
+== Visual Pattern Examples +++<a id="TigerGraphGraphStudioUIGuide-WriteQueries">++++++</a>+++
+
+You have learnt all the basic concepts of Visual Query Builder in the previous article. In this article we will walk you through building several visual patterns step by step, and then show you more graph analytics questions and how to solve them with visual patterns.‌
+
+=== Example 1. Find all the departments with male employees‌. +++<a id="example-1-find-all-the-departments-with-male-employees">++++++</a>+++
+
+Clickimage:https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LMA-P3NzEEls-E_ml1t%2F-LMA37QmCzHgMSncIl_A%2Fupload_file_btn.png?alt=media&token=57239bf7-50db-4993-b2b2-e3f22f182dc1[]in the pattern list pattern, input the pattern name, and clickimage:https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LM9e_2BQZhEfn2WheoU%2F-LM9gaAqbCEhwkJn8k8d%2Fadd_vertex_type_btn.png?alt=media&token=4ca5020e-b47d-4e7f-8275-590a9684093f[]:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvvvsnl5eksscgabgze_demo_2_name.png[]
+
+Clickimage:../../../.gitbook/assets/add_vertex_type.png[]in the toolbar to add a vertex pattern:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvvxrsv4oqboqfdo5rn_add-1st-vertex-pattern.png[]
+
+In the config panel, change the vertex type to be department, and put it in result:
+
+image::../../../.gitbook/assets/edit-vertex-pattern.png[]
+
+Confirm the change by clickimage:../../../.gitbook/assets/confirm.png[]:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvvxyennhcuze3pjgew_changed-to-department.png[]
+
+Clickimage:../../../.gitbook/assets/add_vertex_type.png[]in the toolbar to add another vertex pattern:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvvyo9rsvkzoxl5ti45_2nd-vertex-pattern.png[]
+
+Expand the Filter section in the config panel:
+
+image::../../../.gitbook/assets/open-filter.png[]
+
+Clickimage:../../../.gitbook/assets/add_button.png[]to add a filter:
+
+image::../../../.gitbook/assets/add-filter.png[]
+
+Edit the filter to be *(gender == "male")*:
+
+image::../../../.gitbook/assets/edit-filter.png[]
+
+Confirm the change:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvvaran9ybyvmp5ddmo_apply-filter.png[]
+
+Clickimage:../../../.gitbook/assets/add_edge_type.png[]in the toolbar, then click the person vertex pattern in the working panel:
+
+image::../../../.gitbook/assets/click-person-vp.png[]
+
+Then click department vertex pattern in the working panel to create an edge pattern between the two vertex patterns:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvwcirpqnzwxjjmibcm_click-dep-vp.png[]
+
+In the config panel, change the edge type to be work_in:
+
+image::../../../.gitbook/assets/edit-etype.png[]
+
+Apply the change, and drag the person vertex pattern to a better position:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvwcxjavy9gzmh4fyzv_apply-etype-change.png[]
+
+Clickimage:../../../.gitbook/assets/save_btn.png[]in the toolbar to save the pattern, and clickimage:../../../.gitbook/assets/start_loading.png[]in the toolbar to run the pattern:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvwdbsyr4slvpf3q_x3_run-pattern.png[]
+
+You can also try to output the entire matched subgraphs. Clickimage:../../../.gitbook/assets/output-btn.png[]in the toolbar to enter output toggle mode, then click the person vertex pattern and the work_in edge pattern:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvwe_5_izo_dqy6pq3s_toggle-output.png[]
+
+Clickimage:../../../.gitbook/assets/output-btn.png[]in the toolbar again to exit output toggle mode, then clickimage:../../../.gitbook/assets/start_loading.png[]to run the pattern:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvwf5sghnsn1ueleppj_pattern-result-1.png[]
+
+=== Example 2. Find all such people A, B, C: A and B are friends, A and C are friends, and B manages C.
+
+Create a new visual pattern named FriendsManagerABC.
+
+Clickimage:../../../.gitbook/assets/schema%20%281%29%20%281%29.png[]in the console panel to switch to graph schema:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwkwq25sm1gxtjubld_schema-in-pattern.png[]
+
+Clickimage:../../../.gitbook/assets/pick-btn.png[]in the toolbar, then click the friend edge type in the graph schema:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwlwh76dzytgclrkor_pick-edge.png[]
+
+An edge pattern is added into the working panel:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwo0h98unajvnqwuia_friend-1.png[]
+
+Similarly, useimage:../../../.gitbook/assets/pick-btn.png[]to add another friend edge pattern and a manage edge pattern into the working panel:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwofvai82aycjxsbyj_edge-3.png[]
+
+Adjust the vertex patterns' positions:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwomds8bycwkyyqie8_move-position.png[]
+
+Hold Shift key and choose the two vertex patterns on the left, then clickimage:../../../.gitbook/assets/merge-btn.png[]in the toolbar to merge them together:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwodylbzk0sgn7ttot_merge-1st.png[]
+
+Then, merge the top two vertex patterns:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwojoequux6ziyicjf_merge-2nd.png[]
+
+Then, merge the right two vertex patterns:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwooxl8ofw6hod2te2_merge-3rd.png[]
+
+Now you have a triangle visual pattern representing the three people relationship!
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwoyw8xb-i3gb6ri-b_after-merge.png[]
+
+Now, clickimage:../../../.gitbook/assets/output-btn.png[]in the toolbar and put all the vertex patterns and edge patterns into result:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwp9hypyw9tbbpbkii_add-output.png[]
+
+Clickimage:../../../.gitbook/assets/output-btn.png[]again to exit output toggle mode, clickimage:../../../.gitbook/assets/save_btn.png[]to save the pattern, and clickimage:../../../.gitbook/assets/start_loading.png[]to run the pattern:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwpok75z2ozrptgrf__run-triangle.png[]
+
+=== Example 3. Find the top 2 cities where the most number of companies of an industry are located in.
+
+Create a new visual pattern named IndustryCenterCity. Clickimage:../../../.gitbook/assets/schema%20%281%29%20%281%29.png[]in the console panel to switch to graph schema.
+
+Useimage:../../../.gitbook/assets/pick-btn.png[]in the toolbar to pick the company_locate_at edge type and belong_to edge type in graph schema:
+
+image::../../../.gitbook/assets/pick-edges.png[]
+
+Use Shift key to select the two company vertex patterns, and clickimage:../../../.gitbook/assets/merge-btn.png[]to merge them into one. Drag the vertex patterns to make their positions look good:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwpsgl7org8uej3dw2_-lvww7qmtmgs2f_oiha2_merge-and-reposition.png[]
+
+Click the industry vertex pattern, then clickimage:../../../.gitbook/assets/edit.png[]in the toolbar (or double click the industry vertex pattern), now you are in edit mode:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwpsgl7org8uej3dw2_-lvweww5lc9n2jxsiuz7_edit-industry.png[]
+
+Change the vertices to be from parameter, and give a parameter name *ind*. This annotates the industry as an input vertex set when running the pattern:
+
+image::../../../.gitbook/assets/change-industry.png[]
+
+Confirm the change, and notice there is an id condition on the industry vertex pattern:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwpsgl7org8uej3dw2_-lvwfkjmr-j8e5ccnisg_apply-change.png[]
+
+Click the company vertex pattern, then clickimage:../../../.gitbook/assets/edit.png[]in the toolbar, and change the Name to *C*:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwpsgl7org8uej3dw2_-lvwglklozwsamam-q6v_edit-company.png[]
+
+Confirm the change, and the label of company vertex pattern becomes *company as C*:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwpsgl7org8uej3dw2_-lvwgylchchachlxgiiu_confirm-edit-company.png[]
+
+Click the city vertex pattern, then clickimage:../../../.gitbook/assets/edit.png[]in the toolbar:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwpsgl7org8uej3dw2_-lvwmigwtcze0gpznc2s_1-edit-city.png[]
+
+Expand the Aggregation section in the config panel, and add an aggregation:
+
+image::../../../.gitbook/assets/2-add-aggregation.png[]
+
+Confirm the change:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwpsgl7org8uej3dw2_-lvwmryx7ir5k2qby88t_3-confirm-agg.png[]
+
+Expand the Order section in the config panel, and add a descending order of aggregation result *countCompany*:
+
+image::../../../.gitbook/assets/4-add-order.png[]
+
+Confirm the change:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwmzsftkfmajvmccm0_-lvwn7ddd3u0myj7lfcx_5-confirm-order.png[]
+
+Expand the Limit section in the config panel, check the use limit checkbox, and change limit to 2:
+
+image::../../../.gitbook/assets/6-add-limit.png[]
+
+Confirm the change:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwmzsftkfmajvmccm0_-lvwndz7zl9y9oh9umsk_7-confirm-limit.png[]
+
+Clickimage:../../../.gitbook/assets/output-btn.png[], then click the city vertex pattern, then clickimage:../../../.gitbook/assets/output-btn.png[]again to exit output toggle mode, clickimage:../../../.gitbook/assets/save_btn.png[]to save the pattern:
+
+Clickimage:../../../.gitbook/assets/start_loading.png[]. Because the pattern has one input parameter *ind*, the Pattern parameters section in the pattern list panel expands:
+
+image::../../../.gitbook/assets/9-run.png[]
+
+Clickimage:../../../.gitbook/assets/add_button.png[]to add one industry vertex, and input "big data" for vertex id, then click image:../../../.gitbook/assets/run-pattern.png[]:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwmzsftkfmajvmccm0_-lvwnopp6-_3mp6ndy4b_10-big-data.png[]
+
+Change the industry vertex id to be "internet", and run the pattern again:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwmzsftkfmajvmccm0_-lvwnrxlwx4u7ivox3y1_11-internet.png[]
+
+Again, you can choose to output everything in the matched subgraphs:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwmzsftkfmajvmccm0_-lvwntv-xjmorxvfg4pm_12-full.png[]
+
+=== Example 4. Find the people who either were born in Redwood City or attended Stanford university, but didn't work for Hooli.
+
+Expand Graph patterns section in the pattern list panel, then create a new visual pattern named SearchPeople. Create the following visual pattern following similar steps as above:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwnvp3dgnx-vok3v4n_-lvwq7ggctwogkilkkjj_widget-base%20%281%29.png[]
+
+Clickimage:../../../.gitbook/assets/widget-btn.png[]in the toolbar, and choose *Union*:
+
+image::../../../.gitbook/assets/1-union.png[]
+
+Click the left two person vertex patterns respectively to add the union widget:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwnvp3dgnx-vok3v4n_-lvwspew3aygvwqpnad8_2-union.png[]
+
+Click​image:https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LvhbTLpvz8Pj5ZBuKlD%2F-Lvly1LBfdXQxZvwuE-u%2Fwidget-btn.png?alt=media&token=c8f287b1-a243-4c7b-b648-a91a6c12b48b[]in the toolbar, and choose *Subtract*:
+
+image::../../../.gitbook/assets/3-subtract.png[]
+
+Click the output person vertex pattern of the union widget, then click the right person vertex pattern, a subtract widget is added into the visual pattern:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwnvp3dgnx-vok3v4n_-lvwsveopdlwkrij6849_4-subtract.png[]
+
+Put the output person vertex pattern of the subtract widget into result:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwnvp3dgnx-vok3v4n_-lvwszgkk0ui6kghylhv_5-output.png[]
+
+Save and run the pattern:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwnvp3dgnx-vok3v4n_-lvwt1jugq5zvf-7iqdh_6-result.png[]
+
+=== Example 5. Find all the people that were born in a city with population no more than 100,000, worked for Graphlet, and have research skill.
+
+A snowflake-like visual pattern is commonly used in this type of searching problems:
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwvacebmsfya4_x1e0_-lvwv_2yllbcss4fur5e_people-search-2.png[]
+
+=== Example 6. Giving a person P, among all his direct friends and friends' friends who have programming skill, what are the top 5 other skills that most of these people have?
+
+First, we get the friends and friends' friends of P. We use the programming skill to filter these friends, then we find the other skills that these people have. Then we count the number of people having these skills, and choose the top 5 skills as the result.
+
+image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvww8lr3vzytece1i3e_-lvx6fnowhhcfsolmdjg_top-skills.png[]

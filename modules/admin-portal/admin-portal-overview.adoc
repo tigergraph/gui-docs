@@ -1,0 +1,99 @@
+== Admin Portal Overview
+
+=== Overview 
+
+The TigerGraph Admin Portal is a browser-based devops tool which provides users an overview of a running TigerGraph system, from an application and infrastructure point of view. It also allows the users to configure the TigerGraph system through a user-friendly interface. This guide serves as an introduction and quick-start manual for Admin Portal.
+
+As of Jan 2020, the Admin Portal is certified on following browsers:
+
+|===
+| Browser | Chrome | Safari | Firefox | Opera | Edge | Internet Explorer
+
+| Supported version
+| 54.0+
+| 11.1+
+| 59.0+
+| 52.0+
+| 80.0+
+| 10+
+|===
+
+Not all features are guaranteed to work on other browsers.
+
+Please make sure to enable JavaScript and cookies in your browser settings.
+
+=== Log On 
+
+The Admin Portal and GraphStudio share the same port (14240). If you are logged in one of the servers for your TigerGraph system, you can use `localhost` for your <tigergraph_server_ip_address>. The Admin Portal is on the admin page:
+
+[,http]
+----
+http://<tigergraph_server_ip_address>:14240/admin/
+----
+
+If user authentication has been enabled, users need to log in to access the Admin Portal.
+
+If you are already at GraphStudio, simply click the Admin button image:../../.gitbook/assets/goto_admin_portal.png[] at the right end of the top menu bar.
+
+=== Page Layout
+
+The Admin Portal v3.1 has three pages: Dashboard, Monitor and Management. All the pages share the same Header, Footer, and Navigation Menu.
+
+{% hint style="success" %}
+The layout of the Admin Portal is responsive to screen size.  The layout will automatically adjust for devices with small screens like phones and tablets.
+{% endhint %}
+
+The full screen version of the Admin Portal is shown below, with the Dashboard page selected.
+
+image::../../.gitbook/assets/admin-dark-updated%20%281%29.png[]
+
+The mobile version is shown below:
+
+image::../../.gitbook/assets/admin-mobile-updated.png[]
+
+=== Page Header 
+
+image::../../.gitbook/assets/admin_portal_toolbar-updated.png[]
+
+The *Account* iconimage:../../.gitbook/assets/account_btn.png[]will open the user menu:
+
+image::../../.gitbook/assets/admin-user-menu-updated.png[]
+
+You can switch between a dark theme and light theme. The light theme is shown below:
+
+image::../../.gitbook/assets/admin-lignt-updated.png[]
+
+To sign out of the Admin Portal, click on the *Sign out* button in the Account menu.
+
+Clicking on the *Help* button will take you to the documentation page containing this guide.
+
+You can navigate to GraphStudio by clicking onimage:../../.gitbook/assets/goto_graphstudio.png[].
+
+=== Page Footer 
+
+image::../../.gitbook/assets/page_footer.png[]
+
+The overall system statusimage:../../.gitbook/assets/cluster_status.png[]is always shown in the footer.  This single indicator shows:
+
+* Green indicates all services are online.
+* Gray means one or more service statuses is unknown.
+* Red means on of the component services is offline.
+
+Clicking on the button will show you the status for the services in our system:
+
+image::../../.gitbook/assets/cluster-service-status.png[]
+
+You can start or stop services from the Admin Portal by using the right most buttonsimage:../../.gitbook/assets/service_control_btn.png[](NOTE: ONLY a superuser can see these buttons).
+
+Clicking on the *Stop* iconimage:../../.gitbook/assets/shutdown_btn.png[]will stop GPE, GST and RESTPP services in the TigerGraph system.
+
+Clicking on the *Start* iconimage:../../.gitbook/assets/start_service_btn.png[]will start GPE, GST and RESTPP services of the services in the TigerGraph system (NOTE: because there is an interval between data collection period, the real status of the system will not be reflected in the status section right away).
+
+=== Session Timeout
+
+Admin Portal has a default session timeout of 1 week. If, during this time, the user has no interaction with the page, the session will expire and the user will be logged out automatically. The timeout can be configured with:
+
+[,bash]
+----
+$ gadmin config set GUI.ClientIdleTimeSec[timeout]
+----
