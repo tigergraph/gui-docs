@@ -4,6 +4,5 @@ version: 3.2
 start_page: graphstudio:overview.adoc
 
 nav:
-- modules/graphstudio/overview.adoc
-- modules/graphstudio/design-schemaa.adoc
-- modules/graphstudio/explore-graph.adoc
+- modules/graphstudio/nav.adoc
+- modules/admin-portal/nav.adoc
