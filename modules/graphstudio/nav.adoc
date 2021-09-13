@@ -13,10 +13,10 @@
 *** xref:run-gsql-queries.adoc[]
 *** xref:augment-visualization-result.adoc[]
 ** Build Graph Patterns
-*** xref:visual-query-builder-overview.adoc[]
-*** xref:visual-pattern-examples.adoc[]
+*** xref:build-graph-patterns/visual-query-builder-overview.adoc[]
+*** xref:build-graph-patterns/visual-pattern-examples.adoc[]
 ** xref:write-queries.adoc[]
-** xref:migrate-from-relational-databse.adoc[]
+** xref:migrate-from-relational-database.adoc[]
 ** xref:export-and-import-solution.adoc[]
 ** xref:keyboard-shortcuts.adoc[]
 ** xref:known-issues.adoc[]
