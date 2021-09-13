@@ -1,0 +1,134 @@
+= Graph Exploration Panel
+
+The Graph Exploration panel displays the result of your Graph Exploration actions. After you have a subgraph displayed in the Graph Exploration Panel, you can use the buttons in the Explorer View Menu or the options in the bottom right corner to customize the display. Additionally, you can make modifications to the graph database itself in edit mode.
+
+image::../../../.gitbook/assets/image%20%2833%29.png[Explorer View Menu]
+
+image::../../../.gitbook/assets/screen-shot-2020-06-03-at-5.03.45-pm.png[Options in the bottom right corner]
+
+== Customize visualization
+
+The Graph Exploration panel provides you with multiple ways of customizing the visualization of your graph exploration results.
+
+=== Zoom in/out
+
+Although you can use a mouse scroller to zoom in and zoom out the graph exploration result, you can also use the two buttons at the bottom-right corner to do that: image:../../../.gitbook/assets/screen-shot-2020-06-03-at-5.16.35-pm.png[]
+
+=== Refresh eesult
+
+The graph exploration result only reflects a snapshot of the graph data. If the data is changed due to CRUD operations (maybe in another session), the snapshot is outdated.
+
+You can click the refresh buttonimage:../../../.gitbook/assets/screen-shot-2020-06-03-at-5.16.43-pm.png[]to get all vertices and edges synced with the graph database. All vertices and edges that already got removed will be removed from the exploration panel, and all the attribute values will also get updated.
+
+=== Change layout
+
+You can click the change layout button image:../../../.gitbook/assets/screen-shot-2020-06-03-at-5.16.50-pm.png[] to change layout:
+
+image::../../../.gitbook/assets/image%20%2836%29.png[Change layout]
+
+If your vertices have attributes named `latitude` and `longitude`, with valid latitude and longitude values respectively, you can choose the geospatial layout option. The geospatial layout will present all your vertices and edges between them on the world map:
+
+image::../../../.gitbook/assets/image%20%2832%29.png[Example of vertices and edges in the geospatial layout]
+
+=== Locate vertex
+
+The Locate Vertex In Result featureimage:../../../.gitbook/assets/locate_vertex_btn.png[]searches for and then zooms in on vertices that match the given value for ID and/or attribute. For example, if you type "Mary" in the Locate Vertices in Result popup window, and have both of the checkboxes selected, then this feature will look for any vertices where "Mary" is an exact match for either the ID or any of the attribute values. Those vertices will be selected (and all other objects will be unselected). The display will zoom in to focus on the selected objects.
+
+image::../../../.gitbook/assets/locate_vertex_in_result.png[]
+
+The vertices with the matching ID or attributes will be selected:
+
+image::../../../.gitbook/assets/locate_vertex_result.png[]
+
+=== Show selected vertices and edges
+
+Click the Show Selections buttonimage:../../../.gitbook/assets/show_ve_btn.png[]to hide all the vertices and edges which are not currently selected. However, if the two endpoints of an edge are selected, the edge will be selected as well. Also, if nothing is selected, nothing will be hidden.
+
+=== Hide vertices and edges
+
+Click the Hide buttonimage:../../../.gitbook/assets/hide_ve_btn.png[]to hide the currently selected vertices and edges. If nothing is selected, all vertices and edges in the Graph Exploration Panel will be hidden.
+
+=== Undo and redo
+
+The Explore Graph page records the whole history of the current session's changes to the visualization result set. Click the Undo and the Redo buttons image:../../../.gitbook/assets/redo_undo_btn.png[] to go back or forward in the history.
+
+{% hint style="warning" %}
+Database changes (adding or deleting vertices/edges, editing attributes) cannot be undone with the Undo feature. +
+Also, Undo/Redo do not include layout and display changes (e.g., positioning of objects and display of attributes).
+{% endhint %}
+
+=== Save and open graph exploration result
+
+When you find something interesting during exploration and want to save the result as a picture, you can click the Save Exploration buttonimage:../../../.gitbook/assets/save_btn.png[]. In the popup window, you can give the result a file name and an optional description, then click Save:
+
+image::../../../.gitbook/assets/save_exploration_result.png[]
+
+In the future, you can open a previously saved exploration result by clicking the Open Exploration History buttonimage:../../../.gitbook/assets/open_exploration_result.png[]and choose one result from the list:
+
+image::../../../.gitbook/assets/exploration_history.png[]
+
+=== Save screenshot
+
+When you find something interesting during exploration and want to save the result as a picture, you can click the Save Screenshot buttonimage:../../../.gitbook/assets/screenshot_btn.png[]. The exploration result will be saved as a PNG picture to your local file system.
+
+=== Change settings
+
+To change graph exploration settings by clicking Settings buttonimage:../../../.gitbook/assets/settings_btn.png[]. Currently you can select what attributes to show for each vertex type and edge type, and set whether to show an object's detailed information in a popup tooltip when the cursor hovers over it. Click Apply and the new settings will take effect.
+
+image::../../../.gitbook/assets/settings.png[]
+
+In the example below, the ID and gender for person vertices are shown.  The ID and the foundYear attributes for company vertices are shown.
+
+image::../../../.gitbook/assets/show-attributes.png[]
+
+You can also configure the text font size of vertex and edge labels and properties.
+
+image::../../../.gitbook/assets/screen-shot-2019-01-24-at-11.36.10-am.png[]
+
+Other than the above, you can also configure vertex and edge size and color to augment the visualization in settings. See xref:augment-visualization-result.adoc[Augment Visualization Result].
+
+== Edit graph
+
+Besides customizing the view of your graph exploration results, you can also enable the edit mode and and make edits to the graph itself by adding or removing vertices and edges, as well as changing their attributes.
+
+In order to perform any of the actions in this section, you need to enable edit mode by clicking on the toggle next to Edit mode. Once you are in the edit mode, the four buttons that allow you to edit the graph will appear on the right.
+
+image::../../../.gitbook/assets/image%20%2833%29.png[Explorer View Menu]
+
+=== Add new vertex
+
+In edit mode, click the Add New Vertex buttonimage:../../../.gitbook/assets/add_vertex_type.png[]to add a new vertex to the graph database. The Add New Vertex window will pop up. Choose a vertex type and then fill in values for the ID and the attributes. Click ADD and the vertex will be inserted into the TigerGraph database. It will also be shown in the Graph Exploration Panel.
+
+image::../../../.gitbook/assets/add_new_vertex.png[]
+
+{% hint style="info" %}
+If you provide a vertex ID that is already used, GraphStudio will ask you whether you want to overwrite the existing vertex.  If you say no, then it will not add or update anything.
+{% endhint %}
+
+=== Add new edge
+
+In edit mode, click the Add New Edge buttonimage:../../../.gitbook/assets/add_edge_type.png[]to add a new edge to the graph database. Next, click the source vertex of the edge in the Graph Exploration Panel, and then click the target vertex of the edge. Then the Add New Edge panel will pop up. Choose the edge type from the dropdown menu. Only types that match the two vertices you selected are shown. (It is possible that there are no eligible edge types). Fill in values for attributes and click ADD. Your new edge will be inserted into the TigerGraph database. It will also be shown in the Graph Exploration Panel.
+
+image::../../../.gitbook/assets/add_new_edge.png[]
+
+{% hint style="info" %}
+If you select an edge type that already exists between the two vertices, GraphStudio will ask if you want to overwrite the existing edge.  If you say no, nothing will be added or updated.  The current TigerGraph system does not support having multiple edges of the same type between two specific vertices.
+{% endhint %}
+
+=== Edit attributes
+
+To edit the attributes of one vertex or edge, select one object and then click the Edit Attributes buttonimage:../../../.gitbook/assets/edit.png[]in edit mode. The edit attributes panel will pop up.
+
+image::../../../.gitbook/assets/edit_attributes.png[]
+
+When you finish editing, click the Update button to apply the change.
+
+=== Delete vertices and edges
+
+To delete vertices or edges, select the objects you want to delete, and click the Delete Selected Elements buttonimage:../../../.gitbook/assets/delete_forever.png[] in edit mode.
+
+{% hint style="danger" %}
+"Delete" permanently removes data from the graph database. Deleted vertices and edges cannot be restored with Undo. To restore them, you must manually add them back.
+
+If you delete a vertex, all of its outgoing and incoming edges will also be deleted
+{% endhint %}

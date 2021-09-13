@@ -14,7 +14,7 @@
 
 {% page-ref page="load-data.md" %}
 
-{% page-ref page="explore-graph.md" %}
+{% page-ref page="explore-graph/" %}
 
 {% page-ref page="build-graph-patterns/" %}
 

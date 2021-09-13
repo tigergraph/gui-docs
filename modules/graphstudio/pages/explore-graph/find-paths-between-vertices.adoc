@@ -1,0 +1,80 @@
+= Find Paths between Vertices
+
+You can use the Find Paths and the Find Connections option to find paths between two or more vertices:
+
+* link:find-paths-between-vertices.md#find-paths-between-two-vertices[Find paths: find path between two vertices]
+* link:find-paths-between-vertices.md#find-connections-between-multiple-vertices[Find connections: find paths connecting more than 2 vertices]
+
+== Find paths between two vertices
+
+The third button in the Explore Graph Menu is the "Find paths" optionimage:../../../.gitbook/assets/paths.png[]. This option finds paths between two vertices with your specified conditions. Clicking the button again will hide the Parameter Panel.
+
+=== Choose Starting Vertex and Destination Vertex
+
+The top section of the Parameter Panel asks for your desired starting vertex and destination vertex.
+
+image::../../../.gitbook/assets/find_path_no_input.png[]
+
+There are two ways to provide this information. Each of the two vertices can be selected by either method.
+
+If you know the ID and vertex type for a vertex, you can choose vertex type from dropdown list and type vertex id in the input box.  The vertex does not need to be currently displayed in the Graph Exploration Panel.
+
+If the vertex you want is already displayed in the Graph Exploration Panel, a more convenient way is the following:
+
+. Click on the input box.
+. Click on the desired vertex in the Graph Exploration Panel. Then, GraphStudio will automatically fill in the values for you.
+
+image::../../../.gitbook/assets/find_path_with_input.png[]
+
+You can click the swap icon (two green arrows) on the right to switch the starting vertex and the destination vertex.
+
+=== Set Conditions For Paths
+
+GraphStudio provides three types of path searches:
+
+. One shortest path: search for and highlight the shortest path between the two vertices.
+. All shortest paths: search for and highlight all shortest paths between the two vertices.
+. All paths: search for and highlight all valid paths between the two vertices.
+
+Since path-finding queries may have high computational cost if the graph is very large, a parameter is available to limit the path length.
+
+image::../../../.gitbook/assets/path_types.png[]
+
+In addition to the search type and the maximal length, you can also specify the valid vertex types and edge types and their attribute conditions which may be included in the paths.
+
+image::../../../.gitbook/assets/path-filters.png[]
+
+=== Find Paths
+
+After selecting the endpoint vertices and setting the search conditions, click on the "Find Paths" buttonimage:../../../.gitbook/assets/find_path_btn.png[]to start the search.
+
+image::../../../.gitbook/assets/find-paths.png[]
+
+== Find connections between multiple vertices
+
+The fourth button in the Explore Graph Menu is the "Find connections" optionimage:../../../.gitbook/assets/connections%20%281%29%20%283%29.png[]. Given a set of starting vertices, this feature finds a "connection community" which is defined as follows:
+
+. For each pair of vertices in the vertex set, if there is a shortest path no longer than the maximum path length parameter, include that path in the result.
+. The final result is the union of all of these shortest paths (one path per vertex pair).
+
+This feature is equivalent to running the "Show One Shortest Path" option for each pair of vertices in the selected set.
+
+=== Choose Vertices for Finding Connections
+
+Click on a vertex to select it. Use shift-click to select more than one object. Each time you select another vertex, it will be added to the list in the Parameter Panel.
+
+image::../../../.gitbook/assets/find_connections%20%282%29.png[]
+
+=== Set Conditions For Connection Finding
+
+Since this query may have high computational cost if the graph is very large, a parameter is available to limit the path length.
+
+You can also specify the valid vertex types and edge types which may be included in the connections.
+
+image::../../../.gitbook/assets/find-connections.png[]
+
+=== Find Connections
+
+After selecting the vertices and setting the search conditions, click on the "Find Connection Paths" buttonimage:../../../.gitbook/assets/find_connection_paths_btn.png[]to start the search.
+
+image::../../../.gitbook/assets/find_connections_result.png[]

@@ -1,0 +1,79 @@
+= Overview
+
+The TigerGraph Admin Portal is a browser-based DevOps tool that provides users an overview of a running TigerGraph system, from an application and infrastructure point of view. It also allows the users to configure the TigerGraph system through a user-friendly interface. This guide serves as an introduction and quick-start manual for Admin Portal.
+
+Admin Portal is certified on the following browsers:
+
+|===
+| Browser | Chrome | Safari | Firefox | Opera | Edge | Internet Explorer
+
+| Supported version
+| 54.0+
+| 11.1+
+| 59.0+
+| 52.0+
+| 80.0+
+| 10+
+|===
+
+Not all features are guaranteed to work on other browsers.
+
+Please make sure to enable JavaScript and cookies in your browser settings.
+
+== Log On
+
+The Admin Portal and GraphStudio share the same port (14240). If you are logged in to one of the servers for your TigerGraph system, you can use `localhost` for your server IP address. The Admin Portal is on the admin page:
+
+[source,http]
+----
+http://<tigergraph_server_ip_address>:14240/admin/
+----
+
+If user authentication has been enabled, users need to log in to access the Admin Portal.
+
+If you are already at GraphStudio, click the Admin button image:../../.gitbook/assets/goto_admin_portal.png[] at the right end of the top menu bar to navigate to Admin Portal.
+
+== Page Layout
+
+The Admin Portal v3.1 has three pages: Dashboard, Monitor, and Management. All the pages share the same Header, and Navigation Menu.
+
+{% hint style="success" %}
+The layout of the Admin Portal is responsive to screen size.  The layout will automatically adjust for devices with small screens like phones and tablets.
+{% endhint %}
+
+The full-screen version of the Admin Portal is shown below, with the Dashboard page selected.
+
+image::../../.gitbook/assets/image%20%287%29.png[]
+
+== Page Header
+
+image::../../.gitbook/assets/admin_portal_toolbar-updated.png[]
+
+The *Account* iconimage:../../.gitbook/assets/account_btn.png[]will open the user menu:
+
+image::../../.gitbook/assets/admin-user-menu-updated.png[]
+
+You can switch between a dark theme and a light theme. The light theme is shown below:
+
+image::../../.gitbook/assets/image%20%2811%29.png[]
+
+To sign out of the Admin Portal, click on the *Sign out* button in the Account menu.
+
+Clicking on the *Help* button will take you to the documentation page containing this guide.
+
+You can navigate to GraphStudio by clicking onimage:../../.gitbook/assets/goto_graphstudio.png[].
+
+== Cluster service status
+
+The bottom of the navigation menu shows the cluster service status.
+
+image::../../.gitbook/assets/image%20%2810%29.png[]
+
+== Session Timeout
+
+Admin Portal has a default session timeout of 1 week. If, during this time, the user has no interaction with the page, the session will expire and the user will be logged out automatically. The timeout can be configured with:
+
+[source,bash]
+----
+$ gadmin config set GUI.ClientIdleTimeSec[timeout]
+----

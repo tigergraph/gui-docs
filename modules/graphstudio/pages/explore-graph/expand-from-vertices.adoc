@@ -1,0 +1,50 @@
+= Expand from Vertices
+
+The second button in the Explore Graph Menu is the "Expand from vertices" optionimage:../../../.gitbook/assets/k-step.png[]. "Expand" in this context means find 1-step or multi-step neighbors of the selected vertices. Clicking the button again will hide the Parameter Panel to increase space for the Graph Exploration Panel. To expand from vertices, you need to have at least one selected vertex in the Graph Exploration Panel. If no vertices are visible, please refer to the previous section "Search Vertices in Graph" to search for some vertices.
+
+{% hint style="success" %}
+Shortcut: double-clicking on a vertex will expand to up to 200 neighbors of that vertex.
+{% endhint %}
+
+[discrete]
+=== 1. Choose vertices To expand from
+
+The standard click and shift-click behavior applies for selecting one or multiple objects:
+
+* Click on a vertex to select it. Any previously selected objects are unselected.
+* Shift-click on an unselected object to add it to the selection set.
+* Shift-click on a selected object to remove it from the selection set.
+
+A vertex that is selected has a thick gray border around it. To unselect all vertices, click on a blank area of the panel.
+
+image::../../../.gitbook/assets/select-multiple-vertices%20%281%29.png[]
+
+[discrete]
+=== 2. Set expansion conditions
+
+GraphStudio lets you expand multiple steps from the target vertices, as long as the resulting number of vertices and edges does not exceed the limit for visualization (default limit is 5000 vertices and 10000 edges). The conditions for each expansion step are specified independently.
+
+In the Parameter Panel, set the conditions for each expansion step:
+
+* Maximum number of edges include for each vertex. The effect is that vertices with more neighbors than this limit will not have all their neighbors included in the expansion.
+* Edge types and the attribute filter for each edge type to include.
+* Target vertex types and the attribute filter for each vertex type to include.
+
+image::../../../.gitbook/assets/config.png[]
+
+Initially, the expansion conditions panel for only one expansion step is shown. Click "Add Expansion Step" to add more expansion steps.
+
+image::../../../.gitbook/assets/add_expansion_step.png[]
+
+Similarly, you can remove expansion steps by clicking the "Remove Expansion Step" button.
+
+image::../../../.gitbook/assets/remove_expansion_step.png[]
+
+[discrete]
+=== 3. Expand
+
+After setting the conditions for each expansion step, click on the "Expand" buttonimage:../../../.gitbook/assets/expand.png[]to perform the expansion. The Graph Exploration Panel will be updated to include the expansion result. The expansion starting vertices will be highlighted with a white border. Here is a sample two-step expansion starting from 1 vertex:
+
+image::../../../.gitbook/assets/two-step.png[]
+
+##

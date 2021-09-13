@@ -2,9 +2,9 @@
 
 == Dashboard Page
 
-The Dashboard page has three main parts: Overall Statistics, the Time Range Picker, and several Charts.
+The Dashboard page has three main parts: Overall statistics, the time range picker, and several charts.
 
-image::../../.gitbook/assets/dashboard-updated%20%281%29.png[]
+image::../../.gitbook/assets/image%20%285%29.png[]
 
 === Overall Cluster Statistics   +++<a id="TigerGraphAdminPortalUIGuide-OverallClusterStatistics">++++++</a>+++
 

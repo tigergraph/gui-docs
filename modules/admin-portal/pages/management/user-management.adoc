@@ -18,7 +18,7 @@ Below the cards are secret management section. You can create as many secrets fo
 
 image::../../../.gitbook/assets/secret-management.png[]
 
-When token authentication is enabled, you need to use the secrets to request tokens and add the tokens in the HTTP request headers to call TigerGraph RESTful endpoints. Read more at: link:../../../admin/admin-guide/user-access/user-privileges-and-authentication.md#rest-authentication[User Privileges and Authentication].
+When token authentication is enabled, you need to use the secrets to request tokens and add the tokens in the HTTP request headers to call TigerGraph RESTful endpoints. Read more at: link:[User Privileges and Authentication].
 
 === All Users
 
@@ -58,7 +58,7 @@ image::../../../.gitbook/assets/edit-proxy-group.png[]
 
 Clickimage:../../../.gitbook/assets/delete_btn.png[]to delete a proxy group.
 
-Read more about proxy group at link:../../../admin/admin-guide/user-access/user-privileges-and-authentication.md#creating-and-managing-proxy-groups[User Privileges and Authentication].
+Read more about proxy group at link:[User Privileges and Authentication].
 
 === Role Management
 

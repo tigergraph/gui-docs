@@ -228,7 +228,7 @@ Clickimage:../../../.gitbook/assets/edit.png[]besides the filter expression and 
 
 image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvmjvt2mkzujjj4alns_-lvml2ar64-j4_zuavzr_filters.png[]
 
-You can add multiple filters for each vertex and edge pattern, and they are AND relationship when executing the pattern. Building the filter is similar with building attribute filter in link:../explore-graph.md#search-vertices-with-attribute-filters[Explore Graph page]. One thing special here is that you can refer to attributes on other vertex patterns and edge patterns. Choose *Attribute of vertex or edge* as expression type, then choose the name of the vertex or edge pattern whose attribute you want to refer to (see above why we need give a name to vertex or edge patterns), then choose the attribute you want to refer to.
+You can add multiple filters for each vertex and edge pattern, and they are AND relationship when executing the pattern. Building the filter is similar with building attribute filter in link:../explore-graph/#search-vertices-with-attribute-filters[Explore Graph page]. One thing special here is that you can refer to attributes on other vertex patterns and edge patterns. Choose *Attribute of vertex or edge* as expression type, then choose the name of the vertex or edge pattern whose attribute you want to refer to (see above why we need give a name to vertex or edge patterns), then choose the attribute you want to refer to.
 
 image::../../../.gitbook/assets/filter-remote-attr.png[]
 
@@ -394,7 +394,7 @@ image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvm9pfm2-2ozgm2sd9_
 
 ==== Visualize graph result
 
-If the pattern execution result contains a graph structure, the result will be visualized in this panel as a graph. The panel is the same as the link:../explore-graph.md#TigerGraphGraphStudioUIGuide-GraphExplorationPanelOptions-1[Explore Graph panel]. The only difference is that each time you run a pattern, the previous result will be erased. In Explore Graph, the results are added incrementally.
+If the pattern execution result contains a graph structure, the result will be visualized in this panel as a graph. The panel is the same as the link:../explore-graph/#TigerGraphGraphStudioUIGuide-GraphExplorationPanelOptions-1[Explore Graph panel]. The only difference is that each time you run a pattern, the previous result will be erased. In Explore Graph, the results are added incrementally.
 
 image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvm9pfm2-2ozgm2sd9_-lvmcxuo-u1fkbkapquo_visual-graph.png[]
 

@@ -30,7 +30,7 @@ If you are using GraphStudio in the TigerGraph cloud environment, you can direct
 
 For on-premise deployment, the system by default is listening to port 14240. Any machine connected to the server can access GraphStudio from a browser with the following address:
 
-[,http]
+[source,http]
 ----
 http://<your_tigergraph_server_ip_address>:<your_tigergraph_server_port>
 ----
@@ -41,7 +41,7 @@ In v1.2, the default TCP/IP port for GraphStudio has changed from 44240 to 14240
 
 If you cannot access GraphStudio, check your firewall rules and open 14240 port to public. For example, if your Linux OS uses firewall-cmd:
 
-[,text]
+[source,text]
 ----
 $ firewall-cmd –zone=public –add-port=14240/tcp –permanent
 ----
@@ -56,7 +56,7 @@ To verify, in a linux shell of the server, type
 
 If it is off, turn it on:
 
-[,bash]
+[source,bash]
 ----
 $ gadmin start gui
 ----
@@ -89,7 +89,7 @@ image::../../.gitbook/assets/1.6.png[]
 
 GraphStudio has a default session timeout of 1 week. If, during this time, the user has no interaction with the page, the session will expire and the user will be logged out automatically. The timeout can be configured with:
 
-[,bash]
+[source,bash]
 ----
 $ gadmin config set GUI.ClientIdleTimeMS [timeout]
 ----
@@ -122,6 +122,3 @@ Some features which are available in GSQL are not available in GraphStudio.
 ==== xref:write-queries.adoc[Write Queries]
 
 * You cannot define a user-defined function (you can use the user-defined functions created from TigerGraph server by importing the solution which contains pre-defined UDFs into GraphStudio).
-
-== Admin Portal Overview
-include::3.2@tigergraph-gui:admin-portal:page$admin-portal-overview.adoc[]

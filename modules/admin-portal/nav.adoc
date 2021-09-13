@@ -1,2 +1,16 @@
 * Admin Portal
-** xref:admin-portal-overview.adoc[]
+** xref:overview.adoc[]
+** xref:dashboard.adoc[]
+** xref:monitoring/README.adoc[]
+*** xref:monitoring/log-viewer.adoc[]
+** Management
+*** xref:management/license.adoc[]
+*** xref:user-management.adoc[]
+** Components
+*** xref:components/nginx.adoc[]
+*** xref:components/restpp.adoc[]
+*** xref:components/gui.adoc[]
+** Security
+*** xref:security/ldap.adoc[]
+*** xref:security/sso.adoc[]
+** xref:known-issues.adoc[]

@@ -1,2 +1,25 @@
 * GraphStudio
 ** xref:overview.adoc[]
+** xref:license.adoc[]
+** xref:user-access-management.adoc[]
+** xref:design-schema.adoc[]
+** xref:map-data-to-graph.adoc[]
+** xref:load-data.adoc[]
+** xref:explore-graph/README.adoc[]
+*** xref:explore-graph/graph-exploration-panel.adoc[]
+*** xref:explore-graph/search-for-vertices.adoc[]
+*** xref:explore-graph/expand-from-vertices.adoc[]
+*** xref:explore-graph/find-paths-between-vertices.adoc[]
+*** xref:run-gsql-queries.adoc[]
+*** xref:augment-visualization-result.adoc[]
+** Build Graph Patterns
+*** xref:visual-query-builder-overview.adoc[]
+*** xref:visual-pattern-examples.adoc[]
+** xref:write-queries.adoc[]
+** xref:migrate-from-relational-databse.adoc[]
+** xref:export-and-import-solution.adoc[]
+** xref:keyboard-shortcuts.adoc[]
+** xref:known-issues.adoc[]
+** xref:patent-and-third-party-notice.adoc[]
+
+

@@ -1,11 +1,16 @@
 = Known Issues
 
 [discrete]
+=== GraphStudio Metadata is not replicated using Cross-Region Replication (CRR)
+
+In v3.2.0, GSQL implements metadata Cross-Region Replication (CRR). Currently, replication of metadata for GraphStudio on remote cluster is not supported. If you need to do that, use backup & restore as an alternative. However, GraphStudio can still be used on remote cluster.
+
+[discrete]
 === Solution import if STRING COMPRESS data type is disabled
 
 In v3.1.0, objects related to STRING COMPRESS data type would be skipped during solution import. All the others would be imported successfully.
 
-In v3.1.1, solution having STRING COMPRESS data type would fail to import.
+In v3.1.1, solutions containing the STRING COMPRESS data type would fail to import.
 
 Please update the data type using STRING COMPRESS in your solution before importing into TG v3.1.0 and TG v3.1.1
 
@@ -35,7 +40,7 @@ In the future, GraphStudio will use BigInt to solve this problem.
 === Graph Exploration result disappears +++<a id="TigerGraphGraphStudioUIGuide-GraphExplorationResultDisappears">++++++</a>+++
 
 Sometimes when you double-click a vertex, the graph exploration result disappears. This is only a front-end rendering issue. The data is still there. +
-*Workaround* : click the change layout buttonimage:../../.gitbook/assets/change_layout_btn.png[], and choose any layout. Everything will be rendered.
+*Workaround* : click the change layout button image:../../.gitbook/assets/screen-shot-2021-07-22-at-9.56.00-am.png[] , and choose any layout. Everything will be rendered.
 
 [discrete]
 === Edge response area is too big +++<a id="TigerGraphGraphStudioUIGuide-EdgeResponseAreaIsTooBig">++++++</a>+++

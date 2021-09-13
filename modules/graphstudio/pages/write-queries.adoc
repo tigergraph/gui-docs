@@ -1,17 +1,15 @@
 = Write Queries
 
-== Write Queries +++<a id="TigerGraphGraphStudioUIGuide-WriteQueries">++++++</a>+++
-
-On the Write Queries page, you can design and run custom queries with TigerGraph's powerful graph query language -- GSQL.
+On the Write Queries page, you can write and run custom queries with GSQL.
 
 image::../../.gitbook/assets/3.1.1.png[]
 
 The Write Query page is horizontally divided into two parts:
 
-. Query Editing Panel
-. Result, Log and Visualization Panel
+* Query Editing Panel
+* Result, Log and Visualization Panel
 
-=== Query Editing Panel +++<a id="TigerGraphGraphStudioUIGuide-QueryEditingPanel">++++++</a>+++
+== Query Editing Panel
 
 The Query Editing panel is divided into two sub-panels: the left sub-panel is used to select a query to edit, and the right, larger sub-panel displays the selected query for editing. Here you can edit, save, delete query and/or its draft, install and run the query. The query editor features syntax highlighting customized for the GSQL language.  Also, the query editor performs real-time semantic checking.
 
@@ -29,7 +27,7 @@ image::../../.gitbook/assets/3.2.1.png[]
 * *Download:* Download the query as a gsql file.
 * *Discard query draft :* Delete the selected query draft.
 
-==== Add Or Edit Query +++<a id="TigerGraphGraphStudioUIGuide-AddOrEditQuery">++++++</a>+++
+=== Add Or Edit Query
 
 To create a new query, simply click on the "New GSQL Query" buttonimage:../../.gitbook/assets/upload_file_btn.png[]at the bottom-right corner of the left sub-panel, and type in the name of the new query in the popup window:
 
@@ -43,17 +41,17 @@ To edit an existing query, click on the query name in the list in the left sub p
 
 image::../../.gitbook/assets/3.5%20%281%29.png[]
 
-==== Save Query Draft +++<a id="TigerGraphGraphStudioUIGuide-SaveQueryDraft">++++++</a>+++
+=== Save Query Draft
 
 Once you made some changes to the query code and want to save it as a query draft, click on the "save" buttonimage:../../.gitbook/assets/save_btn.png[]in the toolbar.
 
-==== Run Query in Interpreted Mode +++<a id="TigerGraphGraphStudioUIGuide-InstallQuery">++++++</a>+++
+=== Run Query in Interpreted Mode
 
 If you have saved the query and there is no errors in the query, you can run the query in interpreted mode. Click the run query buttonimage:../../.gitbook/assets/start_loading.png[]. Together with the query execution result, a warning message will appear to notify user of the performance concerns running the query in interpreted mode. To speed up the query performance after you are satisfied with the GSQL query developed in interpreted mode, you can follow the instructions in the next section "Install Query".
 
 image::../../.gitbook/assets/3.6.1.png[]
 
-==== Install Query +++<a id="TigerGraphGraphStudioUIGuide-InstallQuery">++++++</a>+++
+=== Install Query
 
 If you saved a query, the "install query" buttonimage:../../.gitbook/assets/publish_btn.png[]will be enabled. Click it to install the query. The installation process may take about 1 minute:
 
@@ -61,7 +59,7 @@ image::../../.gitbook/assets/install_query_progress.png[]
 
 After the installation, the run query button changes fromimage:../../.gitbook/assets/start_loading.png[]toimage:../../.gitbook/assets/run-installed-query.png[].
 
-==== Run Query +++<a id="TigerGraphGraphStudioUIGuide-RunQuery">++++++</a>+++
+=== Run Query
 
 To run the query, click on the "run" buttonimage:../../.gitbook/assets/run-installed-query.png[]in the toolbar. If the query has no parameters, it will run directly and the result will be shown in the Result panel.
 
@@ -73,7 +71,7 @@ The query will be executed, and the results will be shown in the Result Panel.
 
 image::../../.gitbook/assets/3.8.1.png[]
 
-==== Run Configuration
+=== Run Configuration
 
 You can set runtime configurations of the GSQL query by clicking the small image:../../.gitbook/assets/3.9%20%281%29.png[]button to the right of run query button, then a drop-down menu will appear.
 
@@ -89,25 +87,25 @@ image::../../.gitbook/assets/3.13.png[]
 
 Click the submit button image:../../.gitbook/assets/3.12%20%282%29.png[] to apply your changes.
 
-==== Delete Query +++<a id="TigerGraphGraphStudioUIGuide-DeleteQuery">++++++</a>+++
+=== Delete Query
 
 Choose the query you want to delete and click on the "delete" buttonimage:../../.gitbook/assets/delete_forever.png[]. The query will be deleted permanently.
 
-==== Show Query Endpoint +++<a id="TigerGraphGraphStudioUIGuide-DeleteQuery">++++++</a>+++
+=== Show Query Endpoint
 
 After finishing writing the GSQL queries and installing the queries, you can access the queries via REST endpoints. By clicking the "show query endpoint" buttonimage:../../.gitbook/assets/endpoint.png[], you can see the format of the endpoint to access this query, so that you can integrate the query with your applications.
 
 image::../../.gitbook/assets/show_query_endpoint.png[]
 
-==== Download
+=== Download
 
 You can download your query by click image:../../.gitbook/assets/3.14.1.png[], or download all your queries as a tarball by click image:../../.gitbook/assets/3.15.1.png[]
 
-==== Delete query draft +++<a id="download">++++++</a>+++
+=== Delete query draft
 
 You can delete your query draft by clicking ​image:../../.gitbook/assets/delete-query-draft.png[].
 
-==== Install All Queries
+=== Install All Queries
 
 If you want to install all queries that you haven't installed yet, you can click "Install all queries" buttonimage:../../.gitbook/assets/install_all_queries.png[]in GSQL Queries list. After some verification time, a pop up window listing all queries to be installed will show:
 
@@ -117,7 +115,7 @@ Click INSTALL button, then the listed queries will be installed:
 
 image::../../.gitbook/assets/installing_all_queries.png[]
 
-=== Result Panel +++<a id="TigerGraphGraphStudioUIGuide-ResultPanel">++++++</a>+++
+== Result Panel
 
 The Result panel shows the result of the last run query. Each query generates up to three types of result: visualized graph, JSON text, or log messages. On the left is a toolbar with buttons for changing the the panel size or for switching to a different type of result. The buttons, from top to bottom, are the following:
 
@@ -141,21 +139,21 @@ The Result panel shows the result of the last run query. Each query generates up
 | View logs: Show the log for the last run query.
 |===
 
-==== View schema: +++<a id="TigerGraphGraphStudioUIGuide-VisualResult">++++++</a>+++
+=== View schema:
 
 Viewing graph schema makes it more convenient for developers to refer to the schema topology logic and easier to write correct GSQL queries.
 
 image::../../.gitbook/assets/write-queries-schema.png[]
 
-==== Visualize graph result
+=== Visualize graph result
 
-If the query execution result contains a graph structure, the result will be visualized in this panel as a graph. The panel is the same as the link:explore-graph.md#TigerGraphGraphStudioUIGuide-GraphExplorationPanelOptions-1[Explore Graph panel]. Please refer to the documentation for the link:explore-graph.md#TigerGraphGraphStudioUIGuide-GraphExplorationPanelOptions-1[Explore Graph panel]. The only difference is that each time you run a query, the previous result will be erased. In Explore Graph the results are added incrementally.
+If the query execution result contains a graph structure, the result will be visualized in this panel as a graph. The panel is the same as the link:explore-graph/#TigerGraphGraphStudioUIGuide-GraphExplorationPanelOptions-1[Explore Graph panel]. Please refer to the documentation for the link:explore-graph/#TigerGraphGraphStudioUIGuide-GraphExplorationPanelOptions-1[Explore Graph panel]. The only difference is that each time you run a query, the previous result will be erased. In Explore Graph the results are added incrementally.
 
 image::../../.gitbook/assets/write-queries-graph.png[]
 
 You can switch to the JSON Result panel to see the result in JSON format.
 
-==== View JSON result
+=== View JSON result
 
 If there is no graph structure in the result, the result will be displayed in this panel as a JSON object.
 
@@ -163,13 +161,13 @@ image::../../.gitbook/assets/view-json-result.png[]
 
 You can learn about the JSON format in the link:../../dev/gsql-ref/querying/[GSQL Language documentation] , and integrate it with your applications. In this fashion, the TigerGraph system can serve as a backend or embedded graph data service.
 
-==== View logs +++<a id="TigerGraphGraphStudioUIGuide-QueryLog">++++++</a>+++
+=== View logs
 
 If a query ran successfully, the Query Log message will be "query ran successfully" or something similar. If there was anything wrong when executing your query, such as invalid parameters or runtime errors, an error message will be shown in the Query Log panel:
 
 image::../../.gitbook/assets/query-log.png[]
 
-=== Expand Panels +++<a id="TigerGraphGraphStudioUIGuide-ExpandPanels.1">++++++</a>+++
+== Expand Panels
 
 If you just want to focus on developing your query, or want to have more space to view your result, click the Expand button image:../../.gitbook/assets/expand_panel.png[] in either the Query Editing panel or the Result panel.
 

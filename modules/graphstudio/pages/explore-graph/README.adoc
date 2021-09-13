@@ -1,0 +1,86 @@
+= Explore Graph
+
+After data has been loaded, the Explore Graph page allows you to explore the graph in the following ways:
+
+* xref:search-for-vertices.adoc[Search for vertices in a graph]
+* xref:expand-from-vertices.adoc[Discover nearby vertices]
+* xref:find-paths-between-vertices.adoc[Find paths between vertices.]
+* xref:run-gsql-queries.adoc[Run GSQL queries]
+
+The Graph Exploration panel also provides you with many ways to modify and augment the visualization of your exploration results, as well as the ability to add vertices and edges to the graph:
+
+* xref:graph-exploration-panel.adoc[Graph Exploration Panel]
+* xref:augment-visualization-result.adoc[Augment Visualization Result]
+
+== Page layout
+
+The Explore Graph page is vertically divided into three parts, from left to right:
+
+image::../../../.gitbook/assets/explore-graph%20%281%29.png[]
+
+=== The Inner Navigation Bar
+
+The menu options, from top to bottom, are the following:
+
+[cols="^,<"]
+|===
+| Menu option | Functionality
+
+| image:../../../.gitbook/assets/search_btn.png[]
+| Search vertices: select specific vertices with conditions.
+
+| image:../../../.gitbook/assets/k-step.png[]
+| Expand from vertices: find neighborhood of the specified vertices.
+
+| image:../../../.gitbook/assets/paths.png[]
+| Find paths: find paths between the selected source vertex and target vertex.
+
+| image:../../../.gitbook/assets/connections%20%281%29%20%283%29.png[]
+| Find connections: find connecting paths between a set of vertices.
+
+| image:../../../.gitbook/assets/gsql%20%281%29.png[]
+| Run queries: run installed GSQL queries.
+|===
+
+=== The Parameter Panel
+
+Set filters, conditions, and other parameters for the selected option from the Inner Navigation Bar.
+
+=== The Graph Exploration Panel
+
+The exploration result is displayed in this panel. Below is an example of an exploration result:
+
+image::../../../.gitbook/assets/explore%20%281%29.png[]
+
+You can adjust the results display, take a snapshot of the display, and modify selected data objects in the result.
+
+image::../../../.gitbook/assets/screen-shot-2020-06-03-at-5.06.21-pm.png[]
+
+The menu buttons, from left to right, are the following:
+
+* *Open exploration history*: Open a previously saved graph exploration result.
+* *Save exploration*: Save the current visualization result.
+
+{% hint style="warning" %}
+If the graph schema is modified after the exploration result is saved, the result cannot be opened anymore.
+{% endhint %}
+
+* *Save screenshot*: Save the current visualization result as a png file.
+* *Locate vertices in result*: Search the exploration result by vertex id or attribute value.
+* *Only show selections*: First select one or more objects. Clicking the button will hide all the objects which are not selected.
+* *Hide*: First select one or more objects. Clicking the button will hide the selected vertices and edges (or all if none is selected).
+* *Undo*: Undo the last change to the visualization result set (that is, changes to which objects are included in the result set).
+* *Redo*: Redo the most recent undone change to the visualization result set (that is, changes to which objects are included in the result set).
+
+{% hint style="warning" %}
+Database changes (adding or deleting vertices/edges, editing attributes) cannot be undone with the Undo feature. +
+Also, Undo/Redo do not include layout and display change (e.g., positioning of objects and display of attributes).
+{% endhint %}
+
+* *Add new vertex*: Add a new vertex into the visualization result *as well as to the graph database*.
+* *Add new edge*: Add a new edge into the visualization result *as well as to the graph database*.
+* *Edit attributes*: Change the attributes of the selected object in the visualization result *as well as the graph database*.
+* *Delete selected elements*: Delete the selected elements from the visualization result *as well as the graph database*.
+* *Change settings*: Select which attribute values to display with each vertex or edge type. Enable/disable popup display of all attributes when the cursor hovers over a vertex or edge.
+
+The Parameter Panel can be hidden by clicking its corresponding button in the Explore Graph Menu.
