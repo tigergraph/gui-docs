@@ -4,9 +4,10 @@ The log page contains the search panel, the file directory panel, and the conten
 
 image::../../../.gitbook/assets/image%20%286%29.png[]
 
-{% hint style="danger" %}
+[WARNING]
+====
 Note: Error message might show if an ADBLOCK is running.
-{% endhint %}
+====
 
 [discrete]
 === Open a log file from the file directory
@@ -17,9 +18,10 @@ image::../../../.gitbook/assets/file-listing.png[]
 
 Choose one single log file by clicking on it, and the content will be shown in the display panel. The title will show the machine id and the path of the opened log file. To the very right, there is a download button image:../../../.gitbook/assets/download-log-btn.png[] for downloading the selected log file. Loaded log lines will add to the end of the file (the latest log content) and the system will keep pulling to update the log.
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Note that it displays up to 32 MB of the log file before the latest line of the chosen log file. If users want to read the entire log file, users need to download the file.
-{% endhint %}
+====
 
 image::../../../.gitbook/assets/display-log%20%281%29.png[]
 

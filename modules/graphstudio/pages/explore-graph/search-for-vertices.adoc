@@ -30,9 +30,10 @@ image::../../../.gitbook/assets/attr-filter-added.png[]
 
 Click the Pick vertices button​ image:../../../.gitbook/assets/pick_vertices_btn.png[] again, TigerGraph will search for up to 1 company vertex with a `foundYear >= 2012`.
 
-{% hint style="warning" %}
+[CAUTION]
+====
 If your graph contains a large number of vertices, searching vertices with attribute filters can be extremely slow.
-{% endhint %}
+====
 
 If you keep exploring the graph on the Explore Graph page, the previous exploration result won't be automatically erased. Instead, your new exploration result will be merged together with the previous visualized graph. The objects from the most recent exploration will be selected (highlighted with a thick gray border) to distinguish them from the previous visualized graph.
 

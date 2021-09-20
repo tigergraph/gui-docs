@@ -22,13 +22,15 @@ When token authentication is enabled, you need to use the secrets to request tok
 
 === All Users
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Due to the difference in users' information display compared to GSQL, Admin Portal doesn't allow users with admin role to a graph to create/edit/delete users or assign a user with a role to a graph. Superuser can manage users in this case. Users with Admin role to a local graph can revoke roles to other users for this local graph.
-{% endhint %}
+====
 
-{% hint style="info" %}
+[NOTE]
+====
 Both native users and proxy users are displayed in the User section. However, you can only change password for native users.
-{% endhint %}
+====
 
 Only superuser can access this tab. Superuser can add new users, change other users' password, delete users, create proxy groups, change proxy rules of the groups, and delete proxy groups.
 
@@ -62,11 +64,12 @@ Read more about proxy group at link:[User Privileges and Authentication].
 
 === Role Management
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Admin Portal does not indicate whether a user belongs a proxy group. You can find out more from GSQL client.
 
 Admin Portal shows a combination of roles for proxy users. Proxy user which belongs to a proxy group inherits all the roles from the proxy group plus all the roles the proxy user has. Therefore, if you want to revoke a role from a proxy user, you need to revoke the role from the proxy group first. Then you might need to revoke the same role from the proxy user if the proxy user also has that role.
-{% endhint %}
+====
 
 Superusers and Admin users can access this tab to assign different roles to users on different graphs. Superusers can assign superuser role to other users, while admin users cannot.
 
@@ -132,6 +135,7 @@ Similarly, you can also clickimage:../../../.gitbook/assets/proxy-groups%20%281%
 
 image::../../../.gitbook/assets/manage-groups.png[]
 
-{% hint style="success" %}
+[NOTE]
+====
 *Tip:* If you manage users through GSQL, please click on refresh button on the top right corner to reflect the changes in Admin Portal.
-{% endhint %}
+====

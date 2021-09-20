@@ -56,9 +56,10 @@ The menu buttons, from left to right, are the following:
 * *Open exploration history* : Open a previously saved graph exploration result.
 * *Save exploration* : Save the current visualization result.
 
-{% hint style="warning" %}
+[CAUTION]
+====
 If the graph schema is modified after the exploration result is saved, the result cannot be opened any more.
-{% endhint %}
+====
 
 * *Save screenshot* : Save the current visualization result as a png file.
 * *Locate vertices in result* : Search the exploration result by vertex id or attribute value.
@@ -67,10 +68,11 @@ If the graph schema is modified after the exploration result is saved, the resul
 * *Undo* : Undo the last change to the visualization result set (that is, changes to which objects are included in the result set).
 * *Redo* : Redo the most recent undone change to the visualization result set (that is, changes to which objects are included in the result set).
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Database changes (adding or deleting vertices/edges, editing attributes) cannot be undone with the Undo feature. +
 Also, Undo/Redo do not include layout and display change (e.g., positioning of objects and display of attributes).
-{% endhint %}
+====
 
 * *Add new vertex* : Add a new vertex into the visualization result *as well as to the graph database* .
 * *Add new edge* : Add a new edge into the visualization result *as well as to the graph database* .
@@ -112,13 +114,15 @@ image::../../.gitbook/assets/attr-filter-added.png[]
 
 Click Pick vertices button​ image:../../.gitbook/assets/pick_vertices_btn.png[] again, TigerGraph will search for up to 1 company vertices with a foundYear >= 2012.
 
-{% hint style="warning" %}
+[CAUTION]
+====
 If your graph contains a large number of vertices, searching vertices with attribute filters can be extremely slow.
-{% endhint %}
+====
 
-{% hint style="info" %}
+[NOTE]
+====
 NOTE: If you keep exploring the graph in the Explore Graph page, the previous exploration result won't be automatically erased. Instead, your new exploration result will be merged together with the previous visualized graph. The objects from the most recent exploration action will be selected (highlighted with a thick gray border) to distinguish them from the previous visualized graph.
-{% endhint %}
+====
 
 image::../../.gitbook/assets/new_exploration_result_merged.png[]
 
@@ -126,9 +130,10 @@ image::../../.gitbook/assets/new_exploration_result_merged.png[]
 
 The second button in the Explore Graph Menu is the "Expand from vertices" optionimage:../../.gitbook/assets/k-step.png[]. "Expand" in this context means find 1-step or multi-step neighbors of the selected vertices. Clicking the button again will hide the Parameter Panel to increase space for the Graph Exploration Panel. To expand from vertices, you need to have at least one selected vertex in the Graph Exploration Panel. If no vertices are visible, please refer to the previous section "Search Vertices in Graph" to search for some vertices.
 
-{% hint style="success" %}
+[NOTE]
+====
 Shortcut: double-clicking on a vertex will expand to up to 200 neighbors of that vertex.
-{% endhint %}
+====
 
 ==== Choose Vertices To Expand +++<a id="TigerGraphGraphStudioUIGuide-ChooseVerticesToExpand">++++++</a>+++
 
@@ -298,10 +303,11 @@ Click the Hide buttonimage:../../.gitbook/assets/hide_ve_btn.png[]to hide the cu
 
 The Explore Graph page records the whole history of the current session's changes to the visualization result set. Click the Undo and the Redo buttons image:../../.gitbook/assets/redo_undo_btn.png[] to go back or forward in the history.
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Database changes (adding or deleting vertices/edges, editing attributes) cannot be undone with the Undo feature. +
 Also, Undo/Redo do not include layout and display changes (e.g., positioning of objects and display of attributes).
-{% endhint %}
+====
 
 ==== Add New Vertex +++<a id="TigerGraphGraphStudioUIGuide-AddNewVertex">++++++</a>+++
 
@@ -309,9 +315,10 @@ Click the Add New Vertex buttonimage:../../.gitbook/assets/add_vertex_type.png[]
 
 image::../../.gitbook/assets/add_new_vertex.png[]
 
-{% hint style="info" %}
+[NOTE]
+====
 If you provide a vertex ID that is already used, GraphStudio will ask you whether you want to overwrite the existing vertex.  If you say no, then it will not add or update anything.
-{% endhint %}
+====
 
 ==== Add New Edge +++<a id="TigerGraphGraphStudioUIGuide-AddNewEdge">++++++</a>+++
 
@@ -319,9 +326,10 @@ Click the Add New Edge buttonimage:../../.gitbook/assets/add_edge_type.png[]to a
 
 image::../../.gitbook/assets/add_new_edge.png[]
 
-{% hint style="info" %}
+[NOTE]
+====
 If you select an edge type that already exists between the two vertices, GraphStudio will ask if you want to overwrite the existing edge.  If you say no, nothing will be added or updated.  The current TigerGraph system does not support having multiple edges of the same type between two specific vertices.
-{% endhint %}
+====
 
 ==== Edit Attributes +++<a id="TigerGraphGraphStudioUIGuide-EditAttributes">++++++</a>+++
 
@@ -335,11 +343,12 @@ When you finish editing, click the Update button to apply the change.
 
 To delete vertices or edges, select the objects you want to delete, and click the Delete Selected Elements buttonimage:../../.gitbook/assets/delete_forever.png[].
 
-{% hint style="danger" %}
+[WARNING]
+====
 "Delete" permanently removes data from the graph database. Deleted vertices and edges cannot be restored with Undo. To restore them, you must manually add them back.
 
 If you delete a vertex, all of its outgoing and incoming edges will also be deleted.
-{% endhint %}
+====
 
 ==== Save and Open Graph Exploration Result
 

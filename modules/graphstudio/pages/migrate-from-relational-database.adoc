@@ -38,9 +38,10 @@ image::../../.gitbook/assets/step-4.png[]
 
 The migration will take a few minutes. After migration finished, a new subgraph will be created.
 
-{% hint style="warning" %}
+[CAUTION]
+====
 The data from RDBMS will be imported to the server's filesystem before being loaded into TigerGraph database. Please make sure that the server has enough disk space!
-{% endhint %}
+====
 
 image::../../.gitbook/assets/step-5-migrating.png[]
 

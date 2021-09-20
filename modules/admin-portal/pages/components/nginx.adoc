@@ -58,9 +58,10 @@ image::../../../../.gitbook/assets/nginx-confirm-server.png[]
 
 image::../../../../.gitbook/assets/nginx-finished-right.png[]
 
-{% hint style="danger" %}
+[WARNING]
+====
 
 === After upgrading to v3.1, downgrading from HTTPS to HTTP (turn off SSL) will result in user authentication failure
 
 In v3.1, TigerGraph enhanced the security configuration for cookie by setting a secure flag when SSL is enabled, which may trigger an issue when using Chrome to turn off SSL. Due to this security feature, when downgrading from HTTPS to HTTP, Chrome will not allow setting the same cookie. This will result in user authentication failure because the cookie fails to be set. To solve this problem, users can clear the cache from Chrome and refresh the browser. Enabling from HTTP to HTTPS will work as expected.
-{% endhint %}
+====

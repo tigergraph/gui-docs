@@ -4,9 +4,10 @@
 
 These two features can be found on the GraphStudio Home page. You can return to the Home page by clicking the logo on the top of the left menuimage:../../.gitbook/assets/graphstudio-logo-10.22.48-am%20%281%29.png[].
 
-{% hint style="danger" %}
+[WARNING]
+====
 Solutions created from "Export Current Solution" from a version released prior to v3.1 cannot be imported into v3.1 due to data storage changes made in v3.1 to support HA for the application server. Contact support@tigergraph.com for a detailed workaround if you want to import a solution tarball prior to v3.1.
-{% endhint %}
+====
 
 === Export +++<a id="TigerGraphGraphStudioUIGuide-Export">++++++</a>+++
 
@@ -20,19 +21,21 @@ The exported tarball file includes two folders: *graph/* and *gui/*. The *graph/
 * *global.gsql* - DDL job to create all global vertex and edge types, and data sources.
 * *tuple.gsql* - DDL job to create all User Defined Tuples.
 
-{% hint style="info" %}
+[NOTE]
+====
 Note that this ExportedGraph.zip file is identical to what is produced by running the xref:../../admin/admin-guide/system-management/database-import-export.adoc[database export command]with the template option.
-{% endhint %}
+====
 
 The *gui/* folder includes a folder that contains all user icons and a json file that describes the layout of the schema in GraphStudio.
 
-{% hint style="danger" %}
+[WARNING]
+====
 ATTENTION:
 
 . The graph data and data files will not be exported.
 . If a query has been modified since it was last installed, GraphStudio will export the modified draft instead of the version that has been installed in the TigerGraph engine.
 . Starting with TigerGraph 3.0, GSQL queries can be run in Interpreted Mode in GraphStudio without installation. These queries need to be installed to be exported.
-{% endhint %}
+====
 
 === Import +++<a id="TigerGraphGraphStudioUIGuide-Import">++++++</a>+++
 
@@ -40,10 +43,12 @@ Click on the "Import an Existing Solution" to upload a previously exported tarba
 
 image::../../.gitbook/assets/import-solution.png[]
 
-{% hint style="info" %}
+[NOTE]
+====
 In order to optimize the time required for Import, the imported queries will not be installed but saved as drafts. You need to install them manually.
-{% endhint %}
+====
 
-{% hint style="danger" %}
+[WARNING]
+====
 Importing a solution will overwrite the current solution. The existing schema, loading jobs, queries as well as data files will be erased before the new solution is imported.
-{% endhint %}
+====

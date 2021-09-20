@@ -61,9 +61,10 @@ The menu buttons, from left to right, are the following:
 * *Open exploration history*: Open a previously saved graph exploration result.
 * *Save exploration*: Save the current visualization result.
 
-{% hint style="warning" %}
+[CAUTION]
+====
 If the graph schema is modified after the exploration result is saved, the result cannot be opened anymore.
-{% endhint %}
+====
 
 * *Save screenshot*: Save the current visualization result as a png file.
 * *Locate vertices in result*: Search the exploration result by vertex id or attribute value.
@@ -72,10 +73,11 @@ If the graph schema is modified after the exploration result is saved, the resul
 * *Undo*: Undo the last change to the visualization result set (that is, changes to which objects are included in the result set).
 * *Redo*: Redo the most recent undone change to the visualization result set (that is, changes to which objects are included in the result set).
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Database changes (adding or deleting vertices/edges, editing attributes) cannot be undone with the Undo feature. +
 Also, Undo/Redo do not include layout and display change (e.g., positioning of objects and display of attributes).
-{% endhint %}
+====
 
 * *Add new vertex*: Add a new vertex into the visualization result *as well as to the graph database*.
 * *Add new edge*: Add a new edge into the visualization result *as well as to the graph database*.

@@ -26,11 +26,12 @@ image::../../.gitbook/assets/logout%20%281%29.png[]
 
 TigerGraph uses role-based access control with several pre-defined roles. Each role is a logical collection of data access privileges, such as querywriter or admin. Each user is assigned one or more roles by a graph admin user or by a superuser. Roles are also graph-specific. For example, user Pat could be an admin on graph G1 but a querywriter on graph G2.
 
-{% hint style="success" %}
+[NOTE]
+====
 *New feature available*
 
 In v3.0, Admin Portal supports user management. Read more at https://docs.tigergraph.com/ui/admin-portal[Admin Portal UI Guide].
-{% endhint %}
+====
 
 When a user logs in and/or selects a graph, GraphStudio will disable certain actions based on the user's role on that graph. On each working panel, a warning note will alert the user to features which are disabled. For example, in the current version of GraphStudio, users with querywriter, queryreader, or observer role will see the following warnings on the Design Schema working panel:
 

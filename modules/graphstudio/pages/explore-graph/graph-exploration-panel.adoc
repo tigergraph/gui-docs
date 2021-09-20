@@ -52,10 +52,11 @@ Click the Hide buttonimage:../../../.gitbook/assets/hide_ve_btn.png[]to hide the
 
 The Explore Graph page records the whole history of the current session's changes to the visualization result set. Click the Undo and the Redo buttons image:../../../.gitbook/assets/redo_undo_btn.png[] to go back or forward in the history.
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Database changes (adding or deleting vertices/edges, editing attributes) cannot be undone with the Undo feature. +
 Also, Undo/Redo do not include layout and display changes (e.g., positioning of objects and display of attributes).
-{% endhint %}
+====
 
 === Save and open graph exploration result
 
@@ -101,9 +102,10 @@ In edit mode, click the Add New Vertex buttonimage:../../../.gitbook/assets/add_
 
 image::../../../.gitbook/assets/add_new_vertex.png[]
 
-{% hint style="info" %}
+[NOTE]
+====
 If you provide a vertex ID that is already used, GraphStudio will ask you whether you want to overwrite the existing vertex.  If you say no, then it will not add or update anything.
-{% endhint %}
+====
 
 === Add new edge
 
@@ -111,9 +113,10 @@ In edit mode, click the Add New Edge buttonimage:../../../.gitbook/assets/add_ed
 
 image::../../../.gitbook/assets/add_new_edge.png[]
 
-{% hint style="info" %}
+[NOTE]
+====
 If you select an edge type that already exists between the two vertices, GraphStudio will ask if you want to overwrite the existing edge.  If you say no, nothing will be added or updated.  The current TigerGraph system does not support having multiple edges of the same type between two specific vertices.
-{% endhint %}
+====
 
 === Edit attributes
 
@@ -127,8 +130,9 @@ When you finish editing, click the Update button to apply the change.
 
 To delete vertices or edges, select the objects you want to delete, and click the Delete Selected Elements buttonimage:../../../.gitbook/assets/delete_forever.png[] in edit mode.
 
-{% hint style="danger" %}
+[WARNING]
+====
 "Delete" permanently removes data from the graph database. Deleted vertices and edges cannot be restored with Undo. To restore them, you must manually add them back.
 
 If you delete a vertex, all of its outgoing and incoming edges will also be deleted
-{% endhint %}
+====

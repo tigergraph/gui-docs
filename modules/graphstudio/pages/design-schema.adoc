@@ -6,12 +6,13 @@ Beginning with Version 3.0, GraphStudio can support modifying multiple graphs wi
 
 Designing the graph schema is the first and most important step of solving a business problem. The graph schema is the model of the problem, and all of the subsequent steps depend on the graph schema. If you are not on the Design Schema page yet, click "Design Schema" on the left side menu bar.
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Only certain roles have the privilege to modify a graph schema.
 
 . Only the superuser and globaldesigner roles can modify the global graph schema, including creating local graphs.
 . Only the superuser, globaldesigner, and designer roles can modify a local graph schema.
-{% endhint %}
+====
 
 When there is no graph schema in the system, this page will show some hints:
 
@@ -34,11 +35,12 @@ For superuser and globaldesigner, they can modify global vertex and edge types u
 
 image::../../.gitbook/assets/screen-shot-2020-06-10-at-13.01.14.png[]
 
-{% hint style="warning" %}
+[CAUTION]
+====
 
 . If under global view, other pages except Home and Design Schema will be disabled.
 . Users other than superuser and globaldesigner cannot access global view.
-{% endhint %}
+====
 
 Users can modify a graph schema under graph view. In a graph, there is one more in the toolbar area - "View global vertex and edge types". And for global vertex and edge types used in a graph, a little global icon is attached to them.
 
@@ -82,9 +84,10 @@ Click the red minus sign to the right of the attribute to delete an existing att
 
 Once you are satisfied with the vertex type settings, click the Add buttonimage:../../.gitbook/assets/add-btn.png[]to add the vertex type. A new circle will appear in the working panel. You can drag the circle to any desired position.
 
-{% hint style="danger" %}
+[WARNING]
+====
 Note:  PRIMARY KEY and COMPOSITE KEY is not supported in GraphStudio. If you decide to use these features, you will only be able to use command line interface.
-{% endhint %}
+====
 
 === Add An Edge Type +++<a id="TigerGraphGraphStudioUIGuide-AddAnEdgeType">++++++</a>+++
 
@@ -132,9 +135,10 @@ image::../../.gitbook/assets/view-panel.png[]
 
 You can delete a vertex type or an edge type by first choosing the vertex type circles or edge type links, then clicking the delete buttonimage:../../.gitbook/assets/delete_btn.png[]. In order to delete multiple vertex types and edge types, hold down the "Shift" key while you select multiple items.
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Note that user cannot delete a global vertex or edge type using delete button in a graph.
-{% endhint %}
+====
 
 === Redo And Undo +++<a id="TigerGraphGraphStudioUIGuide-RedoAndUndo">++++++</a>+++
 
@@ -146,9 +150,10 @@ Click the view global vertex and edge types buttonimage:../../.gitbook/assets/vi
 
 image::../../.gitbook/assets/view-global-types-panel.png[]
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Only superuser or globaldesigner can modify global types in a graph. The view global vertex and edge types button will be disabled for other users.
-{% endhint %}
+====
 
 === Publish Schema +++<a id="TigerGraphGraphStudioUIGuide-PublishSchema">++++++</a>+++
 
@@ -156,17 +161,19 @@ Once you are satisfied with the graph schema, click the publish schema buttonima
 
 image::../../.gitbook/assets/installing_schema_enterprise.png[]
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Note that *Publish Schema* applies to both creating a new schema as well as modifying an existing schema.  If you have already loaded data into or created queries for an existing graph, please note that GraphStudio's Publish Schema is only able to retain your existing data in some circumstances. Read the following section carefully.
-{% endhint %}
+====
 
 If you are editing an existing graph schema, GraphStudio will analyze your changes. If the change to a vertex or edge type is to remove some attributes and / or to add some new attributes, or add or remove index to some attributes, GraphStudio will employ a GSQL SCHEMA_CHANGE job in order to retain the graph data you already loaded.
 
 All other types of changes, including *renaming* the vertex or edge type, ***changing **attribute name or data type*, changing *edge direction*, adding or removing *reverse edge* will result in removing the old vertex or edge type and then adding the new one with your desired configurations. In that case, the loaded data to that vertex or edge type will be erased. Please think twice before you do this type of changes.
 
-{% hint style="warning" %}
+[CAUTION]
+====
 If a vertex type will be removed in order to change the schema, all edge types connected to that vertex type will also be removed.
-{% endhint %}
+====
 
 When you are editing a graph schema, a warning message in the top-left side of the working panel will show which old vertex and edge types will be removed. Make sure to check the message periodically to make sure it is as you expect:
 

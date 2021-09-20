@@ -2,9 +2,10 @@
 
 The second button in the Explore Graph Menu is the "Expand from vertices" optionimage:../../../.gitbook/assets/k-step.png[]. "Expand" in this context means find 1-step or multi-step neighbors of the selected vertices. Clicking the button again will hide the Parameter Panel to increase space for the Graph Exploration Panel. To expand from vertices, you need to have at least one selected vertex in the Graph Exploration Panel. If no vertices are visible, please refer to the previous section "Search Vertices in Graph" to search for some vertices.
 
-{% hint style="success" %}
+[NOTE]
+====
 Shortcut: double-clicking on a vertex will expand to up to 200 neighbors of that vertex.
-{% endhint %}
+====
 
 [discrete]
 === 1. Choose vertices To expand from

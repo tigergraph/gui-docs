@@ -51,13 +51,14 @@ If all the files are uploaded successfully, the progress window will close autom
 
 Once the files are uploaded to the server, it will appear in the "Files on server" list on the left side of the Add Data Files window.
 
-{% hint style="info" %}
+[NOTE]
+====
 *Data Files must be .csv files to allow data mapping in GraphStudio ( .json file upload is allowed in TigerGraph V3.0.5+ through GraphStudio)*
 
 The Add Data File box will only upload files which end in ".csv". If you manually place files in the <TigerGraph_root_dir>/data/gui/loading_data folder, please don't put any files into subfolders because they will be ignored.
 
 In TigerGraph V3.0.5, you can upload files which end in ".json". This allows users to upload ".json" files to the filesystems and use a remote GSQL client, or GSQL web shell in TigerGraph Cloud to map data to the graph using GSQL commands. Currently, data mapping for ".json" files through GraphStudio UI is not supported.
-{% endhint %}
+====
 
 ==== Configure the File Parser +++<a id="TigerGraphGraphStudioUIGuide-ConfiguretheFileParser">++++++</a>+++
 
@@ -103,13 +104,15 @@ Click the data source to list all the buckets the credentials can access, and cl
 
 image::../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf1d-1wslbwckzs4fah_screen-shot-2019-05-16-at-12.56.32-pm.png[]
 
-{% hint style="info" %}
+[NOTE]
+====
 Data files, after decompression, must be in either csv or parquet format.
-{% endhint %}
+====
 
-{% hint style="success" %}
+[NOTE]
+====
 TigerGraph supports loading from archived and compressed S3 files directly. Currently supported file extensions includes zip, tar.gz, tgz and tar. GraphStudio detects the file extension and automatically chooses the corresponding file format. If the file is encoded with one of these formats but has a non-standard file extension, you can manually specify the File format.
-{% endhint %}
+====
 
 After clicking the ADD button, an S3 file icon will appear on the working panel:
 

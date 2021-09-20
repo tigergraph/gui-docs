@@ -214,9 +214,10 @@ When finished editing, you need to confirm the change. You can also cancel the c
 
 image::../../../.gitbook/assets/basic-info-banner.png[]
 
-{% hint style="info" %}
+[NOTE]
+====
 If you want another vertex pattern or edge pattern to refer to current selected vertex or edge pattern's attributes, you need to give it a name.
-{% endhint %}
+====
 
 ==== Filter
 

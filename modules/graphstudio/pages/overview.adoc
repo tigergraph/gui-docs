@@ -32,9 +32,10 @@ For on-premise deployment, the system by default is listening to port 14240. Any
 http://<your_tigergraph_server_ip_address>:<your_tigergraph_server_port>
 ----
 
-{% hint style="info" %}
+[NOTE]
+====
 In v1.2, the default TCP/IP port for GraphStudio has changed from 44240 to 14240, to avoid possible port conflicts with Zookeeper.
-{% endhint %}
+====
 
 If you cannot access GraphStudio, check your firewall rules and open 14240 port to public. For example, if your Linux OS uses firewall-cmd:
 

@@ -17,9 +17,10 @@ The "Load Data" interface is separated into three parts:
  ** Graph statistics: displays the numbers of vertices and edges in total and per type, with real-time loading progress.
  ** Loading statistics: displays the total number of vertices and edges loader vs. time.
 
-{% hint style="warning" %}
+[CAUTION]
+====
 To display real-time graph statistics, this page checks the number of vertices and edges every 10 seconds, which adds overhead. To maximize loading performance, move to a different page after starting loading, and only come back here occasionally to check the progress.
-{% endhint %}
+====
 
 === Start Loading +++<a id="TigerGraphGraphStudioUIGuide-StartLoading">++++++</a>+++
 
@@ -102,9 +103,10 @@ The pie chart at the bottom shows the distribution of data lines, among three ca
 * Missing token lines (the lines contain fewer tokens than required by the data mapping)
 * Oversize lines (some tokens are too large)
 
-{% hint style="warning" %}
+[CAUTION]
+====
 The number of loaded lines doesn't mean all these lines are successfully loaded. Some issues during Data Mapping (like mapping a non-numeric column to an integer attribute) or because of dirty data may cause some of these lines not to be loaded. +
-{% endhint %}
+====
 
 If data file loading encounters any issues and gets an error message, the error message will be shown at the bottom:
 
@@ -114,17 +116,20 @@ image::../../.gitbook/assets/screen-shot-2019-05-16-at-6.28.54-pm.png[]
 
 Click on the "clear graph data" buttonimage:../../.gitbook/assets/delete_forever.png[]on the toolbar to clear the graph data. This operation will take approximately 1 minute or more, depending on the size of your graph and the hardware.
 
-{% hint style="warning" %}
+[CAUTION]
+====
 *Caution:* Clear Graph Data deletes all data from your database. The schema and queries will remain. This deletion is irreversible. Please confirm the impact before you proceed with clearing graph data operation.
-{% endhint %}
+====
 
-{% hint style="success" %}
+[NOTE]
+====
 *Tip:* Only users with superuser role can clear graph. You can consider assigning other roles to your team to avoid accidental data deletion.
-{% endhint %}
+====
 
-{% hint style="success" %}
+[NOTE]
+====
 *Tip:* If you clear graph data by accident, you can reload the data into the database by clicking on the "start/resume loading" buttonimage:../../.gitbook/assets/start_loading.png[]on the toolbar. The data files are still in the filesystem, as long as you do not deliberately delete the data files from the filesystem.
-{% endhint %}
+====
 
 After the clear operation, the graph vertex and edge number statistics will both drop to 0.
 
