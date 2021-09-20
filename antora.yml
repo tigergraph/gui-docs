@@ -1,4 +1,4 @@
-name: tigergraph-gui
+name: gui
 title: GraphStudio and Admin Portal
 version: 3.2
 start_page: graphstudio:overview.adoc

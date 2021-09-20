@@ -30,13 +30,13 @@ GraphStudio provides two types of loading:
 
 ==== Load Some Data Files +++<a id="TigerGraphGraphStudioUIGuide-LoadSomeDataSources">++++++</a>+++
 
-Select one or more data files (holding down the "shift" key to select multiple data files), and click on the "start loading" buttonimage:../../.gitbook/assets/start_loading.png[]on the toolbar.
+Select one or more data files (holding down the "shift" key to select multiple data files), and click on the "start loading" buttonimage:start_loading.png[]on the toolbar.
 
 image::../../.gitbook/assets/screen-shot-2019-05-16-at-3.32.04-pm.png[]
 
 ==== Load All Data Sources +++<a id="TigerGraphGraphStudioUIGuide-LoadAllDataSources">++++++</a>+++
 
-Click on a blank space in the data mapping overview panel to unselect the data sources, and click on the "start/resume loading" buttonimage:../../.gitbook/assets/start_loading.png[]on the toolbar.  While loading is in progress a green hatched bar will appear over each data file to show its real time progress.
+Click on a blank space in the data mapping overview panel to unselect the data sources, and click on the "start/resume loading" button image:../../.gitbook/assets/start_loading.png[]on the toolbar.  While loading is in progress a green hatched bar will appear over each data file to show its real time progress.
 
 image::../../.gitbook/assets/screen-shot-2019-05-16-at-3.55.10-pm.png[]
 
