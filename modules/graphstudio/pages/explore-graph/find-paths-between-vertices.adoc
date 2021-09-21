@@ -2,8 +2,8 @@
 
 You can use the Find Paths and the Find Connections option to find paths between two or more vertices:
 
-* link:find-paths-between-vertices.md#find-paths-between-two-vertices[Find paths: find path between two vertices]
-* link:find-paths-between-vertices.md#find-connections-between-multiple-vertices[Find connections: find paths connecting more than 2 vertices]
+* <<Find paths between two vertices>>
+* <<Find connections between multiple vertices>>
 
 == Find paths between two vertices
 

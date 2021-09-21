@@ -1,5 +1,6 @@
 = Map Data To Graph
 :pp: {plus}{plus}
+:experimental: true
 
 == Map Data To Graph +++<a id="TigerGraphGraphStudioUIGuide-MapDataToGraph">++++++</a>+++
 
@@ -23,15 +24,15 @@ Click the data file type selector button on the banner of Add Data File window, 
 
 image::../../.gitbook/assets/screen-shot-2020-01-29-at-2.15.45-pm.png[]
 
-* If you select *File*, no more configuration is needed. Skip the sections for external sources and go to  link:map-data-to-graph.md#TigerGraphGraphStudioUIGuide-map_source_to_typeMapDataSourceToVertexTypeOrEdgeType[Map Data To Graph].
-* If you select *S3*, then read the section link:map-data-to-graph.md#create-s3-data-source[Create S3 Data Source].
+* If you select *File*, no more configuration is needed. Skip the sections for external sources and go to  btn:[Map Data To Graph].
+* If you select *S3*, then read the section <<_create_s3_data_source>>.
 
 == 2 Add Data Files
 
 This section contains a subsection for each of the different data sources. Read the section which pertains to your data source:
 
-* Local File System - link:map-data-to-graph.md#add-local-data-file[Add Local Data File]
-* AWS S3 - link:map-data-to-graph.md#create-s3-data-source[Create S3 File Source]
+* Local File System - <<_add_local_data_file>>
+* AWS S3 - <<_create_s3_data_source>>
 
 === Add Local Data File
 
@@ -41,7 +42,7 @@ image::../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-l
 
 Initially, there are no data files in the server data folder.
 
-==== Upload File To Server +++<a id="TigerGraphGraphStudioUIGuide-UploadFileToServer">++++++</a>+++
+==== Upload File To Server
 
 Click the Upload File button image:../../.gitbook/assets/upload_file_btn.png[] . A file selection window will appear. Choose the data files you want to use. The files will be uploaded to the server data folder:
 
@@ -60,7 +61,7 @@ The Add Data File box will only upload files which end in ".csv". If you manuall
 In TigerGraph V3.0.5, you can upload files which end in ".json". This allows users to upload ".json" files to the filesystems and use a remote GSQL client, or GSQL web shell in TigerGraph Cloud to map data to the graph using GSQL commands. Currently, data mapping for ".json" files through GraphStudio UI is not supported.
 ====
 
-==== Configure the File Parser +++<a id="TigerGraphGraphStudioUIGuide-ConfiguretheFileParser">++++++</a>+++
+==== Configure the File Parser
 
 In this step, you tell GraphStudio how to parse your data file. If your data file is in tabular format, the parser will split each line into a series of _tokens_. Click on one file from the file list to choose it. The parsing result for the first line of data is shown as a *preview* table on the right side:
 
@@ -80,7 +81,7 @@ Once you think a file is no longer needed, you can remove it from server by clic
 
 image::../../.gitbook/assets/file-not-on-server.png[]
 
-After adding all your data files, continue with link:map-data-to-graph.md#3-map-data-files-to-vertex-type-or-edge-type[Step 3 Map Data to Vertex/Edge Types]
+After adding all your data files, continue with <<3 Map Data Files To Vertex Type Or Edge Type>>
 
 === Create S3 data source
 
@@ -100,7 +101,7 @@ The data source will be created and shown in the Data Source list:
 
 image::../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf1airkv9bdfve8lpca_screen-shot-2019-05-16-at-12.44.52-pm.png[]
 
-Click the data source to list all the buckets the credentials can access, and click the Expand icon to see all the buckets or folders within the buckets. The file hierarchy will be shown as a tree. Choose the file you want to add, and change the parsing options if necessary. (See link:map-data-to-graph.md#TigerGraphGraphStudioUIGuide-ConfiguretheFileParser[Configure the file parser.])
+Click the data source to list all the buckets the credentials can access, and click the Expand icon to see all the buckets or folders within the buckets. The file hierarchy will be shown as a tree. Choose the file you want to add, and change the parsing options if necessary. (See <<Configure the File Parser>>)
 
 image::../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf1d-1wslbwckzs4fah_screen-shot-2019-05-16-at-12.56.32-pm.png[]
 
@@ -118,7 +119,7 @@ After clicking the ADD button, an S3 file icon will appear on the working panel:
 
 image::../../.gitbook/assets/screen-shot-2019-05-16-at-1.03.41-pm.png[]
 
-After adding all your s3 data files, continue with link:map-data-to-graph.md#3-map-data-files-to-vertex-type-or-edge-type[Step 3 Map Data Files to Vertex/Edge Types]
+After adding all your s3 data files, continue with <<3 Map Data Files To Vertex Type Or Edge Type>>[Step 3 Map Data Files to Vertex/Edge Types]
 
 == 3 Map Data Files To Vertex Type Or Edge Type
 
@@ -211,7 +212,7 @@ image::../../.gitbook/assets/8.png[]
 By default, there is no data filter. Click the Data Filter buttonimage:../../.gitbook/assets/filter%20%282%29%20%281%29%20%282%29.png[]to start creating a data filter. The Add Data Filter window will appear.  The window contains three parts:
 
 . The top section shows one row of sample data from your file, as a handy reference to the file's contents.
-. The middle sections shows what the data filter looks like when it is converted a to GSQL WHERE clause. For more details, see the *WHERE Clause* section in the link:../../dev/gsql-ref/ddl-and-loading/[GSQL Language Reference Part 1 - Defining Graphs and Loading Data]
+. The middle sections shows what the data filter looks like when it is converted a to GSQL WHERE clause. For more details, see the *WHERE Clause* section in the xref:gsql-ref:ddl-and-loading:system-and-language-basics.adoc[GSQL Language Reference Part 1 - Defining Graphs and Loading Data]
 . The bottom section is where you define your data filter. The data filter will be converted to a GSQL WHERE clause and shown in real time.
 
 image::../../.gitbook/assets/add_data_filter_window.png[]
@@ -294,31 +295,31 @@ image::../../.gitbook/assets/screen-shot-2020-01-21-at-5.53.30-pm.png[]
 
 In the Map Data To Graph page, you can delete anything that you added. Choose what you want to delete, then click the delete buttonimage:../../.gitbook/assets/delete_btn.png[]. Press the "Shift" key to select multiple icons you want to delete. Note that you cannot delete vertex or edge types in this page.
 
-==== Delete Data Files +++<a id="TigerGraphGraphStudioUIGuide-DeleteDataSource">++++++</a>+++
+==== Delete Data Files
 
 Select the data file icon(s), then click the delete button.
 
 image::../../.gitbook/assets/screen-shot-2019-05-16-at-2.35.00-pm.png[]
 
-==== Delete Data File To Vertex Or Edge Mapping +++<a id="TigerGraphGraphStudioUIGuide-DeleteDataSourceToVertexOrEdgeMapping">++++++</a>+++
+==== Delete Data File To Vertex Or Edge Mapping
 
 Select the dashed green link(s) between data file and mapped vertex/edge type, then click the delete button.
 
 image::../../.gitbook/assets/screen-shot-2019-05-16-at-2.36.18-pm.png[]
 
-==== Delete Data Column To Vertex Or Edge Attribute Mapping +++<a id="TigerGraphGraphStudioUIGuide-DeleteDataColumnToVertexOrEdgeAttributeMapping">++++++</a>+++
+==== Delete Data Column To Vertex Or Edge Attribute Mapping
 
 Select the green arrow(s) between data file table and vertex/edge attributes table, then click the delete button.
 
 image::../../.gitbook/assets/5%20%281%29.png[]
 
-==== Delete Token Functions +++<a id="TigerGraphGraphStudioUIGuide-DeleteTokenFunctions">++++++</a>+++
+==== Delete Token Functions
 
 Select the token function table(s), then click the delete button.
 
 image::../../.gitbook/assets/delete_token_functions.png[]
 
-=== Undo And Redo +++<a id="TigerGraphGraphStudioUIGuide-UndoAndRedo">++++++</a>+++
+=== Undo And Redo
 
 You can undo or redo changes by clicking the Back or Forward buttons, respectively:image:../../.gitbook/assets/redo_undo_btn.png[]. The whole history since the time you entered the Map Data To Graph page is recorded.
 

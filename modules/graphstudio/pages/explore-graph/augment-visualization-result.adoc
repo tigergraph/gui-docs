@@ -2,8 +2,8 @@
 
 The Graph Exploration panel allows you to augment the visualization of your exploration results in the following ways:
 
-* link:augment-visualization-result.md#set-different-colors-according-to-attributes-and-accumulator-values[Set different colors according to attributes and accumulator values]
-* link:augment-visualization-result.md#set-different-vertex-radius-and-edge-thickness-according-to-attributes-and-accumulator-values[Set different vertex radius and edge thickness according to attributes and accumulator values]
+* <<Set different colors according to attributes and accumulator values>>
+* <<Set different vertex radius and edge thickness according to attributes and accumulator values>>
 
 == Set different colors according to attributes and accumulator values
 

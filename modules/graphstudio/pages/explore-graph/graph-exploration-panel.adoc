@@ -86,7 +86,7 @@ You can also configure the text font size of vertex and edge labels and properti
 
 image::../../../.gitbook/assets/screen-shot-2019-01-24-at-11.36.10-am.png[]
 
-Other than the above, you can also configure vertex and edge size and color to augment the visualization in settings. See xref:augment-visualization-result.adoc[Augment Visualization Result].
+Other than the above, you can also configure vertex and edge size and color to augment the visualization in settings. See xref:explore-graph/augment-visualization-result.adoc[Augment Visualization Result].
 
 == Edit graph
 

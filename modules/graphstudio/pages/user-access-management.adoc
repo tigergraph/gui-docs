@@ -1,12 +1,12 @@
 = User Access Management
 
-== User Access Management +++<a id="TigerGraphGraphStudioUIGuide-accessUserAccessManagement">++++++</a>+++
+== User Access Management
 
-GraphStudio follows TigerGraph user authentication and role-based access control model. Read more in the document link:../../admin/admin-guide/user-access/[Managing User Privileges and Authentication].
+GraphStudio follows TigerGraph user authentication and role-based access control model. Read more in the document xref:3.2@tigergraph-server:user-access:README.adoc[Managing User Privileges and Authentication].
 
-=== Log On +++<a id="TigerGraphGraphStudioUIGuide-LogOn">++++++</a>+++
+=== Log On
 
-If GSQL _tigergraph_ superuser password hasn't been changed (default password is _tigergraph_), then no user login is needed for GraphStudio. Otherwise, users must provide credentials (e.g., username and password) to log in GraphStudio. In addition, your system administrator can integrate TigerGraph with other user access management systems (e.g., LDAP, Active Directory, or SAML-based Single Sign On).  See the link:../../admin/admin-guide/user-access/[User Access Management] for how to set up LDAP or SSO.
+If GSQL _tigergraph_ superuser password hasn't been changed (default password is _tigergraph_), then no user login is needed for GraphStudio. Otherwise, users must provide credentials (e.g., username and password) to log in GraphStudio. In addition, your system administrator can integrate TigerGraph with other user access management systems (e.g., LDAP, Active Directory, or SAML-based Single Sign On).  See the xref:3.2@tigergraph-server:user-access:README.adoc[Managing User Privileges and Authentication] for how to set up LDAP or SSO.
 
 image::../../.gitbook/assets/login.png[]
 
@@ -18,11 +18,11 @@ image::../../.gitbook/assets/no-accessible-graphs.png[]
 
 After login, the user is assigned to one of the graphs for which he has access to.
 
-To log out, click the User iconimage:../../.gitbook/assets/account_btn.png[]and then the Sign Out icon.
+To log out, click the User icon image:../../.gitbook/assets/account_btn.png[]and then the Sign Out icon.
 
 image::../../.gitbook/assets/logout%20%281%29.png[]
 
-=== Role- and Graph- Based Access Control +++<a id="TigerGraphGraphStudioUIGuide-Role-andGraph-BasedAccessControl">++++++</a>+++
+=== Role- and Graph- Based Access Control
 
 TigerGraph uses role-based access control with several pre-defined roles. Each role is a logical collection of data access privileges, such as querywriter or admin. Each user is assigned one or more roles by a graph admin user or by a superuser. Roles are also graph-specific. For example, user Pat could be an admin on graph G1 but a querywriter on graph G2.
 
@@ -30,7 +30,7 @@ TigerGraph uses role-based access control with several pre-defined roles. Each r
 ====
 *New feature available*
 
-In v3.0, Admin Portal supports user management. Read more at https://docs.tigergraph.com/ui/admin-portal[Admin Portal UI Guide].
+In v3.0, Admin Portal supports user management. Read more at xref:admin-portal:overview.adoc[Admin Portal UI Guide].
 ====
 
 When a user logs in and/or selects a graph, GraphStudio will disable certain actions based on the user's role on that graph. On each working panel, a warning note will alert the user to features which are disabled. For example, in the current version of GraphStudio, users with querywriter, queryreader, or observer role will see the following warnings on the Design Schema working panel:
@@ -133,9 +133,9 @@ The table below summarizes the built-in roles and of their key privileges on Gra
 |
 |===
 
-=== Global View and Select A Graph +++<a id="TigerGraphGraphStudioUIGuide-select_graphSelectAGraph">++++++</a>+++
+=== Global View and Select A Graph
 
-Beginning with Version 1.2, the TigerGraph system can support multiple graphs within one TigerGraph instance. Read more at xref:../../tigergraph-platform-overview/multigraph-overview.adoc[MultiGraph - An Overview].
+Beginning with Version 1.2, the TigerGraph system can support multiple graphs within one TigerGraph instance. Read more at xref:3.2@tigergraph-server:intro:multigraph-overview.adoc[MultiGraph - An Overview].
 
 For superuser and globaldesigner users, by default they will be in global view.
 

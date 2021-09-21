@@ -61,7 +61,7 @@ $ gadmin start gui
 
 == Home Page 
 
-The home page of GraphStudio contains links to each of the six steps of solving a business problem: Design Schema, Map Data To Graph, Load Data, Explore Graph, Build Graph Patterns and Write Queries. Users can also navigate to each step from the buttons in the left menu bar. Each of these major steps has its own page. To hide/show the left menu bar, click the top-left menu button:image:../../.gitbook/assets/toggle_nav_bar.png[]. Clicking the logo on the top of the left menuimage:../../.gitbook/assets/graphstudio-logo-10.22.48-am%20%282%29.png[]will take you back to the home page. You can clickimage:../../.gitbook/assets/goto_admin_portal.png[]to go to the Admin Portal (read more at link:[Admin Portal UI Guide]).
+The home page of GraphStudio contains links to each of the six steps of solving a business problem: Design Schema, Map Data To Graph, Load Data, Explore Graph, Build Graph Patterns and Write Queries. Users can also navigate to each step from the buttons in the left menu bar. Each of these major steps has its own page. To hide/show the left menu bar, click the top-left menu button: image:../../.gitbook/assets/toggle_nav_bar.png[]. Clicking the logo on the top of the left menuimage:../../.gitbook/assets/graphstudio-logo-10.22.48-am%20%282%29.png[]will take you back to the home page. You can clickimage:../../.gitbook/assets/goto_admin_portal.png[]to go to the Admin Portal (read more at xref:admin-portal:overview.adoc[Admin Portal UI Guide]).
 
 image::../../.gitbook/assets/1.1%20%282%29.png[]
 
@@ -111,7 +111,7 @@ Some features which are available in GSQL are not available in GraphStudio.
 
 * Cannot load JSON data.
 
-=== xref:../../start/gsql-101/load-data-gsql-101.adoc[Load Data]
+=== xref:load-data.adoc[Load Data]
 
 * Data loading jobs written in a GSQL console are not shown in GraphStudio.
 * USING options are not available.

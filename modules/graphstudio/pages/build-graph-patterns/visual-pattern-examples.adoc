@@ -1,10 +1,10 @@
 = Visual Pattern Examples
 
-== Visual Pattern Examples +++<a id="TigerGraphGraphStudioUIGuide-WriteQueries">++++++</a>+++
+== Visual Pattern Examples
 
 You have learnt all the basic concepts of Visual Query Builder in the previous article. In this article we will walk you through building several visual patterns step by step, and then show you more graph analytics questions and how to solve them with visual patterns.‌
 
-=== Example 1. Find all the departments with male employees‌. +++<a id="example-1-find-all-the-departments-with-male-employees">++++++</a>+++
+=== Example 1. Find all the departments with male employees
 
 Clickimage:https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LMA-P3NzEEls-E_ml1t%2F-LMA37QmCzHgMSncIl_A%2Fupload_file_btn.png?alt=media&token=57239bf7-50db-4993-b2b2-e3f22f182dc1[]in the pattern list pattern, input the pattern name, and clickimage:https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LM9e_2BQZhEfn2WheoU%2F-LM9gaAqbCEhwkJn8k8d%2Fadd_vertex_type_btn.png?alt=media&token=4ca5020e-b47d-4e7f-8275-590a9684093f[]:
 

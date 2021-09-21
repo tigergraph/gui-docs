@@ -1,8 +1,7 @@
 = Design Schema
 
-== Design Schema +++<a id="TigerGraphGraphStudioUIGuide-DesignSchema">++++++</a>+++
-
-Beginning with Version 3.0, GraphStudio can support modifying multiple graphs within one TigerGraph instance. Read more about multigraph at xref:../../tigergraph-platform-overview/multigraph-overview.adoc[MultiGraph - An Overview].
+== Design Schema
+Beginning with Version 3.0, GraphStudio can support modifying multiple graphs within one TigerGraph instance. Read more about Multigraph at xref:3.2@tigergraph-server:intro:multigraph-overview.adoc[MultiGraph - An Overview].
 
 Designing the graph schema is the first and most important step of solving a business problem. The graph schema is the model of the problem, and all of the subsequent steps depend on the graph schema. If you are not on the Design Schema page yet, click "Design Schema" on the left side menu bar.
 
@@ -131,7 +130,7 @@ In graph mode, you can only edit the style of a global vertex or edge type:
 
 image::../../.gitbook/assets/view-panel.png[]
 
-=== Delete Vertex Or Edge Type +++<a id="TigerGraphGraphStudioUIGuide-DeleteVertexOrEdgeType">++++++</a>+++
+=== Delete Vertex Or Edge Type
 
 You can delete a vertex type or an edge type by first choosing the vertex type circles or edge type links, then clicking the delete buttonimage:../../.gitbook/assets/delete_btn.png[]. In order to delete multiple vertex types and edge types, hold down the "Shift" key while you select multiple items.
 
@@ -140,7 +139,7 @@ You can delete a vertex type or an edge type by first choosing the vertex type c
 Note that user cannot delete a global vertex or edge type using delete button in a graph.
 ====
 
-=== Redo And Undo +++<a id="TigerGraphGraphStudioUIGuide-RedoAndUndo">++++++</a>+++
+=== Redo And Undo
 
 You can redo and undo your changes by clicking the two buttons:image:../../.gitbook/assets/redo_undo_btn.png[]. The whole history since the time you entered Design Schema page is recorded.
 
@@ -155,7 +154,7 @@ image::../../.gitbook/assets/view-global-types-panel.png[]
 Only superuser or globaldesigner can modify global types in a graph. The view global vertex and edge types button will be disabled for other users.
 ====
 
-=== Publish Schema +++<a id="TigerGraphGraphStudioUIGuide-PublishSchema">++++++</a>+++
+=== Publish Schema
 
 Once you are satisfied with the graph schema, click the publish schema buttonimage:../../.gitbook/assets/publish_btn.png[]to publish the schema to the TigerGraph system. If you are publishing a brand new schema, a progress bar will show:
 

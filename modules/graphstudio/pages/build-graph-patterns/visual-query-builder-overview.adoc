@@ -1,6 +1,6 @@
 = Visual Query Builder Overview
 
-== Visual Query Builder +++<a id="TigerGraphGraphStudioUIGuide-WriteQueries">++++++</a>+++
+== Visual Query Builder
 
 In TigerGraph 3.0, we are proudly introducing _Visual Query Builder_ -- a visual way of building your graph business logic. In the Build Graph Patterns page, you can create visual patterns in drag-and-drop fashion, which intuitively represent the questions you want to ask. For these cases, you don't need to write GSQL anymore!
 
@@ -229,7 +229,7 @@ Clickimage:../../../.gitbook/assets/edit.png[]besides the filter expression and 
 
 image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvmjvt2mkzujjj4alns_-lvml2ar64-j4_zuavzr_filters.png[]
 
-You can add multiple filters for each vertex and edge pattern, and they are AND relationship when executing the pattern. Building the filter is similar with building attribute filter in link:../explore-graph/#search-vertices-with-attribute-filters[Explore Graph page]. One thing special here is that you can refer to attributes on other vertex patterns and edge patterns. Choose *Attribute of vertex or edge* as expression type, then choose the name of the vertex or edge pattern whose attribute you want to refer to (see above why we need give a name to vertex or edge patterns), then choose the attribute you want to refer to.
+You can add multiple filters for each vertex and edge pattern, and they are AND relationship when executing the pattern. Building the filter is similar with building attribute filter in xref:graphstudio:explore-graph/search-for-vertices.adoc[Explore Graph page]. One thing special here is that you can refer to attributes on other vertex patterns and edge patterns. Choose *Attribute of vertex or edge* as expression type, then choose the name of the vertex or edge pattern whose attribute you want to refer to (see above why we need give a name to vertex or edge patterns), then choose the attribute you want to refer to.
 
 image::../../../.gitbook/assets/filter-remote-attr.png[]
 
@@ -395,7 +395,7 @@ image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvm9pfm2-2ozgm2sd9_
 
 ==== Visualize graph result
 
-If the pattern execution result contains a graph structure, the result will be visualized in this panel as a graph. The panel is the same as the link:../explore-graph/#TigerGraphGraphStudioUIGuide-GraphExplorationPanelOptions-1[Explore Graph panel]. The only difference is that each time you run a pattern, the previous result will be erased. In Explore Graph, the results are added incrementally.
+If the pattern execution result contains a graph structure, the result will be visualized in this panel as a graph. The panel is the same as the xref:graphstudio:explore-graph/graph-exploration-panel.adoc[Explore Graph panel]. The only difference is that each time you run a pattern, the previous result will be erased. In Explore Graph, the results are added incrementally.
 
 image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvm9pfm2-2ozgm2sd9_-lvmcxuo-u1fkbkapquo_visual-graph.png[]
 
@@ -501,7 +501,7 @@ Use pick and merge together and you can create a complicated visual pattern quic
 
 === Widget
 
-As described in the link:visual-query-builder-overview.md#basic-concepts[Basic Concepts], a visual pattern represents a graph pattern matching problem. In graph theory, graph pattern matching is declarative. However, graph pattern matching is not the full story. In a lot of cases you need to represent procedural computation flow. That's why we are introducing widgets.
+As described in the xref:graphstudio:build-graph-patterns/visual-query-builder-overview.adoc[Basic Concepts], a visual pattern represents a graph pattern matching problem. In graph theory, graph pattern matching is declarative. However, graph pattern matching is not the full story. In a lot of cases you need to represent procedural computation flow. That's why we are introducing widgets.
 
 ==== Intersect
 

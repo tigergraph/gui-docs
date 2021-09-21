@@ -1,6 +1,6 @@
 = SSO
 
-== SSO Page +++<a id="TigerGraphAdminPortalUIGuide-DashboardPagedashboard">++++++</a>+++
+== SSO Page
 
 You can set up and configure SSO settings on this page.
 

@@ -147,7 +147,8 @@ image::../../.gitbook/assets/write-queries-schema.png[]
 
 === Visualize graph result
 
-If the query execution result contains a graph structure, the result will be visualized in this panel as a graph. The panel is the same as the link:explore-graph/#TigerGraphGraphStudioUIGuide-GraphExplorationPanelOptions-1[Explore Graph panel]. Please refer to the documentation for the link:explore-graph/#TigerGraphGraphStudioUIGuide-GraphExplorationPanelOptions-1[Explore Graph panel]. The only difference is that each time you run a query, the previous result will be erased. In Explore Graph the results are added incrementally.
+If the query execution result contains a graph structure, the result will be visualized in this panel as a graph.
+The panel is the same as the xref:graphstudio:explore-graph/graph-exploration-panel.adoc[Explore Graph panel]. Please refer to the documentation for the Explore Graph Panel. The only difference is that each time you run a query, the previous result will be erased. In Explore Graph the results are added incrementally.
 
 image::../../.gitbook/assets/write-queries-graph.png[]
 
@@ -159,7 +160,7 @@ If there is no graph structure in the result, the result will be displayed in th
 
 image::../../.gitbook/assets/view-json-result.png[]
 
-You can learn about the JSON format in the link:../../dev/gsql-ref/querying/[GSQL Language documentation] , and integrate it with your applications. In this fashion, the TigerGraph system can serve as a backend or embedded graph data service.
+You can learn about the JSON format in the xref:3.2@gsql-ref:querying:introduction-query.adoc[GSQL Language documentation] , and integrate it with your applications. In this fashion, the TigerGraph system can serve as a backend or embedded graph data service.
 
 === View logs
 

@@ -1,6 +1,6 @@
 = RESTPP
 
-== RESTPP Page +++<a id="TigerGraphAdminPortalUIGuide-DashboardPagedashboard">++++++</a>+++
+== RESTPP Page
 
 You can configure RESTPP settings on this page: Default query timeout.
 

@@ -1,6 +1,6 @@
 = LDAP
 
-== LDAP Page +++<a id="TigerGraphAdminPortalUIGuide-DashboardPagedashboard">++++++</a>+++
+== LDAP Page
 
 You can set up and configure LDAP settings through this page.
 

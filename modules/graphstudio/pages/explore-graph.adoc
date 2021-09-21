@@ -1,6 +1,6 @@
 = Explore Graph
 
-== Explore Graph +++<a id="TigerGraphGraphStudioUIGuide-ExploreGraph">++++++</a>+++
+== Explore Graph
 
 After data has been loaded, the Explore Graph page allows you to search for vertices in a graph, to discover nearby vertices which satisfy conditions of your choice, and to find the paths between vertices.
 

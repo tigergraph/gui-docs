@@ -6,13 +6,13 @@ The Dashboard page has three main parts: Overall statistics, the time range pick
 
 image::../../.gitbook/assets/image%20%285%29.png[]
 
-=== Overall Cluster Statistics   +++<a id="TigerGraphAdminPortalUIGuide-OverallClusterStatistics">++++++</a>+++
+=== Overall Cluster Statistics
 
 image::../../.gitbook/assets/screen-shot-2020-06-04-at-12.36.25-pm.png[]
 
 Just below the page header, there are four cards showing statistics of your system, including the number of nodes and the number of graphs. These statistics are refreshed live. (The default refresh interval is 1 minute).
 
-=== Time Range Picker   +++<a id="TigerGraphAdminPortalUIGuide-TimeRangePicker">++++++</a>+++
+=== Time Range Picker
 
 image::../../.gitbook/assets/time_range_picker.png[]
 
@@ -27,7 +27,7 @@ The sliding bar on the right lets you fine tune the range. Click and drag an end
 
 Changing any of these selections will trigger a request for statistics data and the chart will be re-rendered accordingly.
 
-=== Charts +++<a id="TigerGraphAdminPortalUIGuide-Charts">++++++</a>+++
+=== Charts
 
 Each chart displays some statistic or states information on the vertical axis and time on the horizontal axis.
 

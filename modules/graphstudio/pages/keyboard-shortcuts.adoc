@@ -1,4 +1,5 @@
 = Keyboard Shortcuts
+:experimental:
 
 The page lists the keyboard shortcuts for common actions in GraphStudio.
 
@@ -10,7 +11,7 @@ The page lists the keyboard shortcuts for common actions in GraphStudio.
 | Action | Shortcut
 
 | Switch focus
-| Tab
+| kbd:[Tab]
 |===
 
 === Graph Canvas
