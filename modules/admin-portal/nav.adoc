@@ -5,7 +5,7 @@
 *** xref:monitoring/log-viewer.adoc[]
 ** Management
 *** xref:management/license.adoc[]
-*** xref:user-management.adoc[]
+*** xref:management/user-management.adoc[]
 ** Components
 *** xref:components/nginx.adoc[]
 *** xref:components/restpp.adoc[]
