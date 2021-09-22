@@ -2,15 +2,15 @@
 
 After data has been loaded, the Explore Graph page allows you to explore the graph in the following ways:
 
-* xref:search-for-vertices.adoc[Search for vertices in a graph]
-* xref:expand-from-vertices.adoc[Discover nearby vertices]
-* xref:find-paths-between-vertices.adoc[Find paths between vertices.]
-* xref:run-gsql-queries.adoc[Run GSQL queries]
+* xref:explore-graph/search-for-vertices.adoc[Search for vertices in a graph]
+* xref:explore-graph/expand-from-vertices.adoc[Discover nearby vertices]
+* xref:explore-graph/find-paths-between-vertices.adoc[Find paths between vertices.]
+* xref:explore-graph/run-gsql-queries.adoc[Run GSQL queries]
 
 The Graph Exploration panel also provides you with many ways to modify and augment the visualization of your exploration results, as well as the ability to add vertices and edges to the graph:
 
-* xref:graph-exploration-panel.adoc[Graph Exploration Panel]
-* xref:augment-visualization-result.adoc[Augment Visualization Result]
+* xref:explore-graph/graph-exploration-panel.adoc[Graph Exploration Panel]
+* xref:explore-graph/augment-visualization-result.adoc[Augment Visualization Result]
 
 == Page layout
 
