@@ -297,39 +297,37 @@ Consider we have the following matching result:
 
 image::../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvmjvt2mkzujjj4alns_-lvqttiowzxn5mwke2a7_matching-agg.png[]
 
-We have the following aggregation result table for city vertex _san jose_:+++<table>++++++<thead>++++++<tr>++++++<th style="text-align:left">+++city vertex+++</th>+++
-      +++<th style="text-align:left">+++aggregation result+++</th>+++
-      +++<th style="text-align:left">+++explanation+++</th>++++++</tr>++++++</thead>+++
-  +++<tbody>++++++<tr>++++++<td style="text-align:left">+++san jose+++</td>+++
-      +++<td style="text-align:left">+++countP = 2+++</td>+++
-      +++<td style="text-align:left">+++Kevin and Emily+++</td>++++++</tr>+++
-    +++<tr>++++++<td style="text-align:left">+++san jose+++</td>+++
-      +++<td style="text-align:left">+++countMatched = 4+++</td>+++
-      +++<td style="text-align:left">++++++<p>+++(san jose)<-[born_in]-(Kevin)-[person_has_skill]->(programming)+++</p>+++
-        +++<p>+++(san jose)<-[born_in]-(Kevin)-[person_has_skill]->(public speech)+++</p>+++
-        +++<p>+++(san jose)<-[born_in]-(Emily)-[person_has_skill]->(human resource)+++</p>+++
-        +++<p>+++(san jose)<-[born_in]-(Emily)-[person_has_skill]->(programming)+++</p>++++++</td>++++++</tr>+++
-    +++<tr>++++++<td style="text-align:left">+++san jose+++</td>+++
-      +++<td style="text-align:left">+++sumPHeight = 676+++</td>+++
-      +++<td style="text-align:left">+++Kevin.height + Kevin.height + Emily.height + Emily.height = 173 + 173
-        + 165 + 165+++</td>++++++</tr>+++
-    +++<tr>++++++<td style="text-align:left">+++san jose+++</td>+++
-      +++<td style="text-align:left">+++minPBirthyear = 1991+++</td>+++
-      +++<td style="text-align:left">+++Min(Kevin.birthYear, Kevin.birthYear, Emily.birthYear, Emily.birthYear)+++</td>++++++</tr>+++
-    +++<tr>++++++<td style="text-align:left">+++san jose+++</td>+++
-      +++<td style="text-align:left">+++maxPBirthyear = 1992+++</td>+++
-      +++<td style="text-align:left">+++Max(Kevin.birthYear, Kevin.birthYear, Emily.birthYear, Emily.birthYear)+++</td>++++++</tr>+++
-    +++<tr>++++++<td style="text-align:left">+++san jose+++</td>+++
-      +++<td style="text-align:left">+++avgPBirthyear = 1991.5+++</td>+++
-      +++<td style="text-align:left">+++(Kevin.birthYear + Kevin.birthYear + Emily.birthYear + Emily.birthYear)
-        / 4+++</td>++++++</tr>+++
-    +++<tr>++++++<td style="text-align:left">+++san jose+++</td>+++
-      +++<td style="text-align:left">+++collectP = [Kevin, Kevin, Emily, Emily]+++</td>+++
-      +++<td style="text-align:left">++++++</td>++++++</tr>+++
-    +++<tr>++++++<td style="text-align:left">+++san jose+++</td>+++
-      +++<td style="text-align:left">+++collectPName = [&quot;Kevin&quot;, &quot;Kevin&quot;, &quot;Emily&quot;,
-        &quot;Emily&quot;]+++</td>+++
-      +++<td style="text-align:left">++++++</td>++++++</tr>++++++</tbody>++++++</table>+++
+We have the following aggregation result table for city vertex _san jose_:
+[width="100%",cols="<34%,<33%,<33%",options="header",]
+|===
+|city vertex |aggregation result |explanation
+|san jose |countP = 2 |Kevin and Emily
+
+|san jose |countMatched = 4 a|
+(san jose)←[born_in]-(Kevin)-[person_has_skill]→(programming)
+
+(san jose)←[born_in]-(Kevin)-[person_has_skill]→(public speech)
+
+(san jose)←[born_in]-(Emily)-[person_has_skill]→(human resource)
+
+(san jose)←[born_in]-(Emily)-[person_has_skill]→(programming)
+
+|san jose |sumPHeight = 676 |Kevin.height + Kevin.height + Emily.height
++ Emily.height = 173 + 173 + 165 + 165
+
+|san jose |minPBirthyear = 1991 |Min(Kevin.birthYear, Kevin.birthYear,
+Emily.birthYear, Emily.birthYear)
+
+|san jose |maxPBirthyear = 1992 |Max(Kevin.birthYear, Kevin.birthYear,
+Emily.birthYear, Emily.birthYear)
+
+|san jose |avgPBirthyear = 1991.5 |(Kevin.birthYear + Kevin.birthYear +
+Emily.birthYear + Emily.birthYear) / 4
+
+|san jose |collectP = [.Kevin]## |
+
+|san jose |collectPName = [."Kevin"]## |
+|===
 
 ==== Order
 
