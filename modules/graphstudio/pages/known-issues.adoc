@@ -40,7 +40,7 @@ In the future, GraphStudio will use BigInt to solve this problem.
 === Graph Exploration result disappears +++<a id="TigerGraphGraphStudioUIGuide-GraphExplorationResultDisappears">++++++</a>+++
 
 Sometimes when you double-click a vertex, the graph exploration result disappears. This is only a front-end rendering issue. The data is still there. +
-*Workaround* : click the change layout button image:../../.gitbook/assets/screen-shot-2021-07-22-at-9.56.00-am.png[] , and choose any layout. Everything will be rendered.
+*Workaround* : click the change layout button image:screen-shot-2021-07-22-at-9.56.00-am.png[] , and choose any layout. Everything will be rendered.
 
 [discrete]
 === Edge response area is too big +++<a id="TigerGraphGraphStudioUIGuide-EdgeResponseAreaIsTooBig">++++++</a>+++
@@ -66,7 +66,7 @@ If you make changes to graph schema, and create/delete/modify global schema and 
 [discrete]
 === Config expression with accumulators will be not applicable with refresh button
 
-On Explore Graph, Build Graph Pattern and Write Query pages, a refresh button image:../../.gitbook/assets/refresh-button.png[] to retrieve updated data is used in visualization viewer. If your color/size configs use accumulator as a variable, it will be lost in the new visualization after clicking the refresh button.
+On Explore Graph, Build Graph Pattern and Write Query pages, a refresh button image:refresh-button.png[] to retrieve updated data is used in visualization viewer. If your color/size configs use accumulator as a variable, it will be lost in the new visualization after clicking the refresh button.
 
 [discrete]
 === Report bugs to us +++<a id="TigerGraphGraphStudioUIGuide-ReportBugsToUs">++++++</a>+++

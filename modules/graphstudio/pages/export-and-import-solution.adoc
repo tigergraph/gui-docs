@@ -2,7 +2,7 @@
 
 == Export And Import Solution
 
-These two features can be found on the GraphStudio Home page. You can return to the Home page by clicking the logo on the top of the left menu image:../../.gitbook/assets/graphstudio-logo-10.22.48-am%20%281%29.png[].
+These two features can be found on the GraphStudio Home page. You can return to the Home page by clicking the logo on the top of the left menu image:graphstudio-logo-10.22.48-am%20%281%29.png[].
 
 [WARNING]
 ====
@@ -13,7 +13,7 @@ Solutions created from "Export Current Solution" from a version released prior t
 
 Click on the "Export Current Solution" link to export the whole solution and download it as a tarball, including the schema, the loading jobs, and the queries. It also includes metadata that describes the layout of your schema design as well as your user icons to preserve the design of your GraphStudio solution.
 
-image::../../.gitbook/assets/export-solution.png[]
+image::export-solution.png[]
 
 The exported tarball file includes two folders: *graph/* and *gui/*. The *graph/* folder includes an ExportedGraph.zip file that contains the following files:
 
@@ -41,7 +41,7 @@ ATTENTION:
 
 Click on the "Import an Existing Solution" to upload a previously exported tarball of a solution.
 
-image::../../.gitbook/assets/import-solution.png[]
+image::import-solution.png[]
 
 [NOTE]
 ====

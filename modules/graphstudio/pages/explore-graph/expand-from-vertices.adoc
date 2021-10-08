@@ -1,7 +1,7 @@
 = Expand from Vertices
 :sectnums:
 
-The second button in the Explore Graph Menu is the "Expand from vertices" optionimage:../../../.gitbook/assets/k-step.png[]. "Expand" in this context means find 1-step or multi-step neighbors of the selected vertices. Clicking the button again will hide the Parameter Panel to increase space for the Graph Exploration Panel. To expand from vertices, you need to have at least one selected vertex in the Graph Exploration Panel. If no vertices are visible, please refer to the previous section "Search Vertices in Graph" to search for some vertices.
+The second button in the Explore Graph Menu is the "Expand from vertices" optionimage:k-step.png[]. "Expand" in this context means find 1-step or multi-step neighbors of the selected vertices. Clicking the button again will hide the Parameter Panel to increase space for the Graph Exploration Panel. To expand from vertices, you need to have at least one selected vertex in the Graph Exploration Panel. If no vertices are visible, please refer to the previous section "Search Vertices in Graph" to search for some vertices.
 
 [NOTE]
 ====
@@ -18,7 +18,7 @@ The standard click and shift-click behavior applies for selecting one or multipl
 
 A vertex that is selected has a thick gray border around it. To unselect all vertices, click on a blank area of the panel.
 
-image::../../../.gitbook/assets/select-multiple-vertices%20%281%29.png[]
+image::select-multiple-vertices%20%281%29.png[]
 
 == Set expansion conditions
 
@@ -30,20 +30,20 @@ In the Parameter Panel, set the conditions for each expansion step:
 * Edge types and the attribute filter for each edge type to include.
 * Target vertex types and the attribute filter for each vertex type to include.
 
-image::../../../.gitbook/assets/config.png[]
+image::config.png[]
 
 Initially, the expansion conditions panel for only one expansion step is shown. Click "Add Expansion Step" to add more expansion steps.
 
-image::../../../.gitbook/assets/add_expansion_step.png[]
+image::add_expansion_step.png[]
 
 Similarly, you can remove expansion steps by clicking the "Remove Expansion Step" button.
 
-image::../../../.gitbook/assets/remove_expansion_step.png[]
+image::remove_expansion_step.png[]
 
 == Expand
 
-After setting the conditions for each expansion step, click on the "Expand" buttonimage:../../../.gitbook/assets/expand.png[]to perform the expansion. The Graph Exploration Panel will be updated to include the expansion result. The expansion starting vertices will be highlighted with a white border. Here is a sample two-step expansion starting from 1 vertex:
+After setting the conditions for each expansion step, click on the "Expand" buttonimage:expand.png[]to perform the expansion. The Graph Exploration Panel will be updated to include the expansion result. The expansion starting vertices will be highlighted with a white border. Here is a sample two-step expansion starting from 1 vertex:
 
-image::../../../.gitbook/assets/two-step.png[]
+image::two-step.png[]
 
 ##

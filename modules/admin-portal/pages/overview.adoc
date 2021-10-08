@@ -31,7 +31,7 @@ http://<tigergraph_server_ip_address>:14240/admin/
 
 If user authentication has been enabled, users need to log in to access the Admin Portal.
 
-If you are already at GraphStudio, click the Admin button image:../../.gitbook/assets/goto_admin_portal.png[] at the right end of the top menu bar to navigate to Admin Portal.
+If you are already at GraphStudio, click the Admin button image:goto_admin_portal.png[] at the right end of the top menu bar to navigate to Admin Portal.
 
 == Page Layout
 
@@ -44,31 +44,31 @@ The layout of the Admin Portal is responsive to screen size.  The layout will au
 
 The full-screen version of the Admin Portal is shown below, with the Dashboard page selected.
 
-image::../../.gitbook/assets/image%20%287%29.png[]
+image::image%20%287%29.png[]
 
 == Page Header
 
-image::../../.gitbook/assets/admin_portal_toolbar-updated.png[]
+image::admin_portal_toolbar-updated.png[]
 
-The *Account* iconimage:../../.gitbook/assets/account_btn.png[]will open the user menu:
+The *Account* iconimage:account_btn.png[]will open the user menu:
 
-image::../../.gitbook/assets/admin-user-menu-updated.png[]
+image::admin-user-menu-updated.png[]
 
 You can switch between a dark theme and a light theme. The light theme is shown below:
 
-image::../../.gitbook/assets/image%20%2811%29.png[]
+image::image%20%2811%29.png[]
 
 To sign out of the Admin Portal, click on the *Sign out* button in the Account menu.
 
 Clicking on the *Help* button will take you to the documentation page containing this guide.
 
-You can navigate to GraphStudio by clicking onimage:../../.gitbook/assets/goto_graphstudio.png[].
+You can navigate to GraphStudio by clicking onimage:goto_graphstudio.png[].
 
 == Cluster service status
 
 The bottom of the navigation menu shows the cluster service status.
 
-image::../../.gitbook/assets/image%20%2810%29.png[]
+image::image%20%2810%29.png[]
 
 == Session Timeout
 

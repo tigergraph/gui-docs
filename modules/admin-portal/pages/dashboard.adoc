@@ -4,21 +4,21 @@
 
 The Dashboard page has three main parts: Overall statistics, the time range picker, and several charts.
 
-image::../../.gitbook/assets/image%20%285%29.png[]
+image::image%20%285%29.png[]
 
 === Overall Cluster Statistics
 
-image::../../.gitbook/assets/screen-shot-2020-06-04-at-12.36.25-pm.png[]
+image::screen-shot-2020-06-04-at-12.36.25-pm.png[]
 
 Just below the page header, there are four cards showing statistics of your system, including the number of nodes and the number of graphs. These statistics are refreshed live. (The default refresh interval is 1 minute).
 
 === Time Range Picker
 
-image::../../.gitbook/assets/time_range_picker.png[]
+image::time_range_picker.png[]
 
 The next card lets you set the time range to be used for the statistics in the charts below. +
-The leftmost inputimage:../../.gitbook/assets/left_time_range.png[]lets you select the start time of the range. +
-The next inputimage:../../.gitbook/assets/right_time_range.png[]lets you select the end time of the range. This input has two options:
+The leftmost inputimage:left_time_range.png[]lets you select the start time of the range. +
+The next inputimage:right_time_range.png[]lets you select the end time of the range. This input has two options:
 
 . "Now" means that the charts will be continually updated with the most recent data.
 . "Custom" lets you select a fixed date.  The time range is historical, so the charts will be static.
@@ -33,7 +33,7 @@ Each chart displays some statistic or states information on the vertical axis an
 
 There are two chart sections. The first section is GSQL Query Performance. This lists all of the queries accessible to the current user. If you click on a query name, the display will expand to show detailed charts about that query. You can expand only one query panel at a time. The second section is Cluster Monitoring. This lists all of the machines within the TigerGraph cluster. Similar to the first section, you can only expand one panel at a time.
 
-image::../../.gitbook/assets/charts_list%20%281%29.png[]
+image::charts_list%20%281%29.png[]
 
 A Query Monitoring Panel includes three charts:
 
@@ -41,7 +41,7 @@ A Query Monitoring Panel includes three charts:
 * Timeout (fraction of the query calls which timed out and therefore did not finish)
 * Latency (minimum, maximum, and average time to complete a query)
 
-image::../../.gitbook/assets/query_performance_charts%20%281%29.png[]
+image::query_performance_charts%20%281%29.png[]
 
 A Machine Monitoring Panel includes 4 charts. The first three charts break down the information among three processing-focused components (GPE, GSE, RESTPP). The last chart breaks down information among three components which may have large storage needs (GStore, Log files, and Apache Kafka).
 
@@ -50,4 +50,4 @@ A Machine Monitoring Panel includes 4 charts. The first three charts break down 
 * Memory Usage: GB used by the given component
 * Disk Usage: GB used by the given component
 
-image::../../.gitbook/assets/machine-charts.png[]
+image::machine-charts.png[]
