@@ -7,15 +7,15 @@ The User Management page has three tabs: My Profile, All Users and Role Manageme
 
 All users can access the My Profile tab to manage themselves.
 
-image::../../../.gitbook/assets/my-profile-updated.png[]
+image::my-profile-updated.png[]
 
-There are three information cards at the top: Username shows the user's username; Accessible graph shows how many graphs the user can access, and Password allows user to change password by clicking the key iconimage:../../../.gitbook/assets/key.png[]:
+There are three information cards at the top: Username shows the user's username; Accessible graph shows how many graphs the user can access, and Password allows user to change password by clicking the key icon image:key.png[] :
 
-image::../../../.gitbook/assets/change-password.png[]
+image::change-password.png[]
 
 Below the cards are secret management section. You can create as many secrets for each graph as you want, but remember to copy the secret value out at the creation time. Once you refresh the page or go to another page and come back, the actual secret value will be masked for security. You need to provide an alias for the secret, and click the green plus sign to add the secret.
 
-image::../../../.gitbook/assets/secret-management.png[]
+image::secret-management.png[]
 
 When token authentication is enabled, you need to use the secrets to request tokens and add the tokens in the HTTP request headers to call TigerGraph RESTful endpoints. Read more at: xref:3.2@tigergraph-server:user-access:README.adoc[].
 
@@ -33,31 +33,31 @@ Both native users and proxy users are displayed in the User section. However, yo
 
 Only superuser can access this tab. Superuser can add new users, change other users' password, delete users, create proxy groups, change proxy rules of the groups, and delete proxy groups.
 
-image::../../../.gitbook/assets/all-users-updated.png[]
+image::all-users-updated.png[]
 
-Clickimage:../../../.gitbook/assets/add-user-btn.png[]to add new users:
+Click image:add-user-btn.png[] to add new users:
 
-image::../../../.gitbook/assets/all-users%20%281%29.png[]
+image::all-users%20%281%29.png[]
 
-Clickimage:../../../.gitbook/assets/change-others-password-btn.png[]to change other users' password:
+Click image:change-others-password-btn.png[] to change other users' password:
 
-image::../../../.gitbook/assets/change-others-password.png[]
+image::change-others-password.png[]
 
-Clickimage:../../../.gitbook/assets/delete_btn.png[]to delete a user.
+Click image:delete_btn.png[] to delete a user.
 
-Clickimage:../../../.gitbook/assets/proxy-groups-tab.png[]to see all proxy groups:
+Click image:proxy-groups-tab.png[] to see all proxy groups:
 
-image::../../../.gitbook/assets/proxy-groups.png[]
+image::proxy-groups.png[]
 
-Clickimage:../../../.gitbook/assets/add-group-btn.png[]to add new proxy groups:
+Click image:add-group-btn.png[] to add new proxy groups:
 
-image::../../../.gitbook/assets/add-proxy-group.png[]
+image::add-proxy-group.png[]
 
-Clickimage:../../../.gitbook/assets/edit.png[]to edit the proxy rule of an existing proxy group:
+Click image:edit.png[] to edit the proxy rule of an existing proxy group:
 
-image::../../../.gitbook/assets/edit-proxy-group.png[]
+image::edit-proxy-group.png[]
 
-Clickimage:../../../.gitbook/assets/delete_btn.png[]to delete a proxy group.
+Click image:delete_btn.png[] to delete a proxy group.
 
 Read more about proxy group at xref:3.2@tigergraph-server:user-access:README.adoc[].
 
@@ -72,29 +72,29 @@ Admin Portal shows a combination of roles for proxy users. Proxy user which belo
 
 Superusers and Admin users can access this tab to assign different roles to users on different graphs. Superusers can assign superuser role to other users, while admin users cannot.
 
-image::../../../.gitbook/assets/role-management-updated.png[]
+image::role-management-updated.png[]
 
 ==== Select a graph
 
 You can use the dropdown menu at the top left corner to select on which graph you want to assign different roles to different users:
 
-image::../../../.gitbook/assets/select-graph.png[]
+image::select-graph.png[]
 
 ==== Search user
 
 You can type in text to search for users:
 
-image::../../../.gitbook/assets/search-user.png[]
+image::search-user.png[]
 
 ==== Settings for users
 
 You can sort the users by alphabetic order or number of roles they have:
 
-image::../../../.gitbook/assets/sort-users.png[]
+image::sort-users.png[]
 
 You can choose to show all users, show the users who have role(s), or show the users who don't have a role:
 
-image::../../../.gitbook/assets/show-users.png[]
+image::show-users.png[]
 
 ==== Grant a new role to a user
 
@@ -102,13 +102,13 @@ You have two ways to grant a new role to a user.
 
 The first way is drag-and-drop. You can drag a user from the right section to under the role you want to grant.
 
-image::../../../.gitbook/assets/assign-by-dnd-updated.png[]
+image::assign-by-dnd-updated.png[]
 
 After the role is granted successfully, the user's name will appear under the corresponding role, and the role's color will appear on the user at the right section. You can grant multiple roles to the same user, and multiple colors will show on the user at the right section to indicate these roles.
 
 The second way is right click a user, and choose the role you want to grant:
 
-image::../../../.gitbook/assets/grant-roles.png[]
+image::grant-roles.png[]
 
 ==== Revoke a role from a user
 
@@ -116,23 +116,23 @@ You have two ways to revoke a role from a user.
 
 The first way is drag-and-drop. You can drag a user from the role you want to revoke to the right section:
 
-image::../../../.gitbook/assets/revoke-dnd-updated.png[]
+image::revoke-dnd-updated.png[]
 
 After the role is revoked successfully, the user's name will disappear under the corresponding role, and the role's color will disappear from the user at the right section.
 
 The second way is right click a user, and choose the role you want to revoke:
 
-image::../../../.gitbook/assets/revoke-a-role.png[]
+image::revoke-a-role.png[]
 
 ==== Change a user's role
 
 You can drag a user from under one role to under another role at the left section. This is a shortcut to change the user's role:
 
-image::../../../.gitbook/assets/change-role-updated.png[]
+image::change-role-updated.png[]
 
-Similarly, you can also clickimage:../../../.gitbook/assets/proxy-groups%20%281%29.png[]to switch to proxy groups and manage their roles.
+Similarly, you can also click image:proxy-groups%20%281%29.png[] to switch to proxy groups and manage their roles.
 
-image::../../../.gitbook/assets/manage-groups.png[]
+image::manage-groups.png[]
 
 [NOTE]
 ====

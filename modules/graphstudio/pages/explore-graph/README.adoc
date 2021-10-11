@@ -16,7 +16,7 @@ The Graph Exploration panel also provides you with many ways to modify and augme
 
 The Explore Graph page is vertically divided into three parts, from left to right:
 
-image::../../../.gitbook/assets/explore-graph%20%281%29.png[]
+image::explore-graph%20%281%29.png[]
 
 === The Inner Navigation Bar
 
@@ -26,19 +26,19 @@ The menu options, from top to bottom, are the following:
 |===
 | Menu option | Functionality
 
-| image:../../../.gitbook/assets/search_btn.png[]
+|  image:search_btn.png[] 
 | Search vertices: select specific vertices with conditions.
 
-| image:../../../.gitbook/assets/k-step.png[]
+|  image:k-step.png[] 
 | Expand from vertices: find neighborhood of the specified vertices.
 
-| image:../../../.gitbook/assets/paths.png[]
+|  image:paths.png[] 
 | Find paths: find paths between the selected source vertex and target vertex.
 
-| image:../../../.gitbook/assets/connections%20%281%29%20%283%29.png[]
+|  image:connections%20%281%29%20%283%29.png[] 
 | Find connections: find connecting paths between a set of vertices.
 
-| image:../../../.gitbook/assets/gsql%20%281%29.png[]
+|  image:gsql%20%281%29.png[] 
 | Run queries: run installed GSQL queries.
 |===
 
@@ -50,11 +50,11 @@ Set filters, conditions, and other parameters for the selected option from the I
 
 The exploration result is displayed in this panel. Below is an example of an exploration result:
 
-image::../../../.gitbook/assets/explore%20%281%29.png[]
+image::explore%20%281%29.png[]
 
 You can adjust the results display, take a snapshot of the display, and modify selected data objects in the result.
 
-image::../../../.gitbook/assets/screen-shot-2020-06-03-at-5.06.21-pm.png[]
+image::screen-shot-2020-06-03-at-5.06.21-pm.png[]
 
 The menu buttons, from left to right, are the following:
 

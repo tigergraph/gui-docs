@@ -2,7 +2,7 @@
 
 The log page contains the search panel, the file directory panel, and the content panel. The content panel either displays log content or search results.
 
-image::../../../.gitbook/assets/image%20%286%29.png[]
+image::image%20%286%29.png[]
 
 [WARNING]
 ====
@@ -14,36 +14,17 @@ Note: Error message might show if an ADBLOCK is running.
 
 In the file directory panel, all machines will be listed. Clicking the machine id, all components of the machine will be listed. When you expand the component,  all log files and folders will be listed.
 
-image::../../../.gitbook/assets/file-listing.png[]
+image::file-listing.png[]
 
-Choose one single log file by clicking on it, and the content will be shown in the display panel. The title will show the machine id and the path of the opened log file. To the very right, there is a download button image:../../../.gitbook/assets/download-log-btn.png[] for downloading the selected log file. Loaded log lines will add to the end of the file (the latest log content) and the system will keep pulling to update the log.
+Choose one single log file by clicking on it, and the content will be shown in the display panel. The title will show the machine id and the path of the opened log file. To the very right, there is a download button  image:download-log-btn.png[]  for downloading the selected log file. Loaded log lines will add to the end of the file (the latest log content) and the system will keep pulling to update the log.
 
 [CAUTION]
 ====
 Note that it displays up to 32 MB of the log file before the latest line of the chosen log file. If users want to read the entire log file, users need to download the file.
 ====
 
-image::../../../.gitbook/assets/display-log%20%281%29.png[]
+image::display-log%20%281%29.png[]
 
 [discrete]
 === Search logs
 
-In the search panel, a user needs to provide the following three pieces of information: pattern, node(s) and component(s). To perform the search operation, a pattern must be entered and at least one node and one component should be selected. The search buttonimage:../../../.gitbook/assets/search-btn.png[]is on the upper-right corner. While searching, all input fields will be disabled, and the search button will change to a progress bar like image:../../../.gitbook/assets/searching.png[]. Users can click on collapse buttonimage:../../../.gitbook/assets/collapse-btn.png[]to collapse the search panel for more space to view the log content. In addition, users can click on expand buttonimage:../../../.gitbook/assets/expand-btn.png[]to open the search panel.
-
-image::../../../.gitbook/assets/search-panel%20%281%29.png[]
-
-If user inputs do not meet the requirements,  an error message will show up after clicking the search button:
-
-image::../../../.gitbook/assets/search-error.png[]
-
-After the searching process finishes, all results will be listed. The number of results will be tagged in result tab likeimage:../../../.gitbook/assets/result-tag.png[].
-
-image::../../../.gitbook/assets/search-result.png[]
-
-The title of each search result contains the machine id, the file path and the number of lines of content which match the pattern. The detailed log line content will also be shown:
-
-image::../../../.gitbook/assets/single-search-result.png[]
-
-Clicking on one single search result will show the log content in display panel. The matching log line content will be highlighted.
-
-image::../../../.gitbook/assets/line-highlight-log%20%281%29.png[]
