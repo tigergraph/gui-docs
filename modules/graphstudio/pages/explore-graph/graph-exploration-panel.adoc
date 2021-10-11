@@ -2,9 +2,9 @@
 
 The Graph Exploration panel displays the result of your Graph Exploration actions. After you have a subgraph displayed in the Graph Exploration Panel, you can use the buttons in the Explorer View Menu or the options in the bottom right corner to customize the display. Additionally, you can make modifications to the graph database itself in edit mode.
 
-image::image%20%2833%29.png[Explorer View Menu]
+image::explore-view-menu.png[Explorer View Menu]
 
-image::screen-shot-2020-06-03-at-5.03.45-pm.png[Options in the bottom right corner]
+image::ex-panel-options.png[Options in the bottom right corner]
 
 == Customize visualization
 
@@ -12,23 +12,23 @@ The Graph Exploration panel provides you with multiple ways of customizing the v
 
 === Zoom in/out
 
-Although you can use a mouse scroller to zoom in and zoom out the graph exploration result, you can also use the two buttons at the bottom-right corner to do that:  image:screen-shot-2020-06-03-at-5.16.35-pm.png[] 
+Although you can use a mouse scroller to zoom in and zoom out the graph exploration result, you can also use the two buttons at the bottom-right corner to do that:  image:zoom-button.png[]
 
-=== Refresh eesult
+=== Refresh result
 
 The graph exploration result only reflects a snapshot of the graph data. If the data is changed due to CRUD operations (maybe in another session), the snapshot is outdated.
 
-You can click the refresh button image:screen-shot-2020-06-03-at-5.16.43-pm.png[] to get all vertices and edges synced with the graph database. All vertices and edges that already got removed will be removed from the exploration panel, and all the attribute values will also get updated.
+You can click the refresh button image:refresh-button.png[] to get all vertices and edges synced with the graph database. All vertices and edges that already got removed will be removed from the exploration panel, and all the attribute values will also get updated.
 
 === Change layout
 
-You can click the change layout button  image:screen-shot-2020-06-03-at-5.16.50-pm.png[]  to change layout:
+You can click the change layout button  image:layout-button.png[]  to change layout:
 
-image::image%20%2836%29.png[Change layout]
+image::change-layout-ex.png[Change layout]
 
 If your vertices have attributes named `latitude` and `longitude`, with valid latitude and longitude values respectively, you can choose the geospatial layout option. The geospatial layout will present all your vertices and edges between them on the world map:
 
-image::image%20%2832%29.png[Example of vertices and edges in the geospatial layout]
+image::geospatial-ex.png[Example of vertices and edges in the geospatial layout]
 
 === Locate vertex
 
@@ -84,7 +84,7 @@ image::show-attributes.png[]
 
 You can also configure the text font size of vertex and edge labels and properties.
 
-image::screen-shot-2019-01-24-at-11.36.10-am.png[]
+image::configure-font-size.png[]
 
 Other than the above, you can also configure vertex and edge size and color to augment the visualization in settings. See xref:explore-graph/augment-visualization-result.adoc[Augment Visualization Result].
 
@@ -94,7 +94,7 @@ Besides customizing the view of your graph exploration results, you can also ena
 
 In order to perform any of the actions in this section, you need to enable edit mode by clicking on the toggle next to Edit mode. Once you are in the edit mode, the four buttons that allow you to edit the graph will appear on the right.
 
-image::image%20%2833%29.png[Explorer View Menu]
+image::explore-view-menu.png[Explorer View Menu]
 
 === Add new vertex
 

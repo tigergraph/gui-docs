@@ -2,3 +2,8 @@
 
 If you have written and installed some GSQL queries (see more at xref:write-queries.adoc[Write Queries]), you can run the queries mixed with the graph exploration functionalities mentioned above.
 
+Click the fifth button in the Explore Graph Menu, which is the "Run queries" option image:code_btn.png[]. In the dropdown list, choose the query you want to run. Input the parameters and click Run query button image:run_query.png[]. The query execution result subgraph will be merged with previous graph exploration result and highlighted:
+
+image::run-gsql-query.png[]
+
+Allowing running GSQL queries mixed with other graph exploration functionalities enables better data analysis possibilities since you can refer to your previous exploration result, and keep gaining insights from your data.
