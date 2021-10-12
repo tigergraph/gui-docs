@@ -12,7 +12,7 @@ The Graph Exploration panel provides you with multiple ways of customizing the v
 
 === Zoom in/out
 
-Although you can use a mouse scroller to zoom in and zoom out the graph exploration result, you can also use the two buttons at the bottom-right corner to do that:  image:zoom-button.png[]
+Although you can use a mouse scroller to zoom in and zoom out the graph exploration result, you can also use the two buttons in the bottom-right corner to do that:  image:zoom-button.png[]
 
 === Refresh result
 

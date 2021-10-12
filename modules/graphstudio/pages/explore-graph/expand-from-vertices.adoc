@@ -18,7 +18,7 @@ The standard click and shift-click behavior applies for selecting one or multipl
 
 A vertex that is selected has a thick gray border around it. To unselect all vertices, click on a blank area of the panel.
 
-image::select-multiple-vertices%20%281%29.png[]
+image::select-multiple-vertices.png[]
 
 == Set expansion conditions
 
@@ -46,4 +46,3 @@ After setting the conditions for each expansion step, click on the "Expand" butt
 
 image::two-step.png[]
 
-##
