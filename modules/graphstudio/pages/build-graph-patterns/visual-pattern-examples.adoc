@@ -139,7 +139,7 @@ pattern, and
 click image:start_loading.png[image] to run the
 pattern:
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwpok75z2ozrptgrf__run-triangle.png[image]
+image:run_triangle.png[image]
 
 [[example-3-find-the-top-2-cities-where-the-most-number-of-companies-of-an-industry-are-located-in]]
 == Example 3. Find the top 2 cities where the most number of companies of an industry are located in.
