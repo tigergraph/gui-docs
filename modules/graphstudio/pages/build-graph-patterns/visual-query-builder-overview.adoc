@@ -592,22 +592,30 @@ redwood city, *and* belongs to big data industry.
 
 The output company vertex pattern can be part of another larger pattern. You can think of the input vertex patterns of the widget as constraints of the output vertex pattern.
 
-#### Union
+== Union
 
-Click![](../../../.gitbook/assets/union.png), then click two vertex patterns of the same vertex type. A union widget is added to the visual pattern:
+Click image:union.png[image] , then click two
+vertex patterns of the same vertex type. A union widget is added to the
+visual pattern:
 
-![](../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrttcpkwcfix_ui3ji_union-pattern.png)
+ image:assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrttcpkwcfix_ui3ji_union-pattern.png[image] 
 
-The output vertex pattern means matching all company vertices located at redwood city, **or** belongs to big data industry.
+The output vertex pattern means matching all company vertices located at
+redwood city, *or* belongs to big data industry.
 
-#### Subtract
+== Subtract
 
-Click![](../../../.gitbook/assets/subtract.png), then click two vertex patterns of the same vertex type. A subtract widget is added to the visual pattern:
+Click image:subtract.png[image] , then click two
+vertex patterns of the same vertex type. A subtract widget is added to
+the visual pattern:
 
-![](../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrtjgenpxrpc6qn91e_subtract-pattern.png)
+ image:assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrtjgenpxrpc6qn91e_subtract-pattern.png[image] 
 
-The output vertex pattern means matching all company vertices located at redwood city, **but not** belong to big data industry.
+The output vertex pattern means matching all company vertices located at
+redwood city, *but not* belong to big data industry.
 
-### Next Step
+== Next Step
 
-Now you have a basic idea about all different functionalities of Visual Query Builder. Let's go to the next page to walk through how to build some visual patterns to solve your business questions!
+Now you have a basic idea about all different functionalities of Visual
+Query Builder. Let's go to the next page to walk through how to build
+some visual patterns to solve your business questions!
