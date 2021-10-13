@@ -104,7 +104,7 @@ changes.
 == Delete Query
 
 Choose the query you want to delete and click on the "delete"
-button image:delete_forever.png[image] . The query
+button image:delete_forever.png[image]. The query
 will be deleted permanently.
 
 == Show Query Endpoint
@@ -127,7 +127,7 @@ image:3.15.1.png[image]
 == Delete query draft
 
 You can delete your query draft by clicking
-​ image:delete-query-draft.png[image] .
+image:delete-query-draft.png[image] .
 
 == Install All Queries
 
@@ -174,7 +174,7 @@ the log for the last run query.
 Viewing graph schema makes it more convenient for developers to refer to
 the schema topology logic and easier to write correct GSQL queries.
 
-image:write-queries-schema.png[image]
+image:schema.png[image]
 
 == Visualize graph result
 
@@ -182,11 +182,10 @@ If the query execution result contains a graph structure, the result
 will be visualized in this panel as a graph. The panel is the same as
 the
 xref:explore-graph/graph-exploration-panel.adoc[Explore
-Graph panel]. The only difference is that each time you run a query, the
-previous result will be erased. In Explore Graph the results are added
+Graph panel]. The only difference is that each time you run a query, the previous result will be erased. In Explore Graph the results are added
 incrementally.
 
-image:write-queries-graph.png[image]
+image:visualize-view.png[image]
 
 You can switch to the JSON Result panel to see the result in JSON
 format.
@@ -196,7 +195,7 @@ format.
 If there is no graph structure in the result, the result will be
 displayed in this panel as a JSON object.
 
-image:view-json-result.png[image]
+image:json-result.png[image]
 
 
 == View logs
@@ -206,7 +205,7 @@ successfully" or something similar. If there was anything wrong when
 executing your query, such as invalid parameters or runtime errors, an
 error message will be shown in the Query Log panel:
 
-image:query-log.png[image]
+image:log-view.png[image]
 
 == Expand Panels
 
@@ -221,7 +220,7 @@ image:write-queries-gsql.1.png[image]
 
 If you expand the Result panel, it looks like this:
 
-image:write-queries-exploration.png[image]
+image:expanded-panel.png[image]
 
 When the panel is expanded, the Expand button becomes the Collapse
 button  image:collapse_btn.png[image] . Clicking it
