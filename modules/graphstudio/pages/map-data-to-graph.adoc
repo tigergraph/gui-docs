@@ -2,11 +2,11 @@
 :pp: {plus}{plus}
 :experimental: true
 
-== Map Data To Graph +++<a id="TigerGraphGraphStudioUIGuide-MapDataToGraph">++++++</a>+++
+== Map Data To Graph
 
 After you have created a graph schema, the next major step is to map your data to the schema. Click "Map Data To Graph" on the left side menu bar. The working panel is split into a left panel and a right panel. Initially when there is no data mapping yet, the left panel will display only the graph schema.
 
-image::map-data-to-graph-overview%20%281%29.png[]
+image::map-data-to-graph-overview.png[]
 
 The main steps are
 
@@ -22,7 +22,7 @@ Beginning with v2.4, GraphStudio supports loading data from either local files o
 
 Click the data file type selector button on the banner of Add Data File window, and choose either File or S3 from the list:
 
-image::screen-shot-2020-01-29-at-2.15.45-pm.png[]
+image::Screen Shot 2020-01-29 at 2.15.45 PM.png[]
 
 * If you select *File*, no more configuration is needed. Skip the sections for external sources and go to  btn:[Map Data To Graph].
 * If you select *S3*, then read the section <<_create_s3_data_source>>.
@@ -36,9 +36,9 @@ This section contains a subsection for each of the different data sources. Read 
 
 === Add Local Data File
 
-In this step, you inform GraphStudio about your data files. A data file is a file containing structured data to be loaded into the graph, creating vertex and/or edge instances. The first step for data mapping is to specify your data files. Click the Add Data File buttonimage:add_data_source_btn.png[]to add data files. The Add Data File window will pop up:
+In this step, you inform GraphStudio about your data files. A data file is a file containing structured data to be loaded into the graph, creating vertex and/or edge instances. The first step for data mapping is to specify your data files. Click the Add Data File button image:add_data_source_btn.png[] to add data files. The Add Data File window will pop up:
 
-image::assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf0zwnpgkbc0uw_zrvy_screen-shot-2019-05-16-at-11.52.29-am.png[]
+image::Screen Shot 2019-05-16 at 11.52.29 AM.png[]
 
 Initially, there are no data files in the server data folder.
 
@@ -56,7 +56,7 @@ Once the files are uploaded to the server, it will appear in the "Files on serve
 ====
 *Data Files must be .csv files to allow data mapping in GraphStudio ( .json file upload is allowed in TigerGraph V3.0.5+ through GraphStudio)*
 
-The Add Data File box will only upload files which end in ".csv". If you manually place files in the <TigerGraph_root_dir>/data/gui/loading_data folder, please don't put any files into subfolders because they will be ignored.
+The Add Data File box will only upload files which end in ".csv". If you manually place files in the `<TigerGraph_root_dir>/data/gui/loading_data` folder, please don't put any files into subfolders because they will be ignored.
 
 In TigerGraph V3.0.5, you can upload files which end in ".json". This allows users to upload ".json" files to the filesystems and use a remote GSQL client, or GSQL web shell in TigerGraph Cloud to map data to the graph using GSQL commands. Currently, data mapping for ".json" files through GraphStudio UI is not supported.
 ====
@@ -65,7 +65,7 @@ In TigerGraph V3.0.5, you can upload files which end in ".json". This allows use
 
 In this step, you tell GraphStudio how to parse your data file. If your data file is in tabular format, the parser will split each line into a series of _tokens_. Click on one file from the file list to choose it. The parsing result for the first line of data is shown as a *preview* table on the right side:
 
-image::assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf111c7fe8u3ier-tzo_screen-shot-2019-05-16-at-12.03.19-pm.png[]
+image::Screen Shot 2019-05-16 at 12.03.19 PM.png[]
 
 If the parsing is not correct, click on the down arrow in a table column to choose a different option for file format, delimiter, or end of line. The file will immediately be re-parsed when you change a setting. The enclosing character is used to mark the boundaries of a token, overriding the delimiter character. For example, if your delimiter is comma (,), but you have commas in some strings, then you can define either double quotes (") or single quotes (') as the enclosing character to mark the endpoints of your string tokens. It is not necessary for every token to have enclosing characters; the parser will use enclosing characters when it encounters them.
 
@@ -77,7 +77,7 @@ Once you are satisfied with the file parsing configuration, click the add button
 
 image::added_file_icon.png[]
 
-Once you think a file is no longer needed, you can remove it from server by clicking the delete buttonimage:delete_forever.png[]to the left of each file. Please note that you also need to manually remove data mapping using this file as data file, otherwise when you load data later, a "file not found" error will be triggered.
+Once you think a file is no longer needed, you can remove it from server by clicking the delete button image:delete_forever.png[]to the left of each file. Please note that you also need to manually remove data mapping using this file as data file, otherwise when you load data later, a "file not found" error will be triggered.
 
 image::file-not-on-server.png[]
 
@@ -87,7 +87,7 @@ After adding all your data files, continue with <<3 Map Data Files To Vertex Typ
 
 After you click the S3 data source icon, you should see the following window:
 
-image::assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf15ub6_fv8dme6lsw7_screen-shot-2019-05-16-at-12.23.02-pm%20%282%29.png[]
+image::Screen Shot 2019-05-16 at 12.23.02 PM.png[]
 
 Initially, there are no S3 data sources in the system.
 
@@ -99,11 +99,11 @@ image::s3-connection.png[]
 
 The data source will be created and shown in the Data Source list:
 
-image::assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf1airkv9bdfve8lpca_screen-shot-2019-05-16-at-12.44.52-pm.png[]
+image::Screen Shot 2019-05-16 at 12.44.52 PM.png[]
 
 Click the data source to list all the buckets the credentials can access, and click the Expand icon to see all the buckets or folders within the buckets. The file hierarchy will be shown as a tree. Choose the file you want to add, and change the parsing options if necessary. (See <<Configure the File Parser>>)
 
-image::assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf1d-1wslbwckzs4fah_screen-shot-2019-05-16-at-12.56.32-pm.png[]
+image::Screen Shot 2019-05-16 at 12.56.32 PM.png[]
 
 [NOTE]
 ====
@@ -117,21 +117,21 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 
 After clicking the ADD button, an S3 file icon will appear on the working panel:
 
-image::screen-shot-2019-05-16-at-1.03.41-pm.png[]
+image::Screen Shot 2019-05-16 at 1.03.41 PM.png[]
 
 After adding all your s3 data files, continue with <<3 Map Data Files To Vertex Type Or Edge Type>>[Step 3 Map Data Files to Vertex/Edge Types]
 
 == 3 Map Data Files To Vertex Type Or Edge Type
 
-In this step, you link (map) a data file to a target vertex type or edge type. The mapping can be many-to-many, which means one data file can map to multiple vertex and / or edge types, and multiple data files can map to the same vertex or edge type. Click the map data file to vertex or edge buttonimage:map_file_to_ve.png[]to enter _map data file to vertex or edge_ mode. When you finish mapping the data files, click the button again to exit this mode.
+In this step, you link (map) a data file to a target vertex type or edge type. The mapping can be many-to-many, which means one data file can map to multiple vertex and / or edge types, and multiple data files can map to the same vertex or edge type. Click the map data file to vertex or edge button image:map_file_to_ve.png[] to enter _map data file to vertex or edge_ mode. When you finish mapping the data files, click the button again to exit this mode.
 
 Then, click the data file icon. A hint will appear over the icon:
 
-image::screen-shot-2019-05-16-at-1.05.30-pm.png[]
+image::Screen Shot 2019-05-16 at 1.05.30 PM.png[]
 
 Next, click the target vertex type circle or edge type link. A dashed link will appear between the data file and the target vertex or edge type:
 
-image::screen-shot-2019-05-16-at-2.20.53-pm.png[]
+image::Screen Shot 2019-05-16 at 2.20.53 PM.png[]
 
 A red hint will appear if the target type has not yet received a mapping for its primary id(s).
 
@@ -143,17 +143,17 @@ image::1.png[]
 
 In order to a column in the data file to a vertex or edge field, first click the row representing the data column in the left side data file table:
 
-image::2%20%282%29.png[]
+image::2.png[]
 
 Then, click the row representing the target field in the right side table. A green arrow appears to show the mapping. Repeat as needed to create all the mappings for this table-to-vertex/edge pair. Since many-to-one mapping is allowed, it is not necessary for one table to provide a mapping for every field in the target vertex/edge.
 
-image::3%20%283%29.png[]
+image::3.png[]
 
 === Using a Token Function
 
 GraphStudio gives you access to both a set of built-in functions and user-defined token functions to preprocess data file tokens before loading them in to the graph. For example, you can concatenate two columns in the data file and load them as an attribute. This section describes how to use these token functions.
 
-First click the add token function buttonimage:add_token_function_btn.png[]. The Add Token Function window will pop up. Click the down arrow to see the list of available token functions and select one. For some functions, you may also specify the number of input parameters. (Most token functions have a fixed number of input parameters; gsql_concat can accept any positive number of inputs). Click Add.
+First click the add token function button image:add_token_function_btn.png[]. The Add Token Function window will pop up. Click the down arrow to see the list of available token functions and select one. For some functions, you may also specify the number of input parameters. (Most token functions have a fixed number of input parameters; gsql_concat can accept any positive number of inputs). Click Add.
 
 image::add_token_function_window.png[]
 
@@ -167,9 +167,9 @@ image::4.png[]
 
 === Auto Mapping
 
-If the data file columns and the vertex/edge attributes have very similar names (only capitalization and hyphen differences), you can click the auto mapping buttonimage:auto_mapping_btn.png[]. All similar columns will be mapped automatically.
+If the data file columns and the vertex/edge attributes have very similar names (only capitalization and hyphen differences), you can click the auto mapping button image:auto_mapping_btn.png[]. All similar columns will be mapped automatically.
 
-=== Map A Constant Value To An Attribute Or Token Function Input +++<a id="TigerGraphGraphStudioUIGuide-map_const_value_to_attributeMapAConstantValueToAnAttributeOrTokenFunctionInput">++++++</a>+++
+=== Map A Constant Value To An Attribute Or Token Function Input
 
 Sometimes, a user may need to load a constant value to an id or attribute. Here we show how to do this in GraphStudio.
 
@@ -201,7 +201,7 @@ image::token_function_with_constant_input.png[]
 
 The constant value can be modified or removed by double-clicking the label and editing the value in the Load Constant window.
 
-=== Add Data Filter +++<a id="TigerGraphGraphStudioUIGuide-data_filterAddDataFilter">++++++</a>+++
+=== Add Data Filter
 
 You can add a data filter to a data mapping so that only data records which meet conditions that you specify will be loaded into the graph.  This is equivalent to the WHERE clause in a GSQL load statement.
 
@@ -209,7 +209,7 @@ You can add one data filter for each data mapping from a data file to a vertex t
 
 image::8.png[]
 
-By default, there is no data filter. Click the Data Filter buttonimage:filter%20%282%29%20%281%29%20%282%29.png[]to start creating a data filter. The Add Data Filter window will appear.  The window contains three parts:
+By default, there is no data filter. Click the Data Filter button image:filter (2) (1) (2).png[]to start creating a data filter. The Add Data Filter window will appear.  The window contains three parts:
 
 . The top section shows one row of sample data from your file, as a handy reference to the file's contents.
 . The middle sections shows what the data filter looks like when it is converted a to GSQL WHERE clause. For more details, see the *WHERE Clause* section in the xref:gsql-ref:ddl-and-loading:system-and-language-basics.adoc[GSQL Language Reference Part 1 - Defining Graphs and Loading Data]
