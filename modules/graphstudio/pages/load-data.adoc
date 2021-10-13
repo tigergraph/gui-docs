@@ -1,7 +1,5 @@
 = Load Data
 
-== Load Data +++<a id="TigerGraphGraphStudioUIGuide-LoadData">++++++</a>+++
-
 After mapping data files to the graph schema, you can start loading data. Click "Load Data" on the left side menu bar to go to the Load Data page.
 
 image::load-data.png[]
@@ -22,62 +20,62 @@ The "Load Data" interface is separated into three parts:
 To display real-time graph statistics, this page checks the number of vertices and edges every 10 seconds, which adds overhead. To maximize loading performance, move to a different page after starting loading, and only come back here occasionally to check the progress.
 ====
 
-=== Start Loading +++<a id="TigerGraphGraphStudioUIGuide-StartLoading">++++++</a>+++
+== Start Loading
 
 GraphStudio provides two types of loading:
 
 * Partial Loading: load a subset of the data files which the user selects.
 * Full Loading: load all of the data files.
 
-==== Load Some Data Files +++<a id="TigerGraphGraphStudioUIGuide-LoadSomeDataSources">++++++</a>+++
+=== Load Some Data Files
 
 Select one or more data files (holding down the "shift" key to select multiple data files), and click on the "start loading" buttonimage:start_loading.png[]on the toolbar.
 
-image::screen-shot-2019-05-16-at-3.32.04-pm.png[]
+image::Screen Shot 2019-05-16 at 3.32.04 PM.png[]
 
-==== Load All Data Sources +++<a id="TigerGraphGraphStudioUIGuide-LoadAllDataSources">++++++</a>+++
+=== Load All Data Sources
 
 Click on a blank space in the data mapping overview panel to unselect the data sources, and click on the "start/resume loading" button image:start_loading.png[]on the toolbar.  While loading is in progress a green hatched bar will appear over each data file to show its real time progress.
 
-image::screen-shot-2019-05-16-at-3.55.10-pm.png[]
+image::Screen Shot 2019-05-16 at 3.55.10 PM.png[]
 
-=== Pause Loading +++<a id="TigerGraphGraphStudioUIGuide-StopLoading">++++++</a>+++
+== Pause Loading
 
 Similar to Start Loading, you can pause loading some of the data files, or all loading data files.
 
-Select one or more data files (holding down the "shift" key to select multiple data files), and click on the "pause loading" buttonimage:screen-shot-2019-05-16-at-4.01.58-pm%20%282%29.png[]on the toolbar. In the Paused state, the progress bar will change to a solid orange color.
+Select one or more data files (holding down the "shift" key to select multiple data files), and click on the "pause loading" button image:Screen Shot 2019-05-16 at 4.01.58 PM.png[]on the toolbar. In the Paused state, the progress bar will change to a solid orange color.
 
-image::screen-shot-2019-05-16-at-4.02.44-pm.png[]
+image::Screen Shot 2019-05-16 at 4.02.44 PM.png[]
 
-=== Resume Loading
+== Resume Loading
 
 You can resume loading some or all loading data files which have been paused.
 
 Select one or more data files (holding down the "shift" key to select multiple data files), and click on the "start/resume loading" buttonimage:start_loading.png[]on the toolbar. After resuming, the data file loading will continue from where it was paused:
 
-image::screen-shot-2019-05-16-at-5.47.43-pm.png[]
+image::Screen Shot 2019-05-16 at 5.47.43 PM.png[]
 
-=== Stop Loading +++<a id="TigerGraphGraphStudioUIGuide-StopLoading">++++++</a>+++
+== Stop Loading
 
-After loading has been started or paused, you can stop loading from these data files by clicking the "stop load" buttonimage:stop_loading.png[]. Similar to Start Loading, you can stop loading some or all loading data files. After stopping, the loading status of the data files will become "Stopped":
+After loading has been started or paused, you can stop loading from these data files by clicking the "stop load" button image:stop_loading.png[]. Similar to Start Loading, you can stop loading some or all loading data files. After stopping, the loading status of the data files will become "Stopped":
 
 image::loading_stopped.png[]
 
-=== Statistics Panel
+== Statistics Panel
 
 The Statistics panel contains two tabs: Graph Statistics (1st tab) and Data Loading Statistics (2nd tab).
 
-image::screen-shot-2019-05-16-at-6.00.53-pm.png[]
+image::Screen Shot 2019-05-16 at 6.00.53 PM.png[]
 
-==== Graph Statistics
+=== Graph Statistics
 
 By default if no data file is selected, the Statistics panel will show Graph Statistics.
 
-image::screen-shot-2019-05-16-at-6.07.42-pm.png[]
+image::Screen Shot 2019-05-16 at 6.07.42 PM.png[]
 
 The table at the top shows the total number of vertices and edges in the current graph, and the number of each vertex type and edge type as well. The line chart at the bottom shows the number of vertices and edges over time, when loading is in progress.
 
-==== Data Loading Statistics
+=== Data Loading Statistics
 
 If you click on one data file, the Statistics panel will change to show Data Loading Statistics:
 
@@ -110,9 +108,9 @@ The number of loaded lines doesn't mean all these lines are successfully loaded.
 
 If data file loading encounters any issues and gets an error message, the error message will be shown at the bottom:
 
-image::screen-shot-2019-05-16-at-6.28.54-pm.png[]
+image::Screen Shot 2019-05-16 at 6.28.54 PM.png[]
 
-=== Clear Graph Data +++<a id="TigerGraphGraphStudioUIGuide-ClearGraphData">++++++</a>+++
+== Clear Graph Data
 
 Click on the "clear graph data" buttonimage:delete_forever.png[]on the toolbar to clear the graph data. This operation will take approximately 1 minute or more, depending on the size of your graph and the hardware.
 
@@ -128,7 +126,7 @@ Click on the "clear graph data" buttonimage:delete_forever.png[]on the toolbar t
 
 [NOTE]
 ====
-*Tip:* If you clear graph data by accident, you can reload the data into the database by clicking on the "start/resume loading" buttonimage:start_loading.png[]on the toolbar. The data files are still in the filesystem, as long as you do not deliberately delete the data files from the filesystem.
+*Tip:* If you clear graph data by accident, you can reload the data into the database by clicking on the "start/resume loading" button image:start_loading.png[] on the toolbar. The data files are still in the filesystem, as long as you do not deliberately delete the data files from the filesystem.
 ====
 
 After the clear operation, the graph vertex and edge number statistics will both drop to 0.
