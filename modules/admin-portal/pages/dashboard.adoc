@@ -43,7 +43,8 @@ A Query Monitoring Panel includes three charts:
 
 image::query_performance_charts%20%281%29.png[]
 
-A Machine Monitoring Panel includes 4 charts. The first three charts break down the information among three processing-focused components (GPE, GSE, RESTPP). The last chart breaks down information among three components which may have large storage needs (GStore, Log files, and Apache Kafka).
+A Machine Monitoring Panel includes 4 charts. The first three charts break down the information among three processing-focused components (GPE, GSE, RESTPP).
+The last chart breaks down information among three components which may have large storage needs (GStore, Log files, and Apache Kafka).
 
 * Service status: ON or OFF status for the given component
 * CPU Usage: percentage of available CPU time used by the given component

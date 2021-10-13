@@ -2,11 +2,11 @@
 
 The log page contains the search panel, the file directory panel, and the content panel. The content panel either displays log content or search results.
 
-image::image%20%286%29.png[]
+image::image (6).png[]
 
 [WARNING]
 ====
-Note: Error message might show if an ADBLOCK is running.
+Error message might show if an ADBLOCK is running.
 ====
 
 [discrete]
@@ -23,8 +23,45 @@ Choose one single log file by clicking on it, and the content will be shown in t
 Note that it displays up to 32 MB of the log file before the latest line of the chosen log file. If users want to read the entire log file, users need to download the file.
 ====
 
-image::display-log%20%281%29.png[]
+image::display-log (1).png[]
 
 [discrete]
 === Search logs
 
+In the search panel, a user needs to provide the following three pieces
+of information: pattern, node(s) and component(s). To perform the search
+operation, a pattern must be entered and at least one node and one
+component should be selected. The search
+button image:search-btn.png[image] is on the
+upper-right corner. While searching, all input fields will be disabled,
+and the search button will change to a progress bar like
+ image:searching.png[image] . Users can click on
+collapse button image:collapse-btn.png[image] to
+collapse the search panel for more space to view the log content. In
+addition, users can click on expand
+button image:expand-btn.png[image] to open the
+search panel.
+
+image:search-panel (1).png[image]
+
+If user inputs do not meet the requirements, an error message will show
+up after clicking the search button:
+
+image:search-error.png[image]
+
+After the searching process finishes, all results will be listed. The
+number of results will be tagged in result tab
+like image:result-tag.png[image] .
+
+ image:search-result.png[image] 
+
+The title of each search result contains the machine id, the file path
+and the number of lines of content which match the pattern. The detailed
+log line content will also be shown:
+
+ image:single-search-result.png[image] 
+
+Clicking on one single search result will show the log content in
+display panel. The matching log line content will be highlighted.
+
+ image:line-highlight-log%20%281%29.png[image] 

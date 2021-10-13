@@ -1,6 +1,6 @@
 = License
 
-== License Page +++<a id="TigerGraphAdminPortalUIGuide-ConfigurationPageconfiguration">++++++</a>+++
+== License Page
 
 You can go to License page to update TigerGraph license key. If no TigerGraph license key is provided during TigerGraph installation time, the license page will look like this:
 

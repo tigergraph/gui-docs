@@ -136,5 +136,5 @@ image::manage-groups.png[]
 
 [NOTE]
 ====
-*Tip:* If you manage users through GSQL, please click on refresh button on the top right corner to reflect the changes in Admin Portal.
+*Tip:* If you manage users through GSQL, please click on refresh button in the top right corner to reflect the changes in Admin Portal.
 ====

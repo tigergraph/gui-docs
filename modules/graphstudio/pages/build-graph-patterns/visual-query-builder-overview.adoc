@@ -92,3 +92,522 @@ The pattern list panel contains three sections:
 
 ==== Graph patterns
 
+The graph patterns section lists all the visual patterns you have
+created for current graph. You can
+click image:upload_file_btn.png[image] to create
+new patterns, or
+click image:delete_forever.png[image] to delete
+existing ones.
+
+ image:pattern-list.png[image] 
+
+== Description
+
+Other than the visual view of the graph pattern, you can optionally add
+a description for the pattern. This can help other users to understand
+what problem you are trying to solve.
+
+image:https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LvhRxsMmFzrFtib487V%2F-LvhZjOAREmlJ_qwVZDm%2Fpattern-description.png?alt=media&token=ba475672-ba6b-4038-9237-64eb23a53744[image]‌
+
+After changing the description, don't forget to confirm the change:
+
+image:https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LvhRxsMmFzrFtib487V%2F-LvhaA47rYs2QvIMAqCo%2Fconfirm-or-cancel.png?alt=media&token=1f8730cb-f29e-4513-bb45-c01766d441af[image]
+
+Changing description is considered as a change to the visual pattern,
+don't forget to save the pattern in the end.
+
+== Pattern parameters
+
+If you added some parameters in your visual pattern, you need to provide
+the values to the parameters when running the pattern.
+
+ image:pattern-params.png[image] 
+
+Click image:run-pattern.png[image] to run the
+pattern.
+
+== Toolbar
+
+The toolbar options, from left to right, are the following:
+
+[width="100%",cols="^50%,<50%",options="header",]
+|===
+|toolbar option |functionality
+|[.image]## |Save the graph pattern.
+
+|[.image]## |Save as GSQL query: show the GSQL query generated from the
+pattern and save. See more information
+link:visual-query-builder-overview.md#save-as-gsql-query[here].
+
+|[.image]## |Console: open/close the console panel.
+
+|[.image]## |Configuration panel: open/close the config panel. By
+default the config panel is closed. You can either open the panel by
+clicking this button, or double click a vertex pattern or edge pattern
+in the visual pattern to open the config panel.
+
+|[.image]## |Render pattern options: config how much detail is shown on
+the pattern. See more information
+link:visual-query-builder-overview.md#render-pattern-options[here].
+
+|[.image]## |Run: run the visual pattern. If the pattern doesn't have
+any parameters, it will run directly, otherwise the *Pattern parameters*
+section will expand for you to provide the parameter values.
+
+|[.image]## |Undo and redo: undo and redo the changes on the visual
+pattern. The whole editing history of each visual pattern since entering
+Build Graph Patterns page is preserved.
+
+|[.image]## |Edit: edit the selected vertex pattern or edge pattern.
+This is same as double-clicking one vertex or edge pattern.
+
+|[.image]## |Delete: delete selected vertex patterns, edge patterns and
+widgets. You can hold the Shift key to select multiple elements to
+delete.
+
+|[.image]## |Add a vertex pattern: add a new vertex pattern into the
+current visual pattern.
+
+|[.image]## |Add an edge pattern: add a new edge pattern into the
+current visual pattern.
+
+|[.image]## |Pick: a shortcut for adding vertex patterns and edge
+patterns into the visual pattern.
+
+|[.image]## |Merge: select multiple vertex patterns, and click this
+button to merge them together. This is a fast way to connect multiple
+shorter patterns into a longer one.
+
+|[.image]## |Widget: see more information
+link:#widget[here].
+
+|[.image]## |Filter: click this button then click a vertex pattern or
+edge pattern, and the config panel will enter editing mode for the
+selected vertex or edge pattern, with the Filter section expanded.
+
+|[.image]## |Aggregation: click this button then click a vertex pattern,
+and the config panel will enter editing mode for the selected vertex
+pattern, with the Aggregation section expanded.
+
+|[.image]## |Order by: click this button then click a vertex pattern,
+and the config panel will enter editing mode for the selected vertex
+pattern, with the Order section expanded.
+
+|[.image]## |Limit: click this button then click a vertex pattern, and
+the config panel will enter editing mode for the selected vertex
+pattern, with the Limit section expanded.
+
+|[.image]## a|
+Output: click this button, then click vertex patterns and edge patterns
+of the visual pattern to toggle whether to output them or not. You can
+see the output glow of the selected vertices or edges turning on and off.
+
+|===
+
+== Configuration Panel You can edit vertex patterns and edge patterns
+
+from config panel. #### Basic Info for vertex pattern If you enter
+editing mode of a vertex pattern and expand the Basic Info section, you
+can edit its name, decide whether or not to put it into result, change
+its vertex type, provide optional matching conditions by giving a list
+of ids, or provide a parameter name.
+image:https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LvmDJHsFycWDzKKRvbn%2F-LvmGGM22Jxkwmy-OkHN%2Fvertex-pattern-basic.png?alt=media&token=5d964b95-5799-486c-bbd4-1eea486b0c57[image]‌
+You can add/drop id in the list:
+image:https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LvmDJHsFycWDzKKRvbn%2F-LvmGsiKMygJOaG6YRQc%2Fvertex-pattern-ids.png?alt=media&token=9c0058e1-f5b5-412f-88f8-b85b19de5954[image]‌
+Or add an input parameter:
+image:https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LvmDJHsFycWDzKKRvbn%2F-LvmH-0jZmTfwDdc1CWP%2Fvertex-pattern-param.png?alt=media&token=e0562257-0fd7-41fd-adfb-0f30990d2637[image]‌
+
+=== Basic Info for edge pattern [#basic-info-for-edge-pattern]## If you
+
+enter editing mode of an edge pattern and expand the Basic Info section,
+you can edit its name, decide whether or not to put it into result, or
+change its edge type. You can also specify this edge pattern as a regex
+match by providing Repeat as least (a non-negative integer) and Repeat
+at most (a positive integer). Due to current GSQL limitations, if you
+decide to change these numbers, you cannot give the edge pattern a name
+or put it into result.
+image:https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LvmDJHsFycWDzKKRvbn%2F-LvmHQxr7mWLpATC0XL3%2Fedge-pattern-basic-info.png?alt=media&token=8ae1fec9-4b76-465e-ba7d-5bc5632e2865[image]‌
+When finished editing, you need to confirm the change. You can also
+cancel the change if you made a mistake:
+ image:basic-info-banner.png[image] 
+
+NOTE: If you want another vertex pattern or edge pattern to refer to current selected vertex or edge pattern's attributes, you need to give it a name.
+
+== Filter
+
+If you expand the Filter section, you can add/edit/delete filters for
+the selected vertex or edge pattern:
+
+ image:non-edit-filter.png[image] 
+
+Click image:edit.png[image] besides the filter
+expression and enter editing mode of the filter:
+
+ image:assets_-lhvjxin4__6ba0t-qmu_-lvmjvt2mkzujjj4alns_-lvml2ar64-j4_zuavzr_filters.png[image] 
+
+You can add multiple filters for each vertex and edge pattern, and they
+are AND relationship when executing the pattern. Building the filter is
+similar with building attribute filter in
+link:../explore-graph/#search-vertices-with-attribute-filters[Explore
+Graph page]. One thing special here is that you can refer to attributes
+on other vertex patterns and edge patterns. Choose *Attribute of vertex
+or edge* as expression type, then choose the name of the vertex or edge
+pattern whose attribute you want to refer to (see above why we need give
+a name to vertex or edge patterns), then choose the attribute you want
+to refer to.
+
+ image:filter-remote-attr.png[image] 
+
+When finished editing, you need confirm or cancel the change:
+
+ image:confirm-filter.png[image] 
+
+== Aggregation
+
+If you expand the Aggregation section, you can add/edit/delete
+aggregations for the selected vertex pattern (aggregation on edge
+patterns is not supported):
+
+ image:agg-non-edit-mode.png[image] 
+
+Click image:edit.png[image] beside one
+aggregation and enter editing mode for the aggregation. You can edit
+both the aggregation expression and aggregation name:
+
+ image:add-edit-mode.png[image] 
+
+When finished editing, you need to confirm or cancel the change:
+
+ image:agg-confirm.png[image] 
+
+When talking about aggregation, it is actually grouping all the matching
+results by the vertex entity which match the vertex pattern, and then
+aggregated based on the expression. Take this example:
+
+ image:assets_-lhvjxin4__6ba0t-qmu_-lvmjvt2mkzujjj4alns_-lvqul-kk8lpmclahxhd_aggregation-example.png[image] 
+
+In the city vertex pattern, we have created 8 different aggregations:
+
+[cols="<,<,<",options="header",]
+|===
+|name |aggregation expression |explanation
+|countP |COUNT(DISTINCT p) |Count number of distinct person vertices
+matched to each city vertex.
+
+|countMatched |COUNT(*) |Count number of matches each city vertex
+involves in.
+
+|sumPHeight |SUM(p.height) |Sum the height attribute of all person
+vertices matched to each city vertex.
+
+|minPBirthyear |MIN(p.birthYear) |Get the minimal height attribute of
+all person vertices matched to each city vertex.
+
+|maxPBirthyear |MAX(p.birthYear) |Get the maximal height attribute of
+all person vertices matched to each city vertex.
+
+|avgPBirthyear |AVG(p.birthYear) |Get the average value of height
+attribute of all person vertices matched to each city vertex.
+
+|collectP |p |Collect all person vertices matched to each city vertex.
+
+|collectPName |p.name |Collect all person vertices' name matched to each
+city vertex.
+|===
+
+Consider we have the following matching result:
+
+ image:assets_-lhvjxin4__6ba0t-qmu_-lvmjvt2mkzujjj4alns_-lvqttiowzxn5mwke2a7_matching-agg.png[image] 
+
+We have the following aggregation result table for city vertex _san jose_:
+
+[width="100%",cols="<34%,<33%,<33%",options="header",]
+|===
+|city vertex |aggregation result |explanation
+|san jose |countP = 2 |Kevin and Emily
+
+|san jose |countMatched = 4 a|
+(san jose)<-[born_in]-(Kevin)-[person_has_skill]->(programming)
+
+(san jose)<-[born_in]-(Kevin)-[person_has_skill]->(public speech)
+
+(san jose)<-[born_in]-(Emily)-[person_has_skill]->(human resource)
+
+(san jose)<-[born_in]-(Emily)-[person_has_skill]->(programming)
+
+|san jose |sumPHeight = 676 |Kevin.height + Kevin.height + Emily.height
++ Emily.height = 173 + 173 + 165 + 165
+
+|san jose |minPBirthyear = 1991 |Min(Kevin.birthYear, Kevin.birthYear,
+Emily.birthYear, Emily.birthYear)
+
+|san jose |maxPBirthyear = 1992 |Max(Kevin.birthYear, Kevin.birthYear,
+Emily.birthYear, Emily.birthYear)
+
+|san jose |avgPBirthyear = 1991.5 |(Kevin.birthYear + Kevin.birthYear +
+Emily.birthYear + Emily.birthYear) / 4
+
+|san jose |collectP = [Kevin, Kevin, Emily, Emily] |
+
+|san jose |collectPName = ["Kevin", "Kevin", "Emily", "Emily"] |
+|===
+
+== Order
+
+If you expand the Order section, you can add/edit/delete ordering for
+the selected vertex pattern (ordering on edge patterns is not
+supported):
+
+ image:order-section.png[image] 
+
+Click image:edit.png[image] beside the ordering
+and enter editing mode for the ordering. You can edit both the ordering
+expression and whether results are in ascending or descending order:
+
+ image:edit-order.png[image] 
+
+When finished editing, you need to confirm the change:
+
+ image:confirm-order.png[image] 
+
+You can refer to aggregations in ordering expression. You can add
+multiple orderings, which follow the multi-key ordering rule (upper
+ordering dominates).
+
+== Limit
+
+If you only want a subset of your matching result, you can use limit.
+Only the top limit results will be returned based on your ordering
+settings. If you don't have orderings, the result will be randomly
+picked from all matchings.
+
+If you expand the Limit section, you can add/edit/delete limit for the
+selected vertex pattern (limit on edge patterns is not supported):
+
+ image:limit-section.png[image] 
+
+Toggle *use limit* checkbox to enable/disable limit. You can also edit
+the limit number:
+
+ image:use-limit.png[image] 
+
+When finished editing, you need confirm or cancel the change:
+
+ image:limit-confirm.png[image] 
+
+== Console
+
+The Console panel shows the graph schema, the result of the last pattern
+execution result, and errors the visual pattern has. Each execution of a
+pattern generates two types of results: a visualized graph and JSON
+text. On the left is a toolbar with buttons for switching between the
+tabs. The buttons, from top to bottom, are the following:
+
+[cols="^,<",options="header",]
+|===
+|menu option |functionality
+| image:expand_panel.png[image] 
+|Expand/Collapse: expand or collapse the Console panel.
+
+| image:schema%20%281%29%20%281%29.png[image] 
+|Graph schema: show the graph schema.
+
+| image:visual-result%20%281%29.png[image] 
+|Visualize graph result: show the visual result of the last run pattern.
+
+| image:json-result.png[image]  |View JSON
+result: show the raw text result in JSON format of the last run pattern.
+
+| image:problems.png[image]  |Problems: show the
+errors in the visual pattern.
+|===
+
+[[graph-schema-]]
+== Graph schema
+
+Viewing graph schema makes it more convenient for developers to refer to
+the schema topology logic and easier to construct the visual pattern.
+
+ image:assets_-lhvjxin4__6ba0t-qmu_-lvm9pfm2-2ozgm2sd9_-lvmcthyogmsp0kft32s_graph-schema.png[image] 
+
+== Visualize graph result
+
+If the pattern execution result contains a graph structure, the result
+will be visualized in this panel as a graph. The panel is the same as
+the
+link:../explore-graph/#TigerGraphGraphStudioUIGuide-GraphExplorationPanelOptions-1[Explore
+Graph panel]. The only difference is that each time you run a pattern,
+the previous result will be erased. In Explore Graph, the results are
+added incrementally.
+
+ image:assets_-lhvjxin4__6ba0t-qmu_-lvm9pfm2-2ozgm2sd9_-lvmcxuo-u1fkbkapquo_visual-graph.png[image] 
+
+You can switch to the JSON Result panel to see the result in JSON
+format.
+
+== View JSON result
+
+You can see the JSON response of running the visual pattern from this
+tab:
+
+ image:assets_-lhvjxin4__6ba0t-qmu_-lvm9pfm2-2ozgm2sd9_-lvmcnniabkll3klmwxr_json-result-vqb.png[image] 
+
+[[problems-]]
+== Problems
+
+If the visual pattern contains errors, you can see them here and debug:
+
+ image:assets_-lhvjxin4__6ba0t-qmu_-lvm0wj98fiup0wogjez_-lvm3eb9dlldguwxg6rb_pattern-errors.png[image] 
+
+== Save as GSQL query
+
+You can view the GSQL query generated from your visual pattern and save
+it. Then you can access this query from Write Queries page, modify your
+query, interpret it, install it and run it.
+
+ image:assets_-lhvjxin4__6ba0t-qmu_-lvm4puugyvb92xsngac_-lvm8fwfp4w1f68fzcz-_save-gsql-query.png[image] 
+
+== Render pattern options
+
+There are three different rendering options.
+
+ image:render-options.png[image] 
+
+By default, Pattern detail and Output glow are checked. All the filters,
+aggregations, ordering conditions and limits are rendered, and the
+vertex and edge patterns that will be in result will be highlighted with
+glow:
+
+ image:render-detail.png[image] 
+
+If Pattern detail is not checked, add-on marks will indicate that there
+are filters, aggregations, ordering conditions and limits on
+corresponding vertex patterns and edge patterns:
+
+ image:render-addon.png[image] 
+
+If Pattern add-on is not checked, the add-ons will be hidden:
+
+ image:render-no-addon.png[image] 
+
+If Output glow is not checked, the output indicating glow is hidden:
+
+ image:render-no-glow.png[image] 
+
+== Add a vertex pattern
+
+Click image:add_vertex_type.png[image] , and a
+new vertex pattern will be added to the visual pattern. You are in the
+editing mode of the newly added vertex pattern.
+
+ image:assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvvxrsv4oqboqfdo5rn_add-1st-vertex-pattern.png[image] 
+
+== Add an edge pattern
+
+Click image:add_edge_type.png[image] , then click
+the source vertex pattern of the edge pattern:
+
+ image:click-person-vp.png[image] 
+
+Then click the target vertex pattern of the edge pattern. A new edge
+pattern will be added to the visual pattern. You are in the editing mode
+of the newly added edge pattern:
+
+ image:assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvwcirpqnzwxjjmibcm_click-dep-vp.png[image] 
+
+== Pick
+
+Pick is a fast way to build your visual pattern. You can pick from
+either graph schema or visual result.
+
+Click image:pick-btn.png[image] , then click one
+vertex type in the graph schema tab:
+
+ image:assets_-lhvjxin4__6ba0t-qmu_-lvr5x32viax2_hmvxxm_-lvrfke7dyvs6rwkzzbk_pick-vertex-type.png[image] 
+
+A vertex pattern will be added to the visual pattern:
+
+ image:pick-vertex-type-done.png[image] 
+
+Click image:pick-btn.png[image] , then click one
+edge type in the graph schema tab:
+
+ image:assets_-lhvjxin4__6ba0t-qmu_-lvr5x32viax2_hmvxxm_-lvrfnuttlpzrlvgsfrq_pick-edge-type.png[image] 
+
+An edge pattern together with two vertex patterns will be added to the
+visual pattern:
+
+ image:pick-edge-type-done.png[image] 
+
+Click image:pick-btn.png[image] , then click one
+vertex in the visualize graph result tab:
+
+ image:assets_-lhvjxin4__6ba0t-qmu_-lvr5x32viax2_hmvxxm_-lvrg-j4xoq7sv1zdjfl_pick-vertex.png[image] 
+
+A vertex pattern will be added to the visual pattern. Note that the
+vertex pattern contains an id condition because it is picked from an
+actual vertex entity from the graph:
+
+ image:pick-vetex-done.png[image] 
+
+== Merge
+
+You can merge multiple vertex patterns of the same vertex type into one
+vertex pattern.
+
+Hold Shift key to select multiple vertex patterns:
+
+ image:multi-sel-vertex-pattern.png[image] 
+
+Then click image:merge-btn.png[image] , and you
+will get a larger visual pattern:
+
+ image:merged-vertex-pattern.png[image] 
+
+Use pick and merge together and you can create a complicated visual
+pattern quickly.
+
+== Widget
+
+As described in the
+link:#_basic_concepts[Basic Concepts], a
+visual pattern represents a graph pattern matching problem. In graph
+theory, graph pattern matching is declarative. However, graph pattern
+matching is not the full story. In a lot of cases you need to represent
+procedural computation flow. That's why we are introducing widgets.
+
+=== Intersect
+
+Click  image:intersect.png[image] , then click two
+vertex patterns of the same vertex type:
+
+ image:assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrry_spqmnsq2be_hq_intersect-input1.png[image] 
+
+And an intersection widget is added to the visual pattern:
+
+ image:assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrs99vsvjblisgtg4w_intersect-added.png[image] 
+
+The output vertex pattern means matching all company vertices located at
+redwood city, *and* belongs to big data industry.
+
+The output company vertex pattern can be part of another larger pattern. You can think of the input vertex patterns of the widget as constraints of the output vertex pattern.
+
+#### Union
+
+Click![](../../../.gitbook/assets/union.png), then click two vertex patterns of the same vertex type. A union widget is added to the visual pattern:
+
+![](../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrttcpkwcfix_ui3ji_union-pattern.png)
+
+The output vertex pattern means matching all company vertices located at redwood city, **or** belongs to big data industry.
+
+#### Subtract
+
+Click![](../../../.gitbook/assets/subtract.png), then click two vertex patterns of the same vertex type. A subtract widget is added to the visual pattern:
+
+![](../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrtjgenpxrpc6qn91e_subtract-pattern.png)
+
+The output vertex pattern means matching all company vertices located at redwood city, **but not** belong to big data industry.
+
+### Next Step
+
+Now you have a basic idea about all different functionalities of Visual Query Builder. Let's go to the next page to walk through how to build some visual patterns to solve your business questions!
