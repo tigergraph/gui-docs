@@ -21,7 +21,7 @@ image::3.2.1.png[]
 * *Save* : Save the current query draft.
 * *Install* : Install the query into the database.
 * *Run* : Run the query. If the query is not installed, it will run the query in interpreted mode. Note there is performance penalty to run queries in interpreted mode.
- ** *Run Configuration:* Set the query runtime configurations.
+** *Run Configuration:* Set the query runtime configurations.
 * *Delete* : Delete the selected query and its draft.
 * *Show query endpoint:* Show the RESTFul endpoint to execute the query. Only installed queries can see their RESTFul endpoints.
 * *Download:* Download the query as a gsql file.
@@ -29,7 +29,7 @@ image::3.2.1.png[]
 
 === Add Or Edit Query
 
-To create a new query, simply click on the "New GSQL Query" buttonimage:upload_file_btn.png[]at the bottom-right corner of the left sub-panel, and type in the name of the new query in the popup window:
+To create a new query, simply click on the "New GSQL Query" button image:upload_file_btn.png[] in the bottom-right corner of the left sub-panel, and type in the name of the new query in the popup window:
 
 image::create_new_query.png[]
 
@@ -39,7 +39,7 @@ image::3.4.1.png[]
 
 To edit an existing query, click on the query name in the list in the left sub panel:
 
-image::3.5%20%281%29.png[]
+image::3.5.png[]
 
 === Save Query Draft
 
@@ -53,7 +53,177 @@ image::3.6.1.png[]
 
 === Install Query
 
-If you saved a query, the "install query" buttonimage:publish_btn.png[]will be enabled. Click it to install the query. The installation process may take about 1 minute:
+If you saved a query, the "install query" button image:publish_btn.png[]will be enabled. Click it to install the query. The installation process may take about 1 minute:
 
 image::install_query_progress.png[]
+
+== Run Query
+
+To run the query, click on the "run"
+button  image:run-installed-query.png[image] in the
+toolbar. If the query has no parameters, it will run directly and the
+result will be shown in the Result panel.
+
+image:3.7.1.png[image]
+
+If the query requires parameters, the Enter Query Parameters panel will
+appear. Enter your parameter values and then click the "Run Query"
+button image:run_query.png[image] at the bottom of
+the panel. If there are several parameters, you might need to scroll the
+panel to the bottom to find the Run Query button.
+
+The query will be executed, and the results will be shown in the Result
+Panel.
+
+image:3.8.1.png[image]
+
+== Run Configuration
+
+You can set runtime configurations of the GSQL query by clicking the
+small  image:3.9.png[image] button to the
+right of run query button, then a drop-down menu will appear.
+
+image:3.10.1.png[image]
+
+Click the "Run configuration" item, and the Run Configuration panel will
+be opened.
+
+image:3.11.1.png[image]
+
+You can set GSQL query timeout here. By default, it uses the timeout of
+TigerGraph configuration (specified by gadmin commands). You can change
+it by unchecking the "Use default timeout" label, and then set a new
+timeout:
+
+image:3.13.png[image]
+
+Click the submit button
+image:3.12.png[image]  to apply your
+changes.
+
+== Delete Query
+
+Choose the query you want to delete and click on the "delete"
+button image:delete_forever.png[image] . The query
+will be deleted permanently.
+
+== Show Query Endpoint
+
+After finishing writing the GSQL queries and installing the queries, you
+can access the queries via REST endpoints. By clicking the "show query
+endpoint" button image:endpoint.png[image] , you can
+see the format of the endpoint to access this query, so that you can
+integrate the query with your applications.
+
+image:show_query_endpoint.png[image]
+
+== Download
+
+You can download your query by click
+image:3.14.1.png[image] , or download all your
+queries as a tarball by click
+image:3.15.1.png[image]
+
+== Delete query draft
+
+You can delete your query draft by clicking
+​ image:delete-query-draft.png[image] .
+
+== Install All Queries
+
+If you want to install all queries that you haven't installed yet, you
+can click "Install all queries"
+button image:install_all_queries.png[image] in GSQL
+Queries list. After some verification time, a pop up window listing all queries to be installed will show:
+
+image:install_all_query_list.png[image]
+
+Click INSTALL button, then the listed queries will be installed:
+
+image:installing_all_queries.png[image]
+
+== Result Panel
+
+The Result panel shows the result of the last run query. Each query
+generates up to three types of result: visualized graph, JSON text, or
+log messages. On the left is a toolbar with buttons for changing the the
+panel size or for switching to a different type of result. The buttons,
+from top to bottom, are the following:
+
+[cols="^,<",options="header",]
+|===
+|menu option |functionality
+| image:expand_panel.png[image]  |Expand/Collapse:
+Expand or collapse the Result panel.
+
+| image:schema-2.png[image]  |View schema:
+Show the graph schema.
+
+| image:visual-result.png[image]
+|Visualize graph result: Show the visual result of the last run query.
+
+| image:json-result.png[image]  |View JSON
+result: Show the raw text result in JSON format of the last run query.
+
+| image:visualize_log.png[image]  |View logs: Show
+the log for the last run query.
+|===
+
+== View schema:
+
+Viewing graph schema makes it more convenient for developers to refer to
+the schema topology logic and easier to write correct GSQL queries.
+
+image:write-queries-schema.png[image]
+
+== Visualize graph result
+
+If the query execution result contains a graph structure, the result
+will be visualized in this panel as a graph. The panel is the same as
+the
+xref:explore-graph/graph-exploration-panel.adoc[Explore
+Graph panel]. The only difference is that each time you run a query, the
+previous result will be erased. In Explore Graph the results are added
+incrementally.
+
+image:write-queries-graph.png[image]
+
+You can switch to the JSON Result panel to see the result in JSON
+format.
+
+== View JSON result
+
+If there is no graph structure in the result, the result will be
+displayed in this panel as a JSON object.
+
+image:view-json-result.png[image]
+
+
+== View logs
+
+If a query ran successfully, the Query Log message will be "query ran
+successfully" or something similar. If there was anything wrong when
+executing your query, such as invalid parameters or runtime errors, an
+error message will be shown in the Query Log panel:
+
+image:query-log.png[image]
+
+== Expand Panels
+
+If you just want to focus on developing your query, or want to have more
+space to view your result, click the Expand button
+image:expand_panel.png[image]  in either the Query
+Editing panel or the Result panel.
+
+If you expand the Query Editing panel, it looks like this:
+
+image:write-queries-gsql.1.png[image]
+
+If you expand the Result panel, it looks like this:
+
+image:write-queries-exploration.png[image]
+
+When the panel is expanded, the Expand button becomes the Collapse
+button  image:collapse_btn.png[image] . Clicking it
+will return the display to the split panel view.
 
