@@ -60,4 +60,99 @@ $ gadmin start gui
 ----
 
 == Home Page 
+The home page of GraphStudio contains links to each of the six steps of
+solving a business problem: Design Schema, Map Data To Graph, Load Data,
+Explore Graph, Build Graph Patterns and Write Queries. Users can also
+navigate to each step from the buttons in the left menu bar. Each of
+these major steps has its own page. To hide/show the left menu bar,
+click the top-left menu
+button:
+ image:toggle_nav_bar.png[image] . Clicking
+the logo on the top of the left
+menu  image:graphstudio-logo-10.22.48-am (2).png[image]  will
+take you back to the home page. You can
+click  image:goto_admin_portal.png[image] to go to
+the Admin Portal (read more at xref:admin-portal:overview.adoc[Admin Portal UI
+Guide]).
 
+image:1.1 (2).png[image]
+
+[[switch-between-dark-and-light-theme-]]
+== Switch Between Dark And Light Theme
+
+GraphStudio provides two themes: dark theme and light theme. By default
+it uses dark theme. You can click the User
+icon  image:account_btn.png[image] and then toggle
+the Dark theme to be Off to switch to light theme:
+
+image:1.2.png[image]
+image:1.3.png[image]
+
+image:1.4.png[image]
+
+== Switch Between Languages
+
+GraphStudio supports 2 languages: English and Chinese. By default it
+uses English. You can
+click  image:account_btn.png[image] and then select a
+language:
+
+image:1.5 (1).png[image]
+
+This shows what Home page looks like if you choose Chinese.
+
+image:1.6.png[image]
+
+== GraphStudio Session Timeout
+
+GraphStudio has a default session timeout of 1 week. If, during this
+time, the user has no interaction with the page, the session will expire
+and the user will be logged out automatically. The timeout can be
+configured with:
+
+[source,bash]
+----
+$ gadmin config set GUI.ClientIdleTimeSec [timeout]
+----
+
+[[graphstudio-online-test-drive-]]
+== GraphStudio Online Test Drive
+
+Visit TigerGraph Test Drive demos at:
+https://testdrive.tigergraph.com[https://testdrive.tigergraph.com/]
+
+The GraphStudio online Test Drive features several instances of the
+TigerGraph system, each one targeting a different use case. Each copy of
+TigerGraph has a GraphStudio interface and is preloaded with
+application-specific queries and synthetic data. These demo applications
+are provided in a read-only mode. Users can explore and play with
+pre-installed queries. Users on these demo systems cannot save changes
+to the graph schema, the loading job, or queries. The corresponding
+buttons are disabled.
+
+== GraphStudio Limitations
+
+Some features which are available in GSQL are not available in
+GraphStudio.
+
+=== xref:design-schema.adoc[]
+
+* Fixed binary data types are not supported.
+* PRIMARY KEY and composite key are not supported.
+
+=== xref:map-data-to-graph.adoc[]
+
+* Cannot load JSON data.
+
+=== xref:load-data.adoc[]
+
+* Data loading jobs written in a GSQL console are not shown in
+GraphStudio.
+* USING options are not available.
+* Concurrent loading is not available.
+
+=== xref:write-queries.adoc[]
+
+* You cannot define a user-defined function (you can use the
+user-defined functions created from TigerGraph server by importing the
+solution which contains pre-defined UDFs into GraphStudio).

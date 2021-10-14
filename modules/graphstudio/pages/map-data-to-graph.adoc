@@ -241,3 +241,137 @@ After adding the data filter, the right working panel will look like this:
 
 image::9.png[]
 
+Hovering the mouse over the data filter
+indicator image:data_filter_indicator.png[image] will
+make the data filter condition appear. If you want to modify the data
+filter, click the Data Filter
+button image:filter%20%282%29%20%281%29%20%282%29.png[image] or
+double-click the data filter indicator​. The Add Data Filter panel will
+appear.
+
+To remove a data filter, select "None" at the top level dropdown of
+Build Data Filter section and then click Add. The data filter will be
+deleted.
+
+image:remove_data_filter.png[image]
+
+[[advanced-features-]]
+== Advanced Features
+
+More advanced data mapping features are grouped in the dropdown list
+under  image:more-data-mapping.png[image] .
+
+=== Map data to a map type attribute
+
+Click  image:map-widget-btn.png[image] in the
+dropdown list, then choose key type and value type. The types must match
+the key type and value type of the attribute you are mapping towards.
+
+image:screen-shot-2020-01-21-at-5.41.40-pm.png[image]
+
+A Map widget will be added to the attribute mapping panel.
+
+image:screen-shot-2020-01-21-at-5.43.15-pm.png[image]
+
+Create the mapping from the data columns to the Map widget, and from the
+Map widget to the attribute.
+
+image:screen-shot-2020-01-21-at-5.44.41-pm.png[image]
+
+== Map data to a UDT type attribute
+
+Click  image:udt-widget-btn.png[image] in the
+dropdown list, then choose UDT name. The name must match the UDT type of
+the attribute you are mapping towards.
+
+image:screen-shot-2020-01-21-at-5.46.32-pm.png[image]
+
+A UDT widget will be added to the attribute mapping panel.
+
+image:screen-shot-2020-01-21-at-5.47.29-pm.png[image]
+
+Create the mapping from the data columns to the UDT widget, and from the
+UDT widget to the attribute.
+
+image:screen-shot-2020-01-21-at-5.47.42-pm.png[image]
+
+== Map data to a map type attribute with UDT value type
+
+If you want to map data to an attribute of map type with UDT value type,
+you have to combine a Map widget with a UDT widget.
+
+Choose UDT as the value type and then choose the UDT name when adding
+the Map widget.
+
+image:screen-shot-2020-01-21-at-5.50.41-pm.png[image]
+
+Create data mapping between data columns, the UDT widget, the Map
+widget, and the attribute.
+
+image:screen-shot-2020-01-21-at-5.53.30-pm.png[image]
+
+[[delete-options-]]
+== Delete Options
+
+In the Map Data To Graph page, you can delete anything that you added.
+Choose what you want to delete, then click the delete
+button  image:delete_btn.png[image] . Press the
+"Shift" key to select multiple icons you want to delete. Note that you
+cannot delete vertex or edge types in this page.
+
+[[delete-data-files-]]
+=== Delete Data Files
+
+Select the data file icon(s), then click the delete button.
+
+image:screen-shot-2019-05-16-at-2.35.00-pm.png[image]
+
+[[delete-data-file-to-vertex-or-edge-mapping-]]
+== Delete Data File To Vertex Or Edge Mapping
+
+Select the dashed green link(s) between data file and mapped vertex/edge
+type, then click the delete button.
+
+image:screen-shot-2019-05-16-at-2.36.18-pm.png[image]
+
+[[delete-data-column-to-vertex-or-edge-attribute-mapping-]]
+== Delete Data Column To Vertex Or Edge Attribute Mapping
+
+Select the green arrow(s) between data file table and vertex/edge
+attributes table, then click the delete button.
+
+image:5%20%281%29.png[image]
+
+[[delete-token-functions-]]
+== Delete Token Functions
+
+Select the token function table(s), then click the delete button.
+
+image:delete_token_functions.png[image]
+
+[[undo-and-redo-]]
+== Undo And Redo
+
+You can undo or redo changes by clicking the Back or Forward buttons,
+respectively:  image:redo_undo_btn.png[image] . The
+whole history since the time you entered the Map Data To Graph page is
+recorded.
+
+[[publish-data-mapping]]
+== 5 Publish Data Mapping
+
+Once you are satisfied with the data loading procedure, click the
+publish schema
+button  image:publish_btn.png[image] to publish the
+data loading procedure to the TigerGraph system. It takes about 2 to 3
+seconds for publishing each data file mapping.
+
+[[expand-panels-]]
+=== Expand Panels
+
+The following three buttons allow you to expand the left or right
+working panel:  image:split-view.png[image] .
+
+By default, the two panels have equal widths. Click the left button to
+expand the left working panel, or click the right button to expand the
+right working panel.
