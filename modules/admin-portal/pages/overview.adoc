@@ -44,7 +44,7 @@ The layout of the Admin Portal is responsive to screen size.  The layout will au
 
 The full-screen version of the Admin Portal is shown below, with the Dashboard page selected.
 
-image::image%20%287%29.png[]
+image::dashboard.png[]
 
 == Page Header
 
@@ -56,7 +56,7 @@ image::admin-user-menu-updated.png[]
 
 You can switch between a dark theme and a light theme. The light theme is shown below:
 
-image::image%20%2811%29.png[]
+image::light-theme.png[]
 
 To sign out of the Admin Portal, click on the *Sign out* button in the Account menu.
 
@@ -68,7 +68,7 @@ You can navigate to GraphStudio by clicking onimage:goto_graphstudio.png[].
 
 The bottom of the navigation menu shows the cluster service status.
 
-image::image%20%2810%29.png[]
+image::service-status.png[]
 
 == Session Timeout
 
