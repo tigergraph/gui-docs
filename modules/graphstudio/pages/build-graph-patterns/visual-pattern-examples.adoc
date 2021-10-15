@@ -6,7 +6,7 @@ You have learnt all the basic concepts of Visual Query Builder in the previous a
 
 === Example 1. Find all the departments with male employees
 
-Click image:https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LMA-P3NzEEls-E_ml1t%2F-LMA37QmCzHgMSncIl_A%2Fupload_file_btn.png?alt=media&token=57239bf7-50db-4993-b2b2-e3f22f182dc1[]in the pattern list pattern, input the pattern name, and click image:https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LM9e_2BQZhEfn2WheoU%2F-LM9gaAqbCEhwkJn8k8d%2Fadd_vertex_type_btn.png?alt=media&token=4ca5020e-b47d-4e7f-8275-590a9684093f[]:
+Click image:add_pattern_btn.png[]in the pattern list pattern, input the pattern name, and click image:add-btn.png[]:
 
 image::assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvvvsnl5eksscgabgze_demo_2_name.png[]
 
