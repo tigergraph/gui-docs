@@ -9,8 +9,7 @@ image::image (6).png[]
 Error message might show if an ADBLOCK is running.
 ====
 
-[discrete]
-=== Open a log file from the file directory
+== Open a log file from the file directory
 
 In the file directory panel, all machines will be listed. Clicking the machine id, all components of the machine will be listed. When you expand the component,  all log files and folders will be listed.
 
@@ -25,8 +24,7 @@ Note that it displays up to 32 MB of the log file before the latest line of the 
 
 image::display-log (1).png[]
 
-[discrete]
-=== Search logs
+== Search logs
 
 In the search panel, a user needs to provide the following three pieces
 of information: pattern, node(s) and component(s). To perform the search
@@ -53,15 +51,15 @@ After the searching process finishes, all results will be listed. The
 number of results will be tagged in result tab
 like image:result-tag.png[image] .
 
- image:search-result.png[image] 
+image:search-result.png[image]
 
 The title of each search result contains the machine id, the file path
 and the number of lines of content which match the pattern. The detailed
 log line content will also be shown:
 
- image:single-search-result.png[image] 
+image:single-search-result.png[image]
 
 Clicking on one single search result will show the log content in
 display panel. The matching log line content will be highlighted.
 
- image:line-highlight-log%20%281%29.png[image] 
+image:line-highlight-log%20%281%29.png[image]
