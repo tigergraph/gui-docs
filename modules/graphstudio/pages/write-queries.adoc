@@ -169,7 +169,7 @@ result: Show the raw text result in JSON format of the last run query.
 the log for the last run query.
 |===
 
-== View schema:
+== View schema
 
 Viewing graph schema makes it more convenient for developers to refer to
 the schema topology logic and easier to write correct GSQL queries.
@@ -197,6 +197,12 @@ displayed in this panel as a JSON object.
 
 image:json-result.png[image]
 
+== View table result
+You can display the query result as a table:
+
+image::table-view.png[]
+
+Table rows can be sorted by any column with primitive type values. You can also download the table as a CSV file by clicking the download button next to the table name.
 
 == View logs
 

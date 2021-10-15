@@ -68,6 +68,7 @@ If the graph schema is modified after the exploration result is saved, the resul
 
 * *Save screenshot*: Save the current visualization result as a png file.
 * *Locate vertices in result*: Search the exploration result by vertex id or attribute value.
+* *Export*: Export the current visualization result as a png file or a zip file containing .csv files.
 * *Only show selections*: First select one or more objects. Clicking the button will hide all the objects which are not selected.
 * *Hide*: First select one or more objects. Clicking the button will hide the selected vertices and edges (or all if none is selected).
 * *Undo*: Undo the last change to the visualization result set (that is, changes to which objects are included in the result set).

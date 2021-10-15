@@ -30,9 +30,39 @@ If your vertices have attributes named `latitude` and `longitude`, with valid la
 
 image::geospatial-ex.png[Example of vertices and edges in the geospatial layout]
 
+=== Export result
+You can export the current visualization result as a png file or a zip file containing csv files by clicking  image:export-btn.png[]. When you click the button, a drop-down menu will appear, as shown below:
+
+image:download-dropdown.png[]
+
+You can select different export types by clicking on different items.
+When you choose to Export PNG, your browser will automatically download a picture named `export.png`.
+Below is an example of an exported .png file.
+
+
+image:export.png[]
+
+You can also choose the Export CSV option, and your browser will download a zip file named `[GraphName]_export_vertices_and_edges.zip`.
+The zip file contains .csv files that describe the exploration result.
+Each file corresponds to a vertex or edge type:
+
+image:export-csv-ex.png[]
+
+The CSV file for each vertex type contains Vertex ID and Vertex Type, in addition to the attributes of each vertex.
+Below is an example:
+
+image:vertex-csv.png[]
+
+For edge types, the CSV file contains Edge Type,  Source Vertex ID, Source Vertex Type, Target Vertex ID, Target Vertex Type and any edge attributes.
+Below is an example:
+
+image:edge-table-ex.png[]
+
 === Locate vertex
 
-The Locate Vertex In Result feature image:locate_vertex_btn.png[] searches for and then zooms in on vertices that match the given value for ID and/or attribute. For example, if you type "Mary" in the Locate Vertices in Result popup window, and have both of the checkboxes selected, then this feature will look for any vertices where "Mary" is an exact match for either the ID or any of the attribute values. Those vertices will be selected (and all other objects will be unselected). The display will zoom in to focus on the selected objects.
+The Locate Vertex In Result feature image:locate_vertex_btn.png[] searches for and then zooms in on vertices that match the given value for ID and/or attribute.
+For example, if you type "Mary" in Locate Vertices in Result popup window, and have both of the checkboxes selected, then this feature will look for any vertices where "Mary" is an exact match for either the ID or any of the attribute values.
+Those vertices will be selected (and all other objects will be unselected). The display will zoom in to focus on the selected objects.
 
 image::locate_vertex_in_result.png[]
 
