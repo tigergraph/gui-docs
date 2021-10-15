@@ -231,7 +231,7 @@ image::basic-info-banner.png[image]
 
 NOTE: If you want another vertex pattern or edge pattern to refer to current selected vertex or edge pattern's attributes, you need to give it a name.
 
-== Filter
+=== Filter
 
 If you expand the Filter section, you can add/edit/delete filters for
 the selected vertex or edge pattern:
@@ -256,7 +256,7 @@ When finished editing, you need confirm or cancel the change:
 
 image:confirm-filter.png[image]
 
-== Aggregation
+=== Aggregation
 
 If you expand the Aggregation section, you can add/edit/delete
 aggregations for the selected vertex pattern (aggregation on edge
@@ -346,7 +346,7 @@ Emily.birthYear + Emily.birthYear) / 4
 |san jose |collectPName = ["Kevin", "Kevin", "Emily", "Emily"] |
 |===
 
-== Order
+=== Order
 
 If you expand the Order section, you can add/edit/delete ordering for
 the selected vertex pattern (ordering on edge patterns is not
@@ -368,7 +368,7 @@ You can refer to aggregations in ordering expression. You can add
 multiple orderings, which follow the multi-key ordering rule (upper
 ordering dominates).
 
-== Limit
+=== Limit
 
 If you only want a subset of your matching result, you can use limit.
 Only the top limit results will be returned based on your ordering
@@ -415,14 +415,14 @@ errors in the visual pattern.
 |===
 
 [[graph-schema-]]
-== Graph schema
+=== Graph schema
 
 Viewing graph schema makes it more convenient for developers to refer to
 the schema topology logic and easier to construct the visual pattern.
 
 image:assets_-lhvjxin4__6ba0t-qmu_-lvm9pfm2-2ozgm2sd9_-lvmcthyogmsp0kft32s_graph-schema.png[image]
 
-== Visualize graph result
+=== Visualize graph result
 
 If the pattern execution result contains a graph structure, the result
 will be visualized in this panel as a graph. The panel is the same as
@@ -437,7 +437,7 @@ image:assets_-lhvjxin4__6ba0t-qmu_-lvm9pfm2-2ozgm2sd9_-lvmcxuo-u1fkbkapquo_visua
 You can switch to the JSON Result panel to see the result in JSON
 format.
 
-== View JSON result
+=== View JSON result
 
 You can see the JSON response of running the visual pattern from this
 tab:
@@ -445,7 +445,7 @@ tab:
 image:assets_-lhvjxin4__6ba0t-qmu_-lvm9pfm2-2ozgm2sd9_-lvmcnniabkll3klmwxr_json-result-vqb.png[image]
 
 [[problems-]]
-== Problems
+=== Problems
 
 If the visual pattern contains errors, you can see them here and debug:
 
