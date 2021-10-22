@@ -3,6 +3,10 @@
 
 This is a step-by-step guide to writing a new page in Antora. In this guide, I will add a page named `example.adoc` to the GraphStudio documentation.
 
+Video walk-through:
+
+video::hli47WlnDaQ[youtube]
+
 == Fork the source repository
 Fork the repository at https://github.com/lennessyy/tg-gui, and clone it in your local environment.
 
@@ -17,11 +21,29 @@ For example, since I plan to add the page in the GraphStudio module, my file is 
 `nav.adoc` is the navigation file for a module.
 You need to register your page on the navigation file in order for it to show up in the left site navigation.
 
+* If the file is at the root of the `pages` directory, then you only need to provide the filename.
+* If it is nested in another directory, you need to provide a relative path to the file from the root of the `pages` directory.
+
 == Add images
 Add the images you will be using in the document to the `images` folder of the same module. In my example, this will be the `graphstudios/images` folder.
 
 == Write the document
 Refer to https://docs.asciidoctor.org/asciidoc/latest/[Asciidoc Documentation] to learn more about AsciiDoc syntax.
+
+NOTE: One thing to note is that it takes two carriage returns to start a new paragraph in Asciidoc.
+This allows you to start every sentence on a new line, and you can spot sentences that are too long.
+
+=== Add images
+To add images in a document, use the image macro(`image::` or `image:`, followed by the name of the image, followed up square brackets). You do not need to specify any relative path
+
+.image macro
+----
+image::friday-meme.png[] <1>
+
+Here is an image image:friday-meme.png[] for work on a Friday. <2>
+----
+<1> Two colons for a block image
+<2> One colon for inline images
 
 == Add and commit your changes
 Add and commit your changes to Git.
@@ -32,7 +54,21 @@ Usually this is not necessary since you can already view the rendered output wit
 
 === Clone the build repository
 Clone the repository at https://github.com/lennessyy/doc-site.
-Change the url and branches to your local git repo, and follow the instructions in the README to build a local preview.
+
+=== Edit the Antora Playbook
+Change the url and branches in the `antora-playbook.yml` file to your local git repo.
+
+CAUTION: If created a new Git branch that you are using to preview, make sure that the `antora.yml` file at the root of your source repository do not have duplicate version names between all the branches you are using to build the site.
+
+=== Run build
+Follow the instructions in the README to build a local preview. In summary:
+
+----
+npm install
+npm run build
+----
+
+Once the build finishes, you can open the static html files straight from your terminal or serve it with `http-server`.
 
 
 == Push and make a pull request
