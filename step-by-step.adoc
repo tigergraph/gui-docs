@@ -1,0 +1,39 @@
+= Step-by-step guide for writing a new page
+:sectnums:
+
+This is a step-by-step guide to writing a new page in Antora. In this guide, I will add a page named `example.adoc` to the GraphStudio documentation.
+
+== Fork the source repository
+Fork the repository at https://github.com/lennessyy/tg-gui, and clone it in your local environment.
+
+Check out the branch you want to work in.
+Since you are working in a fork, choose the branch that corresponds to the version you are creating documentation for.
+
+== Create the new document
+Create the document in the `pages` directory of the module you are working in.
+For example, since I plan to add the page in the GraphStudio module, my file is created at `gui/modules/graphstudio/pages/example.adoc`.
+
+== Add the document to `nav.adoc`
+`nav.adoc` is the navigation file for a module.
+You need to register your page on the navigation file in order for it to show up in the left site navigation.
+
+== Add images
+Add the images you will be using in the document to the `images` folder of the same module. In my example, this will be the `graphstudios/images` folder.
+
+== Write the document
+Refer to https://docs.asciidoctor.org/asciidoc/latest/[Asciidoc Documentation] to learn more about AsciiDoc syntax.
+
+== Add and commit your changes
+Add and commit your changes to Git.
+
+== Load a local preview (Optional)
+You can build a local preview of the doc site.
+Usually this is not necessary since you can already view the rendered output with an IDE plugin, but for the first few times of contributing, this might help you feel more comfortable about your commits.
+
+=== Clone the build repository
+Clone the repository at https://github.com/lennessyy/doc-site.
+Change the url and branches to your local git repo, and follow the instructions in the README to build a local preview.
+
+
+== Push and make a pull request
+Push the changes to your fork and make a Pull Request.
