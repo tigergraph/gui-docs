@@ -61,6 +61,12 @@ Click image:delete_btn.png[] to delete a proxy group.
 
 Read more about proxy group at xref:3.2@tigergraph-server:user-access:README.adoc[].
 
+=== User-defined Roles
+
+
+
+
+
 === Role Management
 
 [CAUTION]
