@@ -1,0 +1,23 @@
+= GSQL Output File
+
+== GSQL Output File Page
+
+After users print the query result into a file, they can preview or download the output files through this page.
+
+image::gsql-output-file-initial.png[]
+
+By default, all machines is chosen. User can select a specific machine in the most left dropdown.
+
+File path input is required. Once file path is provided, `Preview` and `Download` buttons will be enabled.
+
+image::gsql-output-file-button-enabled.png[]
+
+After providing file path, user can click image:preview-btn.png[] to preview the file content (up to 1000 bytes).
+
+image::file-in-preview.png[]
+
+User can also click image:download-btn.png[] to download the file.
+
+File preview and download are protected by GSQL file output policy. When a file path is not allowed by the policy, following error message will be shown either with clicking `Preview` or `Download` button.
+
+image::output-file-err.png[]
