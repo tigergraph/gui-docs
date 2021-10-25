@@ -1,0 +1,33 @@
+= Download GSQL Output File
+:secnums:
+
+In a GSQL query, users can print any output from the query to a file. You can download the query output files from Admin Portal. 
+
+== Procedure
+
+=== Navigate to GSQL Output File page
+
+Navigate to Admin Portal, and then click "Others" on the left side navigation, and Click "GSQL Output File". After users print the query result into a file, they can preview or download the output files through this page.
+
+image::gsql-output-file-initial.png[]
+
+=== Select nodes and provide file path
+
+You can select a specific machine in the cluster to download the output file from. By default, all machines are selected. 
+
+
+=== Preview and download file
+
+After selecting the machine, you need to provide a file path. Once file path is provided, `Preview` and `Download` buttons will be enabled.
+
+image::gsql-output-file-button-enabled.png[]
+
+After providing file path, you can click image:preview-btn.png[] to preview the file content (up to 1000 bytes).
+
+image::file-in-preview.png[]
+
+Click image:download-btn.png[] to download the file.
+
+File previews and downloads are protected by xref:tigergraph-server:security:file-output-policy.adoc[GSQL file output policy]. When a file path is not allowed by the policy, you will not be able download the file. Attempting to download the file will trigger the following error message. 
+
+image::output-file-err.png[]
