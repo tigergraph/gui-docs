@@ -13,4 +13,6 @@
 ** Security
 *** xref:security/ldap.adoc[]
 *** xref:security/sso.adoc[]
+** Others
+*** xref:others/gsql-output-file.adoc[]
 ** xref:known-issues.adoc[]
