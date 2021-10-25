@@ -160,16 +160,16 @@ Expand or collapse the Result panel.
 Show the graph schema.
 
 | image:visual-result.png[image]
-|Visualize graph result: Show the visual result of the last run query.
+|Visualize graph result: Display query result in visualized graph.
 
 | image:json-result.png[image]  |View JSON
-result: Show the raw text result in JSON format of the last run query.
+result: Display query result in JSON format.
 
 | image:table-result.png[image]  |View table result
-: Show the raw text result in tabular format.
+: Display query result in a table.
 
 | image:visualize_log.png[image]  |View logs: Show
-the log for the last run query.
+the log for the most recent query run.
 |===
 
 == View schema
