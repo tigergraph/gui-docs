@@ -150,7 +150,7 @@ log messages. On the left is a toolbar with buttons for changing the the
 panel size or for switching to a different type of result. The buttons,
 from top to bottom, are the following:
 
-[cols="^,<",options="header",]
+[cols="^1,<3",options="header",]
 |===
 |menu option |functionality
 | image:expand_panel.png[image]  |Expand/Collapse:
@@ -160,13 +160,16 @@ Expand or collapse the Result panel.
 Show the graph schema.
 
 | image:visual-result.png[image]
-|Visualize graph result: Show the visual result of the last run query.
+|Visualize graph result: Display query result in visualized graph.
 
 | image:json-result.png[image]  |View JSON
-result: Show the raw text result in JSON format of the last run query.
+result: Display query result in JSON format.
+
+| image:table-result.png[image]  |View table result
+: Display query result in a table.
 
 | image:visualize_log.png[image]  |View logs: Show
-the log for the last run query.
+the log for the most recent query run.
 |===
 
 == View schema
@@ -195,7 +198,7 @@ format.
 If there is no graph structure in the result, the result will be
 displayed in this panel as a JSON object.
 
-image:json-result.png[image]
+image:json-view.png[image]
 
 == View table result
 You can display the query result as a table:
