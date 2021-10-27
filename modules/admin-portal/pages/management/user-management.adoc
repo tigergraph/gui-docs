@@ -1,38 +1,50 @@
 = User Management
 
-== User Management Page
 The User Management page has three tabs: My Profile, All Users and Role Management.
 
-=== My Profile
+== My Profile
 
-All users can access the My Profile tab to manage themselves.
+All users can access the My Profile tab to manage their own credentials.
 
 image::my-profile-updated.png[]
 
-There are three information cards at the top: Username shows the user's username; Accessible graph shows how many graphs the user can access, and Password allows user to change password by clicking the key icon image:key.png[] :
+There are three information cards at the top:
+
+* Username shows the user's username;
+* Accessible graph shows how many graphs the user can access
+* Password allows user to change password by clicking the key icon image:key.png[] :
 
 image::change-password.png[]
 
-Below the cards are secret management section. You can create as many secrets for each graph as you want, but remember to copy the secret value out at the creation time. Once you refresh the page or go to another page and come back, the actual secret value will be masked for security. You need to provide an alias for the secret, and click the green plus sign to add the secret.
+Below the cards is secret management section, where you can create and delete secrets, which are unique strings that can be used to generate authorization tokens.
+You need to provide an alias for the secret,
+
+You can create as many secrets for each graph as you want, but remember to copy the secret value and save it at a secure location when you generate a secret.
+Once you refresh the page or go to another page and come back, the actual secret value will be masked for security.
 
 image::secret-management.png[]
 
-When token authentication is enabled, you need to use the secrets to request tokens and add the tokens in the HTTP request headers to call TigerGraph RESTful endpoints. Read more at: xref:3.2@tigergraph-server:user-access:README.adoc[].
+When token authentication is enabled, you need to use the secrets to request tokens and add the tokens in the HTTP request headers to call TigerGraph REST endpoints.
+Read more at: xref:3.2@tigergraph-server:user-access:README.adoc[].
 
-=== All Users
+== All Users
+
+The All Users tab displays information on all users. Only users with user or proxy groups management permission can access this tab.
+Users with user management permission(`READ_USER`, `WRITE_USER` privileges) can add new users, change other users' password, delete users.
+Users with proxy groups management permission(`READ_PROXYGROUP`, `WRITE_PROXYGROUP` privileges) can create proxy groups, change proxy rules of the groups, and delete proxy groups.
+To see a list of all privileges, see xref:tigergraph-server:reference:list-of-privileges.adoc[List of Privileges]
+
+image::all-users-updated.png[]
 
 [NOTE]
 ====
 Both native users and proxy users are displayed in the User section. However, you can only change password for native users.
 ====
 
-Only users having user or proxy groups management permission can access this tab. Users with user management permission(`READ_USER`, `WRITE_USER` privileges) can add new users, change other users' password, delete users. Users with proxy groups management permission(`READ_PROXYGROUP`, `WRITE_PROXYGROUP` privileges) can create proxy groups, change proxy rules of the groups, and delete proxy groups. Check more details in xref:tigergraph-server:reference:list-of-privileges[List of Privileges]
 
-image::all-users-updated.png[]
+Click image:add-user-btn.png[Add user button] to add new users:
 
-Click image:add-user-btn.png[] to add new users:
-
-image::all-users%20%281%29.png[]
+image::all-users%20%281%29.png[Add new user pop-up]
 
 Click image:change-others-password-btn.png[] to change other users' password:
 
@@ -56,90 +68,107 @@ Click image:delete_btn.png[] to delete a proxy group.
 
 Read more about proxy group at xref:3.2@tigergraph-server:user-access:README.adoc[].
 
-=== User-defined Roles
+== User-defined Roles
 
-Users must have `READ_ROLE` privilege on at least one graph to access this tab. To create/edit/delete a role, user must also have `WRITE_ROLE` privilege on that graph. Check more details in xref:tigergraph-server:user-access:roles-and-privileges[Roles and Privileges]
+The _User-defined roles_ tab lists all user-defined roles and allows users with sufficient privileges to create roles. Users must have the `READ_ROLE` privilege on at least one graph to access this tab. This section describes the procedures to create, edit, and drop roles, as well as assign roles to users in GraphStudio.
+To learn more about roles and privileges in TigerGraph's role-based access control system, see xref:tigergraph-server:user-access:README.adoc[].
 
-At the right upper corner, there is a hint button image:udr-hint-btn.png[]. Click the button and jump the official roles and privileges documentation to read more about roles and privileges. All user-defined roles that you can view will list in a table:
+
+To create/edit/delete a role, user must also have `WRITE_ROLE` privilege on that graph. See more details in xref:tigergraph-server:user-access:roles-and-privileges.adoc[Roles and Privileges]
+
+At the right upper corner, there is a hint button image:udr-hint-btn.png[]. Click the button and jump to the official roles and privileges documentation to read more about roles and privileges.
+All user-defined roles that you can view will list in a table:
 
 image::user-defined-roles.png[]
 
-Each row shows one role. You can view the role name and type. For global roles, all privileges on either global level or a specific graph will be listed. At the very last, there are action buttons. Click image:edit.png[] to edit privileges of a role. Click image:delete_btn.png[] to drop a role.
+Each row shows one role along with the privileges it contains.
+For global roles, all privileges on either global level or a specific graph will be listed.
 
-==== Create a user-defined role
+=== Create a user-defined role
 
-Click image:create-role-btn.png[] at the right upper corner to create a role. You can either choose to create a global or a local role on a graph. We provide a hint with a question mark image:role-type-hint-btn.png[] next to `Role type` to briefly explain the types.
+Click image:create-role-btn.png[] at the right upper corner to create a role.
+You can either choose to create a global or a local role on a graph.
 
 image:role-type-hint.png[]
 
-===== Create a global role
+==== Create a global role
 
-Select image:global-ratio-btn.png[] to start creating a global role. The first panel is for the global privileges, you can check to assign global level privileges for this role.
+Select image:global-ratio-btn.png[] to start creating a global role. The first panel is for the global privileges, where you can select global level privileges to assign to this role.
 
 image::create-global-role.png[]
 
-Click image:grant-privileges-on-graph.png[], a new privileges panel would present. Select a graph first in the dropdwon menu, then grant local privileges on that graph. You can also click image:remove-btn.png[] to remove the graph that you want to add privileges on.
+Click image:grant-privileges-on-graph.png[] at the bottom of the pop-up window to reveal the privileges panel for local privileges.
+Select a graph first in the dropdown menu, then grant local privileges on that graph.
+You can also click image:remove-btn.png[] to remove the graph that you want to add privileges on.
 
 image::privileges-on-a-graph.png[]
 
-===== Create a local role
+==== Create a local role
 
-Select image:local-ratio-btn.png[] to start creating a local role. Select a graph in the dropdown that you want to create the role on.
+Select image:local-ratio-btn.png[] to start creating a local role.
+Select a graph in the dropdown that you want to create the role on.
 
 image::create-local-role.png[]
 
-==== Edit a user-defined role
+=== Edit a user-defined role
 
-Click image:edit.png[] to open the edit popup. The whole procedure is similar to creating a role. But when editing the role, you cannot change the type. For local roles, you cannot change the graph as well.
+Click image:edit.png[] to open the edit pop-up.
+Deselect a privilege to drop it from the role and select one to add it to the role.
+When editing a role, you cannot change a local role to a global role, or vice versa.
 
 image:edit-global-role.png[] image:edit-local-role.png[]
 
-==== Drop a role
+=== Drop a role
 
 Click image:delete_btn.png[] to drop a role.
 
-=== Role Management
+== Role Management
+
+In the _Role Management_ tab, users can view the role assignment of users, assign role to users, and revoke roles from users. Users must have the `READ_ROLE` privilege along with the `READ_USER` or `READ_PROXYGROUP` privilege on at least one graph to access this tab.
 
 [CAUTION]
 ====
 Admin Portal does not indicate whether a user belongs a proxy group. You can find out more from GSQL client.
 
-Admin Portal shows a combination of roles for proxy users. Proxy user which belongs to a proxy group inherits all the roles from the proxy group plus all the roles the proxy user has. Therefore, if you want to revoke a role from a proxy user, you need to revoke the role from the proxy group first. Then you might need to revoke the same role from the proxy user if the proxy user also has that role.
+Admin Portal shows a combination of roles for proxy users.
+Proxy user which belongs to a proxy group inherits all the roles from the proxy group plus all the roles the proxy user has.
+Therefore, if you want to revoke a role from a proxy user, you need to revoke the role from the proxy group first.
+Then you might need to revoke the same role from the proxy user if the proxy user also has that role.
 ====
 
-Users must have `READ_ROLE` privilege along with`READ_USER` or `READ_PROXYGROUP` privilege on at least one graph to access this tab. To assign roles, users need to have `WRITE_ROLE` privilege. If you only have `READ_ROLE` privilege, you can only view the current assignment but can not modify it. Check GSQL privilege details in xref:tigergraph-server:user-access:role-management[Role Management]
+To assign roles, users need to have `WRITE_ROLE` privilege.
+If you only have `READ_ROLE` privilege, you can only view the current assignment but can not modify it.
 
 image::role-management.png[]
 
-==== Select a graph
+=== Select a graph
 
-You can use the dropdown menu at the top left corner to select on which graph you want to assign different roles to different users, you can either choose `global` to assign global roles or a specific graph to assign local roles:
+You can use the dropdown menu in the top left corner to select on which graph you want to assign different roles to different users, you can either choose `global` to assign global roles or a specific graph to assign local roles:
 
 image:select-graph-1.png[] image:select-graph-2.png[]
 
-==== Select a role
+=== Select a role
 
 You can use the second dropdown menu to select a role that you want to assign to different users:
 
 image::select-role.png[]
 
-[NOTE]
+NOTE: With `global` selected, you can assign all global built-in or user-defined roles.
+With a specific graph selected, you can assign all local built-in roles or local user-defined roles within that graph.
 
-With `global` selected, you can assign all global built-in or user-defined roles. With a specific graph selected, you can assign all local built-in roles or local user-defined roles within that graph.
+=== View role details
 
-==== View role details
-
-Next to the dropdowns, click the image:view-role-detail-btn.png[] to view the infos of the chosen role.
+Next to the dropdowns, click the image:view-role-detail-btn.png[] to view the information on the selected role.
 
 image::role-detail.png[]
 
-==== Search user
+=== Search user
 
-You can type in text to search for users:
+You can type in the search box to search for users:
 
 image::search-user.png[]
 
-==== Settings for users
+=== Settings for users
 
 You can sort the users by alphabetic order or name length:
 
@@ -149,27 +178,25 @@ You can choose to show all users, show the users who have the role, or show the 
 
 image::show-users.png[]
 
-==== Grant/revoke a role to/from users
+=== Grant/revoke a role
 
-[NOTE]
+NOTE: On a small screen, you need to click image:manage-btn.png[] to open the assignment panel.
 
-Within a small screen, you need to click image:manage-btn.png[] to open the assignment panel.
-
-All users will be listed with a checkbox. You can check to grant or uncheck to revoke.
+Once you've selected a graph and a role, all users will be listed with a checkbox. You can check the box next to the user to grant the role, or uncheck to revoke the role.
 
 image::user-assignment.png[]
 
-After modifying your assignment, image:discard-btn.png[] and image:save-btn.png[] will be enabled. You either discard all your changes, or save your assignment.
+After modifying your assignment, click image:save-btn.png[] to save your changes.
+You can also discard your changes by clicking the discard button image:discard-btn.png[]
 
-image::user-assignment-changed.png[]
+image::user-assignment-changed.png[View after changing role assignment]
 
-After assignment saved or discard, the two buttons would be disabled again.
 
-Similarly, you can also click image:proxy-groups%20%281%29.png[] to switch to proxy groups and manage their roles.
+Similarly, you can also click the proxy group button image:proxy-groups%20%281%29.png[] to switch to proxy groups and manage their roles.
 
 image::manage-groups.png[]
 
-[NOTE]
+[TIP]
 ====
-*Tip:* If you manage users through GSQL, please click on refresh button in the top right corner to reflect the changes in Admin Portal.
+If you have made changes to users through GSQL after opening the user management page, click the refresh button in the top right corner to reflect the changes in Admin Portal.
 ====
