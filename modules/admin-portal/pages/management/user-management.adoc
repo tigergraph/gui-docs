@@ -21,17 +21,12 @@ When token authentication is enabled, you need to use the secrets to request tok
 
 === All Users
 
-[CAUTION]
-====
-Due to the difference in users' information display compared to GSQL, Admin Portal doesn't allow users with admin role to a graph to create/edit/delete users or assign a user with a role to a graph. Superuser can manage users in this case. Users with Admin role to a local graph can revoke roles to other users for this local graph.
-====
-
 [NOTE]
 ====
 Both native users and proxy users are displayed in the User section. However, you can only change password for native users.
 ====
 
-Only superuser can access this tab. Superuser can add new users, change other users' password, delete users, create proxy groups, change proxy rules of the groups, and delete proxy groups.
+Only users having user or proxy groups management permission can access this tab. Users with user management permission(`READ_USER`, `WRITE_USER` privileges) can add new users, change other users' password, delete users. Users with proxy groups management permission(`READ_PROXYGROUP`, `WRITE_PROXYGROUP` privileges) can create proxy groups, change proxy rules of the groups, and delete proxy groups. Check more details in xref:tigergraph-server:reference:list-of-privileges[List of Privileges]
 
 image::all-users-updated.png[]
 
