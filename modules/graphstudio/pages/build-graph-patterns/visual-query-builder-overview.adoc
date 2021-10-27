@@ -20,13 +20,13 @@ This is a basic vertex pattern within a visual pattern:
 
 image::vertex-pattern-basic.png[]
 
-This is a vertex pattern with 2 filters, 1 aggregation, 2 ordering, and limit:
+This is a vertex pattern with 2 filters, 1 attachment, 2 ordering, and limit:
 
-image::vertex-pattern-full.png[]
+image::vertex-pattern-full_3.3.png[]
 
 This is a vertex pattern that will be output in the pattern execution result. You can see the glow around the border and the highlight at the label:
 
-image::vertex-pattern-full-output.png[]
+image::vertex-pattern-full-output_3.3.png[]
 
 This is a basic edge pattern:
 
@@ -56,9 +56,9 @@ This is the visual pattern matching all the departments having at least one male
 
 image::demo_2.png[]
 
-This is the visual pattern that matches the hometown of the most people having the programming skill. The aggregation *COUNT(DISTINCT p) as cnt* annotates the number of people born in each city that have the programming skill. Then we order the city vertices *by their descending cnt value*, and choose the top 1 city:
+This is the visual pattern that matches the hometown of the most people having the programming skill. The attachment *COUNT(DISTINCT p) as cnt* annotates the number of people born in each city that have the programming skill. Then we order the city vertices *by their descending cnt value*, and choose the top 1 city:
 
-image::demo_3.png[]
+image::demo_3_3.3.png[]
 
 This is the visual pattern matching all such three persons A, B and C, where A is B's friend, and A is C's friend, and B is C's manager:
 
@@ -76,15 +76,15 @@ Working panel is the central component (both visually and logically) of Visual Q
 
 Like other pages in GraphStudio, you can zoom-in, zoom-out and drag the visual pattern. If you have unsaved changes to the pattern, or containing errors in the pattern, some warning messages will show at the top left corner of working panel:
 
-image::assets_-lhvjxin4__6ba0t-qmu_-lvm0wj98fiup0wogjez_-lvm3t_lg0pllsdg_rqv_pattern-working-panel.png[]
+image::pattern_working_panel.png[]
 
 If you click the message indicating errors, the Console will switch to Problems tab:
 
-image::assets_-lhvjxin4__6ba0t-qmu_-lvm0wj98fiup0wogjez_-lvm3eb9dlldguwxg6rb_pattern-errors%20%282%29.png[]
+image::pattern_errors.png[]
 
 You can click the error messages. For some errors, the vertex patterns, edge patterns and widgets involved in the error will be marked red to facilitate your debugging:
 
-image::assets_-lhvjxin4__6ba0t-qmu_-lvm0wj98fiup0wogjez_-lvm4llu2985_6wfdpbv_pattern-highlight-error.png[]
+image::pattern_highlight_error.png[]
 
 === Pattern List
 
@@ -181,9 +181,9 @@ link:#_widget[here].
 edge pattern, and the config panel will enter editing mode for the
 selected vertex or edge pattern, with the Filter section expanded.
 
-|image:agg-btn.png[] |Aggregation: click this button then click a vertex pattern,
+|image:agg-btn.png[] |Attachment: click this button then click a vertex pattern,
 and the config panel will enter editing mode for the selected vertex
-pattern, with the Aggregation section expanded.
+pattern, with the Attachment section expanded.
 
 |image:sort-btn.png[] |Order by: click this button then click a vertex pattern,
 and the config panel will enter editing mode for the selected vertex
@@ -256,35 +256,67 @@ When finished editing, you need confirm or cancel the change:
 
 image:confirm-filter.png[image]
 
-=== Aggregation
+=== Attachment
 
-If you expand the Aggregation section, you can add/edit/delete
-aggregations for the selected vertex pattern (aggregation on edge
+If you expand the Attachment section, you can add/edit/delete
+attachments for the selected vertex pattern (attachment on edge
 patterns is not supported):
 
-image:agg-non-edit-mode.png[image]
+image:att-non-edit-mode.png[image]
 
 Click image:edit.png[image] beside one
-aggregation and enter editing mode for the aggregation. You can edit
-both the aggregation expression and aggregation name:
+attachment and enter editing mode for the attachment. You can edit
+both the attachment expression and attachment name:
 
-image:add-edit-mode.png[image]
+image:att-edit-mode.png[image]
 
 When finished editing, you need to confirm or cancel the change:
 
-image:agg-confirm.png[image]
+image:att-confirm.png[image]
 
-When talking about aggregation, it is actually grouping all the matching
+In attachments you can either attach a single value or attach the results of an aggregation function, 
+to all the matched vertex entity results.
+
+Attaching a single value means attaching the given value to all vertex entities within the matched result.
+If for example, you choose to attach the integer value 1, then that value will be attached to all the matched
+vertex entity results where the attachment was applied to. If the attachment is applied to an entity that is 
+involved in multiple matches, then the attached value is non-deterministic.
+
+Attaching the results of an aggregation function means grouping all the matching
 results by the vertex entity which match the vertex pattern, and then
-aggregated based on the expression. Take this example:
+aggregated based on the expression. 
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvmjvt2mkzujjj4alns_-lvqul-kk8lpmclahxhd_aggregation-example.png[image]
+Take this example:
 
-In the city vertex pattern, we have created 8 different aggregations:
+image:att_examples.png[image]
 
 [cols="<,<,<",options="header",]
 |===
-|name |aggregation expression |explanation
+|name |attachment expression |explanation
+|singleValueInt |1 |Attach the integer number `1` to each matched city vertex.
+
+|singleValueReal |1.5 |Attach the real number `1.5` to each matched city vertex.
+
+|singleValueString |"singleValueString" |Attach the string "singleValueString" to
+each matched city vertex.
+
+|singleValueBool |true |Attach the boolean value `true` to each matched city vertex.
+
+|singleValueDatetime |2021-01-01 |Attach the datetime value `2021-01-01` to each
+matched city vertex.
+
+|singleValueVertex |p |Attach one of the vertex ids of the matched vertices p to the matched 
+city vertex connected to vertices p.
+
+|singleValueEdge |b |Attach one of the edge ids of the matched edges b_i to the matched 
+city vertex with edges b.
+
+|singleValueAttribute |name |Attach the attribute name of the matched city vertex to
+the matched city vertex itself.
+
+|singleValueAttributeOfVertexOrEdge |p.name |Attach one of the `name` attribute of the matched 
+vertices p to the matched city vertex connected to vertices p.
+
 |countP |COUNT(DISTINCT p) |Count number of distinct person vertices
 matched to each city vertex.
 
@@ -303,48 +335,112 @@ all person vertices matched to each city vertex.
 |avgPBirthyear |AVG(p.birthYear) |Get the average value of height
 attribute of all person vertices matched to each city vertex.
 
-|collectP |p |Collect all person vertices matched to each city vertex.
+|collectP |COLLECT(p) |Collect all person vertices matched to each city vertex.
 
-|collectPName |p.name |Collect all person vertices' name matched to each
+|collectPMarried |COLLECT(DISTINCT p.married) |Collect all distinct person vertices' married status matched to each
 city vertex.
+
+|avgPAge |AVG((2021 - p.birthYear)) |Calculate the average age of all person
+vertices matched to each city vertex.
 |===
 
 Consider we have the following matching result:
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvmjvt2mkzujjj4alns_-lvqttiowzxn5mwke2a7_matching-agg.png[image]
+image:att_results.png[image]
 
-We have the following aggregation result table for city vertex _san jose_:
+We have the following attachment result table for city vertex _san jose_:
 
 [width="100%",cols="<34%,<33%,<33%",options="header",]
 |===
-|city vertex |aggregation result |explanation
+|city vertex |attachment result |explanation
+|san jose |singleValueInt = 1 |Just attach the integer number `1` on the matched city vertex.
+
+|san jose |singleValueReal = 1.5 |Just attach the real number `1.5` on the matched city vertex.
+
+|san jose |singleValueString = singleValueString |Just attach the string value "singleValueString"
+on the matched city vertex.
+
+|san jose |singleValueBool = true |Just attach the boolean value `true` on the matched city vertex.
+
+|san jose |singleValueDatetime = ["2020-01-01 00:00:00"] |Just attach the datetime value `2020-01-01` 
+on the matched city vertex.
+
+|san jose |singleValueVertex = ["Emily"] OR singleValueVertex = ["Kevin"] |There are two person vertices connected to city vertex _san jose_
+"Emily" and "Kevin". The resulting value stored in singleValueVertex is non deterministic and could be either 
+"Emily" or "Kevin".
+
+|san jose |singleValueEdge = [
+            {
+              "attributes": {
+                "birthday": "1992-05-23 00:00:00"
+              },
+              "directed": true,
+              "e_type": "born_in",
+              "from_id": "Emily",
+              "from_type": "person",
+              "to_id": "san jose",
+              "to_type": "city"
+            }
+        ] 
+        OR 
+        singleValueEdge = [
+            {
+              "attributes": {
+                "birthday": "1992-05-23 00:00:00"
+              },
+              "directed": true,
+              "e_type": "born_in",
+              "from_id": "Emily",
+              "from_type": "person",
+              "to_id": "san jose",
+              "to_type": "city"
+            }
+        ] | The city vertex _san jose_ is connected to two born in edges, one of them connects the _san jose_ vertex 
+          to the person vertex "Kevin" and the second edge connects the _san jose_ vertex to the person vertex "Emily". 
+          The resulting value stored in singleValueEdge is non deterministic and could be either one of these edges.
+
+|san jose |singleValueAttribute = redwood city | The city vertex _san jose_ has the attribute `name` and the value of that 
+ is attribute is attached to the _san jose_ vertex.
+
+|san jose |singleValueAttributeOfVertexOrEdge = Emily 
+OR 
+singleValueAttributeOfVertexOrEdge = Kevin | The city vertex _san jose_ is connected to two person vertices, 
+one of them has the attribute `name` = "Emily" and the other has the attribute `name` = "Kevin". The resulting value stored in 
+singleValueAttributeOfVertexOrEdge is non deterministic and could be either "Emily" or "Kevin".
+
 |san jose |countP = 2 |Kevin and Emily
 
-|san jose |countMatched = 4 a|
+|san jose |countMatched = 3 a|
 (san jose)<-[born_in]-(Kevin)-[person_has_skill]->(programming)
 
 (san jose)<-[born_in]-(Kevin)-[person_has_skill]->(public speech)
 
 (san jose)<-[born_in]-(Emily)-[person_has_skill]->(human resource)
 
-(san jose)<-[born_in]-(Emily)-[person_has_skill]->(programming)
-
-|san jose |sumPHeight = 676 |Kevin.height + Kevin.height + Emily.height
-+ Emily.height = 173 + 173 + 165 + 165
+|san jose |sumPHeight = 511 |Kevin.height + Kevin.height + Emily.height 
+= 173 + 173 + 165
 
 |san jose |minPBirthyear = 1991 |Min(Kevin.birthYear, Kevin.birthYear,
-Emily.birthYear, Emily.birthYear)
+Emily.birthYear)
 
 |san jose |maxPBirthyear = 1992 |Max(Kevin.birthYear, Kevin.birthYear,
-Emily.birthYear, Emily.birthYear)
+Emily.birthYear)
 
-|san jose |avgPBirthyear = 1991.5 |(Kevin.birthYear + Kevin.birthYear +
-Emily.birthYear + Emily.birthYear) / 4
+|san jose |avgPBirthyear = 1991.33333 |(Kevin.birthYear + Kevin.birthYear +
+Emily.birthYear) / 3
 
-|san jose |collectP = [Kevin, Kevin, Emily, Emily] |
+|san jose |collectP = [Kevin, Kevin, Emily] |
 
-|san jose |collectPName = ["Kevin", "Kevin", "Emily", "Emily"] |
+|san jose |collectPName = [false] |Both Kevin and Emily's married status is false.
+
+|san jose |avgPAge = 29.6667 |((2021 - Kevin.birthYear) + (2021 - Kevin.birthYear) +
+(2021 - Emily.birthYear)) / 3
 |===
+
+As you can see above the values of attaching a single value for `datetime`, `vertex` and `edge` are stored in a list. This is because,
+we currently do not have an accumulator to store these data types directly yet.
+
+The data types supported for single value attachments are: `integer`, `real`, `string`, `bool`, `datetime`, `vertex` and `edge`.
 
 === Order
 
@@ -364,9 +460,13 @@ When finished editing, you need to confirm the change:
 
 image:confirm-order.png[image]
 
-You can refer to aggregations in ordering expression. You can add
+You can refer to attachments in ordering expression. You can add
 multiple orderings, which follow the multi-key ordering rule (upper
-ordering dominates).
+ordering dominates). We support ordering by data of types: `integer`,
+`real`, `string` and `datetime`. However, single value attachments with
+the type `datetime` are stored in a list, thus, we currently do not 
+support ordering based on single value attachments that have the `datetime`
+data type.
 
 === Limit
 
@@ -465,13 +565,13 @@ There are three different rendering options.
 
 image:render-options.png[image]
 
-By default, Pattern detail and Output glow are checked. All the filters, aggregations, ordering conditions and limits are rendered, and the
+By default, Pattern detail and Output glow are checked. All the filters, attachments, ordering conditions and limits are rendered, and the
 vertex and edge patterns that will be in result will be highlighted with
 glow:
 
 image:render-detail.png[image]
 
-If Pattern detail is not checked, add-on marks will indicate that there are filters, aggregations, ordering conditions and limits on
+If Pattern detail is not checked, add-on marks will indicate that there are filters, attachments, ordering conditions and limits on
 corresponding vertex patterns and edge patterns:
 
 image:render-addon.png[image]
