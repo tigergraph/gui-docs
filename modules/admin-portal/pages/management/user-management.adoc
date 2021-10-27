@@ -58,9 +58,45 @@ Read more about proxy group at xref:3.2@tigergraph-server:user-access:README.ado
 
 === User-defined Roles
 
+Users must have `READ_ROLE` privilege on at least one graph to access this tab. To create/edit/delete a role, user must also have `WRITE_ROLE` privilege on that graph. Check more details in xref:tigergraph-server:user-access:roles-and-privileges[Roles and Privileges]
 
+At the right upper corner, there is a hint button image:udr-hint-btn.png[]. Click the button and jump the official roles and privileges documentation to read more about roles and privileges. All user-defined roles that you can view will list in a table:
 
+image::user-defined-roles.png[]
 
+Each row shows one role. You can view the role name and type. For global roles, all privileges on either global level or a specific graph will be listed. At the very last, there are action buttons. Click image:edit.png[] to edit privileges of a role. Click image:delete_btn.png[] to drop a role.
+
+==== Create a user-defined role
+
+Click image:create-role-btn.png[] at the right upper corner to create a role. You can either choose to create a global or a local role on a graph. We provide a hint with a question mark image:role-type-hint-btn.png[] next to `Role type` to briefly explain the types.
+
+image:role-type-hint.png[]
+
+===== Create a global role
+
+Select image:global-ratio-btn.png[] to start creating a global role. The first panel is for the global privileges, you can check to assign global level privileges for this role.
+
+image::create-global-role.png[]
+
+Click image:grant-privileges-on-graph.png[], a new privileges panel would present. Select a graph first in the dropdwon menu, then grant local privileges on that graph. You can also click image:remove-btn.png[] to remove the graph that you want to add privileges on.
+
+image::privileges-on-a-graph.png[]
+
+===== Create a local role
+
+Select image:local-ratio-btn.png[] to start creating a local role. Select a graph in the dropdown that you want to create the role on.
+
+image::create-local-role.png[]
+
+==== Edit a user-defined role
+
+Click image:edit.png[] to open the edit popup. The whole procedure is similar to creating a role. But when editing the role, you cannot change the type. For local roles, you cannot change the graph as well.
+
+image:edit-global-role.png[] image:edit-local-role.png[]
+
+==== Drop a role
+
+Click image:delete_btn.png[] to drop a role.
 
 === Role Management
 
@@ -71,7 +107,7 @@ Admin Portal does not indicate whether a user belongs a proxy group. You can fin
 Admin Portal shows a combination of roles for proxy users. Proxy user which belongs to a proxy group inherits all the roles from the proxy group plus all the roles the proxy user has. Therefore, if you want to revoke a role from a proxy user, you need to revoke the role from the proxy group first. Then you might need to revoke the same role from the proxy user if the proxy user also has that role.
 ====
 
-Users must have `READ_ROLE` privilege along with`READ_USER` or `READ_PROXYGROUP` privilege to access this tab. To assign roles, users need to have `WRITE_ROLE` privilege. If you only have `READ_ROLE` privilege, you can only view the current assignment but can not modify it. Check GSQL privilege details within xref:tigergraph-server:user-access:role-management[Role Management]
+Users must have `READ_ROLE` privilege along with`READ_USER` or `READ_PROXYGROUP` privilege on at least one graph to access this tab. To assign roles, users need to have `WRITE_ROLE` privilege. If you only have `READ_ROLE` privilege, you can only view the current assignment but can not modify it. Check GSQL privilege details in xref:tigergraph-server:user-access:role-management[Role Management]
 
 image::role-management.png[]
 
