@@ -21,17 +21,12 @@ When token authentication is enabled, you need to use the secrets to request tok
 
 === All Users
 
-[CAUTION]
-====
-Due to the difference in users' information display compared to GSQL, Admin Portal doesn't allow users with admin role to a graph to create/edit/delete users or assign a user with a role to a graph. Superuser can manage users in this case. Users with Admin role to a local graph can revoke roles to other users for this local graph.
-====
-
 [NOTE]
 ====
 Both native users and proxy users are displayed in the User section. However, you can only change password for native users.
 ====
 
-Only superuser can access this tab. Superuser can add new users, change other users' password, delete users, create proxy groups, change proxy rules of the groups, and delete proxy groups.
+Only users having user or proxy groups management permission can access this tab. Users with user management permission(`READ_USER`, `WRITE_USER` privileges) can add new users, change other users' password, delete users. Users with proxy groups management permission(`READ_PROXYGROUP`, `WRITE_PROXYGROUP` privileges) can create proxy groups, change proxy rules of the groups, and delete proxy groups. Check more details in xref:tigergraph-server:reference:list-of-privileges[List of Privileges]
 
 image::all-users-updated.png[]
 
@@ -61,6 +56,48 @@ Click image:delete_btn.png[] to delete a proxy group.
 
 Read more about proxy group at xref:3.2@tigergraph-server:user-access:README.adoc[].
 
+=== User-defined Roles
+
+Users must have `READ_ROLE` privilege on at least one graph to access this tab. To create/edit/delete a role, user must also have `WRITE_ROLE` privilege on that graph. Check more details in xref:tigergraph-server:user-access:roles-and-privileges[Roles and Privileges]
+
+At the right upper corner, there is a hint button image:udr-hint-btn.png[]. Click the button and jump the official roles and privileges documentation to read more about roles and privileges. All user-defined roles that you can view will list in a table:
+
+image::user-defined-roles.png[]
+
+Each row shows one role. You can view the role name and type. For global roles, all privileges on either global level or a specific graph will be listed. At the very last, there are action buttons. Click image:edit.png[] to edit privileges of a role. Click image:delete_btn.png[] to drop a role.
+
+==== Create a user-defined role
+
+Click image:create-role-btn.png[] at the right upper corner to create a role. You can either choose to create a global or a local role on a graph. We provide a hint with a question mark image:role-type-hint-btn.png[] next to `Role type` to briefly explain the types.
+
+image:role-type-hint.png[]
+
+===== Create a global role
+
+Select image:global-ratio-btn.png[] to start creating a global role. The first panel is for the global privileges, you can check to assign global level privileges for this role.
+
+image::create-global-role.png[]
+
+Click image:grant-privileges-on-graph.png[], a new privileges panel would present. Select a graph first in the dropdwon menu, then grant local privileges on that graph. You can also click image:remove-btn.png[] to remove the graph that you want to add privileges on.
+
+image::privileges-on-a-graph.png[]
+
+===== Create a local role
+
+Select image:local-ratio-btn.png[] to start creating a local role. Select a graph in the dropdown that you want to create the role on.
+
+image::create-local-role.png[]
+
+==== Edit a user-defined role
+
+Click image:edit.png[] to open the edit popup. The whole procedure is similar to creating a role. But when editing the role, you cannot change the type. For local roles, you cannot change the graph as well.
+
+image:edit-global-role.png[] image:edit-local-role.png[]
+
+==== Drop a role
+
+Click image:delete_btn.png[] to drop a role.
+
 === Role Management
 
 [CAUTION]
@@ -70,15 +107,31 @@ Admin Portal does not indicate whether a user belongs a proxy group. You can fin
 Admin Portal shows a combination of roles for proxy users. Proxy user which belongs to a proxy group inherits all the roles from the proxy group plus all the roles the proxy user has. Therefore, if you want to revoke a role from a proxy user, you need to revoke the role from the proxy group first. Then you might need to revoke the same role from the proxy user if the proxy user also has that role.
 ====
 
-Superusers and Admin users can access this tab to assign different roles to users on different graphs. Superusers can assign superuser role to other users, while admin users cannot.
+Users must have `READ_ROLE` privilege along with`READ_USER` or `READ_PROXYGROUP` privilege on at least one graph to access this tab. To assign roles, users need to have `WRITE_ROLE` privilege. If you only have `READ_ROLE` privilege, you can only view the current assignment but can not modify it. Check GSQL privilege details in xref:tigergraph-server:user-access:role-management[Role Management]
 
-image::role-management-updated.png[]
+image::role-management.png[]
 
 ==== Select a graph
 
-You can use the dropdown menu at the top left corner to select on which graph you want to assign different roles to different users:
+You can use the dropdown menu at the top left corner to select on which graph you want to assign different roles to different users, you can either choose `global` to assign global roles or a specific graph to assign local roles:
 
-image::select-graph.png[]
+image:select-graph-1.png[] image:select-graph-2.png[]
+
+==== Select a role
+
+You can use the second dropdown menu to select a role that you want to assign to different users:
+
+image::select-role.png[]
+
+[NOTE]
+
+With `global` selected, you can assign all global built-in or user-defined roles. With a specific graph selected, you can assign all local built-in roles or local user-defined roles within that graph.
+
+==== View role details
+
+Next to the dropdowns, click the image:view-role-detail-btn.png[] to view the infos of the chosen role.
+
+image::role-detail.png[]
 
 ==== Search user
 
@@ -88,47 +141,29 @@ image::search-user.png[]
 
 ==== Settings for users
 
-You can sort the users by alphabetic order or number of roles they have:
+You can sort the users by alphabetic order or name length:
 
 image::sort-users.png[]
 
-You can choose to show all users, show the users who have role(s), or show the users who don't have a role:
+You can choose to show all users, show the users who have the role, or show the users who don't have the role:
 
 image::show-users.png[]
 
-==== Grant a new role to a user
+==== Grant/revoke a role to/from users
 
-You have two ways to grant a new role to a user.
+[NOTE]
 
-The first way is drag-and-drop. You can drag a user from the right section to under the role you want to grant.
+Within a small screen, you need to click image:manage-btn.png[] to open the assignment panel.
 
-image::assign-by-dnd-updated.png[]
+All users will be listed with a checkbox. You can check to grant or uncheck to revoke.
 
-After the role is granted successfully, the user's name will appear under the corresponding role, and the role's color will appear on the user at the right section. You can grant multiple roles to the same user, and multiple colors will show on the user at the right section to indicate these roles.
+image::user-assignment.png[]
 
-The second way is right click a user, and choose the role you want to grant:
+After modifying your assignment, image:discard-btn.png[] and image:save-btn.png[] will be enabled. You either discard all your changes, or save your assignment.
 
-image::grant-roles.png[]
+image::user-assignment-changed.png[]
 
-==== Revoke a role from a user
-
-You have two ways to revoke a role from a user.
-
-The first way is drag-and-drop. You can drag a user from the role you want to revoke to the right section:
-
-image::revoke-dnd-updated.png[]
-
-After the role is revoked successfully, the user's name will disappear under the corresponding role, and the role's color will disappear from the user at the right section.
-
-The second way is right click a user, and choose the role you want to revoke:
-
-image::revoke-a-role.png[]
-
-==== Change a user's role
-
-You can drag a user from under one role to under another role at the left section. This is a shortcut to change the user's role:
-
-image::change-role-updated.png[]
+After assignment saved or discard, the two buttons would be disabled again.
 
 Similarly, you can also click image:proxy-groups%20%281%29.png[] to switch to proxy groups and manage their roles.
 
