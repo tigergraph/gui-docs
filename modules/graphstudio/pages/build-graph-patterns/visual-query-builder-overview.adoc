@@ -134,6 +134,8 @@ The toolbar options, from left to right, are the following:
 |Toolbar option | Functionality
 |image:save_btn.png[] |Save the graph pattern.
 
+|image:save-as_btn.png[] |Save the graph pattern as a different pattern under a new name.
+
 |image:gsql (1).png[] |Save as GSQL query: show the GSQL query generated from the
 pattern and save. See more information
 link:#_save_as_gsql_query[here].
@@ -551,6 +553,38 @@ If the visual pattern contains errors, you can see them here and debug:
 
 image:assets_-lhvjxin4__6ba0t-qmu_-lvm0wj98fiup0wogjez_-lvm3eb9dlldguwxg6rb_pattern-errors.png[image]
 
+== Save as 
+
+The 'Save as' feature allows users to save the current pattern as a new pattern under a new name.
+After clicking the 'Save as' button the user will be asked to input a unique name for the new pattern.
+Then, the user will be redirected to the new pattern, and the pattern the user saved as the new pattern will
+return to its last saved state.
+
+For example let us say that the user saves the following pattern: 
+
+image:save-as_current-pattern.png[image]
+
+The user then continues to make changes and then decides to save this pattern as a new pattern with a new name,
+and clicks on the 'Save as' button.
+
+image:save-as_pattern-with-changes[image]
+
+Here is the dialog that prompts the user to enter a name for the new pattern: 
+
+image:save-as_input-dialog.png[image]
+
+After entering the name the user gets redirected to the new pattern:
+
+image:save-as_new-pattern.png[image]
+
+Here is the previous pattern returned to its last saved state:
+
+image:save-as_last-saved-state.png[image]
+
+The new pattern contains all the history (can undo and redo) of the previous pattern, whilst the previous pattern 
+loses its history. This imitates the behaviour of most text editors.
+
+
 == Save as GSQL query
 
 You can view the GSQL query generated from your visual pattern and save
@@ -675,7 +709,7 @@ The output vertex pattern means matching all company vertices located at redwood
 
 The output company vertex pattern can be part of another larger pattern. You can think of the input vertex patterns of the widget as constraints of the output vertex pattern.
 
-== Union
+=== Union
 
 Click image:union.png[image] , then click two
 vertex patterns of the same vertex type. A union widget is added to the visual pattern:
@@ -684,7 +718,7 @@ image:assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrttcpkwcfix_ui3ji_unio
 
 The output vertex pattern means matching all company vertices located at redwood city, *or* belongs to big data industry.
 
-== Subtract
+=== Subtract
 
 Click image:subtract.png[image] , then click two
 vertex patterns of the same vertex type. A subtract widget is added to
@@ -693,6 +727,18 @@ the visual pattern:
 image:assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrtjgenpxrpc6qn91e_subtract-pattern.png[image]
 
 The output vertex pattern means matching all company vertices located at redwood city, *but not* belong to big data industry.
+
+== Downward import
+
+We now support importing visual patterns from a higher version to a lower version.
+
+Here is an example of the dialog that will be shown when an imported solution contains visual patterns which contain features
+that are unsupported in the current version:app-name: 
+
+image:downward-import-error-dialog.png[image]
+
+Users can choose to either ignore the message and keep the pattern or delete it. If the user chooses to ignore the message and keep
+the pattern, the pattern will not be deleted, but it will not be displayed or accessible to the users.
 
 == Next Step
 
