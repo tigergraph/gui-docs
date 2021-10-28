@@ -6,7 +6,7 @@ In TigerGraph 3.0, we are proudly introducing _Visual Query Builder_ -- a visual
 
 By adding the Visual Query Builder component, GraphStudio becomes a complete visual SDK for users to _build graph applications from end to end without writing a single line of code_!
 
-image::assets_-lhvjxin4__6ba0t-qmu_-lvxajkx4smjvf9mef0w_-lvxaqyvgcsc9ptnpdht_vqb-overview.png[]
+image::vqb-overview_3.3.png[]
 
 Currently, Visual Query Builder is still in beta phase. Please expect lots of improvements and changes coming in the future!
 
