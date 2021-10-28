@@ -19,6 +19,7 @@ image::3.2.1.png[]
 
 * *Expand/Collapse* : Expand or collapse the Query Editing panel to or from full page mode. The icon changes depending on whether the panel is currently expanded or collapsed.
 * *Save* : Save the current query draft.
+* *Save as* : Save the current query as a new query under a new name.
 * *Install* : Install the query into the database.
 * *Run* : Run the query. If the query is not installed, it will run the query in interpreted mode. Note there is performance penalty to run queries in interpreted mode.
 ** *Run Configuration:* Set the query runtime configurations.
@@ -44,6 +45,31 @@ image::3.5.png[]
 === Save Query Draft
 
 Once you made some changes to the query code and want to save it as a query draft, click on the "save" buttonimage:save_btn.png[]in the toolbar.
+
+=== Save as
+
+Click the 'Save as' button to save the current query as a new query under a different name. 
+After saving a query as another query, you will be redirected to the new query, and the original current will return to its last saved state. 
+
+For example, suppose you have the following query: 
+
+image:save-as_current-query.png[image]
+
+You've made some changes and then decide to save this query as a new query:
+
+image:save-as_query-with-changes.png[image]
+
+You will be prompted to enter a new name for the query: 
+
+image:save-as-query_input-dialog.png[image]
+
+After saving, you are redirected to the new query:
+
+image:save-as_new-query.png[image]
+
+The previous query returns to its last saved state:
+
+image:save-as_last-saved-state-query.png[image]
 
 === Run Query in Interpreted Mode
 
