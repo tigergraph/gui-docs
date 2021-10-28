@@ -1,6 +1,6 @@
-= Visual Query Builder Overview
+= Visual Query Builder
 
-== Visual Query Builder
+== Overview
 
 In TigerGraph 3.0, we are proudly introducing _Visual Query Builder_ -- a visual way of building your graph business logic. In the Build Graph Patterns page, you can create visual patterns in drag-and-drop fashion, which intuitively represent the questions you want to ask. For these cases, you don't need to write GSQL anymore!
 
@@ -76,15 +76,15 @@ Working panel is the central component (both visually and logically) of Visual Q
 
 Like other pages in GraphStudio, you can zoom-in, zoom-out and drag the visual pattern. If you have unsaved changes to the pattern, or containing errors in the pattern, some warning messages will show at the top left corner of working panel:
 
-image::pattern_working_panel.png[]
+image::pattern-working-panel.png[]
 
 If you click the message indicating errors, the Console will switch to Problems tab:
 
-image::pattern_errors.png[]
+image::pattern-errors.png[]
 
 You can click the error messages. For some errors, the vertex patterns, edge patterns and widgets involved in the error will be marked red to facilitate your debugging:
 
-image::pattern_highlight_error.png[]
+image::pattern-highlight-error.png[]
 
 === Pattern List
 
@@ -121,7 +121,7 @@ don't forget to save the pattern in the end.
 If you added some parameters in your visual pattern, you need to provide
 the values to the parameters when running the pattern.
 
-image:pattern-params.png[image]
+image::pattern-params.png[image]
 
 Click image:run-pattern.png[image] to run the pattern.
 
@@ -137,8 +137,8 @@ The toolbar options, from left to right, are the following:
 |image:save-as_btn.png[] |Save the graph pattern as a different pattern under a new name.
 
 |image:gsql (1).png[] |Save as GSQL query: show the GSQL query generated from the
-pattern and save. See more information
-link:#_save_as_gsql_query[here].
+pattern and save. See more information at
+link:#_save_as_gsql_query[Save as GSQL Query].
 
 |image:console-btn.png[] |Console: open/close the console panel.
 
@@ -276,7 +276,7 @@ When finished editing, you need to confirm or cancel the change:
 
 image:att-confirm.png[image]
 
-In attachments you can either attach a single value or attach the results of an aggregation function, 
+In attachments, you can either attach a single value or attach the results of an aggregation function,
 to all the matched vertex entity results.
 
 Attaching a single value means attaching the given value to all vertex entities within the matched result.
@@ -503,10 +503,10 @@ tabs. The buttons, from top to bottom, are the following:
 | image:expand_panel.png[image] 
 |Expand/Collapse: expand or collapse the Console panel.
 
-| image:schema%20%281%29%20%281%29.png[image] 
+| image:schema (1).png[image]
 |Graph schema: show the graph schema.
 
-| image:visual-result%20%281%29.png[image] 
+| image:visual-result (1).png[image]
 |Visualize graph result: show the visual result of the last run pattern.
 
 | image:json-result.png[image]  |View JSON
