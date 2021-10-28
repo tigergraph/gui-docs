@@ -603,7 +603,7 @@ By default, Pattern detail and Output glow are checked. All the filters, attachm
 vertex and edge patterns that will be in result will be highlighted with
 glow:
 
-image:render-detail.png[image]
+image:render-detail_3.3.png[image]
 
 If Pattern detail is not checked, add-on marks will indicate that there are filters, attachments, ordering conditions and limits on
 corresponding vertex patterns and edge patterns:
