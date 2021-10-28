@@ -567,7 +567,7 @@ image:save-as_current-pattern.png[image]
 The user then continues to make changes and then decides to save this pattern as a new pattern with a new name,
 and clicks on the 'Save as' button.
 
-image:save-as_pattern-with-changes[image]
+image:save-as_pattern-with-changes.png[image]
 
 Here is the dialog that prompts the user to enter a name for the new pattern: 
 
