@@ -733,7 +733,7 @@ The output vertex pattern means matching all company vertices located at redwood
 We now support importing visual patterns from a higher version to a lower version.
 
 Here is an example of the dialog that will be shown when an imported solution contains visual patterns which contain features
-that are unsupported in the current version:app-name: 
+that are unsupported in the current version: 
 
 image:downward-import-error-dialog.png[image]
 
