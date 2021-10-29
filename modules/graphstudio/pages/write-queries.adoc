@@ -19,7 +19,7 @@ image::write-queries-toolbar_3.3.png[]
 
 * *Expand/Collapse* : Expand or collapse the Query Editing panel to or from full page mode. The icon changes depending on whether the panel is currently expanded or collapsed.
 * *Save* : Save the current query draft.
-* *Save As* : Save the current query as a new query under a new name.
+* *Save as* : Save the current query as a new query under a new name.
 * *Install* : Install the query into the database.
 * *Run* : Run the query. If the query is not installed, it will run the query in interpreted mode. Note there is performance penalty to run queries in interpreted mode.
 ** *Run Configuration:* Set the query runtime configurations.
@@ -48,34 +48,28 @@ Once you made some changes to the query code and want to save it as a query draf
 
 === Save as
 
-The 'Save as' feature allows users to save the current query as a new query under a new name.
-After clicking the 'Save as' button the user will be asked to input a name for the new query.
-Then, the user will be redirected to the new query, and the query the user saved as the new pattern will
-return to its last saved state.
+Click the 'Save as' button to save the current query as a new query under a different name. 
+After saving a query as another query, you will be redirected to the new query, and the original current will return to its last saved state. 
 
-For example let us say that the user saves the following query: 
+For example, suppose you have the following query: 
 
 image:save-as_current-query.png[image]
 
-The user then continues to make changes and then decides to save this query as a new query with a new name,
-and clicks on the 'Save as' button.
+You've made some changes and then decide to save this query as a new query:
 
 image:save-as_query-with-changes.png[image]
 
-Here is the dialog that prompts the user to enter a name for the new query: 
+You will be prompted to enter a new name for the query: 
 
 image:save-as-query_input-dialog.png[image]
 
-After entering the name the user gets redirected to the new query:
+After saving, you are redirected to the new query:
 
 image:save-as_new-query.png[image]
 
-Here is the previous query returned to its last saved state:
+The previous query returns to its last saved state:
 
 image:save-as_last-saved-state-query.png[image]
-
-When saving as a new query, we also try and identify the name of the previous query and replace it with the name
-of the new query. 
 
 === Run Query in Interpreted Mode
 
