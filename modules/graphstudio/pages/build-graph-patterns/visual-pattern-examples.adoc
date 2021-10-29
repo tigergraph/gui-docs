@@ -302,4 +302,4 @@ programming skill to filter these friends, then we find the other skills
 that these people have. Then we count the number of people having these
 skills, and choose the top 5 skills as the result.
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvww8lr3vzytece1i3e_-lvx6fnowhhcfsolmdjg_top-skills.png[image]
+image:vqb-example6-top-skills_3.3.png[image]
