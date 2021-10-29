@@ -164,7 +164,7 @@ Click the industry vertex pattern, then
 click image:edit.png[image] in the toolbar (or
 double click the industry vertex pattern), now you are in edit mode:
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvwpsgl7org8uej3dw2_-lvweww5lc9n2jxsiuz7_edit-industry.png[image]
+image:vqb-example3-edit-industry_3.3.png[image]
 
 Change the vertices to be from parameter, and give a parameter name
 *ind*. This annotates the industry as an input vertex set when running
@@ -181,7 +181,7 @@ Click the company vertex pattern, then
 click image:edit.png[image] in the toolbar, and
 change the Name to *C*:
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvwpsgl7org8uej3dw2_-lvwglklozwsamam-q6v_edit-company.png[image]
+image:vqb-example3-edit-company_3.3.png[image]
 
 Confirm the change, and the label of company vertex pattern becomes
 *company as C*:
@@ -196,11 +196,11 @@ image:assets_-lhvjxin4__6ba0t-qmu_-lvwpsgl7org8uej3dw2_-lvwmigwtcze0gpznc2s_1-ed
 Expand the Aggregation section in the config panel, and add an
 aggregation:
 
-image:2-add-aggregation.png[image]
+image:vqb-example3-2-add-attachment_3.3.png[image]
 
 Confirm the change:
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvwpsgl7org8uej3dw2_-lvwmryx7ir5k2qby88t_3-confirm-agg.png[image]
+image:vqb-example3-3-confirm-attachment_3.3.png[image]
 
 Expand the Order section in the config panel, and add a descending order
 of aggregation result *countCompany*:
@@ -209,7 +209,7 @@ image:4-add-order.png[image]
 
 Confirm the change:
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvwmzsftkfmajvmccm0_-lvwn7ddd3u0myj7lfcx_5-confirm-order.png[image]
+image:vqb-example3-5-confirm-order_3.3.png[image]
 
 Expand the Limit section in the config panel, check the use limit
 checkbox, and change limit to 2:
@@ -218,7 +218,7 @@ image:6-add-limit.png[image]
 
 Confirm the change:
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvwmzsftkfmajvmccm0_-lvwndz7zl9y9oh9umsk_7-confirm-limit.png[image]
+image:vqb-example3-7-confirm-limit_3.3.png[image]
 
 Click image:output-btn.png[image] , then click
 the city vertex pattern, then
@@ -246,7 +246,7 @@ image:assets_-lhvjxin4__6ba0t-qmu_-lvwmzsftkfmajvmccm0_-lvwnrxlwx4u7ivox3y1_11-i
 
 Again, you can choose to output everything in the matched subgraphs:
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvwmzsftkfmajvmccm0_-lvwntv-xjmorxvfg4pm_12-full.png[image]
+image:vqb-example3-12-full_3.3.png[image]
 
 [[example-4-find-the-people-who-either-were-born-in-redwood-city-or-attended-stanford-university-but-didnt-work-for-hooli]]
 == Example 4. Find the people who either were born in Redwood City or attended Stanford university, but didn't work for Hooli.

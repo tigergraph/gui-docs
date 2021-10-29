@@ -134,7 +134,7 @@ The toolbar options, from left to right, are the following:
 |Toolbar option | Functionality
 |image:save_btn.png[] |Save the graph pattern.
 
-|image:save-as_btn.png[] |Save the graph pattern as a different pattern under a new name.
+|image:save-as_btn.png[image,25,25] |Save the graph pattern as a different pattern under a new name.
 
 |image:gsql (1).png[] |Save as GSQL query: show the GSQL query generated from the
 pattern and save. See more information
