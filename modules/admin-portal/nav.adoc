@@ -9,6 +9,7 @@
 ** Components
 *** xref:components/nginx.adoc[]
 *** xref:components/restpp.adoc[]
+*** xref:components/gsql.adoc[]
 *** xref:components/gui.adoc[]
 ** Security
 *** xref:security/ldap.adoc[]
