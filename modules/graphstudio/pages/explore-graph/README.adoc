@@ -16,7 +16,7 @@ The Graph Exploration panel also provides you with many ways to modify and augme
 
 The Explore Graph page is vertically divided into three parts, from left to right:
 
-image::explore-graph%20%281%29.png[]
+image::explore-graph.png[]
 
 === The Inner Navigation Bar
 
@@ -50,7 +50,7 @@ Set filters, conditions, and other parameters for the selected option from the I
 
 The exploration result is displayed in this panel. Below is an example of an exploration result:
 
-image::explore%20%281%29.png[]
+image::explore-graph-with-result.png[]
 
 You can adjust the results display, take a snapshot of the display, and modify selected data objects in the result.
 
@@ -66,7 +66,6 @@ The menu buttons, from left to right, are the following:
 After saving an exploration result, modifying the graph schema will cause the saved result to be obsolete. You will not be able to open an obsolete saved result.
 ====
 * *Export*: Export the current visualization result as a png file or a zip file containing .csv files.
-* *Save screenshot*: Save the current visualization result as a png file.
 * *Locate vertices in result*: Search the exploration result by vertex id or attribute value.
 * *Only show selections*: First select one or more objects. Clicking the button will hide all the objects which are not selected.
 * *Hide*: First select one or more objects. Clicking the button will hide the selected vertices and edges (or all if none is selected).
