@@ -19,7 +19,7 @@ After selecting the machine, you need to provide the absolute file path to the f
 For example: `/home/tigergraph/tigergraph/data/files/v.csv`.
 
 Make sure the file path you provide is allowed by xref:tigergraph-server:security:file-output-policy.adoc[GSQL file output policy].
-When a file path is not allowed by the policy, you will not be able to preview and download the file.
+When a file path is not allowed by the policy, you will not be able to preview or download the file.
 
 === Preview and download file
 
