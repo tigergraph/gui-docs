@@ -6,7 +6,7 @@
 ** Management
 *** xref:management/license.adoc[]
 *** xref:management/user-management.adoc[]
-** Components
+** xref:components/README.adoc[]
 *** xref:components/nginx.adoc[]
 *** xref:components/restpp.adoc[]
 *** xref:components/gsql.adoc[]

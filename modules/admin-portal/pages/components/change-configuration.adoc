@@ -1,0 +1,10 @@
+== Change a configuration parameter
+:experimental:
+
+Change the value in the input field of the corresponding configuration, and then click btn:[Apply], and then click btn:[OK] to confirm the change.
+
+Once you confirm, the {server-name} server will restart to apply the changes, which will usually take several seconds.
+You will be notified after the changes are applied.
+
+If you are unsure about the changes you made before applying them, you can click the btn:[Discard] button to discard them.
+If you changed the value of the parameter from the backend with `gadmin` since loading the page, you can click the refresh button in the upper right corner of the page to retrieve the current value.

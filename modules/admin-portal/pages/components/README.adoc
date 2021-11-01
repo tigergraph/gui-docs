@@ -1,1 +1,8 @@
 = Components
+
+In the Components section, you can change the configurations for certain components of TigerGraph.
+
+* xref:components/gsql.adoc[GSQL]
+* xref:components/gui.adoc[GUI] (Configurations related to Admin Portal and GraphStudio)
+* xref:components/nginx.adoc[NGINX]
+* xref:components/restpp.adoc[RESTPP]

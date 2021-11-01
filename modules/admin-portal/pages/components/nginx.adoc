@@ -1,6 +1,5 @@
 = Nginx
-
-== Nginx Page +++<a id="TigerGraphAdminPortalUIGuide-DashboardPagedashboard">++++++</a>+++
+:server-name: nginx
 
 You can configure Nginx settings on this page. The following settings can be configured: SSL configuration, allowed CIDR list (whitelist IP), and response header.
 
@@ -24,8 +23,7 @@ image::nginx-response-header-one.png[]
 
 image::nginx-response-header-none.png[]
 
-[discrete]
-==== SSL for Nginx
+== SSL for Nginx
 
 image::ssl-for-nginx.png[]
 

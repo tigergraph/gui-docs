@@ -1,33 +1,9 @@
 = Application Server (GUI)
+:server-name: Application
 
-== Application Server (GUI) Page
-
-You can configure Application Server (GUI) settings through this page. Application Server is the backend component powering both GraphStudio and Admin Portal. Allowed setting includes: Query return size.
+You can configure Application Server (GUI) settings through this page.
+Application Server is the backend component powering both GraphStudio and Admin Portal.
 
 image::gui-page.png[]
 
-When you don't have any changes, the DISCARD and APPLY buttons are disabled.
-
-image::discard-apply.png[]
-
-You can clear your changes by clicking the DISCARD button at the bottom right corner of the page.
-
-image::discard.png[]
-
-If you want to get the default data again, you can click the refresh button in the upper right corner of the page.
-
-image::refresh-button.png[]
-
-The fields with * in the label are required entries. When users do not fill in the required items and click the APPLY button, the following error will appear:
-
-image::gui-reqiured-error.png[]
-
-If everything is ready, click the APPLY button and a confirmation box will pop up.
-
-image::confirm-config-pop.png[]
-
-Click the CANCEL button, the pop-up window will be closed. Click the OK button, it will prompt the success message.Since configuration change requires restarting the server service, a pop-up box will appear to confirm whether to restart the service. After clicking the OK button, it will take a while for the configuration changes and server restart. You will be notified after all the process is completed.
-
-image::nginx-confirm-server%20%281%29.png[]
-
-image::nginx-finished.png[]
+include::change-configuration.adoc[]
