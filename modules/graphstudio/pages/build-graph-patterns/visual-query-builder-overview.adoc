@@ -62,7 +62,7 @@ image::demo_3_3.3.png[]
 
 This is the visual pattern matching all such three persons A, B and C, where A is B's friend, and A is C's friend, and B is C's manager:
 
-image::demo_4.png[]
+image::demo_4_3.3.png[]
 
 This visual pattern matches all the people that born in Redwood City and attended Stanford university, but didn't work for Google:
 
