@@ -2,7 +2,7 @@
 
 On the Write Queries page, you can write and run custom queries with GSQL.
 
-image::3.1.1.png[]
+image::write-queries-overview_3.3.png[]
 
 The Write Query page is horizontally divided into two parts:
 
@@ -15,7 +15,7 @@ The Query Editing panel is divided into two sub-panels: the left sub-panel is us
 
 Above the query editing pane is a toolbar, with the following buttons, from left to right:
 
-image::3.2.1.png[]
+image::write-queries-toolbar_3.3.png[]
 
 * *Expand/Collapse* : Expand or collapse the Query Editing panel to or from full page mode. The icon changes depending on whether the panel is currently expanded or collapsed.
 * *Save* : Save the current query draft.
@@ -32,15 +32,15 @@ image::3.2.1.png[]
 
 To create a new query, simply click on the "New GSQL Query" button image:upload_file_btn.png[] in the bottom-right corner of the left sub-panel, and type in the name of the new query in the popup window:
 
-image::create_new_query.png[]
+image::create_new_query_3.3.png[]
 
 A query draft will be created with a template:
 
-image::3.4.1.png[]
+image::write-queries-query-draft_3.3.png[]
 
 To edit an existing query, click on the query name in the list in the left sub panel:
 
-image::3.5.png[]
+image::write-queries-query-draft-edit_3.3.png[]
 
 === Save Query Draft
 
@@ -75,7 +75,7 @@ image:save-as_last-saved-state-query.png[image]
 
 If you have saved the query and there is no errors in the query, you can run the query in interpreted mode. Click the run query buttonimage:start_loading.png[]. Together with the query execution result, a warning message will appear to notify user of the performance concerns running the query in interpreted mode. To speed up the query performance after you are satisfied with the GSQL query developed in interpreted mode, you can follow the instructions in the next section "Install Query".
 
-image::3.6.1.png[]
+image::write-queries-run-query-interpreted-mode_3.3.png[]
 
 === Install Query
 
@@ -90,7 +90,7 @@ button  image:run-installed-query.png[image] in the
 toolbar. If the query has no parameters, it will run directly and the
 result will be shown in the Result panel.
 
-image:3.7.1.png[image]
+image:write-queries-run-query-installed_3.3.png[image]
 
 If the query requires parameters, the Enter Query Parameters panel will
 appear. Enter your parameter values and then click the "Run Query"
@@ -101,7 +101,7 @@ panel to the bottom to find the Run Query button.
 The query will be executed, and the results will be shown in the Result
 Panel.
 
-image:3.8.1.png[image]
+image:write-queries-run-install-query-with-param_3.3.png[image]
 
 == Run Configuration
 
@@ -109,19 +109,19 @@ You can set runtime configurations of the GSQL query by clicking the
 small  image:3.9.png[image] button to the
 right of run query button, then a drop-down menu will appear.
 
-image:3.10.1.png[image]
+image:write-queries-run-config_3.3.png[image]
 
 Click the "Run configuration" item, and the Run Configuration panel will
 be opened.
 
-image:3.11.1.png[image]
+image:write-queries-use-default-timeout_3.3.png[image]
 
 You can set GSQL query timeout here. By default, it uses the timeout of
 TigerGraph configuration (specified by gadmin commands). You can change
 it by unchecking the "Use default timeout" label, and then set a new
 timeout:
 
-image:3.13.png[image]
+image:write-queries-not-use-default-timeout_3.3.png[image]
 
 Click the submit button
 image:3.12.png[image]  to apply your
@@ -146,14 +146,14 @@ image:show_query_endpoint.png[image]
 == Download
 
 You can download your query by click
-image:3.14.1.png[image] , or download all your
+image:write-queries-toolbar-download-single-query_3.3.png[image] , or download all your
 queries as a tarball by click
-image:3.15.1.png[image]
+image:write-queries-toolbar-download-all-queries_3.3.png[image]
 
 == Delete query draft
 
 You can delete your query draft by clicking
-image:delete-query-draft.png[image] .
+image:write-queries-toolbar-delete-query-draft_3.3.png[image] .
 
 == Install All Queries
 
@@ -251,7 +251,7 @@ Editing panel or the Result panel.
 
 If you expand the Query Editing panel, it looks like this:
 
-image:write-queries-gsql.1.png[image]
+image:write-queries-expand-query-editor-panel_3.3.png[image]
 
 If you expand the Result panel, it looks like this:
 

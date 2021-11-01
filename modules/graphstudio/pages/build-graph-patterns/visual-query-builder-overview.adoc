@@ -6,7 +6,7 @@ In TigerGraph 3.0, we are proudly introducing _Visual Query Builder_ -- a visual
 
 By adding the Visual Query Builder component, GraphStudio becomes a complete visual SDK for users to _build graph applications from end to end without writing a single line of code_!
 
-image::assets_-lhvjxin4__6ba0t-qmu_-lvxajkx4smjvf9mef0w_-lvxaqyvgcsc9ptnpdht_vqb-overview.png[]
+image::vqb-overview_3.3.png[]
 
 Currently, Visual Query Builder is still in beta phase. Please expect lots of improvements and changes coming in the future!
 
@@ -62,7 +62,7 @@ image::demo_3_3.3.png[]
 
 This is the visual pattern matching all such three persons A, B and C, where A is B's friend, and A is C's friend, and B is C's manager:
 
-image::demo_4.png[]
+image::demo_4_3.3.png[]
 
 This visual pattern matches all the people that born in Redwood City and attended Stanford university, but didn't work for Google:
 
@@ -134,7 +134,7 @@ The toolbar options, from left to right, are the following:
 |Toolbar option | Functionality
 |image:save_btn.png[] |Save the graph pattern.
 
-|image:save-as_btn.png[] |Save the graph pattern as a different pattern under a new name.
+|image:save-as_btn.png[image,25,25] |Save the graph pattern as a different pattern under a new name.
 
 |image:gsql (1).png[] |Save as GSQL query: show the GSQL query generated from the
 pattern and save. See more information at
