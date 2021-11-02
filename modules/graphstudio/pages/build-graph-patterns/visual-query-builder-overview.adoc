@@ -575,7 +575,7 @@ The output vertex pattern means matching all company vertices located at redwood
 
 The output company vertex pattern can be part of another larger pattern. You can think of the input vertex patterns of the widget as constraints of the output vertex pattern.
 
-=== Union
+== Union
 
 Click image:union.png[image] , then click two
 vertex patterns of the same vertex type. A union widget is added to the visual pattern:
@@ -584,7 +584,7 @@ image:assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrttcpkwcfix_ui3ji_unio
 
 The output vertex pattern means matching all company vertices located at redwood city, *or* belongs to big data industry.
 
-=== Subtract
+== Subtract
 
 Click image:subtract.png[image] , then click two
 vertex patterns of the same vertex type. A subtract widget is added to
@@ -593,23 +593,6 @@ the visual pattern:
 image:assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrtjgenpxrpc6qn91e_subtract-pattern.png[image]
 
 The output vertex pattern means matching all company vertices located at redwood city, *but not* belong to big data industry.
-
-=== Within
-
-Click image:within_widget-button.jpg[image] , then click one
-vertex pattern. A within widget is added to the visual pattern:
-
-image:within_widget-pattern1.jpg[image]
-
-The within widget constrains a later vertex set matching to be within the former vertex set matching.
-
-The output vertex pattern means matching all company vertices *or* all city vertices that a person who attends san jose university is working at *or* was born in.
-
-The above visual pattern has a different meaning than the below visual pattern:
-
-image:within_widget-pattern2.jpg[image]
-
-The output vertex pattern means matching all company vertices *and* the city vertices that a person who attends san jose university is working at *and* was born in.
 
 == Next Step
 
