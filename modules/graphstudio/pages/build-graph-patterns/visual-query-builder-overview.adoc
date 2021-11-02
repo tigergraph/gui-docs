@@ -1,7 +1,5 @@
 = Visual Query Builder
 
-== Overview
-
 In TigerGraph 3.0, we are proudly introducing _Visual Query Builder_ -- a visual way of building your graph business logic. In the Build Graph Patterns page, you can create visual patterns in drag-and-drop fashion, which intuitively represent the questions you want to ask. For these cases, you don't need to write GSQL anymore!
 
 By adding the Visual Query Builder component, GraphStudio becomes a complete visual SDK for users to _build graph applications from end to end without writing a single line of code_!
@@ -10,7 +8,7 @@ image::vqb-overview_3.3.png[]
 
 Currently, Visual Query Builder is still in beta phase. Please expect lots of improvements and changes coming in the future!
 
-=== Basic Concepts
+== Basic Concepts
 
 A visual pattern is a declarative way of describing a template subgraph structure, and all the subgraph structures that the visual pattern is *homomorphic* with are valid matching results.
 
@@ -70,7 +68,7 @@ image::demo_5.png[]
 
 Now you have a first sight about how the visual patterns look like. Let's walk through all the concepts in depth.
 
-=== Working Panel
+== Working Panel
 
 Working panel is the central component (both visually and logically) of Visual Query Builder. Your visual patterns are rendered here.
 
@@ -86,11 +84,11 @@ You can click the error messages. For some errors, the vertex patterns, edge pat
 
 image::pattern-highlight-error.png[]
 
-=== Pattern List
+== Pattern List
 
 The pattern list panel contains three sections:
 
-==== Graph patterns
+=== Graph patterns
 
 The graph patterns section lists all the visual patterns you have
 created for current graph. You can
@@ -101,7 +99,7 @@ existing ones.
 
 image::pattern-list.png[image]
 
-==== Description
+=== Description
 
 Other than the visual view of the graph pattern, you can optionally add
 a description for the pattern. This can help other users to understand
@@ -116,7 +114,7 @@ image::https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/a
 Changing description is considered as a change to the visual pattern,
 don't forget to save the pattern in the end.
 
-==== Pattern parameters
+=== Pattern parameters
 
 If you added some parameters in your visual pattern, you need to provide
 the values to the parameters when running the pattern.
