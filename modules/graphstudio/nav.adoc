@@ -1,7 +1,5 @@
 * GraphStudio
 ** xref:overview.adoc[]
-** xref:license.adoc[]
-** xref:user-access-management.adoc[]
 ** xref:design-schema.adoc[]
 ** xref:map-data-to-graph.adoc[]
 ** xref:load-data.adoc[]
@@ -21,5 +19,7 @@
 ** xref:keyboard-shortcuts.adoc[]
 ** xref:known-issues.adoc[]
 ** xref:patent-and-third-party-notice.adoc[]
+** xref:license.adoc[]
+** xref:user-access-management.adoc[]
 
 
