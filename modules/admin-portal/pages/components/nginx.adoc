@@ -9,7 +9,7 @@ When you don't have any changes, the DISCARD and APPLY buttons are disabled.
 
 image::discard-apply.png[]
 
-You can clear your changes by clicking the DISCARD button at the bottom right corner of the page.
+You can clear your changes by clicking the DISCARD button in the bottom right corner of the page.
 
 image::discard.png[]
 
@@ -38,7 +38,7 @@ image::ssl-uploading.png[]
 
 image::self-sign.png[]
 
-If you want to get the default data again, you can click the refresh button on the upper right corner of the page.
+If you want to get the default data again, you can click the refresh button in the upper right corner of the page.
 
 image::refresh-button.png[]
 
