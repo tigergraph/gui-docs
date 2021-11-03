@@ -1,4 +1,5 @@
 = Write Queries
+:experimental:
 
 On the Write Queries page, you can write and run custom queries with GSQL.
 
@@ -11,7 +12,10 @@ The Write Query page is horizontally divided into two parts:
 
 == Query Editing Panel
 
-The Query Editing panel is divided into two sub-panels: the left sub-panel is used to select a query to edit, and the right, larger sub-panel displays the selected query for editing. Here you can edit, save, delete query and/or its draft, install and run the query. The query editor features syntax highlighting customized for the GSQL language.  Also, the query editor performs real-time semantic checking.
+The Query Editing panel is divided into two sub-panels: the left sub-panel is used to select a query to edit, and the right, larger sub-panel displays the selected query for editing.
+Here you can edit, save, delete query and/or its draft, install and run the query.
+The query editor features syntax highlighting customized for the GSQL language.
+Also, the query editor performs real-time semantic checking.
 
 Above the query editing pane is a toolbar, with the following buttons, from left to right:
 
@@ -44,7 +48,7 @@ image::write-queries-query-draft-edit_3.3.png[]
 
 === Save Query Draft
 
-Once you made some changes to the query code and want to save it as a query draft, click on the "save" buttonimage:save_btn.png[]in the toolbar.
+Once you made some changes to the query code and want to save it as a query draft, click on the "save" button image:save_btn.png[]in the toolbar.
 
 === Save as
 
@@ -53,29 +57,28 @@ After saving a query as another query, you will be redirected to the new query, 
 
 For example, suppose you have the following query: 
 
-image:save-as_current-query.png[image]
+image::save-as_current-query.png[image]
 
 You've made some changes and then decide to save this query as a new query:
 
-image:save-as_query-with-changes.png[image]
+image::save-as_query-with-changes.png[image]
 
 You will be prompted to enter a new name for the query: 
 
-image:save-as-query_input-dialog.png[image]
+image::save-as-query_input-dialog.png[image]
 
 After saving, you are redirected to the new query:
 
-image:save-as_new-query.png[image]
+image::save-as_new-query.png[image]
 
 The previous query returns to its last saved state:
 
-image:save-as_last-saved-state-query.png[image]
+image::save-as_last-saved-state-query.png[image]
 
 === Run Query in Interpreted Mode
 
-If you have saved the query and there is no errors in the query, you can run the query in interpreted mode. Click the run query buttonimage:start_loading.png[]. Together with the query execution result, a warning message will appear to notify user of the performance concerns running the query in interpreted mode. To speed up the query performance after you are satisfied with the GSQL query developed in interpreted mode, you can follow the instructions in the next section "Install Query".
-
-image::write-queries-run-query-interpreted-mode_3.3.png[]
+If you have saved the query and there is no errors in the query, you can run the query in interpreted mode. Click the run query buttonimage:start_loading.png[].
+Together with the query execution result, a warning message will appear to notify user of the performance concerns running the query in interpreted mode.
 
 === Install Query
 
@@ -90,7 +93,7 @@ button  image:run-installed-query.png[image] in the
 toolbar. If the query has no parameters, it will run directly and the
 result will be shown in the Result panel.
 
-image:write-queries-run-query-installed_3.3.png[image]
+image::write-queries-run-query-installed_3.3.png[image]
 
 If the query requires parameters, the Enter Query Parameters panel will
 appear. Enter your parameter values and then click the "Run Query"
@@ -101,7 +104,7 @@ panel to the bottom to find the Run Query button.
 The query will be executed, and the results will be shown in the Result
 Panel.
 
-image:write-queries-run-install-query-with-param_3.3.png[image]
+image::write-queries-run-install-query-with-param_3.3.png[image]
 
 == Run Configuration
 
@@ -109,22 +112,22 @@ You can set runtime configurations of the GSQL query by clicking the
 small  image:3.9.png[image] button to the
 right of run query button, then a drop-down menu will appear.
 
-image:write-queries-run-config_3.3.png[image]
+image::write-queries-run-config_3.3.png[image]
 
 Click the "Run configuration" item, and the Run Configuration panel will
 be opened.
 
-image:write-queries-use-default-timeout_3.3.png[image]
+image::write-queries-use-default-timeout_3.3.png[image]
 
 You can set GSQL query timeout here. By default, it uses the timeout of
 TigerGraph configuration (specified by gadmin commands). You can change
 it by unchecking the "Use default timeout" label, and then set a new
 timeout:
 
-image:write-queries-not-use-default-timeout_3.3.png[image]
+image::write-queries-not-use-default-timeout_3.3.png[image]
 
 Click the submit button
-image:3.12.png[image]  to apply your
+image::3.12.png[image]  to apply your
 changes.
 
 == Delete Query
@@ -141,19 +144,19 @@ endpoint" button image:endpoint.png[image] , you can
 see the format of the endpoint to access this query, so that you can
 integrate the query with your applications.
 
-image:show_query_endpoint.png[image]
+image::show_query_endpoint.png[image]
 
 == Download
 
 You can download your query by click
-image:write-queries-toolbar-download-single-query_3.3.png[image] , or download all your
+image::write-queries-toolbar-download-single-query_3.3.png[image] , or download all your
 queries as a tarball by click
-image:write-queries-toolbar-download-all-queries_3.3.png[image]
+image::write-queries-toolbar-download-all-queries_3.3.png[image]
 
 == Delete query draft
 
-You can delete your query draft by clicking
-image:write-queries-toolbar-delete-query-draft_3.3.png[image] .
+You can delete your query draft by clicking btn:[Discard Query Draft]
+image::write-queries-toolbar-delete-query-draft_3.3.png[image].
 
 == Install All Queries
 
@@ -162,11 +165,11 @@ can click "Install all queries"
 button image:install_all_queries.png[image] in GSQL
 Queries list. After some verification time, a pop up window listing all queries to be installed will show:
 
-image:install_all_query_list.png[image]
+image::install_all_query_list.png[image]
 
-Click INSTALL button, then the listed queries will be installed:
+Click btn:[INSTALL] button, then the listed queries will be installed:
 
-image:installing_all_queries.png[image]
+image::installing_all_queries.png[image]
 
 == Result Panel
 
@@ -178,7 +181,7 @@ from top to bottom, are the following:
 
 [cols="^1,<3",options="header",]
 |===
-|menu option |functionality
+|Menu option |Functionality
 | image:expand_panel.png[image]  |Expand/Collapse:
 Expand or collapse the Result panel.
 
@@ -203,7 +206,7 @@ the log for the most recent query run.
 Viewing graph schema makes it more convenient for developers to refer to
 the schema topology logic and easier to write correct GSQL queries.
 
-image:schema.png[image]
+image::schema.png[image]
 
 == Visualize graph result
 
@@ -214,7 +217,7 @@ xref:explore-graph/graph-exploration-panel.adoc[Explore
 Graph panel]. The only difference is that each time you run a query, the previous result will be erased. In Explore Graph the results are added
 incrementally.
 
-image:visualize-view.png[image]
+image::visualize-view.png[image]
 
 You can switch to the JSON Result panel to see the result in JSON
 format.
@@ -224,7 +227,7 @@ format.
 If there is no graph structure in the result, the result will be
 displayed in this panel as a JSON object.
 
-image:json-view.png[image]
+image::json-view.png[image]
 
 == View table result
 You can display the query result as a table:
@@ -240,24 +243,23 @@ successfully" or something similar. If there was anything wrong when
 executing your query, such as invalid parameters or runtime errors, an
 error message will be shown in the Query Log panel:
 
-image:log-view.png[image]
+image::log-view.png[image]
 
 == Expand Panels
 
 If you just want to focus on developing your query, or want to have more
 space to view your result, click the Expand button
-image:expand_panel.png[image]  in either the Query
+image::expand_panel.png[image]  in either the Query
 Editing panel or the Result panel.
 
 If you expand the Query Editing panel, it looks like this:
 
-image:write-queries-expand-query-editor-panel_3.3.png[image]
+image::write-queries-expand-query-editor-panel_3.3.png[image]
 
 If you expand the Result panel, it looks like this:
 
-image:expanded-panel.png[image]
+image::expanded-panel.png[image]
 
 When the panel is expanded, the Expand button becomes the Collapse
 button  image:collapse_btn.png[image] . Clicking it
 will return the display to the split panel view.
-

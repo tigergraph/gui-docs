@@ -1,4 +1,5 @@
 = Overview
+
 TigerGraph GraphStudio™ is a graphic user interface that provides an intuitive, browser-based interface to easily accomplish graph-based application development tasks.
 
 == Feature Overview
@@ -112,9 +113,6 @@ icon  image:account_btn.png[image] and then toggle
 the Dark theme to be Off to switch to light theme:
 
 image:1.2.png[image]
-image:1.3.png[image]
-
-image:1.4.png[image]
 
 == Switch Between Languages
 
