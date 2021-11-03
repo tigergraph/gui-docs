@@ -33,30 +33,30 @@ image::geospatial-ex.png[Example of vertices and edges in the geospatial layout]
 === Export result
 You can export the current visualization result as a png file or a zip file containing csv files by clicking  image:export-btn.png[]. When you click the button, a drop-down menu will appear, as shown below:
 
-image:download-dropdown.png[]
+image::download-dropdown.png[]
 
 You can select different export types by clicking on different items.
 When you choose to Export PNG, your browser will automatically download a picture named `export.png`.
 Below is an example of an exported .png file.
 
 
-image:export.png[]
+image::export.png[]
 
 You can also choose the Export CSV option, and your browser will download a zip file named `[GraphName]_export_vertices_and_edges.zip`.
 The zip file contains .csv files that describe the exploration result.
 Each file corresponds to a vertex or edge type:
 
-image:export-csv-ex.png[]
+image::export-csv-ex.png[]
 
 The CSV file for each vertex type contains Vertex ID and Vertex Type, in addition to the attributes of each vertex.
 Below is an example:
 
-image:vertex-csv.png[]
+image::vertex-csv.png[]
 
 For edge types, the CSV file contains Edge Type,  Source Vertex ID, Source Vertex Type, Target Vertex ID, Target Vertex Type and any edge attributes.
 Below is an example:
 
-image:edge-table-ex.png[]
+image::edge-table-ex.png[]
 
 === Locate vertex
 
@@ -120,7 +120,7 @@ Other than the above, you can also configure vertex and edge size and color to a
 
 == Edit graph
 
-Besides customizing the view of your graph exploration results, you can also enable the edit mode and and make edits to the graph itself by adding or removing vertices and edges, as well as changing their attributes.
+Beside customizing the view of your graph exploration results, you can also enable the edit mode and and make edits to the graph itself by adding or removing vertices and edges, as well as changing their attributes.
 
 In order to perform any of the actions in this section, you need to enable edit mode by clicking on the toggle next to Edit mode. Once you are in the edit mode, the four buttons that allow you to edit the graph will appear on the right.
 

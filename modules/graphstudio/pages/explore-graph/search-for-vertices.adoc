@@ -1,5 +1,4 @@
 = Search for Vertices
-:image
 
 The first button in the Explore Graph Menu is the "Search Vertices" option image:search_btn.png[]. This option lets you select an initial set of vertices for your exploration. It is also the default option when you first enter the Explore Graph page. Clicking the button again will hide the Parameter Panel to increase space for the Graph Exploration Panel.
 
