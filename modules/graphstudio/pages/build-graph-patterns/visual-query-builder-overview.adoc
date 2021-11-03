@@ -478,16 +478,16 @@ picked from all matchings.
 If you expand the Limit section, you can add/edit/delete limit for the
 selected vertex pattern (limit on edge patterns is not supported):
 
-image:limit-section.png[image]
+image::limit-section.png[image]
 
 Toggle *use limit* checkbox to enable/disable limit. You can also edit
 the limit number:
 
-image:use-limit.png[image]
+image::use-limit.png[image]
 
 When finished editing, you need confirm or cancel the change:
 
-image:limit-confirm.png[image]
+image::limit-confirm.png[image]
 
 == Console
 
@@ -520,7 +520,7 @@ errors in the visual pattern.
 Viewing graph schema makes it more convenient for developers to refer to
 the schema topology logic and easier to construct the visual pattern.
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvm9pfm2-2ozgm2sd9_-lvmcthyogmsp0kft32s_graph-schema.png[image]
+image::assets_-lhvjxin4__6ba0t-qmu_-lvm9pfm2-2ozgm2sd9_-lvmcthyogmsp0kft32s_graph-schema.png[image]
 
 === Visualize graph result
 
@@ -532,7 +532,7 @@ Graph panel]. The only difference is that each time you run a pattern,
 the previous result will be erased. In Explore Graph, the results are
 added incrementally.
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvm9pfm2-2ozgm2sd9_-lvmcxuo-u1fkbkapquo_visual-graph.png[image]
+image::assets_-lhvjxin4__6ba0t-qmu_-lvm9pfm2-2ozgm2sd9_-lvmcxuo-u1fkbkapquo_visual-graph.png[image]
 
 You can switch to the JSON Result panel to see the result in JSON
 format.
@@ -542,14 +542,14 @@ format.
 You can see the JSON response of running the visual pattern from this
 tab:
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvm9pfm2-2ozgm2sd9_-lvmcnniabkll3klmwxr_json-result-vqb.png[image]
+image::assets_-lhvjxin4__6ba0t-qmu_-lvm9pfm2-2ozgm2sd9_-lvmcnniabkll3klmwxr_json-result-vqb.png[image]
 
 [[problems-]]
 === Problems
 
 If the visual pattern contains errors, you can see them here and debug:
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvm0wj98fiup0wogjez_-lvm3eb9dlldguwxg6rb_pattern-errors.png[image]
+image::assets_-lhvjxin4__6ba0t-qmu_-lvm0wj98fiup0wogjez_-lvm3eb9dlldguwxg6rb_pattern-errors.png[image]
 
 == Save as 
 
@@ -560,24 +560,24 @@ return to its last saved state.
 
 For example let us say that the user saves the following pattern: 
 
-image:save-as_current-pattern.png[image]
+image::save-as_current-pattern.png[image]
 
 The user then continues to make changes and then decides to save this pattern as a new pattern with a new name,
 and clicks on the 'Save as' button.
 
-image:save-as_pattern-with-changes.png[image]
+image::save-as_pattern-with-changes.png[image]
 
 Here is the dialog that prompts the user to enter a name for the new pattern: 
 
-image:save-as_input-dialog.png[image]
+image::save-as_input-dialog.png[image]
 
 After entering the name the user gets redirected to the new pattern:
 
-image:save-as_new-pattern.png[image]
+image::save-as_new-pattern.png[image]
 
 Here is the previous pattern returned to its last saved state:
 
-image:save-as_last-saved-state.png[image]
+image::save-as_last-saved-state.png[image]
 
 The new pattern contains all the history (can undo and redo) of the previous pattern, whilst the previous pattern 
 loses its history. This imitates the behaviour of most text editors.
@@ -589,7 +589,7 @@ You can view the GSQL query generated from your visual pattern and save
 it. Then you can access this query from Write Queries page, modify your
 query, interpret it, install it and run it.
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvm4puugyvb92xsngac_-lvm8fwfp4w1f68fzcz-_save-gsql-query.png[image]
+image::assets_-lhvjxin4__6ba0t-qmu_-lvm4puugyvb92xsngac_-lvm8fwfp4w1f68fzcz-_save-gsql-query.png[image]
 
 == Render pattern options
 
@@ -601,20 +601,20 @@ By default, Pattern detail and Output glow are checked. All the filters, attachm
 vertex and edge patterns that will be in result will be highlighted with
 glow:
 
-image:render-detail_3.3.png[image]
+image::render-detail_3.3.png[image]
 
 If Pattern detail is not checked, add-on marks will indicate that there are filters, attachments, ordering conditions and limits on
 corresponding vertex patterns and edge patterns:
 
-image:render-addon.png[image]
+image::render-addon.png[image]
 
 If Pattern add-on is not checked, the add-ons will be hidden:
 
-image:render-no-addon.png[image]
+image::render-no-addon.png[image]
 
 If Output glow is not checked, the output indicating glow is hidden:
 
-image:render-no-glow.png[image]
+image::render-no-glow.png[image]
 
 == Add a vertex pattern
 
@@ -622,19 +622,19 @@ Click image:add_vertex_type.png[image] , and a
 new vertex pattern will be added to the visual pattern. You are in the
 editing mode of the newly added vertex pattern.
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvvxrsv4oqboqfdo5rn_add-1st-vertex-pattern.png[image]
+image::assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvvxrsv4oqboqfdo5rn_add-1st-vertex-pattern.png[image]
 
 == Add an edge pattern
 
 Click image:add_edge_type.png[image] , then click
 the source vertex pattern of the edge pattern:
 
-image:click-person-vp.png[image]
+image::click-person-vp.png[image]
 
 Then click the target vertex pattern of the edge pattern. A new edge
 pattern will be added to the visual pattern. You are in the editing mode of the newly added edge pattern:
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvwcirpqnzwxjjmibcm_click-dep-vp.png[image]
+image::assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvwcirpqnzwxjjmibcm_click-dep-vp.png[image]
 
 == Pick
 
@@ -644,32 +644,32 @@ either graph schema or visual result.
 Click image:pick-btn.png[image] , then click one
 vertex type in the graph schema tab:
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvr5x32viax2_hmvxxm_-lvrfke7dyvs6rwkzzbk_pick-vertex-type.png[image]
+image::assets_-lhvjxin4__6ba0t-qmu_-lvr5x32viax2_hmvxxm_-lvrfke7dyvs6rwkzzbk_pick-vertex-type.png[image]
 
 A vertex pattern will be added to the visual pattern:
 
-image:pick-vertex-type-done.png[image]
+image::pick-vertex-type-done.png[image]
 
 Click image:pick-btn.png[image], then click one
 edge type in the graph schema tab:
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvr5x32viax2_hmvxxm_-lvrfnuttlpzrlvgsfrq_pick-edge-type.png[image]
+image::assets_-lhvjxin4__6ba0t-qmu_-lvr5x32viax2_hmvxxm_-lvrfnuttlpzrlvgsfrq_pick-edge-type.png[image]
 
 An edge pattern together with two vertex patterns will be added to the
 visual pattern:
 
-image:pick-edge-type-done.png[image]
+image::pick-edge-type-done.png[image]
 
 Click image:pick-btn.png[image] , then click one
 vertex in the visualize graph result tab:
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvr5x32viax2_hmvxxm_-lvrg-j4xoq7sv1zdjfl_pick-vertex.png[image]
+image::assets_-lhvjxin4__6ba0t-qmu_-lvr5x32viax2_hmvxxm_-lvrg-j4xoq7sv1zdjfl_pick-vertex.png[image]
 
 A vertex pattern will be added to the visual pattern. Note that the
 vertex pattern contains an id condition because it is picked from an
 actual vertex entity from the graph:
 
-image:pick-vetex-done.png[image]
+image::pick-vetex-done.png[image]
 
 == Merge
 
@@ -677,12 +677,12 @@ You can merge multiple vertex patterns of the same vertex type into one vertex p
 
 Hold Shift key to select multiple vertex patterns:
 
-image:multi-sel-vertex-pattern.png[image]
+image::multi-sel-vertex-pattern.png[image]
 
 Then click image:merge-btn.png[image] , and you
 will get a larger visual pattern:
 
-image:merged-vertex-pattern.png[image]
+image::merged-vertex-pattern.png[image]
 
 Use pick and merge together and you can create a complicated visual
 pattern quickly.
@@ -697,11 +697,11 @@ link:#_basic_concepts[Basic Concepts], a visual pattern represents a graph patte
 Click  image:intersect.png[image] , then click two
 vertex patterns of the same vertex type:
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrry_spqmnsq2be_hq_intersect-input1.png[image]
+image::assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrry_spqmnsq2be_hq_intersect-input1.png[image]
 
 And an intersection widget is added to the visual pattern:
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrs99vsvjblisgtg4w_intersect-added.png[image]
+image::assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrs99vsvjblisgtg4w_intersect-added.png[image]
 
 The output vertex pattern means matching all company vertices located at redwood city, *and* belongs to big data industry.
 
@@ -712,7 +712,7 @@ The output company vertex pattern can be part of another larger pattern. You can
 Click image:union.png[image] , then click two
 vertex patterns of the same vertex type. A union widget is added to the visual pattern:
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrttcpkwcfix_ui3ji_union-pattern.png[image]
+image::assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrttcpkwcfix_ui3ji_union-pattern.png[image]
 
 The output vertex pattern means matching all company vertices located at redwood city, *or* belongs to big data industry.
 
@@ -722,7 +722,7 @@ Click image:subtract.png[image] , then click two
 vertex patterns of the same vertex type. A subtract widget is added to
 the visual pattern:
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrtjgenpxrpc6qn91e_subtract-pattern.png[image]
+image::assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrtjgenpxrpc6qn91e_subtract-pattern.png[image]
 
 The output vertex pattern means matching all company vertices located at redwood city, *but not* belong to big data industry.
 
@@ -733,7 +733,7 @@ We now support importing visual patterns from a higher version to a lower versio
 Here is an example of the dialog that will be shown when an imported solution contains visual patterns which contain features
 that are unsupported in the current version: 
 
-image:downward-import-error-dialog.png[image]
+image::downward-import-error-dialog.png[image]
 
 Users can choose to either ignore the message and keep the pattern or delete it. If the user chooses to ignore the message and keep
 the pattern, the pattern will not be deleted, but it will not be displayed or accessible to the users.
@@ -750,13 +750,13 @@ Click image:within_widget-button.jpg[Within widget, 100], and then select a vert
 This creates a within widget on the first vertex pattern, and you will see a second vertex pattern added to the graph pattern.
 Below are two visual examples to select results within a vertex pattern.
 
-image:within_widget-pattern1.jpg[image]
+image::within_widget-pattern1.jpg[image]
 
 In the above example, the graph pattern outputs two bottom patterns which are both within the top pattern.
 The output vertex pattern means matching all company vertices or all city vertices that a person who attends san jose university is working at or was born in.
 In other words, a person vertex that attends san jose university needs either a `work_at` edge connected to a company vertex, or a `born_in` edge connected to a city vertex to be included in the result.
 
-image:within_widget-pattern2.jpg[image]
+image::within_widget-pattern2.jpg[image]
 
 The output vertex pattern means matching all company vertices and the city vertices that a person who attends san jose university is working at and was born in. In other words, a person vertex needs to have both a word_at edge connected to a company and a born_in edge connected to a city to be included in the result.
 
