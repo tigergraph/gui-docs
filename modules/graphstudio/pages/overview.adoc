@@ -3,7 +3,7 @@
 TigerGraph GraphStudio™ is a graphic user interface that provides an intuitive, browser-based interface to easily accomplish graph-based application development tasks.
 
 == Feature Overview
-Graphstudio provides the following features: 
+GraphStudio provides the following features:
 
 === 1. Design Schema
 The *Design Schema* page is where users edit their graph schema. Users will be able to add and specify the attributes and fields of every vertex and edge they add to the schema and also customize the colors and icons displayed on each vertex or edge. Users will also be able to edit existing vertices and edges in the existing schema in this page.
@@ -11,7 +11,11 @@ The *Design Schema* page is where users edit their graph schema. Users will be a
 For more details, see xref:design-schema.adoc[]
 
 === 2. Map Data To Graph
-The *Map Data To Graph* page is where users will add data files and map it to the corresponding vertices or edges in the schema. In this page users will be able to add data files as the data source to load their data into the data base. Users will also be able to specify the delimiter used to separate the fields in each file. This page also provides the tools that users can use to map each data file to the corresponding vertices and edges that the data should be loaded to. Users will also be able to map each data field in each data file to the corresponding attributes within each vertex or edge.
+The *Map Data To Graph* page is where users will add data files and map it to the corresponding vertices or edges in the schema.
+In this page users will be able to add data files as the data source to load their data into the database.
+Users will also be able to specify the delimiter used to separate the fields in each file.
+This page also provides the tools that users can use to map each data file to the corresponding vertices and edges that the data should be loaded to.
+Users will also be able to map each data field in each data file to the corresponding attributes within each vertex or edge.
 
 For more details, see xref:map-data-to-graph.adoc[]
 
