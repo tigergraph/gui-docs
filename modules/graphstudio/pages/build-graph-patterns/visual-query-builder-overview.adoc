@@ -1,6 +1,6 @@
 = Visual Query Builder
 
-In TigerGraph 3.0, we are proudly introducing _Visual Query Builder_ -- a visual way of building your graph business logic. In the Build Graph Patterns page, you can create visual patterns in drag-and-drop fashion, which intuitively represent the questions you want to ask. For these cases, you don't need to write GSQL anymore!
+_Visual Query Builder_ offers a visual approach to building your graph business logic. In the Build Graph Patterns page, you can create visual patterns in drag-and-drop fashion, which intuitively represent the questions you want to ask. For these cases, you don't need to write GSQL anymore!
 
 By adding the Visual Query Builder component, GraphStudio becomes a complete visual SDK for users to _build graph applications from end to end without writing a single line of code_!
 
@@ -497,7 +497,7 @@ tabs. The buttons, from top to bottom, are the following:
 
 [cols="^,<",options="header",]
 |===
-|menu option |functionality
+|Menu option |Functionality
 | image:expand_panel.png[image] 
 |Expand/Collapse: expand or collapse the Console panel.
 
@@ -505,7 +505,9 @@ tabs. The buttons, from top to bottom, are the following:
 |Graph schema: show the graph schema.
 
 | image:visual-result (1).png[image]
-|Visualize graph result: show the visual result of the last run pattern.
+|Visualize graph result: display the visual result of the last run pattern.
+
+| image:table-result.png[] | View table result: display the result in a table.
 
 | image:json-result.png[image]  |View JSON
 result: show the raw text result in JSON format of the last run pattern.
@@ -726,18 +728,6 @@ image::assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrtjgenpxrpc6qn91e_sub
 
 The output vertex pattern means matching all company vertices located at redwood city, *but not* belong to big data industry.
 
-== Downward import
-
-We now support importing visual patterns from a higher version to a lower version.
-
-Here is an example of the dialog that will be shown when an imported solution contains visual patterns which contain features
-that are unsupported in the current version: 
-
-image::downward-import-error-dialog.png[image]
-
-Users can choose to either ignore the message and keep the pattern or delete it. If the user chooses to ignore the message and keep
-the pattern, the pattern will not be deleted, but it will not be displayed or accessible to the users.
-
 === Within
 
 The Within widget allows you to create a vertex pattern whose matching result is constrained within the matching result of another vertex pattern.
@@ -759,6 +749,18 @@ In other words, a person vertex that attends san jose university needs either a 
 image::within_widget-pattern2.jpg[image]
 
 The output vertex pattern means matching all company vertices and the city vertices that a person who attends san jose university is working at and was born in. In other words, a person vertex needs to have both a word_at edge connected to a company and a born_in edge connected to a city to be included in the result.
+
+== Downward import
+
+We now support importing visual patterns from a higher version to a lower version.
+
+Here is an example of the dialog that will be shown when an imported solution contains visual patterns which contain features
+that are unsupported in the current version:
+
+image::downward-import-error-dialog.png[image]
+
+Users can choose to either ignore the message and keep the pattern or delete it. If the user chooses to ignore the message and keep
+the pattern, the pattern will not be deleted, but it will not be displayed or accessible to the users.
 
 == Next Step
 
