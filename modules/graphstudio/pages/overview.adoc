@@ -39,7 +39,7 @@ In v1.2, the default TCP/IP port for GraphStudio has changed from 44240 to 14240
 
 If you cannot access GraphStudio, check your firewall rules and open 14240 port to public. For example, if your Linux OS uses firewall-cmd:
 
-[source,text]
+[source,console]
 ----
 $ firewall-cmd –zone=public –add-port=14240/tcp –permanent
 ----
@@ -54,7 +54,7 @@ To verify, in a linux shell of the server, type
 
 If it is off, turn it on:
 
-[source,bash]
+[source,console]
 ----
 $ gadmin start gui
 ----
@@ -110,7 +110,7 @@ time, the user has no interaction with the page, the session will expire
 and the user will be logged out automatically. The timeout can be
 configured with:
 
-[source,bash]
+[source,console]
 ----
 $ gadmin config set GUI.ClientIdleTimeSec [timeout]
 ----

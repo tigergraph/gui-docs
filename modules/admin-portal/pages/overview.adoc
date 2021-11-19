@@ -74,7 +74,7 @@ image::service-status.png[]
 
 Admin Portal has a default session timeout of 1 week. If, during this time, the user has no interaction with the page, the session will expire and the user will be logged out automatically. The timeout can be configured with:
 
-[source,bash]
+[source,console]
 ----
 $ gadmin config set GUI.ClientIdleTimeSec[timeout]
 ----
