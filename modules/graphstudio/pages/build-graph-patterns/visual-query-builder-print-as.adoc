@@ -1,0 +1,11 @@
+= Support PRINT AS in VQB and function refactoring
+
+This function is responsible for the code generation of print statement of vertex, edge and pattern view.
+
+== Support PRINT AS code change
+If the entity passed in has an alias, call the function getPatternComponentAlias to get the input entity alias and attach it at end of the print statement so that the result will be printed out in alias.
+
+== Refactor the getPrintStatement function
+All the print statement in VQB will be genereted by calling this function(getPrintStatment) and we add a new parameter entityName to force the caller pass in an existing name.
+
+If an entity is a vertex type, all the attributes it has will be printed out. Otherwise, for edge and pattern view, the attribute won't be printed out.
