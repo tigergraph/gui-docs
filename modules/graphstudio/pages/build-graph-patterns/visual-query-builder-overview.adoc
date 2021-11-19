@@ -202,6 +202,8 @@ Output: click this button, then click vertex patterns and edge patterns of the v
 
 You can edit vertex patterns and edge patterns from config panel.
 
+If you want to use vertx or edge id as an attribute, please go to Design Schema section and check the box "AS ATTRIBUTE". Then, id of a vertex/edge will be supported in filter, attachment and order by as an attribute.
+
 === Vertex patterns
 If you enter editing mode of a vertex pattern and expand the Basic Info section, you can edit its name, decide whether or not to put it into result, change
 its vertex type, provide optional matching conditions by giving a list
