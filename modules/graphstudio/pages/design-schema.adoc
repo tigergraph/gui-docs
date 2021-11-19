@@ -88,6 +88,8 @@ Then you can use your uploaded icons:
 image:select_icon_with_user_upload.png[image]
 
 *Adding and Deleting Attributes* +
+If you want to have PRIMARY ID as an attribute, check the "AS ATTRIBUTE" box and the name of your PRIMARY ID will show up in filter, attachment and order inside attribute list.
+
 To add an attribute, click the green plus sign at the right of the
 Attributes section:
 
