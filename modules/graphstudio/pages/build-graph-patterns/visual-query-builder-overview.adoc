@@ -1,6 +1,6 @@
 = Visual Query Builder
 
-In TigerGraph 3.0, we are proudly introducing _Visual Query Builder_ -- a visual way of building your graph business logic. In the Build Graph Patterns page, you can create visual patterns in drag-and-drop fashion, which intuitively represent the questions you want to ask. For these cases, you don't need to write GSQL anymore!
+Visual Query Builder(VQB) provides a visual approach to building your graph business logic. In the Build Graph Patterns page, you can create visual patterns in a drag-and-drop fashion to represent the questions you want to ask instead of writing GSQL queries. 
 
 By adding the Visual Query Builder component, GraphStudio becomes a complete visual SDK for users to _build graph applications from end to end without writing a single line of code_!
 
@@ -200,9 +200,10 @@ Output: click this button, then click vertex patterns and edge patterns of the v
 
 == Configuration Panel
 
-You can edit vertex patterns and edge patterns from config panel.
+You can edit vertex patterns and edge patterns from the Configuration Panel.
 
-If you want to use vertx or edge id as an attribute, please go to Design Schema section and check the box "AS ATTRIBUTE". Then, id of a vertex/edge will be supported in filter, attachment and order by as an attribute.
+If you want to use vertex ID or edge ID as an attribute, check the "AS ATTRIBUTE" box in the Design Schema section for the corresponding vertex type. 
+If a vertex or edge type's primary ID is set as an attibute, you can use its ID in features such as filter, attachment and order by like any other attribute.
 
 === Vertex patterns
 If you enter editing mode of a vertex pattern and expand the Basic Info section, you can edit its name, decide whether or not to put it into result, change
