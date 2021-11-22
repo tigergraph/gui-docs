@@ -4,7 +4,7 @@ In TigerGraph 3.0, we are proudly introducing _Visual Query Builder_ -- a visual
 
 By adding the Visual Query Builder component, GraphStudio becomes a complete visual SDK for users to _build graph applications from end to end without writing a single line of code_!
 
-image::vqb-overview_3.3.png[]
+image::vqb-overview.png[]
 
 Currently, Visual Query Builder is still in beta phase. Please expect lots of improvements and changes coming in the future!
 
@@ -12,7 +12,7 @@ Currently, Visual Query Builder is still in beta phase. Please expect lots of im
 
 A visual pattern is a declarative way of describing a template subgraph structure, and all the subgraph structures that the visual pattern is *homomorphic* with are valid matching results.
 
-Visual patterns are constructed by vertex patterns, edge patterns and widgets.
+Visual patterns are constructed by vertex patterns, edge patterns, widgets and pattern views.
 
 This is a basic vertex pattern within a visual pattern:
 
@@ -45,6 +45,10 @@ image::widget.png[]
 A widget has input vertex patterns and output vertex patterns:
 
 image::intput-output.png[]
+
+This is a visual pattern with a pattern view:app-name: 
+
+image::pattern-view-part.png[]
 
 This is the visual pattern matching all the people who are younger than 30 years old in the year 2019. The filter *((2019 - birthYear) < 30)* on the person vertex pattern provides the matching condition:
 
@@ -173,6 +177,10 @@ patterns into the visual pattern.
 |image:merge-btn.png[] |Merge: select multiple vertex patterns, and click this
 button to merge them together. This is a fast way to connect multiple
 shorter patterns into a longer one.
+
+|image:add-pattern-view-btn.png[] |Add a pattern view: select one or more vertex or
+edge patterns, and click this button to create a pattern view containing all these 
+vertex and edge patterns.
 
 |image:widget-btn.png[] |Widget: see more information
 link:#_widget[here].
@@ -687,6 +695,102 @@ image::merged-vertex-pattern.png[image]
 Use pick and merge together and you can create a complicated visual
 pattern quickly.
 
+== Add a pattern view
+
+Before we introduced *pattern view*, we could only apply filters, attachments, order by and limit on individual vertices or edges. The *pattern view* functionality allows us 
+to group vertices and edges within a connected component together as a *pattern view* and apply filters, attachments, order by and limit on the Pattern View itself, instead of 
+only on individual vertices and edges. The *pattern view* is applied on the pattern match results and outputs a deduplicated sub-pattern match from the original match.
+
+Our current *pattern view* functionality does not have filter, attachment, order by or limit on it yet, but you can still use it to group vertices and edges in a connected component.
+
+Take a look at these examples:
+
+Here we have a *pattern view* which encapsulates the whole visual pattern:
+
+image::pattern-view-all.png[image]
+
+Running this visual pattern would give us the following result:
+
+image::pattern-view-all-results.png[image]
+
+As you can see putting a *pattern view* over the whole visual pattern would mean applying the *pattern view* on the pattern match result of the whole pattern. In this case, as 
+we do not have any filter, order by or limit the output of the *pattern view* is just the projection the whole pattern match result again.
+
+Here we have a *pattern view* which encapsulate only a part of the visual pattern:
+
+image::pattern-view-part.png[image]
+
+Running this visual pattern would give us the following result:
+
+image::pattern-view-part-results.png[image]
+
+As you can see putting a *pattern view* over a part of the visual pattern would mean applying the *pattern view* on only a sub-graph of the pattern match result of the whole 
+pattern. In this case, it is the sub-graph which matches the sub-pattern (person AS p)-person_has_skill->(skill). As we do not have any filter, order-by and limit the output 
+of this *pattern view* is just the projection of the matched sub-graph.
+
+Here we have a *pattern view* which encapsulates only a vertex within the visual pattern:
+
+image::pattern-view-one.png[image]
+
+Running this visual pattern would give us the following result:
+
+image::pattern-view-one-results.png[image]
+
+As you can see putting a *pattern view* over only a vertex within a visual pattern would mean applying the *pattern view* on only a single vertex type of the pattern match 
+result of the whole pattern. In this case, it is all the vertices of type 'person'. As we do not have any filter, order-by and limit, the output of this *pattern view* is just 
+the projection of all the distinct vertices of type 'person' within the whole pattern match result. This is the same behavior as when we just output a single vertex. 
+
+To add a *pattern view* to your visual pattern, you will first have to select the vertices and edges in the visual pattern that you want to include in the *pattern view*. 
+Then, you click on the 'Add a pattern view' button image:add-pattern-view-btn.png[] on the toolbar and a *pattern view* will appear and it will encapsulate all the vertices 
+and edges included within the *pattern view*. 
+
+If you select an edge pattern, and then click on the 'Add a pattern view' button both vertices on the ends of the edge pattern will be included within the *pattern view*.
+If you select two vertex patterns with an edge/edges between the two vertex patterns and then click on the 'Add pattern view' button the edge/edges between the two vertex 
+patterns will be included in the *pattern view*.
+
+Note: Self edges however might not visually appear to be included within the *pattern view*, but if the self edge or the vertex with the self edge was selected, then it is in 
+the *pattern view*.
+
+A *pattern view* can only consist of vertices and edges, and so widgets are not included within a *pattern view*.
+
+Each *pattern view* must have an alias, and when it is first created a name will be directly assigned to it. The format of the name would be: 'pattern_view_{index}', where the 
+'index' is the first available positive number. So if there alias 'pattern_view_1' is taken already, and 'pattern_view_2' is not, the new *pattern view* will be assigned the 
+name 'pattern_view_2'. Users will also be able to change the name of the *pattern view* by editing the *pattern view* using the configuration panel.
+
+image::pattern-view-name-edit.png[image]
+
+To delete a *pattern view*, you will need to select the *pattern view* and then click on the 'Delete' button on the toolbar. Vertex and edge patterns within a *pattern view* 
+can not be deleted before the *pattern view* itself has been deleted. If you attempt to do so an error message such as the one below will be shown:
+
+image::delete-vertex-pattern-in-pattern-view.png[image]
+
+Limitations on the current *pattern view* functionality:
+
+We currently do not allow overlapping *pattern views*:
+
+image::pattern-view-overlap-error.png[image]
+
+Error message:
+
+image::pattern-view-overlap-error-message.png[image]
+
+We currently do not allow *pattern view* across multiple connected components:
+
+image::pattern-view-different-components-error.png[image]
+
+Error message:
+
+image::pattern-view-different-components-error-message.png[image]
+
+We currently do not allow vertex patterns within a *pattern view* to be merged with any other vertex patterns:
+
+image::merging-pattern-component-included-in-pattern-view.png[image]
+
+We currently do not allow creating edge patterns between vertex patterns in the same *pattern view*:
+
+image::adding-edge-between-two-vertices-in-pattern-view.png[image]
+
+
 == Widget
 
 As described in the
@@ -726,18 +830,6 @@ image::assets_-lhvjxin4__6ba0t-qmu_-lvrllqdvwlhlo9elct4_-lvrtjgenpxrpc6qn91e_sub
 
 The output vertex pattern means matching all company vertices located at redwood city, *but not* belong to big data industry.
 
-== Downward import
-
-We now support importing visual patterns from a higher version to a lower version.
-
-Here is an example of the dialog that will be shown when an imported solution contains visual patterns which contain features
-that are unsupported in the current version: 
-
-image::downward-import-error-dialog.png[image]
-
-Users can choose to either ignore the message and keep the pattern or delete it. If the user chooses to ignore the message and keep
-the pattern, the pattern will not be deleted, but it will not be displayed or accessible to the users.
-
 === Within
 
 The Within widget allows you to create a vertex pattern whose matching result is constrained within the matching result of another vertex pattern.
@@ -759,6 +851,18 @@ In other words, a person vertex that attends san jose university needs either a 
 image::within_widget-pattern2.jpg[image]
 
 The output vertex pattern means matching all company vertices and the city vertices that a person who attends san jose university is working at and was born in. In other words, a person vertex needs to have both a word_at edge connected to a company and a born_in edge connected to a city to be included in the result.
+
+== Downward import
+
+We now support importing visual patterns from a higher version to a lower version.
+
+Here is an example of the dialog that will be shown when an imported solution contains visual patterns which contain features
+that are unsupported in the current version: 
+
+image::downward-import-error-dialog.png[image]
+
+Users can choose to either ignore the message and keep the pattern or delete it. If the user chooses to ignore the message and keep
+the pattern, the pattern will not be deleted, but it will not be displayed or accessible to the users.
 
 == Next Step
 
