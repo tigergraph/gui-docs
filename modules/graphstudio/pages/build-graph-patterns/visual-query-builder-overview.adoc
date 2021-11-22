@@ -760,6 +760,10 @@ image::within_widget-pattern2.jpg[image]
 
 The output vertex pattern means matching all company vertices and the city vertices that a person who attends san jose university is working at and was born in. In other words, a person vertex needs to have both a word_at edge connected to a company and a born_in edge connected to a city to be included in the result.
 
+== Give an alias and Print in customized name
+
+You can give any vertex, edge, and pattern view an alias and GSQL will have "AS your alias" attached and result will be displayed in this alias.
+
 == Next Step
 
 Now you have a basic idea about all different functionalities of Visual Query Builder. Let's go to the next page to walk through how to build some visual patterns to solve your business questions!
