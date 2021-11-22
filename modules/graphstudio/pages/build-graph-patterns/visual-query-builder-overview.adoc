@@ -790,6 +790,9 @@ We currently do not allow creating edge patterns between vertex patterns in the 
 
 image::adding-edge-between-two-vertices-in-pattern-view.png[image]
 
+We currently do not support dragging vertices within a pattern view. However the pattern view itself can be dragged around, and ther vertex and edge patterns within it will be
+dragged along with the pattern view.
+
 
 == Widget
 
