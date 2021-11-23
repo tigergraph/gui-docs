@@ -697,11 +697,8 @@ pattern quickly.
 
 == Add a pattern view
 
-Before we introduced *pattern view*, we could only apply filters, attachments, order by and limit on individual vertices or edges. The *pattern view* functionality allows us 
-to group vertices and edges within a connected component together as a *pattern view* and apply filters, attachments, order by and limit on the Pattern View itself, instead of 
-only on individual vertices and edges. The *pattern view* is applied on the pattern match results and outputs a deduplicated sub-pattern match from the original match.
-
-Our current *pattern view* functionality does not have filter, attachment, order by or limit on it yet, but you can still use it to group vertices and edges in a connected component.
+The *pattern view* functionality allows us to group vertices and edges within a connected component together as a *pattern view*. The *pattern view* is applied on the pattern match 
+results and outputs a deduplicated sub-pattern match from the original match.
 
 Take a look at these examples:
 
@@ -713,8 +710,8 @@ Running this visual pattern would give us the following result:
 
 image::pattern-view-all-results.png[image]
 
-As you can see putting a *pattern view* over the whole visual pattern would mean applying the *pattern view* on the pattern match result of the whole pattern. In this case, as 
-we do not have any filter, order by or limit the output of the *pattern view* is just the projection the whole pattern match result again.
+As you can see putting a *pattern view* over the whole visual pattern would mean applying the *pattern view* on the pattern match result of the whole pattern. In this case, 
+the output of the *pattern view* is just the projection the whole pattern match result again.
 
 Here we have a *pattern view* which encapsulate only a part of the visual pattern:
 
@@ -725,8 +722,8 @@ Running this visual pattern would give us the following result:
 image::pattern-view-part-results.png[image]
 
 As you can see putting a *pattern view* over a part of the visual pattern would mean applying the *pattern view* on only a sub-graph of the pattern match result of the whole 
-pattern. In this case, it is the sub-graph which matches the sub-pattern (person AS p)-person_has_skill->(skill). As we do not have any filter, order-by and limit the output 
-of this *pattern view* is just the projection of the matched sub-graph.
+pattern. In this case, it is the sub-graph which matches the sub-pattern (person AS p)-person_has_skill->(skill). In this case the output of the pattern view is just the sub
+-graph of the pattern match result.
 
 Here we have a *pattern view* which encapsulates only a vertex within the visual pattern:
 
@@ -737,8 +734,8 @@ Running this visual pattern would give us the following result:
 image::pattern-view-one-results.png[image]
 
 As you can see putting a *pattern view* over only a vertex within a visual pattern would mean applying the *pattern view* on only a single vertex type of the pattern match 
-result of the whole pattern. In this case, it is all the vertices of type 'person'. As we do not have any filter, order-by and limit, the output of this *pattern view* is just 
-the projection of all the distinct vertices of type 'person' within the whole pattern match result. This is the same behavior as when we just output a single vertex. 
+result of the whole pattern. In this case, it is all the vertices of type 'person'. The output of this *pattern view* is just the projection of all the distinct vertices of 
+type 'person' within the whole pattern match result. This is the same behavior as when we just output a single vertex. 
 
 To add a *pattern view* to your visual pattern, you will first have to select the vertices and edges in the visual pattern that you want to include in the *pattern view*. 
 Then, you click on the 'Add a pattern view' button image:add-pattern-view-btn.png[] on the toolbar and a *pattern view* will appear and it will encapsulate all the vertices 
