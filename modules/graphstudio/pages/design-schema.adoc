@@ -88,7 +88,7 @@ Then you can use your uploaded icons:
 image:select_icon_with_user_upload.png[image]
 
 *Adding and Deleting Attributes* +
-If you want to have a vertex or edge type's primary ID as an attribute, check the "AS ATTRIBUTE" box. This will allow you to use the vertex or edge's primary ID in features such as filter, attachment and order by like any other attribute of the vertex or edge type.
+If you want to have a vertex or edge type's primary ID as an attribute, check the "AS ATTRIBUTE" box. This will allow you to use the vertex or edge's primary ID  like any other attribute of the vertex or edge type in features such as filter, attachment and order.
 
 To add an attribute, click the green plus sign at the right of the
 Attributes section:
