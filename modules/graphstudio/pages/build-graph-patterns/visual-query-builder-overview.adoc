@@ -700,98 +700,130 @@ pattern quickly.
 
 == Add a pattern view
 
-The *pattern view* functionality allows us to group vertices and edges within a connected component together as a *pattern view*. The *pattern view* is applied on the pattern match 
-results and outputs a deduplicated sub-pattern match from the original match.
+The *pattern view* functionality allows us to group a subset of a visual pattern within a connected component together as a *pattern view*.
+The *pattern view* is applied on the pattern match results and outputs a deduplicated subset of the original match results.
 
-Take a look at these examples:
+To add a *pattern view* to your visual pattern:
 
-Here we have a *pattern view* which encapsulates the whole visual pattern:
-
-image::pattern-view-all.png[image]
-
-Running this visual pattern would give us the following result:
-
-image::pattern-view-all-results.png[image]
-
-As you can see putting a *pattern view* over the whole visual pattern would mean applying the *pattern view* on the pattern match result of the whole pattern. In this case, 
-the output of the *pattern view* is just the projection the whole pattern match result again.
-
-Here we have a *pattern view* which encapsulate only a part of the visual pattern:
-
-image::pattern-view-part.png[image]
-
-Running this visual pattern would give us the following result:
-
-image::pattern-view-part-results.png[image]
-
-As you can see putting a *pattern view* over a part of the visual pattern would mean applying the *pattern view* on only a sub-graph of the pattern match result of the whole 
-pattern. In this case, it is the sub-graph which matches the sub-pattern (person AS p)-person_has_skill->(skill). In this case the output of the pattern view is just the sub
--graph of the pattern match result.
-
-Here we have a *pattern view* which encapsulates only a vertex within the visual pattern:
-
-image::pattern-view-one.png[image]
-
-Running this visual pattern would give us the following result:
-
-image::pattern-view-one-results.png[image]
-
-As you can see putting a *pattern view* over only a vertex within a visual pattern would mean applying the *pattern view* on only a single vertex type of the pattern match 
-result of the whole pattern. In this case, it is all the vertices of type 'person'. The output of this *pattern view* is just the projection of all the distinct vertices of 
-type 'person' within the whole pattern match result. This is the same behavior as when we just output a single vertex. 
-
-To add a *pattern view* to your visual pattern, you will first have to select the vertices and edges in the visual pattern that you want to include in the *pattern view*. 
-Then, you click on the 'Add a pattern view' button image:add-pattern-view-btn.png[] on the toolbar and a *pattern view* will appear and it will encapsulate all the vertices 
-and edges included within the *pattern view*. 
-
-If you select an edge pattern, and then click on the 'Add a pattern view' button both vertices on the ends of the edge pattern will be included within the *pattern view*.
-If you select two vertex patterns with an edge/edges between the two vertex patterns and then click on the 'Add pattern view' button the edge/edges between the two vertex 
+. Select the vertices and edges in the visual pattern that you want to include in the *pattern view*.
+. Click on the 'Add a pattern view' button image:add-pattern-view-btn.png[] on the toolbar to add all selected vertices and edges to the pattern view.
+** If you select an edge pattern, both vertices on the ends of the edge pattern will be included within the *pattern view*.
+** If you select two vertex patterns with an edge/edges between the two vertex patterns the edge/edges between the two vertex
 patterns will be included in the *pattern view*.
 
-Note: Self edges however might not visually appear to be included within the *pattern view*, but if the self edge or the vertex with the self edge was selected, then it is in 
+NOTE: Self edges might not visually appear to be included within the *pattern view*, but if the self edge or the vertex with the self edge was selected, then it is in
 the *pattern view*.
 
 A *pattern view* can only consist of vertices and edges, and so widgets are not included within a *pattern view*.
 
-Each *pattern view* must have an alias, and when it is first created a name will be directly assigned to it. The format of the name would be: 'pattern_view_{index}', where the 
-'index' is the first available positive number. So if there alias 'pattern_view_1' is taken already, and 'pattern_view_2' is not, the new *pattern view* will be assigned the 
-name 'pattern_view_2'. Users will also be able to change the name of the *pattern view* by editing the *pattern view* using the configuration panel.
+Each *pattern view* must have an alias.
+GraphStudio generates a default name for each pattern view upon creation, and you can change its name from the configuration panel.
 
 image::pattern-view-name-edit.png[image]
 
-To delete a *pattern view*, you will need to select the *pattern view* and then click on the 'Delete' button on the toolbar. Vertex and edge patterns within a *pattern view* 
+To delete a *pattern view*, you will need to select the *pattern view* and then click on the 'Delete' button on the toolbar. Vertex and edge patterns within a *pattern view*
 can not be deleted before the *pattern view* itself has been deleted. If you attempt to do so an error message such as the one below will be shown:
 
 image::delete-vertex-pattern-in-pattern-view.png[image]
 
-Limitations on the current *pattern view* functionality:
+=== Examples
 
-We currently do not allow overlapping *pattern views*:
+==== Example 1
 
+Here we have a *pattern view* that includes part of a visual pattern:
+
+[tabs]
+====
+Pattern view::
++
+--
+.Pattern view that includes part of a visual pattern
+image::pattern-view-part.png[image]
+
+--
+
+Results::
++
+--
+Running this visual pattern would give us the following result:
+
+image::pattern-view-part-results.png[image]
+
+As you can see putting a *pattern view* over a part of the visual pattern would mean applying the *pattern view* on only a sub-graph of the pattern match result of the whole pattern.
+
+In this case, it is the sub-graph which matches the sub-pattern `(person AS p)-person_has_skill->(skill)`. In this case the output of the pattern view is just the sub
+-graph of the pattern match result.
+--
+====
+
+==== Example 2
+
+Here we have a *pattern view* that includes the whole visual pattern:
+[tabs]
+====
+Pattern view::
++
+--
+.Pattern view that includes
+image::pattern-view-all.png[Pattern view example]
+--
+
+Results::
++
+--
+Running this visual pattern would give us the following result:
+
+image::pattern-view-all-results.png[Pattern view example results]
+
+As you can see putting a *pattern view* over the whole visual pattern would mean applying the *pattern view* on the pattern match result of the whole pattern.
+In this case, the output of the *pattern view* is just the projection of the whole pattern match result again.
+--
+====
+
+==== Example 3
+
+Here we have a *pattern view* which includes only a vertex within the visual pattern:
+
+[tabs]
+====
+Pattern view::
++
+--
+
+.Pattern view that includes one vertex within a visual pattern
+image::pattern-view-one.png[image]
+--
+
+Results::
++
+--
+Running the visual pattern would give us the following result:
+
+image::pattern-view-one-results.png[image]
+
+As you can see putting a *pattern view* over only a vertex within a visual pattern would mean applying the *pattern view* on only a single vertex type of the pattern match 
+result of the whole pattern.
+In this case, it is all the vertices of type 'person'.
+The output of this *pattern view* is just the projection of all the distinct vertices of
+type `person` within the whole pattern match result.
+This is the same behavior as when we just output a single vertex.
+--
+====
+
+
+=== Limitations
+
+* Overlapping pattern views are not allowed:
++
 image::pattern-view-overlap-error.png[image]
 
-Error message:
-
-image::pattern-view-overlap-error-message.png[image]
-
-We currently do not allow *pattern view* across multiple connected components:
-
+* Pattern views across different connected components are not allowed:
++
 image::pattern-view-different-components-error.png[image]
 
-Error message:
-
-image::pattern-view-different-components-error-message.png[image]
-
-We currently do not allow vertex patterns within a *pattern view* to be merged with any other vertex patterns:
-
-image::merging-pattern-component-included-in-pattern-view.png[image]
-
-We currently do not allow creating edge patterns between vertex patterns in the same *pattern view*:
-
-image::adding-edge-between-two-vertices-in-pattern-view.png[image]
-
-We currently do not support dragging vertices within a pattern view. However the pattern view itself can be dragged around, and ther vertex and edge patterns within it will be
-dragged along with the pattern view.
+* Vertex patterns within a *pattern view* cannot be merged with any other vertex patterns:
+* We currently do not allow creating edge patterns between vertex patterns in the same *pattern view*:
+* Drag-and-drop is not supported within a pattern view. However, the pattern view itself can be dragged around, and the vertex and edge patterns within it will be dragged along with the pattern view.
 
 
 == Widget
