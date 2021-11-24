@@ -209,7 +209,9 @@ of ids, or provide a parameter name.
 
 image::https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LvmDJHsFycWDzKKRvbn%2F-LvmGGM22Jxkwmy-OkHN%2Fvertex-pattern-basic.png?alt=media&token=5d964b95-5799-486c-bbd4-1eea486b0c57[image]
 
-You can add/drop id in the list:
+The name supplied in the panel will be used as the vertex's JSON key when producing output and when the pattern is saved as a GSQL query. 
+
+You can add/drop IDs in the list:
 
 image::https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LvmDJHsFycWDzKKRvbn%2F-LvmGsiKMygJOaG6YRQc%2Fvertex-pattern-ids.png?alt=media&token=9c0058e1-f5b5-412f-88f8-b85b19de5954[image]
 
@@ -225,6 +227,9 @@ change its edge type. You can also specify this edge pattern as a regex match by
 or put it into result.
 
 image::https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LvmDJHsFycWDzKKRvbn%2F-LvmHQxr7mWLpATC0XL3%2Fedge-pattern-basic-info.png?alt=media&token=8ae1fec9-4b76-465e-ba7d-5bc5632e2865[image]
+
+
+The name supplied in the panel will be used as the edge's JSON key when producing output and when the pattern is saved as a GSQL query. 
 
 When finished editing, you need to confirm the change. You can also
 cancel the change if you made a mistake:
@@ -759,10 +764,6 @@ In other words, a person vertex that attends san jose university needs either a 
 image::within_widget-pattern2.jpg[image]
 
 The output vertex pattern means matching all company vertices and the city vertices that a person who attends san jose university is working at and was born in. In other words, a person vertex needs to have both a word_at edge connected to a company and a born_in edge connected to a city to be included in the result.
-
-== Give an alias and Print in customized name
-
-You can give any vertex, edge, and pattern view an alias and GSQL will have "AS your alias" attached and result will be displayed in this alias.
 
 == Next Step
 
