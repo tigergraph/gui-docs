@@ -1,18 +1,9 @@
 = SSO
 
-== SSO Page
-
 You can set up and configure SSO settings on this page.
 
 image::sso-page.png[]
 
-When you don't have any changes, the DISCARD and APPLY buttons are disabled.
-
-image::discard-apply.png[]
-
-You can clear your changes by clicking the DISCARD button at the bottom right corner of the page.
-
-image::discard.png[]
 
 `Service Provider's X509 certificate` and  `Service Provider's private key`
 
@@ -27,15 +18,6 @@ image::self-sign.png[]
 
 If you want to get the default data again, you can click the refresh button in the upper right corner of the page.
 
-image::refresh-button.png[]
-
-The fields with * in the label are required. When users do not fill the required fields and click the APPLY button, the following error will appear:
-
-image::sso-reqired-error.png[]
-
-If everything is ready, click the APPLY button and a confirmation box will pop up.
-
-image::confirm-config-pop.png[]
 
 Click the CANCEL button, the pop-up window will be closed. Then click the OK button, it will prompt the success message. Since any configuration modification requires restarting the server service, a pop-up box will appear to confirm whether to restart the service.After clicking the OK button, configuration changes will start. Users will be notified after server restarting when all the process is completed.
 
