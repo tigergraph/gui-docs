@@ -112,6 +112,12 @@ In the example below, the ID and gender for person vertices are shown.  The ID a
 
 image::show-attributes.png[]
 
+You can set the number format you want to display through settings. This setting allows you to define the thousandth place and its separator, the number of decimal places and its separator. Every time you modify the settings, a sample at the top will show your modifications in real time. Note that if you need to modify the thousandth separator and the number of decimal places, you need to turn them on by checking the box in front of them.
+
+image::number-formatting-settings.png[]
+
+image::number-formatting-ex.png[]
+
 You can also configure the text font size of vertex and edge labels and properties.
 
 image::configure-font-size.png[]
