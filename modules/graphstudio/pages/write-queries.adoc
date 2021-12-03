@@ -75,7 +75,6 @@ image:save-as_last-saved-state-query.png[image]
 
 If you have saved the query and there is no errors in the query, you can run the query in interpreted mode. Click the run query buttonimage:start_loading.png[]. Together with the query execution result, a warning message will appear to notify user of the performance concerns running the query in interpreted mode. To speed up the query performance after you are satisfied with the GSQL query developed in interpreted mode, you can follow the instructions in the next section "Install Query".
 
-image::write-queries-run-query-interpreted-mode_3.3.png[]
 
 === Install Query
 
