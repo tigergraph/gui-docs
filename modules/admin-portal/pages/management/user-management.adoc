@@ -45,7 +45,7 @@ Both native users and proxy users are displayed in the User section. However, yo
 
 Click image:add-user-btn.png[Add user button] to add new users:
 
-image::all-users%20%281%29.png[Add new user pop-up]
+image::all-users (1).png[Add new user pop-up]
 
 Click image:change-others-password-btn.png[] to change other users' password:
 
@@ -193,7 +193,7 @@ You can also discard your changes by clicking the discard button image:discard-b
 image::user-assignment-changed.png[View after changing role assignment]
 
 
-Similarly, you can also click the proxy group button image:proxy-groups%20%281%29.png[] to switch to proxy groups and manage their roles.
+Similarly, you can also click the proxy group button image:proxy-groups (1).png[] to switch to proxy groups and manage their roles.
 
 image::manage-groups.png[]
 

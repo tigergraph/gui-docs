@@ -62,4 +62,4 @@ image:single-search-result.png[image]
 Clicking on one single search result will show the log content in
 display panel. The matching log line content will be highlighted.
 
-image:line-highlight-log%20%281%29.png[image]
+image:line-highlight-log (1).png[image]

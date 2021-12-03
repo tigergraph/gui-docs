@@ -20,7 +20,7 @@ After login, the user is assigned to one of the graphs for which he has access t
 
 To log out, click the User icon image:account_btn.png[]and then the Sign Out icon.
 
-image::logout%20%281%29.png[]
+image::logout (1).png[]
 
 === Role- and Graph- Based Access Control
 
@@ -143,7 +143,7 @@ image::global-view.png[]
 
 Click the card showing current graph and user roles, and a dropdown menu of graphs the current user can access will appear. In addition, superuser or globaldesigner users can create and drop graphs.
 
-image::switch-graph%20%281%29.png[]
+image::switch-graph (1).png[]
 
 For other users, there is no access to global view, and you cannot create or drop graphs.
 

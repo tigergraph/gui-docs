@@ -4,7 +4,7 @@
 
 The Dashboard page has three main parts: Overall statistics, the time range picker, and several charts.
 
-image::image%20%285%29.png[]
+image::image (5).png[]
 
 === Overall Cluster Statistics
 
@@ -33,7 +33,7 @@ Each chart displays some statistic or states information on the vertical axis an
 
 There are two chart sections. The first section is GSQL Query Performance. This lists all of the queries accessible to the current user. If you click on a query name, the display will expand to show detailed charts about that query. You can expand only one query panel at a time. The second section is Cluster Monitoring. This lists all of the machines within the TigerGraph cluster. Similar to the first section, you can only expand one panel at a time.
 
-image::charts_list%20%281%29.png[]
+image::charts_list (1).png[]
 
 A Query Monitoring Panel includes three charts:
 
@@ -41,7 +41,7 @@ A Query Monitoring Panel includes three charts:
 * Timeout (fraction of the query calls which timed out and therefore did not finish)
 * Latency (minimum, maximum, and average time to complete a query)
 
-image::query_performance_charts%20%281%29.png[]
+image::query_performance_charts (1).png[]
 
 A Machine Monitoring Panel includes 4 charts. The first three charts break down the information among three processing-focused components (GPE, GSE, RESTPP).
 The last chart breaks down information among three components which may have large storage needs (GStore, Log files, and Apache Kafka).

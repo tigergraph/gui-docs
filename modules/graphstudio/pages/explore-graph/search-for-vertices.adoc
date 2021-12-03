@@ -20,7 +20,7 @@ image::pick-vertex-by-type.png[]
 
 == Search with attribute filters
 
-You can control vertex search in finer granularity by creating attribute filters. Click the filter buttonimage:filter%20%282%29%20%281%29%20%282%29.png[]to the right of any vertex type. In the pop-up window, you can create a condition involving attributes of the vertex type. The user experience is the same as creating data filters when you do data mapping. Here is an example attribute filter for searching company vertices with `foundYear >= 2012`:
+You can control vertex search in finer granularity by creating attribute filters. Click the filter buttonimage:filter (2) (1) (2).png[]to the right of any vertex type. In the pop-up window, you can create a condition involving attributes of the vertex type. The user experience is the same as creating data filters when you do data mapping. Here is an example attribute filter for searching company vertices with `foundYear >= 2012`:
 
 image::attr-filter.png[]
 
