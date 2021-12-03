@@ -35,10 +35,10 @@ The menu options, from top to bottom, are the following:
 |  image:paths.png[] 
 | Find paths: find paths between the selected source vertex and target vertex.
 
-|  image:connections%20%281%29%20%283%29.png[] 
+|  image:connections (1) (3).png[]
 | Find connections: find connecting paths between a set of vertices.
 
-|  image:gsql%20%281%29.png[] 
+|  image:gsql (1).png[]
 | Run queries: run installed GSQL queries.
 |===
 
