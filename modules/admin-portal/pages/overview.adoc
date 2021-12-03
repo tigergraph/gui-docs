@@ -1,4 +1,6 @@
 = Overview
+:description: An overview of GraphStudio UI.
+:experimental:
 
 The TigerGraph Admin Portal is a browser-based DevOps tool that provides users an overview of a running TigerGraph system, from an application and infrastructure point of view. It also allows the users to configure the TigerGraph system through a user-friendly interface. This guide serves as an introduction and quick-start manual for Admin Portal.
 
@@ -62,7 +64,7 @@ To sign out of the Admin Portal, click on the *Sign out* button in the Account m
 
 Clicking on the *Help* button will take you to the documentation page containing this guide.
 
-You can navigate to GraphStudio by clicking onimage:goto_graphstudio.png[].
+You can navigate to GraphStudio by clicking on the btn:[GraphStudio] button in the upper right corner.
 
 == Cluster service status
 
