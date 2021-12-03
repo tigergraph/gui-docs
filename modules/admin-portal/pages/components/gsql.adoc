@@ -12,5 +12,5 @@ Currently, the following parameters can be changed in Admin Portal
 
 * GSQL.QueryResponseMaxSizeByte
 
-include::change-configuration.adoc[]
+include::partial$change-configuration.adoc[]
 

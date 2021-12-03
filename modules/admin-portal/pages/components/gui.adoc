@@ -6,4 +6,4 @@ Application Server is the backend component powering both GraphStudio and Admin 
 
 image::gui-page.png[]
 
-include::change-configuration.adoc[]
+include::partial$change-configuration.adoc[]

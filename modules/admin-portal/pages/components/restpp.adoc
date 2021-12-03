@@ -10,4 +10,4 @@ The following parameters are configurable in Admin Portal
 
 * Default query timeout
 
-include::change-configuration.adoc[]
+include::partial$change-configuration.adoc[]
