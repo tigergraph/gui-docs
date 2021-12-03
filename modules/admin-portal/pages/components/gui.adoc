@@ -28,6 +28,6 @@ image::confirm-config-pop.png[]
 
 Click the CANCEL button, the pop-up window will be closed. Click the OK button, it will prompt the success message.Since configuration change requires restarting the server service, a pop-up box will appear to confirm whether to restart the service. After clicking the OK button, it will take a while for the configuration changes and server restart. You will be notified after all the process is completed.
 
-image::nginx-confirm-server%20%281%29.png[]
+image::nginx-confirm-server (1).png[]
 
 image::nginx-finished.png[]

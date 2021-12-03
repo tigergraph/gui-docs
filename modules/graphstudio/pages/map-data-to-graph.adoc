@@ -245,7 +245,7 @@ Hovering the mouse over the data filter
 indicator image:data_filter_indicator.png[image] will
 make the data filter condition appear. If you want to modify the data
 filter, click the Data Filter
-button image:filter%20%282%29%20%281%29%20%282%29.png[image] or
+button image:filter (2) (1) (2).png[image] or
 double-click the data filter indicator​. The Add Data Filter panel will
 appear.
 
@@ -340,7 +340,7 @@ image:screen-shot-2019-05-16-at-2.36.18-pm.png[image]
 Select the green arrow(s) between data file table and vertex/edge
 attributes table, then click the delete button.
 
-image:5%20%281%29.png[image]
+image:5 (1).png[image]
 
 [[delete-token-functions-]]
 == Delete Token Functions

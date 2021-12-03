@@ -80,7 +80,7 @@ image::assets_-lhvjxin4__6ba0t-qmu_-lvm0wj98fiup0wogjez_-lvm3t_lg0pllsdg_rqv_pat
 
 If you click the message indicating errors, the Console will switch to Problems tab:
 
-image::assets_-lhvjxin4__6ba0t-qmu_-lvm0wj98fiup0wogjez_-lvm3eb9dlldguwxg6rb_pattern-errors%20%282%29.png[]
+image::assets_-lhvjxin4__6ba0t-qmu_-lvm0wj98fiup0wogjez_-lvm3eb9dlldguwxg6rb_pattern-errors (2).png[]
 
 You can click the error messages. For some errors, the vertex patterns, edge patterns and widgets involved in the error will be marked red to facilitate your debugging:
 
@@ -401,10 +401,10 @@ tabs. The buttons, from top to bottom, are the following:
 | image:expand_panel.png[image] 
 |Expand/Collapse: expand or collapse the Console panel.
 
-| image:schema%20%281%29%20%281%29.png[image] 
+| image:schema (1) (1).png[image]
 |Graph schema: show the graph schema.
 
-| image:visual-result%20%281%29.png[image] 
+| image:visual-result (1).png[image]
 |Visualize graph result: show the visual result of the last run pattern.
 
 | image:json-result.png[image]  |View JSON

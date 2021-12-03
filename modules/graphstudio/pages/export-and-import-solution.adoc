@@ -2,7 +2,7 @@
 
 == Export And Import Solution
 
-These two features can be found on the GraphStudio Home page. You can return to the Home page by clicking the logo on the top of the left menu image:graphstudio-logo-10.22.48-am%20%281%29.png[].
+These two features can be found on the GraphStudio Home page. You can return to the Home page by clicking the logo on the top of the left menu image:graphstudio-logo-10.22.48-am (1).png[].
 
 [WARNING]
 ====

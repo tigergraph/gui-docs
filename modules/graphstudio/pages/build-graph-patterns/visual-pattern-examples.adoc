@@ -83,7 +83,7 @@ image:assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvwf5sghnsn1ueleppj_patt
 
 Create a new visual pattern named FriendsManagerABC.
 
-Click  image:schema%20%281%29%20%281%29.png[image] in
+Click  image:schema (1) (1).png[image] in
 the console panel to switch to graph schema:
 
 image:assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwkwq25sm1gxtjubld_schema-in-pattern.png[image]
@@ -255,7 +255,7 @@ Expand Graph patterns section in the pattern list panel, then create a
 new visual pattern named SearchPeople. Create the following visual
 pattern following similar steps as above:
 
-image:assets_-lhvjxin4__6ba0t-qmu_-lvwnvp3dgnx-vok3v4n_-lvwq7ggctwogkilkkjj_widget-base%20%281%29.png[image]
+image:assets_-lhvjxin4__6ba0t-qmu_-lvwnvp3dgnx-vok3v4n_-lvwq7ggctwogkilkkjj_widget-base (1).png[image]
 
 Click image:widget-btn.png[image] in the toolbar,
 and choose *Union*:

@@ -52,7 +52,7 @@ image::find-paths.png[]
 
 == Find connections between multiple vertices
 
-The fourth button in the Explore Graph Menu is the "Find connections" optionimage:connections%20%281%29%20%283%29.png[]. Given a set of starting vertices, this feature finds a "connection community" which is defined as follows:
+The fourth button in the Explore Graph Menu is the "Find connections" optionimage:connections (1) (3).png[]. Given a set of starting vertices, this feature finds a "connection community" which is defined as follows:
 
 . For each pair of vertices in the vertex set, if there is a shortest path no longer than the maximum path length parameter, include that path in the result.
 . The final result is the union of all of these shortest paths (one path per vertex pair).
@@ -63,7 +63,7 @@ This feature is equivalent to running the "Show One Shortest Path" option for ea
 
 Click on a vertex to select it. Use shift-click to select more than one object. Each time you select another vertex, it will be added to the list in the Parameter Panel.
 
-image::find_connections%20%282%29.png[]
+image::find_connections (2).png[]
 
 === Set Conditions For Connection Finding
 

@@ -37,7 +37,7 @@ image::all-users-updated.png[]
 
 Click image:add-user-btn.png[] to add new users:
 
-image::all-users%20%281%29.png[]
+image::all-users (1).png[]
 
 Click image:change-others-password-btn.png[] to change other users' password:
 
@@ -130,7 +130,7 @@ You can drag a user from under one role to under another role at the left sectio
 
 image::change-role-updated.png[]
 
-Similarly, you can also click image:proxy-groups%20%281%29.png[] to switch to proxy groups and manage their roles.
+Similarly, you can also click image:proxy-groups (1).png[] to switch to proxy groups and manage their roles.
 
 image::manage-groups.png[]
 
