@@ -104,7 +104,9 @@ When you find something interesting during exploration and want to save the resu
 
 === Change settings
 
-To change graph exploration settings by clicking Settings button image:settings_btn.png[] . Currently you can select what attributes to show for each vertex type and edge type, and set whether to show an object's detailed information in a popup tooltip when the cursor hovers over it. Click Apply and the new settings will take effect.
+To change graph exploration settings by clicking Settings button image:settings_btn.png[] .
+Currently, you can select what attributes to show for each vertex type and edge type, and set whether to show an object's detailed information in a popup tooltip when the cursor hovers over it.
+Click Apply and the new settings will take effect.
 
 image::settings.png[]
 
@@ -112,7 +114,9 @@ In the example below, the ID and gender for person vertices are shown.  The ID a
 
 image::show-attributes.png[]
 
-You can set the number format you want to display through settings. This setting allows you to define the thousandth place and its separator, the number of decimal places and its separator. Every time you modify the settings, a sample at the top will show your modifications in real time. Note that if you need to modify the thousandth separator and the number of decimal places, you need to turn them on by checking the box in front of them.
+You can set the number format you want to display through settings.
+This setting allows you to define the thousandth place and its separator, the number of decimal places and its separator.
+Every time you modify the settings, a sample at the top will show your modifications in real time.
 
 image::number-formatting-settings.png[]
 
