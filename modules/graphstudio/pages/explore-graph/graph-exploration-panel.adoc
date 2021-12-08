@@ -26,7 +26,10 @@ You can click the change layout button  image:layout-button.png[]  to change lay
 
 image::change-layout-ex.png[Change layout]
 
-If your vertices have attributes named `latitude` and `longitude`, with valid latitude and longitude values respectively, you can choose the geospatial layout option. The geospatial layout will present all your vertices and edges between them on the world map:
+WARNING: The geospatial layout option has been removed in TigerGraph 3.2.2 due to performance issues.
+
+If your vertices have attributes named `latitude` and `longitude`, with valid latitude and longitude values respectively, you can choose the geospatial layout option.
+The geospatial layout will present all your vertices and edges between them on the world map:
 
 image::geospatial-ex.png[Example of vertices and edges in the geospatial layout]
 
