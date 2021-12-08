@@ -18,17 +18,14 @@ Although you can use a mouse scroller to zoom in and zoom out the graph explorat
 
 The graph exploration result only reflects a snapshot of the graph data. If the data is changed due to CRUD operations (maybe in another session), the snapshot is outdated.
 
-You can click the refresh button image:refresh-button.png[] to get all vertices and edges synced with the graph database. All vertices and edges that already got removed will be removed from the exploration panel, and all the attribute values will also get updated.
+You can click the refresh button image:refresh-button.png[refresh button,35] to get all vertices and edges synced with the graph database. All vertices and edges that already got removed will be removed from the exploration panel, and all the attribute values will also get updated.
 
 === Change layout
 
-You can click the change layout button  image:layout-button.png[]  to change layout:
+Click the change layout button image:layout-button.png[] in the bottom right of the canvas to change layout:
 
 image::change-layout-ex.png[Change layout]
 
-If your vertices have attributes named `latitude` and `longitude`, with valid latitude and longitude values respectively, you can choose the geospatial layout option. The geospatial layout will present all your vertices and edges between them on the world map:
-
-image::geospatial-ex.png[Example of vertices and edges in the geospatial layout]
 
 === Export result
 You can export the current visualization result as a png file or a zip file containing csv files by clicking  image:export-btn.png[]. When you click the button, a drop-down menu will appear, as shown below:
@@ -120,7 +117,7 @@ Other than the above, you can also configure vertex and edge size and color to a
 
 == Edit graph
 
-Beside customizing the view of your graph exploration results, you can also enable the edit mode and and make edits to the graph itself by adding or removing vertices and edges, as well as changing their attributes.
+Beside customizing the view of your graph exploration results, you can also enable the edit mode and make edits to the graph itself by adding or removing vertices and edges, as well as changing their attributes.
 
 In order to perform any of the actions in this section, you need to enable edit mode by clicking on the toggle next to Edit mode. Once you are in the edit mode, the four buttons that allow you to edit the graph will appear on the right.
 
