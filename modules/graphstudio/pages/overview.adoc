@@ -2,6 +2,7 @@
 
 TigerGraph GraphStudio™ is a graphic user interface that provides an intuitive, browser-based interface to easily accomplish graph-based application development tasks.
 
+
 == Feature Overview
 GraphStudio provides the following features:
 
@@ -75,22 +76,25 @@ If you cannot access GraphStudio, check your firewall rules and open 14240 port 
 $ firewall-cmd –zone=public –add-port=14240/tcp –permanent
 ----
 
-If the GraphStudio UI shows some errors at the login page like below, the GUI service might be off.
+If you see the error message "Oops, looks like something went wrong" on the login page, the GUI service might be off.
+
+CAUTION: This error might also be caused by an IP range block rule from your ad blocker.
+Please try turning off your ad blocker for the GraphStudio page and try again. 
 
 image::login-error.png[]
 
-To verify, in a linux shell of the server, run the following
+To verify, in a linux shell of the server, run the following:
 
  $ gadmin status gui
 
 If it is off, turn it on by running:
 
-[source,bash]
+[source,console]
 ----
 $ gadmin start gui
 ----
 
-== Navigating Features Inside Graphstudio
+== Navigating Features Inside GraphStudio
 The home page of GraphStudio contains links to each of the six steps of
 solving a business problem: Design Schema, Map Data To Graph, Load Data,
 Explore Graph, Build Graph Patterns and Write Queries. Users can also
