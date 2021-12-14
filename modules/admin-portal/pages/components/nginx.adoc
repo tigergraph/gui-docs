@@ -78,5 +78,5 @@ You will be notified after all the process is completed.
 
 Downgrading from HTTPS to HTTP (turn off SSL) will result in user authentication failure.
 
-If you are seeing authentication failure after turning off SSL in Chome, clear the cache from Chrome and refresh the browser.
+If you are seeing authentication failure after turning off SSL in Chrome, clear the cache from Chrome and refresh the browser.
 ====
