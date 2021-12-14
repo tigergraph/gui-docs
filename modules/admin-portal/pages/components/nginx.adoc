@@ -24,9 +24,21 @@ You can modify the allowed CIDR list to only allow hosts from a specific CIDR bl
 A CIDR block looks like a normal IP address except that it ends with a slash followed by a number, called the IP network prefix.
 A network prefix is an aggregation of IP addresses.
 
+
 For example, 192.50.128.0/16 defines the first 16 bits of the IP address to identify the address aggregation.
 It includes every address from 192.50.0.0 to 192.50.255.255.
 If you put 192.50.128.0/16 in the allowed CIDR list, then every host with an IP address from 192.50.0.0 to 192.50.255.255 are allowed to access Nginx.
+
+[CAUTION]
+====
+If you decide to change the allowlist, you should at least make sure that you allow requests from your own instance:
+
+* If you are running a single-server instance, 127.0.0.1 should be included in the allowed CIDR block.
+An easy way to do this is to add 127.0.0.1/32 to the end of your allowed list.
+* If you are running a cluster, you can run `gssh` in the Linux terminal to find out the IP addresses of all machines in your cluster.
+Make sure the allowed CIDR block you provide includes the IP address of every machine.
+** You can allow 10.41.0.0/16 to allow all IP addresses on TigerGraph Cloud.
+====
 
 If you are unsure which CIDR block you want to allow, you can use link:https://www.ipaddressguide.com/cidr[an online tool] to calculate the corresponding CIDR block for an IP range or vice versa.
 
