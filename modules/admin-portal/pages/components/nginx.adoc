@@ -1,6 +1,6 @@
 = Nginx
 :server-name: nginx
-:description: The Nginx
+:description: The Nginx configuration page.
 :experimental:
 
 You can configure Nginx settings on menu:Admin Portal[Management > Security > Nginx] page.
