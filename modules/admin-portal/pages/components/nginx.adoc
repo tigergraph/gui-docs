@@ -37,7 +37,6 @@ If you decide to change the allowlist, you should at least make sure that you al
 An easy way to do this is to add 127.0.0.1/32 to the end of your allowed list.
 * If you are running a cluster, you can run `gssh` in the Linux terminal to find out the IP addresses of all machines in your cluster.
 Make sure the allowed CIDR block you provide includes the IP address of every machine.
-** You can allow 10.41.0.0/16 to allow all IP addresses on TigerGraph Cloud.
 ====
 
 If you are unsure which CIDR block you want to allow, you can use link:https://www.ipaddressguide.com/cidr[an online tool] to calculate the corresponding CIDR block for an IP range or vice versa.
