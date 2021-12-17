@@ -1,6 +1,6 @@
 = Visual Query Builder
 
-Visual Query Builder(VQB) provides a visual approach to building your graph business logic. In the Build Graph Patterns page, you can create visual patterns in a drag-and-drop fashion to represent the questions you want to ask instead of writing GSQL queries. 
+Visual Query Builder(VQB) provides a visual approach to building your graph business logic. In the Build Graph Patterns page, you can create visual patterns in a drag-and-drop fashion to represent the questions you want to ask instead of writing GSQL queries.
 
 By adding the Visual Query Builder component, GraphStudio becomes a complete visual SDK for users to _build graph applications from end to end without writing a single line of code_!
 
@@ -703,6 +703,7 @@ image::merged-vertex-pattern.png[image]
 Use pick and merge together and you can create a complicated visual
 pattern quickly.
 
+[#_add_a_pattern_view]
 == Add a pattern view
 
 The *pattern view* functionality allows us to group a subset of a visual pattern within a connected component together as a *pattern view*.
