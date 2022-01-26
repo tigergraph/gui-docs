@@ -1,6 +1,6 @@
 name: gui
 title: GraphStudio and Admin Portal
-version: 3.4
+version: 3.5
 start_page: graphstudio:overview.adoc
 
 nav:
