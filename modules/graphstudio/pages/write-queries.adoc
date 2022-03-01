@@ -11,22 +11,24 @@ The Write Query page is horizontally divided into two parts:
 
 == Query Editing Panel
 
-The Query Editing panel is divided into two sub-panels: the left sub-panel is used to select a query to edit, and the right, larger sub-panel displays the selected query for editing. Here you can edit, save, delete query and/or its draft, install and run the query. The query editor features syntax highlighting customized for the GSQL language.  Also, the query editor performs real-time semantic checking.
+The Query Editing panel is divided into two sub-panels. The left sub-panel is used to select a query to edit, and the right, larger sub-panel displays the selected query for editing.
 
-Above the query editing pane is a toolbar, with the following buttons, from left to right:
+Here you can write draft queries and edit, save, delete, install and run queries. The query editor features syntax highlighting customized for the GSQL language.  Also, the query editor performs real-time semantic checking.
+
+Above the query editing pane is a toolbar with the following buttons from left to right:
 
 image::write-queries-toolbar_3.3.png[]
 
-* *Expand/Collapse* : Expand or collapse the Query Editing panel to or from full page mode. The icon changes depending on whether the panel is currently expanded or collapsed.
-* *Save* : Save the current query draft.
-* *Save as* : Save the current query as a new query under a new name.
-* *Install* : Install the query into the database.
-* *Run* : Run the query. If the query is not installed, it will run the query in interpreted mode. Note there is performance penalty to run queries in interpreted mode.
+* *Expand/Collapse*: Expand or collapse the Query Editing panel to or from full page mode. The icon changes depending on whether the panel is currently expanded or collapsed.
+* *Save*: Save the current query draft.
+* *Save as*: Save the current query as a new query under a new name.
+* *Install*: Install the query into the database.
+* *Run*: Run the query. If the query is not installed, it will run the query in interpreted mode. There is a performance penalty to run queries in interpreted mode.
 ** *Run Configuration:* Set the query runtime configurations.
-* *Delete* : Delete the selected query and its draft.
+* *Delete*: Delete the selected query and its draft.
 * *Show query endpoint:* Show the RESTFul endpoint to execute the query. Only installed queries can see their RESTFul endpoints.
-* *Download:* Download the query as a gsql file.
-* *Discard query draft :* Delete the selected query draft.
+* *Download:* Download the query as a `.gsql` file.
+* *Discard query draft*: Delete the selected query draft.
 
 === Add Or Edit Query
 
@@ -78,7 +80,7 @@ If you have saved the query and there is no errors in the query, you can run the
 
 === Install Query
 
-If you saved a query, the "install query" button image:publish_btn.png[]will be enabled. Click it to install the query. The installation process may take about 1 minute:
+If you saved a query, the "Install Query" button image:publish_btn.png[]will be enabled. Click it to install the query. The installation process may take about 1 minute:
 
 image::install_query_progress.png[]
 
@@ -86,8 +88,8 @@ image::install_query_progress.png[]
 
 To run the query, click on the "run"
 button  image:run-installed-query.png[image] in the
-toolbar. If the query has no parameters, it will run directly and the
-result will be shown in the Result panel.
+toolbar. If the query has no parameters, it will run immediately and the
+result will appear in the Result panel.
 
 image:write-queries-run-query-installed_3.3.png[image]
 
@@ -97,7 +99,7 @@ button image:run_query.png[image] at the bottom of
 the panel. If there are several parameters, you might need to scroll the
 panel to the bottom to find the Run Query button.
 
-The query will be executed, and the results will be shown in the Result
+The query will be executed, and the results will appear in the Result
 Panel.
 
 image:write-queries-run-install-query-with-param_3.3.png[image]
@@ -106,17 +108,15 @@ image:write-queries-run-install-query-with-param_3.3.png[image]
 
 You can set runtime configurations of the GSQL query by clicking the
 small  image:3.9.png[image] button to the
-right of run query button, then a drop-down menu will appear.
+right of the Run Query button. A drop-down menu will appear.
 
 image:write-queries-run-config_3.3.png[image]
 
-Click the "Run configuration" item, and the Run Configuration panel will
-be opened.
+Click the "Run Configuration" item to open the Run Configuration panel.
 
 image:write-queries-use-default-timeout_3.3.png[image]
 
-You can set GSQL query timeout here. By default, it uses the timeout of
-TigerGraph configuration (specified by gadmin commands). You can change
+You can set the GSQL query timeout here. By default, it uses the TigerGraph configuration timeout (specified by gadmin commands). You can change
 it by unchecking the "Use default timeout" label, and then set a new
 timeout:
 
@@ -135,8 +135,10 @@ will be deleted permanently.
 == Show Query Endpoint
 
 After finishing writing the GSQL queries and installing the queries, you
-can access the queries via REST endpoints. By clicking the "show query
-endpoint" button image:endpoint.png[image] , you can
+can access the queries via REST endpoints.
+
+By clicking the "show query
+endpoint" button image:endpoint.png[image], you can
 see the format of the endpoint to access this query, so that you can
 integrate the query with your applications.
 
@@ -144,9 +146,9 @@ image:show_query_endpoint.png[image]
 
 == Download
 
-You can download your query by click
-image:write-queries-toolbar-download-single-query_3.3.png[image] , or download all your
-queries as a tarball by click
+You can download your query by clicking
+image:write-queries-toolbar-download-single-query_3.3.png[image], or download all your
+queries as a tarball by clicking
 image:write-queries-toolbar-download-all-queries_3.3.png[image]
 
 == Delete query draft
