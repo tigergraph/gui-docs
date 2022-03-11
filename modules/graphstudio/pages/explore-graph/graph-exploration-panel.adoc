@@ -1,4 +1,5 @@
 = Graph Exploration Panel
+:experimental:
 
 The Graph Exploration panel displays the result of your Graph Exploration actions. After you have a subgraph displayed in the Graph Exploration Panel, you can use the buttons in the Explorer View Menu or the options in the bottom right corner to customize the display. Additionally, you can make modifications to the graph database itself in edit mode.
 
@@ -157,11 +158,16 @@ If you select an edge type that already exists between the two vertices, GraphSt
 
 === Edit attributes
 
-To edit the attributes of one vertex or edge, select one object and then click the Edit Attributes button image:edit.png[] in edit mode. The edit attributes panel will pop up.
+To edit the attributes of one vertex or edge, select one object and then click the Edit Attributes button image:edit.png[] in edit mode.
+The edit attributes panel will pop up.
 
-image::edit_attributes.png[]
+image::edit-attributes.png[]
 
 When you finish editing, click the Update button to apply the change.
+
+=== Copy attributes
+In the menu:Edit Attributes[] window, click btn:[COPY] to copy the attributes of a vertex or edge.
+The attributes are copied to clipboard in JSON format.
 
 === Delete vertices and edges
 
