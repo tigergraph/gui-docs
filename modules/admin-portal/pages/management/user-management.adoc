@@ -75,7 +75,7 @@ The _User-defined roles_ tab lists all user-defined roles and allows users with 
 To learn more about roles and privileges in TigerGraph's role-based access control system, see xref:tigergraph-server:user-access:index.adoc[].
 
 
-To create/edit/delete a role, a user must also have `WRITE_ROLE` privilege on that graph. See more details in xref:tigergraph-server:user-access:roles-and-privileges.adoc[Roles and Privileges]
+To create/edit/delete a role, a user must also have `WRITE_ROLE` privilege on that graph. See more details in xref:tigergraph-server:user-access:access-control-model.adoc[]
 
 At the right upper corner, there is a hint button image:udr-hint-btn.png[]. Click the button and jump to the official roles and privileges documentation to read more about roles and privileges.
 All user-defined roles that you can view will list in a table:
