@@ -1,4 +1,5 @@
 = Write Queries
+:experimental:
 
 On the Write Queries page, you can write and run custom queries with GSQL.
 
@@ -32,7 +33,7 @@ image::write-queries-toolbar_3.3.png[]
 
 To create a new query, simply click on the "New GSQL Query" button image:upload_file_btn.png[] in the bottom-right corner of the left sub-panel, and type in the name of the new query in the popup window:
 
-image::create_new_query_3.3.png[]
+image::create-new-query-3.6.png[]
 
 A query draft will be created with a template:
 
@@ -70,6 +71,15 @@ image:save-as_new-query.png[image]
 The previous query returns to its last saved state:
 
 image:save-as_last-saved-state-query.png[image]
+
+=== Graph Data Science Library Queries
+
+GraphStudio is connected to the xref:graph-ml:intro:index.adoc[Graph Data Science Library] and can import machine learning algorithms directly from a curated library.
+Click btn:[Choose Query] on the Add New Query window to see the query choices.
+Select any queries that you would like to install. After installation, they will appear in the GSQL Queries window just like user-generated queries.
+
+[NOTE]
+If you use the Data Science Library to install a query that is already installed, installation will fail.
 
 === Run Query in Interpreted Mode
 
