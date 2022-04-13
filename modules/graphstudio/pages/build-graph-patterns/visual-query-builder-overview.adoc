@@ -6,8 +6,6 @@ By adding the Visual Query Builder component, GraphStudio becomes a complete vis
 
 image::vqb-overview.png[]
 
-Currently, Visual Query Builder is still in beta. Please expect lots of improvements and changes coming in the future!
-
 == Basic Concepts
 
 A visual pattern is a declarative way of describing a template subgraph structure, and all the subgraph structures that the visual pattern is *homomorphic* with are valid matching results.
@@ -66,7 +64,7 @@ This is the visual pattern matching all such three persons A, B and C, where A i
 
 image::demo_4_3.3.png[]
 
-This visual pattern matches all the people that born in Redwood City and attended Stanford university, but didn't work for Google:
+This visual pattern matches all the people born in Redwood City and who attended Stanford university, but didn't work for Google:
 
 image::demo_5.png[]
 
@@ -74,9 +72,10 @@ Now you have a first sight about how the visual patterns look like. Let's walk t
 
 == Working Panel
 
-The working panel is the central component (both visually and logically) of the Visual Query Builder. Your visual patterns are rendered here.
+The working panel is the central component of the Visual Query Builder. Your visual patterns are rendered here.
 
-Like other pages in GraphStudio, you can zoom-in, zoom-out and drag the visual pattern. If you have unsaved changes to the pattern, or containing errors in the pattern, some warning messages will show in the top left corner of working panel:
+Like other pages in GraphStudio, you can zoom in and out and drag the visual pattern to rearrange it.
+If the pattern contains errors or unsaved changes, some warning messages will show in the top left corner of working panel:
 
 image::pattern-working-panel.png[]
 
@@ -95,11 +94,7 @@ The pattern list panel contains three sections:
 === Graph patterns
 
 The graph patterns section lists all the visual patterns you have
-created for current graph. You can
-click image:upload_file_btn.png[image] to create
-new patterns, or
-click image:delete_forever.png[image] to delete
-existing ones.
+created for the current graph.
 
 image::pattern-list.png[image]
 
@@ -111,8 +106,7 @@ what problem you are trying to solve.
 
 image::graph-pattern-description.png[image]
 
-Changing description is considered as a change to the visual pattern,
-don't forget to save the pattern in the end.
+Remember to save your changes after adding a description.
 
 === Pattern parameters
 
@@ -120,8 +114,6 @@ If you added some parameters in your visual pattern, you need to provide
 the values to the parameters when running the pattern.
 
 image::pattern-params.png[image]
-
-Click image:run-pattern.png[image] to run the pattern.
 
 == Toolbar
 
@@ -147,7 +139,7 @@ in the visual pattern to open the config panel.
 the pattern. See more information
 link:#_render_pattern_options[here].
 
-|image:start_loading.png[] |Run: run the visual pattern. If the pattern doesn't have
+|image:start-loading-button.png[] |Run: run the visual pattern. If the pattern doesn't have
 any parameters, it will run directly, otherwise the *Pattern parameters* section will expand for you to provide the parameter values.
 
 |image:redo_undo_btn.png[] |Undo and redo: undo and redo the changes on the visual

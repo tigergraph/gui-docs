@@ -21,7 +21,7 @@ To log out, click the User icon image:account_btn.png[]and then the Sign Out ico
 
 image::logout (1).png[]
 
-== Role- and Graph- Based Access Control
+== Role- and graph-based access control
 
 TigerGraph uses role-based access control with several pre-defined roles. Each role is a logical collection of data access privileges, such as querywriter or admin. Each user is assigned one or more roles by a graph admin user or by a superuser. Roles are also graph-specific. For example, user Pat could be an admin on graph G1 but a querywriter on graph G2.
 
@@ -125,17 +125,19 @@ The table below summarizes the built-in roles and of their key privileges on Gra
 |
 |===
 
-== Global View and Select A Graph
+== GlobalView and Select A Graph
 
-Beginning with Version 1.2, the TigerGraph system can support multiple graphs within one TigerGraph instance. Read more at xref:3.2@tigergraph-server:intro:multigraph-overview.adoc[MultiGraph - An Overview].
+The TigerGraph system can support multiple graphs within one TigerGraph instance. Read more at xref:3.2@tigergraph-server:intro:multigraph-overview.adoc[MultiGraph - An Overview].
 
-For superuser and globaldesigner users, by default they will be in global view.
+Superuser and globaldesigner users see the global view by default.
 
 image::global-view.png[]
 
-Click the card showing current graph and user roles, and a dropdown menu of graphs the current user can access will appear. In addition, superuser or globaldesigner users can create and drop graphs.
+Click the card showing current graph and user roles, and a dropdown menu of graphs the current user can access will appear.
+
+In addition, superuser or globaldesigner users can create and drop graphs.
 
 image::switch-graph (1).png[]
 
-For other users, there is no access to global view, and you cannot create or drop graphs.
+Other users have no access to global view and cannot create or drop graphs.
 
