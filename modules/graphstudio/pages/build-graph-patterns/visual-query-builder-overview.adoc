@@ -243,9 +243,8 @@ expression and enter editing mode of the filter:
 
 image::assets_-lhvjxin4__6ba0t-qmu_-lvmjvt2mkzujjj4alns_-lvml2ar64-j4_zuavzr_filters.png[image]
 
-You can add multiple filters for each vertex and edge pattern, and they are AND relationship when executing the pattern. Building the filter is similar with building attribute filter in
-xref:explore-graph/search-for-vertices.adoc[Explore
-Graph page].
+You can add multiple filters for each vertex and edge pattern, and they are AND relationship when executing the pattern.
+Building the filter is similar with building attribute filter in the xref:explore-graph/search-for-vertices.adoc[Explore Graph page].
 
 One thing special here is that you can refer to attributes on other vertex patterns and edge patterns. Choose *Attribute of vertex or edge* as expression type, then choose the name of the vertex or edge
 pattern whose attribute you want to refer to (see above why we need give a name to vertex or edge patterns), then choose the attribute you want to refer to.
@@ -264,9 +263,8 @@ patterns is not supported):
 
 image::att-non-edit-mode.png[image]
 
-Click image:edit.png[image] beside one
-attachment and enter editing mode for the attachment. You can edit
-both the attachment expression and attachment name:
+Click image:edit.png[image] beside one attachment and enter editing mode for the attachment.
+You can edit both the attachment expression and attachment name:
 
 image::att-edit-mode.png[image]
 

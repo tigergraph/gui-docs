@@ -8,34 +8,36 @@ image::image (5).png[]
 
 === Overall Cluster Statistics
 
-image::screen-shot-2020-06-04-at-12.36.25-pm.png[]
+image::overall-cluster-statistics.png[]
 
-Just below the page header, there are four cards showing statistics of your system, including the number of nodes and the number of graphs. These statistics are refreshed live. (The default refresh interval is 1 minute).
+Below the page header, you can see system statistics like the number of nodes and number of graphs.
+These statistics are refreshed live, with a default refresh interval of one minute.
 
 === Time Range Picker
 
 image::time_range_picker.png[]
 
-The next card lets you set the time range to be used for the statistics in the charts below. +
-The leftmost inputimage:left_time_range.png[]lets you select the start time of the range. +
-The next inputimage:right_time_range.png[]lets you select the end time of the range. This input has two options:
+The next card lets you set the time range to be used for the statistics in the charts below.
+Selecting "Now" as the end time will keep the statistics regularly updated.
 
-. "Now" means that the charts will be continually updated with the most recent data.
-. "Custom" lets you select a fixed date.  The time range is historical, so the charts will be static.
-
-The sliding bar on the right lets you fine tune the range. Click and drag an endpoint to adjust the start or end time.
+The sliding bar on the right is another way to adjust the time range. Click and drag an endpoint to adjust the start or end time.
 
 Changing any of these selections will trigger a request for statistics data and the chart will be re-rendered accordingly.
+You may need to wait about thirty seconds for the screen to update.
+If the screen does not update after a while, try resizing the browser window to trigger a refresh.
 
 === Charts
 
 Each chart displays some statistic or states information on the vertical axis and time on the horizontal axis.
 
-There are two chart sections. The first section is GSQL Query Performance. This lists all of the queries accessible to the current user. If you click on a query name, the display will expand to show detailed charts about that query. You can expand only one query panel at a time. The second section is Cluster Monitoring. This lists all of the machines within the TigerGraph cluster. Similar to the first section, you can only expand one panel at a time.
+The Cluster Monitoring section lists all machines within the TigerGraph cluster.
+
+The GSQL Query Performance section lists all queries accessible to the current user.
+If you click on a query name, the display will expand to show detailed charts about that query.
 
 image::charts_list (1).png[]
 
-A Query Monitoring Panel includes three charts:
+The Query Monitoring Panel includes three charts:
 
 * QPS (number of queries completed per second)
 * Timeout (fraction of the query calls which timed out and therefore did not finish)
@@ -43,7 +45,8 @@ A Query Monitoring Panel includes three charts:
 
 image::query_performance_charts (1).png[]
 
-A Machine Monitoring Panel includes 4 charts. The first three charts break down the information among three processing-focused components (GPE, GSE, RESTPP).
+The Machine Monitoring Panel includes four charts.
+he first three charts break down the information among three processing-focused components (GPE, GSE, RESTPP).
 The last chart breaks down information among three components which may have large storage needs (GStore, Log files, and Apache Kafka).
 
 * Service status: ON or OFF status for the given component

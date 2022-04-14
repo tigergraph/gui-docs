@@ -69,13 +69,12 @@ Click btn:[Self Signed] to fill in the information to generate a self-signed cer
 image::ssl-uploading.png[]
 
 Since configuration change requires restarting the server service, a pop-up box will appear to confirm whether to restart the service.
-After clicking the btn:[OK] button, it will take a while for the configuration changes and server restart.
+After clicking the btn:[OK] button, the configuration changes and server restart process will take several moments.
 You will be notified after all the process is completed.
 
 [WARNING]
 ====
+Downgrading from HTTPS to HTTP (turning off SSL) will cause a user authentication failure.
 
-Downgrading from HTTPS to HTTP (turn off SSL) will result in user authentication failure.
-
-If you are seeing authentication failure after turning off SSL in Chrome, clear the cache from Chrome and refresh the browser.
+If you are seeing an authentication failure after turning off SSL in Chrome, clear the cache from Chrome and refresh the browser.
 ====
