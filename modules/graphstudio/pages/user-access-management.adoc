@@ -1,23 +1,21 @@
 = Authentication
 :description: How users authenticate themselves on GraphStudio
+:experimental:
 
-GraphStudio follows TigerGraph user authentication and role-based access control model. Read more in the document xref:3.2@tigergraph-server:user-access:README.adoc[Managing User Privileges and Authentication].
+GraphStudio follows the TigerGraph user authentication and role-based access control model as described in the document xref:tigergraph-server:user-access:index.adoc[].
 
 == Log On
 
-If GSQL _tigergraph_ superuser password hasn't been changed (default password is _tigergraph_), then no user login is needed for GraphStudio. Otherwise, users must provide credentials (e.g., username and password) to log in GraphStudio. In addition, your system administrator can integrate TigerGraph with other user access management systems (e.g., LDAP, Active Directory, or SAML-based Single Sign On).  See the xref:3.2@tigergraph-server:user-access:README.adoc[Managing User Privileges and Authentication] for how to set up LDAP or SSO.
+If the GSQL `tigergraph` superuser password hasn't been changed from the default of `tigergraph`, then no user login is needed for GraphStudio.
+Otherwise, users must provide a username and password to log in to GraphStudio.
+In addition, your system administrator can integrate TigerGraph with other user access management systems (e.g., LDAP, Active Directory, or SAML-based Single Sign On).
+See the xref:tigergraph-server:user-access:index.adoc[] guide for information on setting up LDAP or SSO.
 
-image::login.png[]
-
-After login, the user is assigned to one of the graphs for which he has access to.
-
-For users other than superuser or globaldesigner, if users do not have access to any graphs, they cannot enter GraphStudio. Hints will show in login page:
+Users with roles other than superuser or globaldesigner who do not have access to any graphs cannot enter GraphStudio and will see an error on the login page:
 
 image::no-accessible-graphs.png[]
 
-After login, the user is assigned to one of the graphs for which he has access to.
-
-To log out, click the User icon image:account_btn.png[]and then the Sign Out icon.
+Once inside GraphStudio, log out by clicking the User icon image:account_btn.png[] and btn:[Log Out].
 
 image::logout (1).png[]
 
@@ -127,7 +125,7 @@ The table below summarizes the built-in roles and of their key privileges on Gra
 
 == GlobalView and Select A Graph
 
-The TigerGraph system can support multiple graphs within one TigerGraph instance. Read more at xref:3.2@tigergraph-server:intro:multigraph-overview.adoc[MultiGraph - An Overview].
+The TigerGraph system can support multiple graphs within one TigerGraph instance. Read more at xref:tigergraph-server:intro:multigraph-overview.adoc[MultiGraph - An Overview].
 
 Superuser and globaldesigner users see the global view by default.
 
