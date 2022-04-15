@@ -60,27 +60,11 @@ the right:
 
 image:add-vertex-panel.png[image]
 
-In this window you specify a vertex type name, primary id name.
+In this window you specify a vertex type name and primary id name.
 GraphStudio will automatically select a color for your vertex type icon.
-You can change the vertex type color by clicking the value under the
-"Color hex" label. A color palette window will pop up allowing you to
-choose a new color:
 
-image:color-picker.png[image]
-
-Click anywhere outside the color palette window to set the color.
-You can also choose an icon for the vertex type by clicking btn:[Select
-Icon]. Use keywords to filter the icon library and find the best match faster.
-
-image:select_icons.png[image]
-
-You can also upload your own icons by clicking btn:[Upload Icon].
-
-image:upload_icon.png[image]
-
-Uploaded icons will appear separately under *My icons*.
-
-image:select_icon_with_user_upload.png[image]
+In the Style section, you can change the color of your vertex icon.
+You can also replace the default circle using a file that you upload or choose from our icon library.
 
 *Adding and Deleting Attributes* +
 If you want to have a vertex or edge type's primary ID as an attribute, check the "AS ATTRIBUTE" box. This will allow you to use the vertex or edge's primary ID  like any other attribute of the vertex or edge type in features such as filter, attachment and order.
@@ -153,21 +137,20 @@ Editing edge type attributes is the same as editing vertex type
 attributes.
 
 Once you are satisfied with the edge type settings, click the checkmark button at the top to add the edge
-type. A new link between the selected source vertex type circle(s) and
-target vertex type circle(s) will appear in the working panel.
+type, which will instantly appear in the working panel.
 
 You can add multiple edge types between the same source vertex type and
 target vertex type pair. Moreover, an edge can use the same vertex type
 for both its source vertex type and its target vertex type, e.g., a
-Friendship edge from Person vertex to Person vertex.
+Friendship edge from a Person vertex to Person vertex.
 
 [[edit-vertex-or-edge-type-]]
 == Edit Vertex Or Edge Type
 
 You can edit the vertex types or edge types at any time after you add
 them. Click one vertex type circle or one edge link, then click
-the edit button image:edit.png[image] (double-clicking on the selected vertex/edge will have the same effect). The
-working space will enter Edit mode with the Edit Attributes panel in the right:
+the edit button image:edit.png[image] or double-click on the selected vertex or edge.
+working space will enter Edit mode, allowing you to use the Edit Attributes panel to make the same kinds of changes as in the Add panel.
 
 image:edit-panel.png[image]
 
@@ -192,11 +175,10 @@ or edge type using the delete button in a graph.
 [[redo-and-undo-]]
 == Undo and redo
 
-You can undo and redo your changes by clicking the two
-buttons: image:redo_undo_btn.png[image] . The whole
+You can undo and redo your changes with the undo and redo buttons: image:redo_undo_btn.png[image] .
 history since the time you entered the Design Schema page is recorded.
 
-== View Global Vertex And Edge Types
+== View global vertex and edge types
 
 Click the view global vertex and edge types
 button image:view-global-type-button.png[image] to
@@ -212,35 +194,35 @@ global types in a graph. The view global vertex and edge types button
 will be disabled for other users.
 
 [[publish-schema-]]
-== Publish Schema
+== Publish schema
 
 Once you are satisfied with the graph schema, click the publish schema
 button image:publish_btn.png[image] to publish the
 schema to the TigerGraph system. If you are publishing a brand new
-schema, a progress bar will show:
+schema, a progress bar will appear:
 
 image:installing_schema_enterprise.png[image]
 
-CAUTION: Note that *Publish Schema* applies to both
-creating a new schema as well as modifying an existing schema. If you
-have already loaded data into or created queries for an existing graph,
-please note that GraphStudio's Publish Schema is only able to retain
-your existing data in some circumstances. Read the following section
-carefully.
+== Change or edit an existing schema
 
-If you are editing an existing graph schema, GraphStudio will analyze
-your changes. If the change to a vertex or edge type is to remove some
-attributes and / or to add some new attributes, or add or remove index
-to some attributes, GraphStudio will employ a GSQL SCHEMA_CHANGE job in
-order to retain the graph data you already loaded.
+If a schema already exists, *Publish Schema* image:publish_btn.png[image] will modify the existing schema.
 
-All other types of changes, including *renaming* the vertex or edge
-type, *changing attribute name or data type*, changing *edge
-direction*, adding or removing *reverse edge* will result in removing
-the old vertex or edge type and then adding the new one with your
-desired configurations. In that case, the loaded data to that vertex or
-edge type will be erased. Please think twice before you do this type of
-changes.
+[WARNING]
+====
+If you have already loaded data into or created queries for an existing graph, *Publish Schema* will only retain your existing data in some circumstances.
+====
+
+If the change to a vertex or edge type is to add or remove attributes or attribute indexes, GraphStudio will employ a GSQL SCHEMA_CHANGE job and retain any graph data you already loaded.
+
+For all other types of changes, including:
+
+* renaming a vertex or edge type
+* changing attribute name or data type
+* changing edge direction
+* adding or removing a reverse edge
+
+GraphStudio will remove the old vertex or edge type and add the new one with your desired configurations.
+In that case, the loaded data to that vertex or edge type will be erased.
 
 CAUTION: If a vertex type will be removed in order to
 change the schema, all edge types connected to that vertex type will

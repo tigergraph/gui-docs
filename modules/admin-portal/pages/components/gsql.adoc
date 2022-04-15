@@ -8,7 +8,7 @@ The GSQL page in Admin Portal allows you to change the value of certain GSQL con
 
 image::gsql-page.png[]
 
-The following parameters can be changed in Admin Portal
+The following parameters can be changed in Admin Portal:
 
 * GSQL.QueryResponseMaxSizeByte
 
