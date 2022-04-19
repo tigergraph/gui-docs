@@ -1,12 +1,10 @@
 = Visual Query Builder
 
-Visual Query Builder(VQB) provides a visual approach to building your graph business logic. In the Build Graph Patterns page, you can create visual patterns in a drag-and-drop fashion to represent the questions you want to ask instead of writing GSQL queries.
+The Visual Query Builder (VQB) provides a visual approach to building your graph business logic. In the Build Graph Patterns page, you can create visual patterns in a drag-and-drop fashion to represent the questions you want to ask instead of writing GSQL queries.
 
 By adding the Visual Query Builder component, GraphStudio becomes a complete visual SDK for users to _build graph applications from end to end without writing a single line of code_!
 
 image::vqb-overview.png[]
-
-Currently, Visual Query Builder is still in beta phase. Please expect lots of improvements and changes coming in the future!
 
 == Basic Concepts
 
@@ -66,7 +64,7 @@ This is the visual pattern matching all such three persons A, B and C, where A i
 
 image::demo_4_3.3.png[]
 
-This visual pattern matches all the people that born in Redwood City and attended Stanford university, but didn't work for Google:
+This visual pattern matches all the people born in Redwood City and who attended Stanford university, but didn't work for Google:
 
 image::demo_5.png[]
 
@@ -74,9 +72,10 @@ Now you have a first sight about how the visual patterns look like. Let's walk t
 
 == Working Panel
 
-Working panel is the central component (both visually and logically) of Visual Query Builder. Your visual patterns are rendered here.
+The working panel is the central component of the Visual Query Builder. Your visual patterns are rendered here.
 
-Like other pages in GraphStudio, you can zoom-in, zoom-out and drag the visual pattern. If you have unsaved changes to the pattern, or containing errors in the pattern, some warning messages will show in the top left corner of working panel:
+Like other pages in GraphStudio, you can zoom in and out and drag the visual pattern to rearrange it.
+If the pattern contains errors or unsaved changes, some warning messages will show in the top left corner of working panel:
 
 image::pattern-working-panel.png[]
 
@@ -95,11 +94,7 @@ The pattern list panel contains three sections:
 === Graph patterns
 
 The graph patterns section lists all the visual patterns you have
-created for current graph. You can
-click image:upload_file_btn.png[image] to create
-new patterns, or
-click image:delete_forever.png[image] to delete
-existing ones.
+created for the current graph.
 
 image::pattern-list.png[image]
 
@@ -109,14 +104,9 @@ Other than the visual view of the graph pattern, you can optionally add
 a description for the pattern. This can help other users to understand
 what problem you are trying to solve.
 
-image::https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LvhRxsMmFzrFtib487V%2F-LvhZjOAREmlJ_qwVZDm%2Fpattern-description.png?alt=media&token=ba475672-ba6b-4038-9237-64eb23a53744[image]
+image::graph-pattern-description.png[image]
 
-After changing the description, don't forget to confirm the change:
-
-image::https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LvhRxsMmFzrFtib487V%2F-LvhaA47rYs2QvIMAqCo%2Fconfirm-or-cancel.png?alt=media&token=1f8730cb-f29e-4513-bb45-c01766d441af[image]
-
-Changing description is considered as a change to the visual pattern,
-don't forget to save the pattern in the end.
+Remember to save your changes after adding a description.
 
 === Pattern parameters
 
@@ -124,8 +114,6 @@ If you added some parameters in your visual pattern, you need to provide
 the values to the parameters when running the pattern.
 
 image::pattern-params.png[image]
-
-Click image:run-pattern.png[image] to run the pattern.
 
 == Toolbar
 
@@ -151,12 +139,15 @@ in the visual pattern to open the config panel.
 the pattern. See more information
 link:#_render_pattern_options[here].
 
-|image:start_loading.png[] |Run: run the visual pattern. If the pattern doesn't have
+|image:start-loading-button.png[] |Run: run the visual pattern. If the pattern doesn't have
 any parameters, it will run directly, otherwise the *Pattern parameters* section will expand for you to provide the parameter values.
 
 |image:redo_undo_btn.png[] |Undo and redo: undo and redo the changes on the visual
 pattern. The whole editing history of each visual pattern since entering
 Build Graph Patterns page is preserved.
+
+|image:copy.png[] |Copy: Create duplicates of the selected pattern or patterns.
+This button is grayed out if no patterns are selected.
 
 |image:edit.png[] |Edit: edit the selected vertex pattern or edge pattern.
 This is same as double-clicking one vertex or edge pattern.
@@ -211,24 +202,18 @@ Output: click this button, then click vertex patterns and edge patterns of the v
 You can edit vertex patterns and edge patterns from the Configuration Panel.
 
 If you want to use vertex ID or edge ID as an attribute, check the "AS ATTRIBUTE" box in the Design Schema section for the corresponding vertex type. 
-If a vertex or edge type's primary ID is set as an attibute, you can use its ID in features such as filter, attachment and order by like any other attribute.
+If a vertex or edge type's primary ID is set as an attribute, you can use its ID in features such as filter, attachment and order by like any other attribute.
 
 === Vertex patterns
 If you enter editing mode of a vertex pattern and expand the Basic Info section, you can edit its name, decide whether or not to put it into result, change
 its vertex type, provide optional matching conditions by giving a list
 of ids, or provide a parameter name.
 
-image::https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LvmDJHsFycWDzKKRvbn%2F-LvmGGM22Jxkwmy-OkHN%2Fvertex-pattern-basic.png?alt=media&token=5d964b95-5799-486c-bbd4-1eea486b0c57[image]
+image::edit-vertex-patterns.png[image]
 
 The name supplied in the panel will be used as the vertex's JSON key when producing output and when the pattern is saved as a GSQL query. 
 
-You can add/drop IDs in the list:
-
-image::https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LvmDJHsFycWDzKKRvbn%2F-LvmGsiKMygJOaG6YRQc%2Fvertex-pattern-ids.png?alt=media&token=9c0058e1-f5b5-412f-88f8-b85b19de5954[image]
-
-Or add an input parameter:
-
-image::https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LvmDJHsFycWDzKKRvbn%2F-LvmH-0jZmTfwDdc1CWP%2Fvertex-pattern-param.png?alt=media&token=e0562257-0fd7-41fd-adfb-0f30990d2637[image]
+The dropdown under *Vertex Type* allows you to add or drop IDs or add an input parameter.
 
 === Basic Info for edge pattern
 
@@ -236,9 +221,6 @@ If you enter editing mode of an edge pattern and expand the Basic Info section,
 you can edit its name, decide whether or not to put it into result, or
 change its edge type. You can also specify this edge pattern as a regex match by providing Repeat as least (a non-negative integer) and Repeat at most (a positive integer). Due to current GSQL limitations, if you decide to change these numbers, you cannot give the edge pattern a name
 or put it into result.
-
-image::https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LvmDJHsFycWDzKKRvbn%2F-LvmHQxr7mWLpATC0XL3%2Fedge-pattern-basic-info.png?alt=media&token=8ae1fec9-4b76-465e-ba7d-5bc5632e2865[image]
-
 
 The name supplied in the panel will be used as the edge's JSON key when producing output and when the pattern is saved as a GSQL query. 
 
@@ -261,9 +243,8 @@ expression and enter editing mode of the filter:
 
 image::assets_-lhvjxin4__6ba0t-qmu_-lvmjvt2mkzujjj4alns_-lvml2ar64-j4_zuavzr_filters.png[image]
 
-You can add multiple filters for each vertex and edge pattern, and they are AND relationship when executing the pattern. Building the filter is similar with building attribute filter in
-xref:explore-graph/search-for-vertices.adoc[Explore
-Graph page].
+You can add multiple filters for each vertex and edge pattern, and they are AND relationship when executing the pattern.
+Building the filter is similar with building attribute filter in the xref:explore-graph/search-for-vertices.adoc[Explore Graph page].
 
 One thing special here is that you can refer to attributes on other vertex patterns and edge patterns. Choose *Attribute of vertex or edge* as expression type, then choose the name of the vertex or edge
 pattern whose attribute you want to refer to (see above why we need give a name to vertex or edge patterns), then choose the attribute you want to refer to.
@@ -282,9 +263,8 @@ patterns is not supported):
 
 image::att-non-edit-mode.png[image]
 
-Click image:edit.png[image] beside one
-attachment and enter editing mode for the attachment. You can edit
-both the attachment expression and attachment name:
+Click image:edit.png[image] beside one attachment and enter editing mode for the attachment.
+You can edit both the attachment expression and attachment name:
 
 image::att-edit-mode.png[image]
 

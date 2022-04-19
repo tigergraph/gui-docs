@@ -1,49 +1,40 @@
 = Overview
 
-TigerGraph GraphStudio™ is a graphic user interface that provides an intuitive, browser-based interface to easily accomplish graph-based application development tasks.
-
+TigerGraph GraphStudio™ is an intuitive, browser-based interface for graph-based application development tasks.
 
 == Feature Overview
+
+image:graphstudio-main-page.png[]
+
 GraphStudio provides the following features:
 
-=== 1. Design Schema
-The *Design Schema* page is where users edit their graph schema. Users will be able to add and specify the attributes and fields of every vertex and edge they add to the schema and also customize the colors and icons displayed on each vertex or edge. Users will also be able to edit existing vertices and edges in the existing schema in this page.
+=== xref:design-schema.adoc[]
+The *Design Schema* page is where users edit their graph schema.
+Users are able to add and edit the attributes and fields of every vertex and edge they add to the schema.
 
-For more details, see xref:design-schema.adoc[]
+=== xref:map-data-to-graph.adoc[]
+The *Map Data To Graph* page is where users add data from external files and map it to the corresponding vertices or edges in the schema.
 
-=== 2. Map Data To Graph
-The *Map Data To Graph* page is where users will add data files and map it to the corresponding vertices or edges in the schema.
-In this page users will be able to add data files as the data source to load their data into the database.
-Users will also be able to specify the delimiter used to separate the fields in each file.
-This page also provides the tools that users can use to map each data file to the corresponding vertices and edges that the data should be loaded to.
-Users will also be able to map each data field in each data file to the corresponding attributes within each vertex or edge.
+=== xref:load-data.adoc[]
+The *Load Data* page is where users load their data from their data source to the database as specified in the mapping stage.
 
-For more details, see xref:map-data-to-graph.adoc[]
+=== xref:explore-graph/README.adoc[]
+The *Explore Graph* page is where users can explore their graph data and uncover insights based on their data.
+Here users can search for vertices in a graph, discover nearby vertices, find paths between vertices, and run GSQL queries.
+Users will also be able to use the *Graph Exploration* panel on this page to modify and augment the visualization of their exploration results.
 
-=== 3. Load Data
-The *Load Data* page is where users load their data from their data source to the database. The data is loaded in correspondence with the mapping specified in the *Map Data To Graph* page. Users can either load all the files in one go or load data from each file individually. In this page users will also be able to see the load status of each file, the speed at which the loading is happening, the size of data that has been loaded and other information pertaining to data loading.
+=== xref:build-graph-patterns/visual-query-builder-overview.adoc[]
+The *Build Graph Patterns* page is where users can build graph queries visually with a drag-and-drop interface.
+In this way, users will not need to understand any GSQL to build queries, run queries, or evaluate results.
 
-For more details, see xref:load-data.adoc[]
-
-=== 4. Explore Graph
-The *Explore Graph* page is where users can explore their graph data and uncover insights based on their data. Here users can search for vertices in a graph, discover nearby vertices, find paths between vertices, and run gsql queries. Users will also be able to use the *Graph Exploration panel* in this page to modify and augment the visualization of their exploration results.
-
-For more details, see xref:explore-graph/README.adoc[]
-
-=== 5. Build Graph Patterns
-The *Build Graph Patterns* page is where users can build graph business logic queries visually. In this page we provide tools that users can use to build visual patterns visually in drag and drop fashion. In this way, users will not need to understand any gsql to build business logic queries. The users will be able to run these visual patterns, and check out the results. Users will also have the option to see, copy and save the corresponding generated gsql code if they want to do so.
-
-For more details, see xref:build-graph-patterns/visual-query-builder-overview.adoc[]
-
-=== 6. Write Queries
-The *Write Queries* page is where users can write and test out their gsql queries. In this page we provide users a query editor where the users can write their gsql code on. The query editor also validates the user's query syntax and will let the user know if the syntax is wrong. Users can also install their queries on this page and run it to see the results of their queries. If the user does not install their queries first, the queries will be run on interpreted mode.
-
-For more details, see xref:write-queries.adoc[]
+=== xref:write-queries.adoc[]
+The *Write Queries* page is where users can write and test out custom GSQL queries using a text-based query editor.
+The query editor validates the user's query syntax and notifies the user of any errors.
 
 == GraphStudio Online Test Drive
 
 Visit TigerGraph Test Drive demos at:
-https://testdrive.tigergraph.com[https://testdrive.tigergraph.com/]
+link:https://testdrive.tigergraph.com[https://testdrive.tigergraph.com/]
 
 The GraphStudio online Test Drive features several instances of the
 TigerGraph system, each one targeting a different use case. Each copy of
@@ -51,8 +42,7 @@ TigerGraph has a GraphStudio interface and is preloaded with
 application-specific queries and synthetic data. These demo applications
 are provided in a read-only mode. Users can explore and play with
 pre-installed queries. Users on these demo systems cannot save changes
-to the graph schema, the loading job, or queries. The corresponding
-buttons are disabled.
+to the graph schema, the loading job, or queries.
 
 
 == GraphStudio Availability
@@ -61,29 +51,22 @@ buttons are disabled.
 
 If you are using GraphStudio in the TigerGraph Cloud environment, you can directly access GraphStudio via your browser.
 
-=== On-Prem
-For on-prem deployment, the server by default is listening on port 14240. Any machine connected to the server can access GraphStudio from a browser with the following address:
+=== On-Premises
+For on-premises deployment, the server by default is listening on port 14240.
+Any machine connected to the server can access GraphStudio from a browser with the following address:
 
 [source,http]
 ----
 http://<your_tigergraph_server_ip_address>:<your_tigergraph_server_port>
 ----
 
-If you cannot access GraphStudio, check your firewall rules and open 14240 port to public. For example, if your Linux OS uses firewall-cmd:
-
-[source,text]
-----
-$ firewall-cmd –zone=public –add-port=14240/tcp –permanent
-----
+If you cannot access GraphStudio, check your firewall to ensure that port 14240 is open.
 
 If you see the error message "Oops, looks like something went wrong" on the login page, the GUI service might be off.
 
-CAUTION: This error might also be caused by an IP range block rule from your ad blocker.
-Please try turning off your ad blocker for the GraphStudio page and try again. 
-
 image::login-error.png[]
 
-To verify, in a linux shell of the server, run the following:
+To verify the status of the GUI service, run the following command in a Linux shell on the server.
 
  $ gadmin status gui
 
@@ -94,53 +77,25 @@ If it is off, turn it on by running:
 $ gadmin start gui
 ----
 
-== Navigating Features Inside GraphStudio
-The home page of GraphStudio contains links to each of the six steps of
-solving a business problem: Design Schema, Map Data To Graph, Load Data,
-Explore Graph, Build Graph Patterns and Write Queries. Users can also
-navigate to each step from the buttons in the left menu bar. Each of
-these major steps has its own page. To hide/show the left menu bar,
-click the top-left menu
-button:
-image:toggle_nav_bar.png[image]. Clicking
-the logo on the top of the left
-menu  image:graphstudio-logo-10.22.48-am (2).png[image]  will
-take you back to the home page. You can
-click  image:goto_admin_portal.png[image] to go to
-the Admin Portal (read more at xref:admin-portal:overview.adoc[Admin Portal UI
-Guide]).
+CAUTION: This error might also be caused by an IP range block rule from your ad blocker.
+Please try turning off your ad blocker for the GraphStudio page and try again. GraphStudio does not have any ads.
 
-image::1.1 (2).png[image]
+== User menu
 
-[[switch-between-dark-and-light-theme-]]
-== Switch Between Dark And Light Theme
+The User icon image:account_btn.png[image] in the upper-right corner opens a menu with GUI customization options and links to these documentation pages.
 
-GraphStudio provides two themes: dark theme and light theme. By default
-it uses dark theme. You can click the User
-icon  image:account_btn.png[image] and then toggle
-the Dark theme to be Off to switch to light theme:
+GraphStudio supports English and Simplified Chinese user interface language options.
 
-image::1.2.png[image]
+The user interface dark theme is enabled by default. The light theme looks like this:
 
-== Switch Between Languages
-
-GraphStudio supports 2 languages: English and Chinese. By default it
-uses English. You can
-click  image:account_btn.png[image] and then select a
-language:
-
-image::1.5 (1).png[image]
-
-This shows what Home page looks like if you choose Chinese.
-
-image::1.6.png[image]
+image:gui-light-theme.png[]
 
 == GraphStudio Session Timeout
 
 GraphStudio has a default session timeout of 1 week. If, during this
 time, the user has no interaction with the page, the session will expire
 and the user will be logged out automatically. The timeout can be
-configured with:
+configured with this server command:
 
 [source,bash]
 ----
@@ -150,7 +105,7 @@ $ gadmin config set GUI.ClientIdleTimeSec [timeout]
 [[graphstudio-online-test-drive-]]
 
 == Browser Support
-As of Jan 2020, the GraphStudio UI is certified on following browsers:
+As of Jan 2020, the GraphStudio UI is certified on the following browsers:
 
 |===
 | Browser | Chrome | Safari | Firefox | Opera | Edge | Internet Explorer
@@ -170,8 +125,7 @@ Please make sure to enable JavaScript and cookies in your browser settings.
 
 == GraphStudio Limitations
 
-Some features which are available in GSQL are not available in
-GraphStudio.
+Some features available in GSQL are not available in GraphStudio.
 
 === xref:design-schema.adoc[]
 
@@ -186,11 +140,10 @@ GraphStudio.
 
 * Data loading jobs written in a GSQL console are not shown in
 GraphStudio.
-* USING options are not available.
+* `USING` options are not available.
 * Concurrent loading is not available.
 
 === xref:write-queries.adoc[]
 
-* You cannot define a user-defined function (you can use the
-user-defined functions created from TigerGraph server by importing the
-solution which contains pre-defined UDFs into GraphStudio).
+* You cannot define a user-defined function.
+However, you can use user-defined functions created from TigerGraph Server by importing a solution with pre-defined UDFs into GraphStudio.

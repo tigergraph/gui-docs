@@ -2,11 +2,11 @@
 :server-name: RESTPP
 :experimental:
 
-You can configure RESTPP settings on the RESTPP component page:
+Configure RESTPP settings on the RESTPP component page:
 
 image::restpp-page.png[]
 
-The following parameters are configurable in Admin Portal
+The following parameters are configurable in Admin Portal:
 
 * Default query timeout
 

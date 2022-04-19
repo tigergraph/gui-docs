@@ -9,13 +9,7 @@ All users can access the My Profile tab to manage their own credentials.
 
 image::my-profile-updated.png[]
 
-There are three information cards at the top:
-
-* Username shows the user's username;
-* Accessible graph shows how many graphs the user can access
-* Password allows user to change password by clicking the key icon image:key.png[] :
-
-image::change-password.png[]
+To change your password, click the key icon image:key.png[] in the Password card at the top.
 
 Below the cards is secret management section, where you can create and delete secrets, which are unique strings that can be used to generate authorization tokens.
 You need to provide an alias for the secret,
@@ -30,16 +24,19 @@ Read more at: xref:3.2@tigergraph-server:user-access:README.adoc[].
 
 == All Users
 
-The All Users tab displays information on all users. Only users with user or proxy groups management permission can access this tab.
-Users with user management permission(`READ_USER`, `WRITE_USER` privileges) can add new users, change other users' password, delete users.
-Users with proxy groups management permission(`READ_PROXYGROUP`, `WRITE_PROXYGROUP` privileges) can create proxy groups, change proxy rules of the groups, and delete proxy groups.
-To see a list of all privileges, see xref:tigergraph-server:reference:list-of-privileges.adoc[List of Privileges]
+The All Users tab displays information on all users.
+Only users with user or proxy groups management permission can access this tab.
+Users with user management permissions (`READ_USER`, `WRITE_USER` privileges) can add new users, change other users' password, delete users.
+
+Users with proxy groups management permission (`READ_PROXYGROUP`, `WRITE_PROXYGROUP` privileges) can create proxy groups, change proxy rules of the groups, and delete proxy groups.
+To see a list of all privileges, see xref:tigergraph-server:reference:list-of-privileges.adoc[List of Privileges].
 
 image::all-users-updated.png[]
 
 [NOTE]
 ====
-Both native users and proxy users are displayed in the User section. However, you can only change password for native users.
+Both native users and proxy users are displayed in the User section.
+However, you can only change the password for native users.
 ====
 
 
@@ -67,17 +64,18 @@ image::edit-proxy-group.png[]
 
 Click image:delete_btn.png[] to delete a proxy group.
 
-Read more about proxy group at xref:3.2@tigergraph-server:user-access:README.adoc[].
+Read more about proxy group at xref:3.5@tigergraph-server:user-access:index.adoc[].
 
-== User-defined Roles
+== User-defined roles
 
 The _User-defined roles_ tab lists all user-defined roles and allows users with sufficient privileges to create roles. Users must have the `READ_ROLE` privilege on at least one graph to access this tab. This section describes the procedures to create, edit, and drop roles, as well as assign roles to users in GraphStudio.
 To learn more about roles and privileges in TigerGraph's role-based access control system, see xref:tigergraph-server:user-access:index.adoc[].
 
+To create/edit/delete a role, a user must also have `WRITE_ROLE` privilege on that graph.
+See more details in xref:tigergraph-server:user-access:access-control-model.adoc[].
 
-To create/edit/delete a role, a user must also have `WRITE_ROLE` privilege on that graph. See more details in xref:tigergraph-server:user-access:access-control-model.adoc[]
-
-At the right upper corner, there is a hint button image:udr-hint-btn.png[]. Click the button and jump to the official roles and privileges documentation to read more about roles and privileges.
+At the right upper corner, there is a hint button image:udr-hint-btn.png[].
+Click the button and jump to the official roles and privileges documentation to read more about roles and privileges.
 All user-defined roles that you can view will list in a table:
 
 image::user-defined-roles.png[]
@@ -87,8 +85,8 @@ For global roles, all privileges on either global level or a specific graph will
 
 === Create a user-defined role
 
-Click image:create-role-btn.png[] at the right upper corner to create a role.
-You can either choose to create a global or a local role on a graph.
+Click btn:[+ Create role] at the right upper corner to create a role.
+You can create a global or a local role on a graph.
 
 image:role-type-hint.png[]
 
@@ -98,11 +96,7 @@ Select image:global-ratio-btn.png[] to start creating a global role. The first p
 
 image::create-global-role.png[]
 
-Click image:grant-privileges-on-graph.png[] at the bottom of the pop-up window to reveal the privileges panel for local privileges.
-Select a graph first in the dropdown menu, then grant local privileges on that graph.
-You can also click image:remove-btn.png[] to remove the graph that you want to add privileges on.
-
-image::privileges-on-a-graph.png[]
+Click image:grant-privileges-on-graph.png[] at the bottom of the pop-up window to open the same interface with the ability to create privileges for a different graph.
 
 ==== Create a local role
 
@@ -123,7 +117,7 @@ image:edit-global-role.png[] image:edit-local-role.png[]
 
 Click image:delete_btn.png[] to drop a role.
 
-== Role Management
+== Role management
 
 In the _Role Management_ tab, users can view the role assignment of users, assign roles to users, and revoke roles from users. Users must have the `READ_ROLE` privilege along with the `READ_USER` or `READ_PROXYGROUP` privilege on at least one graph to access this tab.
 
@@ -191,7 +185,6 @@ After modifying your assignment, click image:save-btn.png[] to save your changes
 You can also discard your changes by clicking the discard button image:discard-btn.png[]
 
 image::user-assignment-changed.png[View after changing role assignment]
-
 
 Similarly, you can also click the proxy group button image:proxy-groups (1).png[] to switch to proxy groups and manage their roles.
 

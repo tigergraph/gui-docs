@@ -2,13 +2,13 @@
 :server-name: GSQL
 :experimental:
 
-Click "GSQL" under "Components" on the left side navigation to get to the GSQL configuration page.
+Click "GSQL" under "Components" in the left navigation panel to show the GSQL configuration page.
 The GSQL page in Admin Portal allows you to change the value of certain GSQL configuration parameters.
 
 
 image::gsql-page.png[]
 
-Currently, the following parameters can be changed in Admin Portal
+The following parameters can be changed in Admin Portal:
 
 * GSQL.QueryResponseMaxSizeByte
 

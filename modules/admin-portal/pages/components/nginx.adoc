@@ -25,16 +25,16 @@ A CIDR block looks like a normal IP address except that it ends with a slash fol
 A network prefix is an aggregation of IP addresses.
 
 
-For example, 192.50.128.0/16 defines the first 16 bits of the IP address to identify the address aggregation.
-It includes every address from 192.50.0.0 to 192.50.255.255.
-If you put 192.50.128.0/16 in the allowed CIDR list, then every host with an IP address from 192.50.0.0 to 192.50.255.255 are allowed to access Nginx.
+For example, `192.50.128.0/16` defines the first 16 bits of the IP address to identify the address aggregation.
+It includes every address from `192.50.0.0` to `192.50.255.255`.
+If you put 192.50.128.0/16 in the allowed CIDR list, then every host with an IP address from `192.50.0.0` to `192.50.255.255` are allowed to access Nginx.
 
 [CAUTION]
 ====
 If you decide to change the allowlist, you should at least make sure that you allow requests from your own instance:
 
-* If you are running a single-server instance, 127.0.0.1 should be included in the allowed CIDR block.
-An easy way to do this is to add 127.0.0.1/32 to the end of your allowed list.
+* If you are running a single-server instance, `127.0.0.1` should be included in the allowed CIDR block.
+An easy way to do this is to add `127.0.0.1/32` to the end of your allowed list.
 * If you are running a cluster, you can run `gssh` in the Linux terminal to find out the IP addresses of all machines in your cluster.
 Make sure the allowed CIDR block you provide includes the IP address of every machine.
 ====
@@ -44,7 +44,7 @@ If you are unsure which CIDR block you want to allow, you can use link:https://w
 == Response header
 
 The `response header` can be empty.
-In addition, you can also add one by clicking the + on the right side of the `response header` box, or you can delete the specified one by clicking-on the right side of a `response header`.
+In addition, you can also add one by clicking the btn:[+] on the right side of the `response header` box, or you can delete the specified one by clicking on the right side of a `response header`.
 
 image::nginx-response-header-one.png[]
 
@@ -60,22 +60,22 @@ SSL key:: The private key used for SSL.
 You can provide the SSL certificate and SSL key in one of the following ways:
 
 * Uploading files.
- ** Click the btn:[file upload] button next to the input box, and a drop-down menu for uploading files will appear. Click the btn:[Upload file] option to upload the desired file.
+ ** Click the upload icon next to the input box, and a drop-down menu for uploading files will appear.
+Click the btn:[Upload file] option to upload the desired file.
 * Providing manual input to self-sign.
- ** Click the btn:[file upload] button next to the input box, and a drop-down menu for uploading files will appear.
+ ** Click the upload icon next to the input box, and a drop-down menu for uploading files will appear.
 Click btn:[Self Signed] to fill in the information to generate a self-signed certificate.
 *A self-signed certificate will be valid for a year*.
 
 image::ssl-uploading.png[]
 
 Since configuration change requires restarting the server service, a pop-up box will appear to confirm whether to restart the service.
-After clicking the btn:[OK] button, it will take a while for the configuration changes and server restart.
+After clicking the btn:[OK] button, the configuration changes and server restart process will take several moments.
 You will be notified after all the process is completed.
 
 [WARNING]
 ====
+Downgrading from HTTPS to HTTP (turning off SSL) will cause a user authentication failure.
 
-Downgrading from HTTPS to HTTP (turn off SSL) will result in user authentication failure.
-
-If you are seeing authentication failure after turning off SSL in Chrome, clear the cache from Chrome and refresh the browser.
+If you are seeing an authentication failure after turning off SSL in Chrome, clear the cache from Chrome and refresh the browser.
 ====

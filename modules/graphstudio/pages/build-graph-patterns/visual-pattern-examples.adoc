@@ -1,6 +1,6 @@
 = Visual Pattern Examples
 
-You have learnt all the basic concepts of Visual Query Builder in the previous article. In this article we will walk you through building several visual patterns step by step, and then show you more graph analytics questions and how to solve them with visual patterns.‌
+You have learnt all the basic concepts of the Visual Query Builder in the previous article. In this article we will walk you through building several visual patterns step by step, and then show you more graph analytics questions and how to solve them with visual patterns.‌
 
 == Example 1. Find all the departments with male employees
 
