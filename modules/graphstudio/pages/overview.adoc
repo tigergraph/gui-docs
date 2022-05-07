@@ -84,7 +84,9 @@ Please try turning off your ad blocker for the GraphStudio page and try again. G
 
 The User icon image:account_btn.png[image] in the upper-right corner opens a menu with GUI customization options and links to these documentation pages.
 
-GraphStudio supports English and Simplified Chinese user interface language options.
+GraphStudio supports English, Simplified Chinese, and Japanese user interface language options.
+
+image:language-picker.png[]
 
 The user interface dark theme is enabled by default. The light theme looks like this:
 
