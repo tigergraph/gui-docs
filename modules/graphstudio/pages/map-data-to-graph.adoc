@@ -21,13 +21,11 @@ The main steps are
 
 == Select a data source
 
-GraphStudio supports loading data from either local files on the TigerGraph server or files stored on Amazon S3.
+GraphStudio supports loading data from local files on the TigerGraph server, from files stored on Amazon S3, or from files stored on Google Cloud Services (GCS).
 
-Click the data file type selector button on the banner of the Add Data File window, and choose either File or S3 from the list:
+image::choose-a-data-source-type.png[]
 
-image::Screen Shot 2020-01-29 at 2.15.45 PM.png[]
-
-* If you select *File*, no more configuration is needed. Skip the sections for external sources and go to  btn:[Map Data To Graph].
+* If you select *File*, no more configuration is needed. Skip the sections for external sources and go to btn:[Map Data To Graph].
 * If you select *S3*, then read the section <<_create_s3_data_source>>.
 
 == Add data files
@@ -62,7 +60,7 @@ Once the files are uploaded to the server, they will appear in the "Files on ser
 
 [NOTE]
 ====
-*Data Files must be .csv files to allow data mapping in GraphStudio ( .json file upload is allowed in TigerGraph V3.0.5+ through GraphStudio)*
+*Data Files must be .csv files to allow data mapping in GraphStudio (.json file upload is allowed in TigerGraph V3.0.5+ through GraphStudio)*
 
 The Add Data File box will only upload files which end in ".csv". If you manually place files in the `<TigerGraph_root_dir>/data/gui/loading_data` folder, please don't put any files into subfolders because they will be ignored.
 
