@@ -19,9 +19,9 @@ The main steps are
 . Map data file columns to vertex/edge fields
 . Publish data mapping
 
-== Select a data source
+== Select a data source type
 
-GraphStudio supports loading data from local files on the TigerGraph server, from files stored on Amazon S3, or from files stored on Google Cloud Services (GCS).
+GraphStudio supports loading data from local files on the TigerGraph server, from files stored on Amazon S3, or from files stored on Google Cloud Storage (GCS).
 
 Click the Add Data File button image:add_data_source_btn.png[] in the toolbar to add data files.
 
@@ -34,7 +34,7 @@ image::choose-a-data-source-type.png[]
 == Add data files
 
 A data file is a file containing structured data to be loaded into the graph, creating vertex and/or edge instances.
-After specifying your data source, the next step is to specify your data files.
+After specifying your data source type, the next step is to specify your data files.
 
 This section contains subsections for each data source.
 
@@ -145,9 +145,13 @@ image::add-data-source-from-gcs.png[]
 
 Underneath the name line, upload your GCS account key file. Google provides a guide on generating and downloading key files at this link: link:https://cloud.google.com/iam/docs/creating-managing-service-account-keys#getting_a_service_account_key[Getting a service account key].
 
-After you enter your key, enter the URI for your data file in your Google Cloud Storage bucket.
+After you enter your key, enter the gsutil URI for your data file in your Google Cloud Storage bucket.
 
 image::gcs-data-source.png[]
+
+In addition to single files, TigerGraph also supports loading an entire folder by entering the gsutil URI for that folder.
+
+All data files in this folder must share the same data schema. When uploading a folder, the file preview is limited to the first 10 lines.
 
 [NOTE]
 ====
