@@ -29,7 +29,7 @@ image::choose-a-data-source-type.png[]
 
 * If you select *Local File*, no more configuration is needed. Skip the sections for external sources and go to btn:[Map Data To Graph].
 * For *AWS S3*, skip to the section <<_create_s3_data_source>>.
-* For *Google Cloud Storage*, skip to the section <<_create_gcs_data_source>>.
+* For *Google Cloud Storage*, skip to the section <<_create_a_gcs_data_source>>.
 
 == Add data files
 
@@ -40,7 +40,7 @@ This section contains subsections for each data source.
 
 * Local File System - <<_add_local_data_file>>
 * AWS S3 - <<_create_s3_data_source>>
-* GCS - <<_create_gcs_data_source>>
+* GCS - <<_create_a_gcs_data_source>>
 
 === Add local data file
 
@@ -48,11 +48,7 @@ After clicking btn:[Local File], you will be prompted to choose a local file to 
 
 image::choose-a-local-file.png[]
 
-Initially, there are no data files in the server data folder.
-
-==== Upload file to server
-
-Click the Upload File button image:upload_file_btn.png[] and choose the data files you want to upload to the server data folder:
+Click the Upload File button image:upload_file_btn.png[] and choose the data files you want to upload to the server data folder, then click btn:[ADD].
 
 image::upload-files.png[]
 
@@ -92,15 +88,18 @@ image::edit-header.png[]
 
 Once you are satisfied with the file parsing configuration, click the btn:[ADD] button to add the data file into the left working panel.
 
-Once you think a file is no longer needed, you can remove it from the server by clicking the delete button image:delete_forever.png[] to the left of each file.
+If a file is no longer needed, you can remove it from the server by clicking the delete button image:delete_forever.png[] to the left of each file.
 
 [NOTE]
 After removing a file from the server, you also need to manually remove data mapping using that file.
 Otherwise, a "file not on server" error will be triggered when loading data.
 
-Continue with <<Map data files to vertex type or edge type>>
+Continue with <<Map data files to vertex type or edge type>>.
 
 === Create S3 data source
+
+TigerGraph creates a connection to S3 in order to access the file system in an S3 bucket.
+Only one file may be selected at a time.
 
 After you click the btn:[S3] data source icon, you will be prompted to first connect an S3 data source.
 
@@ -116,7 +115,7 @@ Click the btn:[ADD] button and the data source will appear in the Data Source li
 
 Clicking the data source in the list expands a file tree listing all buckets and folders accessible by the credentials provided.
 
-Choose the file you want to add and change the parsing options if necessary. (See <<Configure the File Parser>>)
+Choose the file you want to add and change the parsing options if necessary. The first ten lines of the selected file appear as a preview.
 
 image::Screen Shot 2019-05-16 at 12.56.32 PM.png[]
 
@@ -133,9 +132,9 @@ GraphStudio detects the file extension and automatically chooses the correspondi
 If the file is encoded with one of these formats but has a non-standard file extension, you can manually specify the file format.
 ====
 
-After clicking the btn:[ADD] button, your data will appear in the working panel.
+Confirm that the data has parsed correctly (see <<Configure the File Parser>>) and click btn:[ADD] to add the data source to your project, where it will appear in the working panel.
 
-Continue with <<Map data files to vertex type or edge type>>
+Continue with <<Map data files to vertex type or edge type>>.
 
 === Create a GCS data source
 
@@ -151,7 +150,9 @@ image::gcs-data-source.png[]
 
 In addition to single files, TigerGraph also supports loading an entire folder by entering the gsutil URI for that folder.
 
-All data files in this folder must share the same data schema. When uploading a folder, the file preview is limited to the first 10 lines.
+All data files in this folder must share the same data schema.
+The folder preview, like the file preview, is limited to the first ten lines of uploaded data.
+If a folder contains more than one file, only the first ten lines of the first file will appear in the preview.
 
 [NOTE]
 ====
