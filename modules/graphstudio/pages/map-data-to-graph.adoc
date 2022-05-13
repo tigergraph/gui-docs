@@ -152,7 +152,7 @@ In addition to single files, TigerGraph also supports loading an entire folder b
 
 All data files in this folder must share the same data schema.
 The folder preview, like the file preview, is limited to the first ten lines of uploaded data.
-If a folder contains more than one file, only the first ten lines of the first file will appear in the preview.
+If a folder contains more than one file and the first file has more than ten lines, only the first ten lines of the first file will appear in the preview.
 
 [NOTE]
 ====
