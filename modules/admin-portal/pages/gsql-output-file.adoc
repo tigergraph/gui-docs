@@ -4,16 +4,14 @@
 In a GSQL query, you can print any output from the query to a local file on the machine running TigerGraph. (See xref:gsql-ref:querying:output-statements-and-file-objects.adoc[] for details.)
 You can download these files from your web browser through the Admin Portal interface.
 
-This also applies to GraphStudio, because GraphStudio does not allow files to be saved from the web browser directly.
-Instead, any files saved through a query on GraphStudio must first be saved on the server, such as in a folder of your choice under `\home\tigergraph\`, then downloaded via Admin Portal.
+For solutions on TigerGraph Cloud, GraphStudio does not allow you to download files from the cloud machine directly from the web browser.
+Any files saved through a query on a cloud solution must first be saved on the remote server, such as in a folder of your choice under `\home\tigergraph\`, then downloaded via Admin Portal.
 
-
-[discrete]
 == Procedure
 
 === Navigate to GSQL Output File page
 
-Navigate to Admin Portal, click "Others" on the left side navigation, and Click "GSQL Output File".
+Navigate to Admin Portal, click "Others" on the left side navigation, and click "GSQL Output File".
 After you print the query result into a file on the server running TigerGraph, you can preview or download the output files through this page.
 
 image::gsql-output-file-initial.png[GSQL output file page]
