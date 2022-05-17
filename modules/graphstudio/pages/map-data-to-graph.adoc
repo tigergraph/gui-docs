@@ -19,40 +19,36 @@ The main steps are
 . Map data file columns to vertex/edge fields
 . Publish data mapping
 
-== Select a data source
+== Select a data source type
 
-GraphStudio supports loading data from either local files on the TigerGraph server or files stored on Amazon S3.
+GraphStudio supports loading data from local files on the TigerGraph server, from files stored on Amazon S3, or from files stored on Google Cloud Storage (GCS).
 
-Click the data file type selector button on the banner of the Add Data File window, and choose either File or S3 from the list:
+Click the Add Data File button image:add_data_source_btn.png[] in the toolbar to add data files.
 
-image::Screen Shot 2020-01-29 at 2.15.45 PM.png[]
+image::choose-a-data-source-type.png[]
 
-* If you select *File*, no more configuration is needed. Skip the sections for external sources and go to  btn:[Map Data To Graph].
-* If you select *S3*, then read the section <<_create_s3_data_source>>.
+* If you select *Local File*, no more configuration is needed. Skip the sections for external sources and go to btn:[Map Data To Graph].
+* For *AWS S3*, skip to the section <<_create_s3_data_source>>.
+* For *Google Cloud Storage*, skip to the section <<_create_a_gcs_data_source>>.
 
 == Add data files
+
+A data file is a file containing structured data to be loaded into the graph, creating vertex and/or edge instances.
+After specifying your data source type, the next step is to specify your data files.
 
 This section contains subsections for each data source.
 
 * Local File System - <<_add_local_data_file>>
 * AWS S3 - <<_create_s3_data_source>>
+* GCS - <<_create_a_gcs_data_source>>
 
 === Add local data file
 
-A data file is a file containing structured data to be loaded into the graph, creating vertex and/or edge instances.
-The first step for data mapping is to specify your data files.
+After clicking btn:[Local File], you will be prompted to choose a local file to upload through the GUI.
 
-Click the Add Data File button image:add_data_source_btn.png[] to add data files.
+image::choose-a-local-file.png[]
 
-The Add Data File window will pop up:
-
-image::Screen Shot 2019-05-16 at 11.52.29 AM.png[]
-
-Initially, there are no data files in the server data folder.
-
-==== Upload file to server
-
-Click the Upload File button image:upload_file_btn.png[] and choose the data files you want to upload to the server data folder:
+Click the Upload File button image:upload_file_btn.png[] and choose the data files you want to upload to the server data folder, then click btn:[ADD].
 
 image::upload-files.png[]
 
@@ -62,7 +58,7 @@ Once the files are uploaded to the server, they will appear in the "Files on ser
 
 [NOTE]
 ====
-*Data Files must be .csv files to allow data mapping in GraphStudio ( .json file upload is allowed in TigerGraph V3.0.5+ through GraphStudio)*
+*Data Files must be .csv files to allow data mapping in GraphStudio (.json file upload is allowed in TigerGraph V3.0.5+ through GraphStudio)*
 
 The Add Data File box will only upload files which end in ".csv". If you manually place files in the `<TigerGraph_root_dir>/data/gui/loading_data` folder, please don't put any files into subfolders because they will be ignored.
 
@@ -92,34 +88,34 @@ image::edit-header.png[]
 
 Once you are satisfied with the file parsing configuration, click the btn:[ADD] button to add the data file into the left working panel.
 
-Once you think a file is no longer needed, you can remove it from the server by clicking the delete button image:delete_forever.png[] to the left of each file.
+If a file is no longer needed, you can remove it from the server by clicking the delete button image:delete_forever.png[] to the left of each file.
 
 [NOTE]
 After removing a file from the server, you also need to manually remove data mapping using that file.
 Otherwise, a "file not on server" error will be triggered when loading data.
 
-After adding all your data files, continue with <<Map data files to vertex type or edge type>>
+Continue with <<Map data files to vertex type or edge type>>.
 
 === Create S3 data source
 
-After you click the S3 data source icon, you should see the following window:
+TigerGraph creates a connection to S3 in order to access the file system in an S3 bucket.
+Only one file may be selected at a time.
 
-image::Screen Shot 2019-05-16 at 12.23.02 PM.png[]
+After you click the btn:[S3] data source icon, you will be prompted to first connect an S3 data source.
 
-A data source is an appropriately configured connection to some remote source of data file(s).
-When the data file type is switched to S3, you can configure connections to your S3 buckets.
+image::choose-file-from-s3-bucket.png[]
 
 Click the Add new data source button image:upload_file_btn.png[] to bring up the new S3 data source window.
 Give a name to the data source and provide the access key id and secret access key to connect to S3.
 
-image::s3-connection.png[]
+image::new-s3-data-source.png[]
 
 Click the btn:[ADD] button and the data source will appear in the Data Source list.
 
 
 Clicking the data source in the list expands a file tree listing all buckets and folders accessible by the credentials provided.
 
-Choose the file you want to add and change the parsing options if necessary. (See <<Configure the File Parser>>)
+Choose the file you want to add and change the parsing options if necessary. The first ten lines of the selected file appear as a preview.
 
 image::Screen Shot 2019-05-16 at 12.56.32 PM.png[]
 
@@ -131,16 +127,44 @@ Data files, after decompression, must be in either csv or parquet format.
 [NOTE]
 ====
 TigerGraph supports loading from archived and compressed S3 files directly.
-Currently supported file extensions includes zip, tar.gz, tgz and tar.
+Currently supported file extensions include zip, tar.gz, tgz and tar.
 GraphStudio detects the file extension and automatically chooses the corresponding file format.
 If the file is encoded with one of these formats but has a non-standard file extension, you can manually specify the file format.
 ====
 
-After clicking the btn:[ADD] button, an S3 file icon will appear on the working panel:
+Confirm that the data has parsed correctly (see <<Configure the File Parser>>) and click btn:[ADD] to add the data source to your project, where it will appear in the working panel.
 
-image::Screen Shot 2019-05-16 at 1.03.41 PM.png[]
+Continue with <<Map data files to vertex type or edge type>>.
 
-After adding all your S3 data files, continue with <<Map data files to vertex type or edge type>>
+=== Create a GCS data source
+
+After clicking btn:[Local File] when selecting a data source type, you will be prompted to enter a custom name for your GCS data source.
+
+image::add-data-source-from-gcs.png[]
+
+Underneath the name line, upload your GCS account key file. Google provides a guide on generating and downloading key files at this link: link:https://cloud.google.com/iam/docs/creating-managing-service-account-keys#getting_a_service_account_key[Getting a service account key].
+
+After you enter your key, enter the gsutil URI for your data file in your Google Cloud Storage bucket.
+
+image::gcs-data-source.png[]
+
+In addition to single files, TigerGraph also supports loading an entire folder by entering the gsutil URI for that folder.
+
+All data files in this folder must share the same data schema.
+The folder preview, like the file preview, is limited to the first ten lines of uploaded data.
+If a folder contains more than one file and the first file has more than ten lines, only the first ten lines of the first file will appear in the preview.
+
+[NOTE]
+====
+TigerGraph supports loading from archived and compressed GCS files directly.
+Currently supported file extensions include zip, tar.gz, tgz and tar.
+GraphStudio detects the file extension and automatically chooses the corresponding file format.
+If the file is encoded with one of these formats but has a non-standard file extension, you can manually specify the file format.
+====
+
+Confirm that the data has parsed correctly (see <<Configure the File Parser>>) and click btn:[ADD] to add the data source to your project, where it will appear in the working panel.
+
+Continue with <<Map data files to vertex type or edge type>>.
 
 == Map data files to vertex type or edge type
 
