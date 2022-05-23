@@ -1,6 +1,6 @@
 = Migrate From Relational Database
 
-== Migrate From Relational Database
+== Migrate from relational database
 
 Starting from 3.0, you can easily migrate your relational database into TigerGraph database without having to write a single line of code!
 
@@ -10,25 +10,28 @@ image::rdnms-link.png[]
 
 === Step 1. Choose relational database type
 
-Currently we support PostgreSQL and MySQL. We will support more RDBMS types in the future.
+We support PostgreSQL and MySQL.
 
 image::step-1.png[]
 
 === Step 2. Input connection information
 
-Provide the credentials to connect to your relational database. You need to specify which database you want to migrate from in this step.
+Provide the credentials to connect to your relational database and specify which database you want to migrate from.
 
 image::step-2.png[]
 
 === Step 3. Choose tables/attributes to be migrated
 
-GraphStudio will connect to your relational database and retrieve all the table schemes of the database. You can choose which tables and which attributes of each table you want to migrate. By default everything will be migrated.
+GraphStudio will connect to your relational database and retrieve all the table schemes of the database.
+You can choose which tables and which attributes of each table you want to migrate. By default, everything will be migrated.
 
 image::step-3.png[]
 
 === Step 4. Configurations
 
-You can set the migrated graph's name (by default it will be your RDBMS type concatenated with the database name). You can choose to create index for the attributes if an index exists in the relational database. You can also choose to only migrate the top several records of each table (by default the whole dataset will be migrated).
+You can set the migrated graph's name. By default, it will be your RDBMS type concatenated with the database name.
+You can choose to create index for the attributes if an index exists in the relational database.
+You can also choose to only migrate the top several records of each table (by default the whole dataset will be migrated).
 
 The foreign keys will be treated as edge types. This is the fixed migration rule we are using. In the future we will provide more migration rules for you to choose.
 
@@ -36,26 +39,22 @@ image::step-4.png[]
 
 === Step 5. Start migration
 
-The migration will take a few minutes. After migration finished, a new subgraph will be created.
+The migration will take a few minutes, after which a new subgraph will be created.
 
 [CAUTION]
 ====
-The data from RDBMS will be imported to the server's filesystem before being loaded into TigerGraph database. Please make sure that the server has enough disk space!
+The data from the RDBMS will be imported to the server's filesystem before being loaded into TigerGraph database. Please make sure that the server has enough disk space!
 ====
 
 image::step-5-migrating.png[]
 
 === Verify Migration Result
 
-After migration, a popup message will guide you to go to Design Schema page to verify the graph schema.
-
-image::migration-verify.png[]
-
-You can take a look of the auto-generated schema and make appropriate modifications.
+After migration, look over the auto-generated schema and make appropriate modifications.
 
 image::rdbms-schema.png[]
 
-Then go to Map Data To Graph page and check the auto-generated data mapping.
+Then go to the Map Data To Graph page and check the auto-generated data mapping.
 
 image::rdbms-data-mapping.png[]
 
@@ -63,6 +62,4 @@ Then go to Load Data page and load the data into the graph.
 
 image::rdbms-data-loading.png[]
 
-Well done, you can play with your data and work on your business logic! Here is an example of playing with the data in Explore Graph page.
-
-image::rdbms-graph-exploration.png[]
+Your data is now successfully loaded. You can now go on to write queries and explore the graph.

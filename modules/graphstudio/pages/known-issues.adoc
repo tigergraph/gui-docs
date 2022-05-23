@@ -34,6 +34,7 @@ In the future, GraphStudio will use BigInt to solve this problem.
 
 == Graph Exploration result disappears 
 
+
 Sometimes when you double-click a vertex, the graph exploration result disappears. This is only a front-end rendering issue. The data is still there. +
 *Workaround* : click the change layout button image:screen-shot-2021-07-22-at-9.56.00-am.png[] , and choose any layout. Everything will be rendered.
 
@@ -49,22 +50,26 @@ When you run a query, if the structure of the data in the response is too comple
 
 == You cannot use fixed binary type attributes
 
-Currently GraphStudio doesn't support fixed binary type attributes in schema. If you create your graph schema from GSQL with such attributes, GraphStudio will refuse to work. We will support this feature in future releases.
+Currently GraphStudio doesn't support fixed binary type attributes in the schema. If you create your graph schema from GSQL with such attributes, GraphStudio will refuse to work. We will support this feature in future releases.
 
 == Loading jobs created from GSQL won't be shown
 
 GraphStudio can only recognize data mapping procedures created through GUI. If you create loading jobs from GSQL, they won't be shown in GraphStudio.
 
+
 == GSQL changes do not auto refresh 
+=======
 
 If you make changes to graph schema, and create/delete/modify global schema and local schema through GSQL, you need to refresh the browser for the changes to show up in GraphStudio.
 
 
 == Config expression with accumulators will be not applicable with refresh button
 
-On Explore Graph, Build Graph Pattern and Write Query pages, a refresh button image:refresh-button.png[] to retrieve updated data is used in visualization viewer. If your color/size configs use accumulator as a variable, it will be lost in the new visualization after clicking the refresh button.
+On Explore Graph, Build Graph Pattern and Write Query pages, a refresh button image:refresh-button.png[] to retrieve updated data is used in the visualization viewer.
+If your color/size configs use an accumulator as a variable, it will be lost in the new visualization after clicking the refresh button.
 
 
 == Report bugs to us 
+
 
 If you find any bugs, please report them to link:mailto:support@tigergraph.com.[support@tigergraph.com.]We really appreciate it!

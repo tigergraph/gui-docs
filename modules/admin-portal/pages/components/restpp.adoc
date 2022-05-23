@@ -1,33 +1,13 @@
 = RESTPP
+:server-name: RESTPP
+:experimental:
 
-== RESTPP Page
-
-You can configure RESTPP settings on this page: Default query timeout.
+Configure RESTPP settings on the RESTPP component page:
 
 image::restpp-page.png[]
 
-When you don't have any changes, the DISCARD and APPLY buttons are disabled.
+The following parameters are configurable in Admin Portal:
 
-image::discard-apply.png[]
+* Default query timeout
 
-You can clear your changes by clicking the DISCARD button at the bottom right corner of the page.
-
-image::discard.png[]
-
-If you want to get the default data again, you can click the refresh button on the upper right corner of the page.
-
-image::refresh-button.png[]
-
-The fields with * in the label are required entries. When users do not fill in the required items and click the APPLY button, the following error will appear:
-
-image::restpp-reqired-error.png[]
-
-If everything is ready, click the APPLY button and a confirmation box will pop up.
-
-image::confirm-config-pop.png[]
-
-Click the CANCEL button, the pop-up window will be closed. Click the OK button, it will prompt the success message.Since configuration change requires restarting the server service, a pop-up box will appear to confirm whether to restart the service. After clicking the OK button, it will take a while for the configuration changes and server restart. You will be notified after all the process is completed.
-
-image::restpp-confirm-server.png[]
-
-image::restpp-finished.png[]
+include::partial$change-configuration.adoc[]

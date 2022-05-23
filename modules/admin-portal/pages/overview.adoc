@@ -1,6 +1,10 @@
 = Overview
+:description: An overview of GraphStudio UI.
+:experimental:
 
-The TigerGraph Admin Portal is a browser-based DevOps tool that provides users an overview of a running TigerGraph system, from an application and infrastructure point of view. It also allows the users to configure the TigerGraph system through a user-friendly interface. This guide serves as an introduction and quick-start manual for Admin Portal.
+The TigerGraph Admin Portal is a browser-based DevOps tool that provides users an overview of a running TigerGraph system from an application and infrastructure point of view.
+It also allows users to configure the TigerGraph system through a user-friendly interface.
+This guide serves as an introduction and quick-start manual for Admin Portal.
 
 Admin Portal is certified on the following browsers:
 
@@ -22,7 +26,7 @@ Please make sure to enable JavaScript and cookies in your browser settings.
 
 == Log On
 
-The Admin Portal and GraphStudio share the same port (14240). If you are logged in to one of the servers for your TigerGraph system, you can use `localhost` for your server IP address. The Admin Portal is on the admin page:
+Admin Portal and GraphStudio share the same port (14240). If you are logged in to one of the servers for your TigerGraph system, you can use `localhost` for your server IP address. The Admin Portal is on the admin page:
 
 [source,http]
 ----
@@ -31,7 +35,7 @@ http://<tigergraph_server_ip_address>:14240/admin/
 
 If user authentication has been enabled, users need to log in to access the Admin Portal.
 
-If you are already at GraphStudio, click the Admin button image:goto_admin_portal.png[] at the right end of the top menu bar to navigate to Admin Portal.
+If you are already at GraphStudio, click the btn:[Admin] button at the right end of the top menu bar to navigate to Admin Portal.
 
 == Page Layout
 
@@ -48,9 +52,7 @@ image::dashboard.png[]
 
 == Page Header
 
-image::admin_portal_toolbar-updated.png[]
-
-The *Account* iconimage:account_btn.png[]will open the user menu:
+The user menu is accessible from the User icon image:account_btn.png[] in the header.
 
 image::admin-user-menu-updated.png[]
 
@@ -58,11 +60,11 @@ You can switch between a dark theme and a light theme. The light theme is shown 
 
 image::light-theme.png[]
 
-To sign out of the Admin Portal, click on the *Sign out* button in the Account menu.
+To sign out of Admin Portal, click on the *Sign out* button in the Account menu.
 
 Clicking on the *Help* button will take you to the documentation page containing this guide.
 
-You can navigate to GraphStudio by clicking onimage:goto_graphstudio.png[].
+You can navigate to GraphStudio by clicking on the btn:[GraphStudio] button in the upper right corner.
 
 == Cluster service status
 

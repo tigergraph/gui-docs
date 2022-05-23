@@ -6,11 +6,13 @@
 ** Management
 *** xref:management/license.adoc[]
 *** xref:management/user-management.adoc[]
-** Components
+** xref:components/README.adoc[]
 *** xref:components/nginx.adoc[]
 *** xref:components/restpp.adoc[]
+*** xref:components/gsql.adoc[]
 *** xref:components/gui.adoc[]
 ** Security
 *** xref:security/ldap.adoc[]
 *** xref:security/sso.adoc[]
+** xref:gsql-output-file.adoc[Query Output File Download]
 ** xref:known-issues.adoc[]

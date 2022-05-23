@@ -6,12 +6,13 @@ image::image (6).png[]
 
 [WARNING]
 ====
-Error message might show if an ADBLOCK is running.
+Due to IP address blocking, an error message may appear with some ad blocker software.
+Please turn off your ad blocker when using Admin Portal.
 ====
 
 == Open a log file from the file directory
 
-In the file directory panel, all machines will be listed. Clicking the machine id, all components of the machine will be listed. When you expand the component,  all log files and folders will be listed.
+In the file directory panel, all machines will be listed in a tree structure. Click a machine ID to show the components, and click again to show log files and folders.
 
 image::file-listing.png[]
 
@@ -26,30 +27,17 @@ image::display-log (1).png[]
 
 == Search logs
 
-In the search panel, a user needs to provide the following three pieces
-of information: pattern, node(s) and component(s). To perform the search
-operation, a pattern must be entered and at least one node and one
-component should be selected. The search
-button image:search-btn.png[image] is on the
-upper-right corner. While searching, all input fields will be disabled,
-and the search button will change to a progress bar like
- image:searching.png[image] . Users can click on
-collapse button image:collapse-btn.png[image] to
-collapse the search panel for more space to view the log content. In
-addition, users can click on expand
-button image:expand-btn.png[image] to open the
-search panel.
+image:search-panel.png[image]
 
-image:search-panel (1).png[image]
+In the search panel, a user needs to provide the following three pieces of information:
 
-If user inputs do not meet the requirements, an error message will show
-up after clicking the search button:
+* Pattern
+* Node
+* Component
 
-image:search-error.png[image]
+Without at a pattern and at least one node and one component, the search will not be performed.
 
-After the searching process finishes, all results will be listed. The
-number of results will be tagged in result tab
-like image:result-tag.png[image] .
+Use the expand or collapse buttons for more space to view the log content, if necessary. image:collapse-btn.png[image]image:expand-btn.png[image]
 
 image:search-result.png[image]
 
@@ -59,7 +47,6 @@ log line content will also be shown:
 
 image:single-search-result.png[image]
 
-Clicking on one single search result will show the log content in
-display panel. The matching log line content will be highlighted.
+Clicking on a single search result will show the log content in the display panel and highlight the matching log line.
 
-image:line-highlight-log%20%281%29.png[image]
+image:line-highlight-log (1).png[image]

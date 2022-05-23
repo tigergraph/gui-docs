@@ -1,54 +1,56 @@
 = Export And Import Solution
+:experimental:
 
-== Export And Import Solution
+== Export and Import
 
-These two features can be found on the GraphStudio Home page. You can return to the Home page by clicking the logo on the top of the left menu image:graphstudio-logo-10.22.48-am%20%281%29.png[].
+These two features can be found on the GraphStudio Home page.
 
 [WARNING]
 ====
-Solutions created from "Export Current Solution" from a version released prior to v3.1 cannot be imported into v3.1 due to data storage changes made in v3.1 to support HA for the application server. Contact support@tigergraph.com for a detailed workaround if you want to import a solution tarball prior to v3.1.
+Legacy solutions exported prior to v3.1 cannot be imported into newer versions due to data storage changes made in v3.1.
+Contact support@tigergraph.com for guidance to import an older solution.
 ====
 
 === Export
 
-Click on the "Export Current Solution" link to export the whole solution and download it as a tarball, including the schema, the loading jobs, and the queries. It also includes metadata that describes the layout of your schema design as well as your user icons to preserve the design of your GraphStudio solution.
+Click btn:[Export Current Solution] to download the whole solution as a tar file, including the schema, the loading jobs, and the queries.
+The exported file also includes metadata that describes the layout of your schema design as well as user-created icons to preserve the design of your GraphStudio solution.
 
 image::export-solution.png[]
 
-The exported tarball file includes two folders: *graph/* and *gui/*. The *graph/* folder includes an ExportedGraph.zip file that contains the following files:
+The tar file includes two folders: *graph/* and *gui/*. The *graph/* folder includes an `ExportedGraph.zip` file that contains the following files:
 
-* *DBImportExport_<graphName>.gsql* command file __**__for each graph called <graphName> in a MultiGraph system. The command file creates the exported graph, including its local vertex, edge, and tuple types, along with its loading jobs, data source file objects as well as queries.
-* *global.gsql* - DDL job to create all global vertex and edge types, and data sources.
-* *tuple.gsql* - DDL job to create all User Defined Tuples.
+* `DBImportExport_<graphName>.gsql` command file for each graph called <graphName> in a MultiGraph system.
+The command file creates the exported graph, including its local vertex, edge, and tuple types, along with its loading jobs, data source file objects and queries.
+* `global.gsql` - Loading job to create all global vertex and edge types and data sources.
+* `tuple.gsql` - Loading job to create all User Defined Tuples.
 
 [NOTE]
 ====
-Note that this ExportedGraph.zip file is identical to what is produced by running the xref:3.2@tigergraph-server:import-export:database-import-export.adoc[database export command] with the template option.
+This `ExportedGraph.zip` file is identical to what is produced by running the xref:tigergraph-server:import-export:database-import-export.adoc[database export command] with the template option.
 ====
 
-The *gui/* folder includes a folder that contains all user icons and a json file that describes the layout of the schema in GraphStudio.
+The `gui/` folder contains all user icons and a json file that describes the layout of the schema in GraphStudio.
 
 [WARNING]
 ====
-ATTENTION:
-
 . The graph data and data files will not be exported.
-. If a query has been modified since it was last installed, GraphStudio will export the modified draft instead of the version that has been installed in the TigerGraph engine.
+. If a query has been modified since it was last installed, GraphStudio will export the modified draft instead of the version installed in the TigerGraph engine.
 . Starting with TigerGraph 3.0, GSQL queries can be run in Interpreted Mode in GraphStudio without installation. These queries need to be installed to be exported.
 ====
 
-=== Import +++<a id="TigerGraphGraphStudioUIGuide-Import">++++++</a>+++
+=== Import
 
-Click on the "Import an Existing Solution" to upload a previously exported tarball of a solution.
+Click btn:[Import an Existing Solution] to upload a previously exported tar file.
 
 image::import-solution.png[]
 
 [NOTE]
 ====
-In order to optimize the time required for Import, the imported queries will not be installed but saved as drafts. You need to install them manually.
+In order to optimize the time required for import, the imported queries will not be installed but saved as drafts. You need to install them manually.
 ====
 
 [WARNING]
 ====
-Importing a solution will overwrite the current solution. The existing schema, loading jobs, queries as well as data files will be erased before the new solution is imported.
+Importing a solution will overwrite the current solution. The existing schema, loading jobs, queries and data files will be erased before the new solution is imported.
 ====
