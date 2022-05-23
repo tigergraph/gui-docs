@@ -42,9 +42,9 @@ Sometimes when you double-click a vertex, the graph exploration result disappear
 When there are edges very close to one another, their click response areas may overlap, making it hard to select the edge you want. This happens after zoom-in / zoom-out or connecting to another screen sometimes. +
 *Workaround*: click a blank place in the working panel then zoom-in and zoom-out. The response area will back to normal.
 
-== Running the query, the page crashes
+== Page becomes unresponsive from running certain queries
 
-When running query, if the structure of the data in the response is too complex, it may cause the crash of the page.
+When you run a query, if the structure of the data in the response is too complex, it may cause the page to become unresponsive.
 
 
 == You cannot use fixed binary type attributes
