@@ -1,12 +1,16 @@
 = Download GSQL Output File
+:description: Instructions for downloading a GSQL file output from Admin Portal.
+:experimental:
 
 In a GSQL query, users can print any output from the query to a file available to download from the Admin Portal.
+
 
 == Procedure
 
 === Navigate to GSQL Output File page
 
-In Admin Portal, click "Others" on the left side navigation, and click "GSQL Output File". After users print the query result into a file, they can preview or download the output files through this page.
+In Admin Portal, click btn:[Others] on the left side navigation, and click btn:[GSQL Output File].
+After users print the query result into a file, they can preview or download the output files through this page.
 
 image::gsql-output-file-initial.png[GSQL output file page]
 
@@ -19,6 +23,9 @@ For example: `/home/tigergraph/tigergraph/data/files/v.csv`.
 
 Make sure the provided file path is allowed by the xref:tigergraph-server:security:file-output-policy.adoc[GSQL file output policy].
 When a file path is not allowed by the policy, you will not be able to preview or download the file.
+
+WARNING: On TigerGraph Cloud, the file output policy is set to only allow file outputs to `/home/tigergraph/gsql_output/` and its subfolders.
+This policy cannot be changed on for an TigerGraph Cloud instance for security reasons. 
 
 === Preview and download file
 
