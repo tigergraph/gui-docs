@@ -4,6 +4,9 @@
 
 In a GSQL query, users can print any output from the query to a file available to download from the Admin Portal.
 
+== Prerequisites
+* You are logged in as a user with a role that has all privileges (either the built-in `superuser` role or user-defined role with all privileges).
+
 
 == Procedure
 
@@ -25,7 +28,7 @@ Make sure the provided file path is allowed by the xref:tigergraph-server:securi
 When a file path is not allowed by the policy, you will not be able to preview or download the file.
 
 WARNING: On TigerGraph Cloud, the file output policy is set to only allow file outputs to `/home/tigergraph/gsql_output/` and its subfolders.
-This policy cannot be changed on for an TigerGraph Cloud instance for security reasons. 
+This policy cannot be changed on for an TigerGraph Cloud instance for security reasons.
 
 === Preview and download file
 
