@@ -1,0 +1,18 @@
+= Multi-factor authentication
+
+TigerGraph supports multi-factor authentication (MFA, also known as two-factor authentication or 2FA) with a cloud service provider account once it is enabled in the cloud service provider portal.
+
+== Azure Active Directory (AD)
+
+Prerequisites:
+
+. xref:security/sso-aad.adoc[].
+. An Azure AD Tenant must be granted `Conditional Access Administrator` permissions.
+
+Steps:
+
+. Create a Conditional Access policy and assign your test group of users as follows:
+. Sign in to the Azure portal using an account with `Conditional Access Administrator` permissions.
+. Follow the steps as outlined in the Microsoft documentation: link:https://docs.microsoft.com/en-us/azure/active-directory/authentication/tutorial-enable-azure-mfa[Tutorial: Secure user sign-in events with Azure AD Multi-Factor Authentication].
+During this process, you create a policy requiring MFA for a certain application (TigerGraph) and apply it to a user or group of users in Azure.
+. Test the login process with a TigerGraph user that the Azure policy applies to.

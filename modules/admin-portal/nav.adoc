@@ -15,5 +15,6 @@
 *** xref:security/ldap.adoc[]
 *** xref:security/sso.adoc[]
 *** xref:security/sso-aad.adoc[]
+*** xref:security/mfa.adoc[]
 ** xref:gsql-output-file.adoc[Query Output File Download]
 ** xref:known-issues.adoc[]

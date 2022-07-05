@@ -71,9 +71,3 @@ image:apply-proxy-group.png[]
 
 [start=7]
 . Go to btn:[Users] > btn:[My Profile] and check to see that your profile has the correct role.
-
-== Enable multi-factor authentication
-
-TigerGraph supports multi-factor authentication (also known as MFA or 2FA) once it is enabled in Azure.
-
-See the Microsoft documentation for details: link:https://docs.microsoft.com/en-us/azure/active-directory/authentication/tutorial-enable-azure-mfa[Tutorial: Secure user sign-in events with Azure AD Multi-Factor Authentication]
