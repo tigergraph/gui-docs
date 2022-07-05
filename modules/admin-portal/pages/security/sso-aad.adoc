@@ -25,8 +25,8 @@ image::aad-single-sign-on-setup.png[]
 
 [start=5]
 . Enter this information in the btn:[Basic SAML Configuration] section. Replace `<tigergraph-machine-hostname>` with your TigerGraph machine hostname.
-.. Identifier (Entity ID): `https://<tigergraph-machine-hostname>:14240/gsqlserver/gsql/saml/meta`
-.. Reply URL: `https://<tigergraph-machine-hostname>:14240/api/auth/saml/acs`
+.. Identifier (Entity ID): `\https://<tigergraph-machine-hostname>:14240/gsqlserver/gsql/saml/meta`
+.. Reply URL: `\https://<tigergraph-machine-hostname>:14240/api/auth/saml/acs`
 . Go to Section 3: SAML Signing Certificate and click Edit.
 . Set the *Signing Option* to "Set SAML Response and Assertion", then click btn:[Save].
 . Also in Section 3, click the btn:[Download] link to download the certificate in Base64 format. This will be used to connect to TigerGraph.

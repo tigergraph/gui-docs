@@ -1,4 +1,4 @@
-= Multi-factor authentication
+= Multi-factor Authentication
 
 TigerGraph supports multi-factor authentication (MFA, also known as two-factor authentication or 2FA) with a cloud service provider account once it is enabled in the cloud service provider portal.
 
