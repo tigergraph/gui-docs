@@ -36,13 +36,15 @@ image::aad-single-sign-on-setup.png[]
 
 == Enable single sign-on in TigerGraph
 
-First, use the xref:security/sso.adoc[SSO documentation] to set up SSO in Admin Portal. Next, follow these steps:
+First, use the xref:security/sso.adoc[SSO documentation] to set up SSO in Admin Portal. This is where you will upload the certificate you downloaded from Azure.
+
+Next, follow these steps:
 
 . Enter the Identity Provider's Entity ID and Identity Provider SSO URL you copied in Step 9 of the previous section.
 . At the bottom of the screen, for the *Authentication Context* section, use `urn:oasis:names:tc:SAML:2.0:ac:classes:Password`
 
 Before Azure and TigerGraph can successfully communicate, the Azure AD groups need to be correctly mapped to TigerGraph proxy groups with the appropriate roles.
-The TigerGraph proxy group is created witt the `key=value` proxy rule. The key and value should match the SSO user claims in the SAML response.
+The TigerGraph proxy group is created with the `key=value` proxy rule. The key and value should match the SSO user claims in the SAML response.
 
 For example, you could add a `Name` key with a value of `in_group1` and a `Member` group attribute value of `True` for a certain group, in this example `TestGroup1`.
 
@@ -58,8 +60,16 @@ See Microsoft's official documentation for instructions on setting up the SAML t
 . At the top of the Users page, select btn:[All Users] and click on btn:[Proxy Group].
 . Click the btn:[+ Add Group] button to add a new group.
 . Enter a name for your proxy group and use the same attribute name and value from Azure. In this example, the attribute-value pair is `in_group1` and `True`.
+
+image:add-new-proxy-group.png[]
+
+[start=5]
 . Navigate to the btn:[Role Management] tab at the top.
 . Select a graph and role on the graph for the proxy group, then click Save.
+
+image:apply-proxy-group.png[]
+
+[start=7]
 . Go to btn:[Users] > btn:[My Profile] and check to see that your profile has the correct role.
 
 == Enable multi-factor authentication
