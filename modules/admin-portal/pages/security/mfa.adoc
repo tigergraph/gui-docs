@@ -4,12 +4,14 @@ TigerGraph supports multi-factor authentication (MFA, also known as two-factor a
 
 == Azure Active Directory (AD)
 
-Prerequisites:
+This section desribes how to set up MFA with Azure Active Directory. 
+
+=== Prerequisites
 
 . xref:security/sso-aad.adoc[].
 . An Azure AD Tenant must be granted `Conditional Access Administrator` permissions.
 
-Steps:
+=== Procedure
 
 . Create a Conditional Access policy and assign your test group of users as follows:
 . Sign in to the Azure portal using an account with `Conditional Access Administrator` permissions.
