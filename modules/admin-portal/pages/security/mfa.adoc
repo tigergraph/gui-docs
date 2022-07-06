@@ -4,7 +4,7 @@ TigerGraph supports multi-factor authentication (MFA, also known as two-factor a
 
 == Azure Active Directory (AD)
 
-This section desribes how to set up MFA with Azure Active Directory. 
+This section describes how to set up MFA with Azure Active Directory. 
 
 === Prerequisites
 
