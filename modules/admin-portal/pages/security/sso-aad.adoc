@@ -1,0 +1,73 @@
+= Set up SSO with Azure Active Directory
+:experimental:
+
+This is a tutorial for configuring SAML-2.0 based Single Sign-on (SSO) with Azure Active Directory (Azure AD).
+
+== Prerequisites
+
+. TigerGraph must be xref:admin-portal:components/nginx.adoc[configured with SSL].
+. xref:tigergraph-server:user-access:enabling-user-authentication.adoc[GSQL authentication must be enabled] by changing the password of the GSQL default user.
+. An Azure AD Tenant must be granted `Application Administrator` to follow the tutorial.
+. An Azure AD Tenant must be granted `Conditional Access Administrator` to take the next step to configure two-factor authentication (2FA).
+
+== Configure Azure AD SSO
+
+. Log in to Azure Active Directory as an admin user: link:https://aad.portal.azure.com/[Azure AAD Portal Login]
+. Create a new application by selecting btn:[Enterprise Applications] in the left sidebar menu and clicking btn:[All applications] > btn:[New application] > btn:[Create your own application].
+. Enter a name and ensure that you are using a *non-gallery* application.
+
+image::aad-create-your-own-application.png[]
+
+[start=4]
+. In the sidebar for your new application, choose btn:[Single sign-on] under *Manage*, then click the btn:[SAML] button.
+
+image::aad-single-sign-on-setup.png[]
+
+[start=5]
+. Enter this information in the btn:[Basic SAML Configuration] section. Replace `<tigergraph-machine-hostname>` with your TigerGraph machine hostname.
+.. Identifier (Entity ID): `\https://<tigergraph-machine-hostname>:14240/gsqlserver/gsql/saml/meta`
+.. Reply URL: `\https://<tigergraph-machine-hostname>:14240/api/auth/saml/acs`
+. Go to Section 3: SAML Signing Certificate and click Edit.
+. Set the *Signing Option* to "Set SAML Response and Assertion", then click btn:[Save].
+. Also in Section 3, click the btn:[Download] link to download the certificate in Base64 format. This will be used to connect to TigerGraph.
+. In Section 4, copy the following information for later use to configure SSO in TigerGraph's Admin Portal:
+.. Login URL  (TigerGraph calls this the "Identity Provider Single Sign-On URL")
+.. Azure AD Identifier  (TigerGraph calls this the Identity Provider Entity Id in TigerGraph)
+
+== Enable single sign-on in TigerGraph
+
+First, use the xref:security/sso.adoc[SSO documentation] to set up SSO in Admin Portal. This is where you will upload the certificate you downloaded from Azure.
+
+Next, follow these steps:
+
+. Enter the Identity Provider's Entity ID and Identity Provider SSO URL you copied in Step 9 of the previous section.
+. At the bottom of the screen, for the *Authentication Context* section, use `urn:oasis:names:tc:SAML:2.0:ac:classes:Password`
+
+Before Azure and TigerGraph can successfully communicate, the Azure AD groups need to be correctly mapped to TigerGraph proxy groups with the appropriate roles.
+The TigerGraph proxy group is created with the `key=value` proxy rule. The key and value should match the SSO user claims in the SAML response.
+
+For example, you could add a `Name` key with a value of `in_group1` and a `Member` group attribute value of `True` for a certain group, in this example `TestGroup1`.
+
+image:aad-manage-claim.png[]
+
+This will return `in_group1 = True` in the SSO SAML response only if the Azure user is part of TestGroup1.
+
+See Microsoft's official documentation for instructions on setting up the SAML tokens on the Azure side: link:https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-saml-claims-customization[Customize Claims issued in the SAML token for enterprise applications]
+
+== Create a TigerGraph proxy group
+
+. In AdminPortal, select btn:[Management] > btn:[Users] from the left sidebar menu.
+. At the top of the Users page, select btn:[All Users] and click on btn:[Proxy Group].
+. Click the btn:[+ Add Group] button to add a new group.
+. Enter a name for your proxy group and use the same attribute name and value from Azure. In this example, the attribute-value pair is `in_group1` and `True`.
+
+image:add-new-proxy-group.png[]
+
+[start=5]
+. Navigate to the btn:[Role Management] tab at the top.
+. Select a graph and role on the graph for the proxy group, then click Save.
+
+image:apply-proxy-group.png[]
+
+[start=7]
+. Go to btn:[Users] > btn:[My Profile] and check to see that your profile has the correct role.

@@ -1,6 +1,6 @@
 name: gui
 title: GraphStudio and Admin Portal
-version: 3.6
+version: sso-2fa-aad-DOC-1208
 start_page: graphstudio:overview.adoc
 
 nav:

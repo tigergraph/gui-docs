@@ -1,8 +1,8 @@
-= SSO
+= Single Sign-on (SSO)
 :description: Admin portal SSO page.
 :experimental:
 
-The settings on this page are related to set up Single Sign-on(SSO) on TigerGraph.
+The settings on this page are related to set up Single Sign-on (SSO) on TigerGraph.
 
 image::sso-page.png[]
 
@@ -54,3 +54,4 @@ Refer to your identity provider's documentation to determine which options to us
 
 * link:https://auth0.com/docs/configure/saml-configuration/customize-saml-assertions#saml-assertion-attributes[Auth0]
 * link:https://developer.okta.com/docs/reference/api/apps/#settings-9[Okta]
+* link:https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/add-application-portal-setup-sso[Azure Active Directory (AD)]
