@@ -181,12 +181,12 @@ Once you've selected a graph and a role, all users will be listed with a checkbo
 
 image::user-assignment.png[]
 
-After modifying your assignment, click image:save-btn.png[] to save your changes.
-You can also discard your changes by clicking the discard button image:discard-btn.png[]
+After modifying your assignment, click btn:[SAVE] to save your changes.
+You can also discard your changes with the btn:[DISCARD] button.
 
 image::user-assignment-changed.png[View after changing role assignment]
 
-Similarly, you can also click the proxy group button image:proxy-groups (1).png[] to switch to proxy groups and manage their roles.
+Click the proxy group button to switch to proxy groups and manage their roles.
 
 image::manage-groups.png[]
 

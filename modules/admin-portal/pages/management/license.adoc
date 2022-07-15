@@ -1,15 +1,15 @@
 = License
 :experimental:
 
+The license page does not appear on the Admin Portal for TigerGraph Cloud solutions because the licensing is built in to the cloud provisioning process.
+
 == License Page
 
-Update TigerGraph license key on the License page. If no TigerGraph license key is provided during TigerGraph installation time, the license page will look like this:
-
-image::no-license-updated.png[]
+Update your TigerGraph license key on the License page.
 
 Click btn:[SELECT FILE] and choose the license text file, then click btn:[UPDATE]. The license details will appear in the main view:
 
-image::license_updated (2).png[]
+image::license-valid.png[]
 
 GraphStudio is not available with all licenses. If it is greyed out, it means GraphStudio is not enabled in the provided license.
 
