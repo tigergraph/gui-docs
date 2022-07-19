@@ -39,7 +39,7 @@ If you are already at GraphStudio, click the btn:[Admin] button at the right end
 
 == Page Layout
 
-The Admin Portal v3.1 has three pages: Dashboard, Monitor, and Management. All the pages share the same Header, and Navigation Menu.
+The Admin Portal has three pages: Dashboard, Monitor, and Management. All the pages share the same Header, and Navigation Menu.
 
 [NOTE]
 ====
@@ -71,6 +71,8 @@ You can navigate to GraphStudio by clicking on the btn:[GraphStudio] button in t
 The bottom of the navigation menu shows the cluster service status.
 
 image::service-status.png[]
+
+See the xref:tigergraph-server:intro:internal-architecture.adoc[Glossary] section for information on these services.
 
 == Session Timeout
 
