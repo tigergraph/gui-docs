@@ -1,24 +1,15 @@
 = LDAP
+:experimental:
+
+The LDAP page does not appear on the Admin Portal for TigerGraph Cloud solutions because of the unified xref:master@cloud:security:manage-database-users.adoc[User Authentication] system present in TigerGraph Cloud.
 
 == LDAP Page
 
-You can set up and configure LDAP settings through this page.
+You can set up and configure LDAP settings through this page. To repopulate the fields with the default data, click the refresh button in the upper right corner of the page image:refresh-button.png[].
 
 image::ldap-page.png[]
 
-When you don't have any changes, the DISCARD and APPLY buttons are disabled.
-
-image::discard-apply.png[]
-
-You can clear your changes by clicking the DISCARD button at the bottom right corner of the page.
-
-image::discard.png[]
-
-For security reason, password is masked by default:
-
-image::password-hide.png[]
-
-If you want to see your password, click the button at the end of the input box
+For security reasons, the password field is masked by default, but it can be revealed with the button at the end of the input box
 
 image::password-show.png[]
 
@@ -28,20 +19,8 @@ image::ldap-file-uploading.png[]
 
 image::ldap-file-uploaded.png[]
 
-If you want to get the default data again, you can click the refresh button on the upper right corner of the page.
+The fields with * in the label are required entries and will not allow you to navigate away from the page without completing them.
 
-image::refresh-button.png[]
-
-The fields with * in the label are required entries.When users do not fill the required items and click the APPLY button, the following error message will appear:
-
-image::reqired-error.png[]
-
-If everything is ready, click the APPLY button and a confirmation box will pop up
-
-image::confirm-config-pop.png[]
-
-Click the CANCEL button, the pop-up window will be closed. Click the OK button, it will prompt the success message. Since configuration modification requires restarting the server service, a pop-up box will appear to confirm whether to restart the service. After clicking the OK button, it will take a while for configuration changes and server restart. You will be notified when all the process is completed.
-
-image::ldap-confirm-serve.png[]
-
-image::ldap-finished.png[]
+If everything is ready, click btn:[APPLY] and then btn:[OK] to confirm.
+Since configuration modification requires restarting the server service, a pop-up box will appear to confirm once more whether to restart the service.
+After confirming again, wait a few moments for the changes to be propagated. You will be notified via popup when the process is completed.
