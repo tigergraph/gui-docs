@@ -11,24 +11,35 @@ image::my-profile-updated.png[]
 
 To change your password, click the key icon image:key.png[] in the Password card at the top.
 
-Below the cards is secret management section, where you can create and delete secrets, which are unique strings that can be used to generate authorization tokens.
-You need to provide an alias for the secret,
+=== Secret Management
+
+Below the cards is the secret management section, where you can create and delete secrets, which are unique strings that can be used to generate authorization tokens.
+An alias is required for each secret.
 
 You can create as many secrets for each graph as you want, but remember to copy the secret value and save it at a secure location when you generate a secret.
 Once you refresh the page or go to another page and come back, the actual secret value will be masked for security.
 
 image::secret-management.png[]
 
-When token authentication is enabled, you need to use the secrets to request tokens and add the tokens in the HTTP request headers to call TigerGraph REST endpoints.
-Read more at: xref:3.2@tigergraph-server:user-access:README.adoc[].
+With token authentication enabled, use the secrets to request tokens and add the tokens in the HTTP request headers to call TigerGraph REST endpoints.
+Read more at: xref:tigergraph-server:user-access:index.adoc[].
 
 == All Users
 
 The All Users tab displays information on all users.
 Only users with user or proxy groups management permission can access this tab.
-Users with user management permissions (`READ_USER`, `WRITE_USER` privileges) can add new users, change other users' password, delete users.
+Users with user management permissions (`READ_USER` and `WRITE_USER` privileges) can:
 
-Users with proxy groups management permission (`READ_PROXYGROUP`, `WRITE_PROXYGROUP` privileges) can create proxy groups, change proxy rules of the groups, and delete proxy groups.
+* add new users
+* change passwords for other users
+* delete users
+
+Users with proxy groups management permission (`READ_PROXYGROUP`, `WRITE_PROXYGROUP` privileges) can:
+
+* create proxy groups
+* change proxy rules
+* delete proxy groups
+
 To see a list of all privileges, see xref:tigergraph-server:reference:list-of-privileges.adoc[List of Privileges].
 
 image::all-users-updated.png[]
@@ -40,31 +51,29 @@ However, you can only change the password for native users.
 ====
 
 
-Click image:add-user-btn.png[Add user button] to add new users:
+Click btn:[+ Add User] to add new users:
 
 image::all-users (1).png[Add new user pop-up]
 
-Click image:change-others-password-btn.png[] to change other users' password:
-
-image::change-others-password.png[]
+Click image:change-others-password-btn.png[] to edit another user's username and password.
 
 Click image:delete_btn.png[] to delete a user.
 
-Click image:proxy-groups-tab.png[] to see all proxy groups:
+=== Proxy groups
+
+Click the Proxy Group tab at the left to see all proxy groups:
 
 image::proxy-groups.png[]
 
-Click image:add-group-btn.png[] to add new proxy groups:
+Click btn:[+ Add Group] to add new proxy groups:
 
 image::add-proxy-group.png[]
 
-Click image:edit.png[] to edit the proxy rule of an existing proxy group:
-
-image::edit-proxy-group.png[]
+Click image:edit.png[] to edit the proxy rule of an existing proxy group.
 
 Click image:delete_btn.png[] to delete a proxy group.
 
-Read more about proxy group at xref:3.5@tigergraph-server:user-access:index.adoc[].
+Read more about proxy groups at xref:tigergraph-server:user-access:index.adoc[].
 
 == User-defined roles
 
@@ -74,9 +83,7 @@ To learn more about roles and privileges in TigerGraph's role-based access contr
 To create/edit/delete a role, a user must also have `WRITE_ROLE` privilege on that graph.
 See more details in xref:tigergraph-server:user-access:access-control-model.adoc[].
 
-At the right upper corner, there is a hint button image:udr-hint-btn.png[].
-Click the button and jump to the official roles and privileges documentation to read more about roles and privileges.
-All user-defined roles that you can view will list in a table:
+All user-defined roles that you can view appear in a table:
 
 image::user-defined-roles.png[]
 
@@ -88,7 +95,7 @@ For global roles, all privileges on either global level or a specific graph will
 Click btn:[+ Create role] at the right upper corner to create a role.
 You can create a global or a local role on a graph.
 
-image:role-type-hint.png[]
+A global role can be granted privileges on any graph or globally. A local role is limited to one specific graph.
 
 ==== Create a global role
 
@@ -96,7 +103,7 @@ Select image:global-ratio-btn.png[] to start creating a global role. The first p
 
 image::create-global-role.png[]
 
-Click image:grant-privileges-on-graph.png[] at the bottom of the pop-up window to open the same interface with the ability to create privileges for a different graph.
+Click  btn:[+ Grant privileges on another graph] at the bottom of the pop-up window to open the same interface with the ability to create privileges for a different graph.
 
 ==== Create a local role
 
@@ -131,51 +138,39 @@ Therefore, if you want to revoke a role from a proxy user, you need to revoke th
 Then you might need to revoke the same role from the proxy user if the proxy user also has that role.
 ====
 
-To assign roles, users need to have `WRITE_ROLE` privilege.
-If you only have `READ_ROLE` privilege, you can only view the current assignment but can not modify it.
+To assign roles, users need to have the `WRITE_ROLE` privilege.
+If you only have the `READ_ROLE` privilege, you can view the current assignment but cannot modify it.
 
 image::role-management.png[]
 
 === Select a graph
 
-You can use the dropdown menu in the top left corner to select on which graph you want to assign different roles to different users, you can either choose `global` to assign global roles or a specific graph to assign local roles:
-
-image:select-graph-1.png[] image:select-graph-2.png[]
+You can use the dropdown menu in the top left corner to select on which graph you want to assign different roles to different users.
+Choose `global` to assign global roles or a specific graph to assign local roles.
 
 === Select a role
 
-You can use the second dropdown menu to select a role that you want to assign to different users:
-
-image::select-role.png[]
+You can use the second dropdown menu to select a role that you want to assign to different users.
 
 NOTE: With `global` selected, you can assign all global built-in or user-defined roles.
 With a specific graph selected, you can assign all local built-in roles or local user-defined roles within that graph.
 
 === View role details
 
-Next to the dropdowns, click the btn:[View role details] button image:view-role-detail-btn.png[] to view the information on the selected role.
+Next to the dropdowns, click the btn:[View role details] button to view the information on the selected role.
 
 image::role-detail.png[]
 
-=== Search user
+=== Settings for user view
 
-You can type in the search box to search for users:
+In the Settings dropdown, you can sort the users in alphabetic order or by name length.
 
-image::search-user.png[]
+You can also choose to show all users, show the users who have the role, or show only the users who don't have the role.
 
-=== Settings for users
-
-You can sort the users by alphabetic order or name length:
-
-image::sort-users.png[]
-
-You can choose to show all users, show the users who have the role, or show the users who don't have the role:
-
-image::show-users.png[]
 
 === Grant/revoke a role
 
-NOTE: On a small screen, you need to click image:manage-btn.png[] to open the assignment panel.
+NOTE: On a small screen, you need to click btn:[Manage] to open the assignment panel.
 
 Once you've selected a graph and a role, all users will be listed with a checkbox. You can check the box next to the user to grant the role, or uncheck to revoke the role.
 
@@ -183,8 +178,6 @@ image::user-assignment.png[]
 
 After modifying your assignment, click btn:[SAVE] to save your changes.
 You can also discard your changes with the btn:[DISCARD] button.
-
-image::user-assignment-changed.png[View after changing role assignment]
 
 Click the proxy group button to switch to proxy groups and manage their roles.
 
