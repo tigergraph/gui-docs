@@ -92,33 +92,29 @@ For global roles, all privileges on either global level or a specific graph will
 
 === Create a user-defined role
 
-Click btn:[+ Create role] at the right upper corner to create a role.
-You can create a global or a local role on a graph.
+Click btn:[+ Create role] at the right upper corner of the "User-defined Roles" tab to create a role.
+You can create a global role or a local role on a graph.
 
 A global role can be granted privileges on any graph or globally. A local role is limited to one specific graph.
 
-==== Create a global role
+Select image:global-ratio-btn.png[] to start creating a global role.
+Choose global level privileges to assign to this role in the first panel.
 
-Select image:global-ratio-btn.png[] to start creating a global role. The first panel is for the global privileges, where you can select global level privileges to assign to this role.
+Click  btn:[+ Grant privileges on another graph] at the bottom of the window to create privileges for a different graph.
 
-image::create-global-role.png[]
+When you grant local privileges, you have the ability to grant `READ_DATA`, `CREATE_DATA`, and `UPDATE_DATA` privileges at various levels:
 
-Click  btn:[+ Grant privileges on another graph] at the bottom of the pop-up window to open the same interface with the ability to create privileges for a different graph.
+* Graph level: Grants access to all data on the graph.
+* Vertex or edge level: Grants access to all data on the specified vertices and edges, but not others
+* Data level: Grants access to the specified data on the specified vertices and edges, but not other data on those or other vertices or edges.
 
-==== Create a local role
-
-Select image:local-ratio-btn.png[] to start creating a local role.
-Select a graph in the dropdown that you want to create the role on.
-
-image::create-local-role.png[]
 
 === Edit a user-defined role
 
-Click image:edit.png[] to open the edit pop-up.
+Click image:edit.png[] to open the privileges menu again for editing.
 Deselect a privilege to drop it from the role and select one to add it to the role.
-When editing a role, you cannot change a local role to a global role, or vice versa.
 
-image:edit-global-role.png[] image:edit-local-role.png[]
+When editing a role, you cannot change a local role to a global role, or vice versa.
 
 === Drop a role
 
