@@ -61,13 +61,18 @@ Click image:delete_btn.png[] to delete a user.
 
 === Proxy groups
 
-Click the Proxy Group tab at the left to see all proxy groups:
+A proxy group is a way to manage users based on an aspect of their account identity set up as part of SSO or LDAP.
+For example, different proxy groups could correspond to different teams, and each team could be granted different access levels to different graphs.
+
+Click the Proxy Group tab at the left under User to see all proxy groups:
 
 image::proxy-groups.png[]
 
 Click btn:[+ Add Group] to add new proxy groups:
 
 image::add-proxy-group.png[]
+
+The attribute name and attribute value are checked against all attributes supplied by an identity provider (IDP) using SSO or LDAP. Please ensure the name and value match exactly with the IDP values.
 
 Click image:edit.png[] to edit the proxy rule of an existing proxy group.
 
@@ -77,10 +82,10 @@ Read more about proxy groups at xref:tigergraph-server:user-access:index.adoc[].
 
 == User-defined roles
 
-The _User-defined roles_ tab lists all user-defined roles and allows users with sufficient privileges to create roles. Users must have the `READ_ROLE` privilege on at least one graph to access this tab. This section describes the procedures to create, edit, and drop roles, as well as assign roles to users in GraphStudio.
+The _User-defined roles_ tab lists all user-defined roles and allows users with sufficient privileges to create new roles. Users must have the `READ_ROLE` privilege on at least one graph to access this tab. This section describes the procedures to create, edit, and drop roles, as well as assign roles to users in GraphStudio.
 To learn more about roles and privileges in TigerGraph's role-based access control system, see xref:tigergraph-server:user-access:index.adoc[].
 
-To create/edit/delete a role, a user must also have `WRITE_ROLE` privilege on that graph.
+To create/edit/delete a role, a user must also have the `WRITE_ROLE` privilege on that graph.
 See more details in xref:tigergraph-server:user-access:access-control-model.adoc[].
 
 All user-defined roles that you can view appear in a table:
@@ -99,6 +104,9 @@ A global role can be granted privileges on any graph or globally. A local role i
 
 Select image:global-ratio-btn.png[] to start creating a global role.
 Choose global level privileges to assign to this role in the first panel.
+Clicking on a privilege grants that role immediately after the box is checked.
+
+image:grant-privileges.png[]
 
 Click  btn:[+ Grant privileges on another graph] at the bottom of the window to create privileges for a different graph.
 
@@ -134,7 +142,7 @@ Therefore, if you want to revoke a role from a proxy user, you need to revoke th
 Then you might need to revoke the same role from the proxy user if the proxy user also has that role.
 ====
 
-To assign roles, users need to have the `WRITE_ROLE` privilege.
+A user needs to have the `WRITE_ROLE` privilege to assign roles via Admin Portal.
 If you only have the `READ_ROLE` privilege, you can view the current assignment but cannot modify it.
 
 image::role-management.png[]
@@ -146,7 +154,7 @@ Choose `global` to assign global roles or a specific graph to assign local roles
 
 === Select a role
 
-You can use the second dropdown menu to select a role that you want to assign to different users.
+You can use the second dropdown menu to select a previously-defined role that you want to assign to different users.
 
 NOTE: With `global` selected, you can assign all global built-in or user-defined roles.
 With a specific graph selected, you can assign all local built-in roles or local user-defined roles within that graph.
