@@ -1,0 +1,33 @@
+= Actions
+
+The Actions tab in GraphStudio is a hub for actions that affect the entire graph database.
+
+== Clear all graph data
+
+This command removes all loaded data from the schema while retaining all graph schemas and queries.
+
+Your user account must have the superuser role, and you must also be in Global View to clear all data from all graphs.
+You are required to type "clear all graph data" as a confirmation phrase to avoid accidentally performing this action.
+
+This operation will take about a minute depending on the size of your graphs and your hardware capability.
+
+[CAUTION]
+====
+Clear Graph Data deletes all data from your database irreversibly. Only the schema and queries will remain.
+
+However, if you clear the graph data by accident, the data will remain in your filesystem.
+You can start over and re-load the data into the database with the "start/resume loading" button image:start-loading-button.png[].
+====
+
+== Rebuild all graph data
+
+Rebuilding graph data is a function performed automatically by the graph engine to compact the database storage, improving performance.
+
+This process is regularly scheduled every 30 seconds, but can be triggered manually through the Actions tab.
+
+* Force
+
+* Snapshot
+
+* Snapshot Only
+

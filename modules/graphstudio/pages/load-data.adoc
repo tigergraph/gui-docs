@@ -97,18 +97,3 @@ image::Screen Shot 2019-05-16 at 6.28.54 PM.png[]
 
 == Clear Graph Data
 
-Click on the *Actions* tab on the left side of the window and choose the "clear graph data" button.
-Your account must have the correct privileges to remove data, and you must also be in Global View to clear all data from all graphs.
-You are required to type "clear all graph data" as a confirmation phrase to avoid accidentally performing this action.
-
-This operation will take about a minute depending on the size of your graphs and your hardware capability.
-
-Only users with the superuser role can clear the graph data.
-
-[CAUTION]
-====
-Clear Graph Data deletes all data from your database irreversibly. Only the schema and queries will remain.
-
-However, if you clear the graph data by accident, the data will remain in your filesystem.
-You can start over and re-load the data into the database with the "start/resume loading" button image:start-loading-button.png[].
-====
