@@ -25,9 +25,9 @@ Rebuilding graph data is a function performed automatically by the graph engine 
 
 This process is regularly scheduled every 30 seconds, but can be triggered manually through the Actions tab.
 
-* Force
+* Force: expensive and slow. Produce consistent data on disk.
 
-* Snapshot
+* Snapshot: for an elastic eluster to generate links and rebuild segments if possible.
 
-* Snapshot Only
+* Snapshot Only: for an elastic cluster to generate links and skip any rebuilding.
 
