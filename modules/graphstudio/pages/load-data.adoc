@@ -91,9 +91,3 @@ The number of loaded lines doesn't mean all these lines are successfully loaded.
 Some issues during Data Mapping (like mapping a non-numeric column to an integer attribute) or because of dirty data may cause some of these lines not to be loaded. +
 ====
 
-Any error messages generated during loading will be shown at the bottom:
-
-image::Screen Shot 2019-05-16 at 6.28.54 PM.png[]
-
-== Clear Graph Data
-
