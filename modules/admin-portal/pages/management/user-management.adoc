@@ -61,7 +61,7 @@ Click image:delete_btn.png[] to delete a user.
 
 === Proxy groups
 
-A proxy group is a way to manage users based on an aspect of their account identity set up as part of SSO or LDAP.
+Proxy groups manage user access based on an aspect of their account identity set up as part of SSO or LDAP.
 For example, different proxy groups could correspond to different teams, and each team could be granted different access levels to different graphs.
 
 Click the Proxy Group tab at the left under User to see all proxy groups:
@@ -95,6 +95,9 @@ image::user-defined-roles.png[]
 Each row shows one role along with the privileges it contains.
 For global roles, all privileges on either global level or a specific graph will be listed.
 
+[NOTE]
+Parent privileges overwrite child privileges. Similarly, global privileges overwrite local privileges.
+
 === Create a user-defined role
 
 Click btn:[+ Create role] at the right upper corner of the "User-defined Roles" tab to create a role.
@@ -108,6 +111,8 @@ Clicking on a privilege grants that role immediately after the box is checked.
 
 image:grant-privileges.png[]
 
+=== Local privileges
+
 Click  btn:[+ Grant privileges on another graph] at the bottom of the window to create privileges for a different graph.
 
 When you grant local privileges, you have the ability to grant `READ_DATA`, `CREATE_DATA`, and `UPDATE_DATA` privileges at various levels:
@@ -116,6 +121,17 @@ When you grant local privileges, you have the ability to grant `READ_DATA`, `CRE
 * Vertex or edge level: Grants access to all data on the specified vertices and edges, but not others
 * Data level: Grants access to the specified data on the specified vertices and edges, but not other data on those or other vertices or edges.
 
+Because of the granularity offered with this feature, the expanded window for some graphs is quite large.
+This example uses the ldbc_snb graph, which has too many vertex properties to see on one screen.
+Just the properties for one vertex type, Comment, is shown here.
+
+image::ldbc_snb-local-permissions.png[]
+
+Parent permissions override child permissions, so setting permissions for the graph automatically sets permissions for all vertex and edge types.
+Setting permissions for a vertex or edge type automatically sets permissions for all attributes.
+
+The results can be filtered with the btn:[Add a filter] button, which is useful for large and complex graphs.
+Enter text into this field to only return vertices and attributes that match the filter.
 
 === Edit a user-defined role
 
@@ -154,7 +170,7 @@ Choose `global` to assign global roles or a specific graph to assign local roles
 
 === Select a role
 
-You can use the second dropdown menu to select a previously-defined role that you want to assign to different users.
+You can use the second dropdown menu to select a previously defined role that you want to assign to different users.
 
 NOTE: With `global` selected, you can assign all global built-in or user-defined roles.
 With a specific graph selected, you can assign all local built-in roles or local user-defined roles within that graph.
