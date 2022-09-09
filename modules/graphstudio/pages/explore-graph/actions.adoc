@@ -16,20 +16,18 @@ This operation will take about a minute depending on the size of your graphs and
 [CAUTION]
 ====
 Clear Graph Data deletes all data from your database and cannot be undone. Only the schema and queries will remain.
-
-If you clear the graph data by accident, you can start over and re-load the data into the database with the "start/resume loading" button image:start-loading-button.png[].
 ====
 
 == Rebuild all graph data
 
 image::rebuild-all-graph-data.png[]
 
-Rebuilding graph data is a function performed automatically by the graph engine to compact the database storage, improving performance.
+Rebuilding graph data is a function performed automatically by the graph engine to write the data in memory to storage.
 
 This process is regularly scheduled every 30 seconds and can also be triggered manually through the Actions tab.
 Manually triggering a rebuild is rarely necessary, but is sometimes done during technical support.
 
-* Force: expensive and slow. Produces consistent data on disk.
+* Force: computationally expensive and slow. Produces consistent data on disk.
 
 * Snapshot: for an elastic eluster to generate links and rebuild segments if possible.
 
