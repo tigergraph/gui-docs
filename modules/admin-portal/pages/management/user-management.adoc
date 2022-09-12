@@ -118,8 +118,8 @@ Click  btn:[+ Grant privileges on another graph] at the bottom of the window to 
 When you grant local privileges, you have the ability to grant `READ_DATA`, `CREATE_DATA`, and `UPDATE_DATA` privileges at various levels:
 
 * Graph level: Grants access to all data on the graph.
-* Vertex or edge level: Grants access to all data on the specified vertices and edges, but not others
-* Data level: Grants access to the specified data on the specified vertices and edges, but not other data on those or other vertices or edges.
+* Vertex or edge level: Grants access to all data on the specified vertices and edges, but not others.
+* Data level: Grants access to the specified attributes on the specified vertices and edges, but not other attributes on those or other vertices or edges.
 
 Because of the granularity offered with this feature, the expanded window for some graphs is quite large.
 This example uses the ldbc_snb graph, which has too many vertex properties to see on one screen.
@@ -127,8 +127,8 @@ Just the properties for one vertex type, Comment, is shown here.
 
 image::ldbc_snb-local-permissions.png[]
 
-Parent permissions override child permissions, so setting permissions for the graph automatically sets permissions for all vertex and edge types.
-Setting permissions for a vertex or edge type automatically sets permissions for all attributes.
+Parent privileges override child privileges, so setting privileges for the graph automatically sets privileges for all vertex and edge types.
+Setting privileges for a vertex or edge type automatically sets privileges for all attributes.
 
 The results can be filtered with the btn:[Add a filter] button, which is useful for large and complex graphs.
 Enter text into this field to only return vertices and attributes that match the filter.
