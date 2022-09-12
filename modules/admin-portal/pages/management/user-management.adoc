@@ -82,7 +82,7 @@ Read more about proxy groups at xref:tigergraph-server:user-access:index.adoc[].
 
 == User-defined roles
 
-The _User-defined roles_ tab lists all user-defined roles and allows users with sufficient privileges to create new roles. Users must have the `READ_ROLE` privilege on at least one graph to access this tab. This section describes the procedures to create, edit, and drop roles, as well as assign roles to users in GraphStudio.
+The _User-defined roles_ tab lists all user-defined roles and allows users with sufficient privileges to create new roles. Users must have the `READ_ROLE` privilege on at least one graph to access this tab. This section describes the procedures to create, edit, and drop roles, as well as assign roles to users in TigerGraph.
 To learn more about roles and privileges in TigerGraph's role-based access control system, see xref:tigergraph-server:user-access:index.adoc[].
 
 To create/edit/delete a role, a user must also have the `WRITE_ROLE` privilege on that graph.
