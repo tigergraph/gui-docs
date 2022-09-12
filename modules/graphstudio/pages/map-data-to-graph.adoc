@@ -44,15 +44,12 @@ This section contains subsections for each data source.
 
 === Add local data file
 
-After clicking btn:[Local File], you will be prompted to choose a local file to upload through the GUI.
+After clicking btn:[Local File], you will be prompted to choose one or more local files to upload through the GUI.
 
 image::choose-a-local-file.png[]
 
-Click the Upload File button image:upload_file_btn.png[] and choose the data files you want to upload to the server data folder, then click btn:[ADD].
-
-image::upload-files.png[]
-
-If all the files are uploaded successfully, the progress window will close automatically, otherwise the window will stay open to notify users of any errors.
+If all the files are uploaded successfully, a message of success will appear at the bottom of the screen.
+After you see that message, you may click btn:[Next].
 
 Once the files are uploaded to the server, they will appear in the "Files on server" list on the left side of the Add Data Files window.
 
@@ -169,7 +166,7 @@ Each line in the uploaded file must contain exactly one JSON object.
 
 Similar to loading a CSV or TSV, you will first see a preview of the JSON file so that you can check the parsing.
 
-Next, you need to choose the data type for each of the JSON fields.
+After looking at the preview, choose the data type for each of the JSON fields.
 
 image::json-data-types.png[]
 
