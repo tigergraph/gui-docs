@@ -4,7 +4,7 @@
 
 The Dashboard page has three main parts: Overall statistics, the time range picker, and several charts.
 
-image::image (5).png[]
+image::dashboard-page.png[]
 
 === Overall Cluster Statistics
 
@@ -46,7 +46,7 @@ The Query Monitoring Panel includes three charts:
 image::query_performance_charts (1).png[]
 
 The Machine Monitoring Panel includes four charts.
-he first three charts break down the information among three processing-focused components (GPE, GSE, RESTPP).
+The first three charts break down the information among five processing-focused components (GSE, GPE, RESTPP, GSQL, GUI).
 The last chart breaks down information among three components which may have large storage needs (GStore, Log files, and Apache Kafka).
 
 * Service status: ON or OFF status for the given component
@@ -54,4 +54,4 @@ The last chart breaks down information among three components which may have lar
 * Memory Usage: GB used by the given component
 * Disk Usage: GB used by the given component
 
-image::machine-charts.png[]
+image::cluster-monitoring.png[]
