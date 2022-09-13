@@ -49,7 +49,7 @@ The Machine Monitoring Panel includes four charts.
 The first three charts break down the information among five processing-focused components (GSE, GPE, RESTPP, GSQL, GUI).
 The last chart breaks down information among three components which may have large storage needs (GStore, Log files, and Apache Kafka).
 
-* Service status: ON or OFF status for the given component
+* Service status: ON, Warm Up, OFF status for the given component
 * CPU Usage: percentage of available CPU time used by the given component
 * Memory Usage: GB used by the given component
 * Disk Usage: GB used by the given component
