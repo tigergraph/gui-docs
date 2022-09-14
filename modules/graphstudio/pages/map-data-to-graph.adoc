@@ -166,7 +166,7 @@ Each line in the uploaded file must contain exactly one JSON object.
 
 Similar to loading a CSV or TSV, you will first see a preview of the JSON file so that you can check the parsing.
 
-After looking at the preview, choose the data type for each of the JSON fields.
+After looking at the preview, you may edit the data key and data type for each of the JSON fields.
 
 image::json-data-types.png[]
 
