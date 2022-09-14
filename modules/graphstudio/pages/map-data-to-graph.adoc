@@ -52,10 +52,13 @@ If all the files are uploaded successfully, a message of success will appear at 
 After you see that message, you may click btn:[Next].
 
 Once the files are uploaded to the server, they will appear in the "Files on server" list on the left side of the Add Data Files window.
+If you chose to upload JSON files, you will only see JSON files, and if you chose to upload CSV files, you will only see CSV files.
+
+image::local-csv-files.png[]
 
 [NOTE]
 ====
-Data Files must be .csv or .json files to allow data mapping in GraphStudio.
+Data Files must be either .csv or .json files to allow data mapping in GraphStudio.
 ====
 
 ==== Configure the File Parser
@@ -65,7 +68,7 @@ If your data file is in tabular format, the parser will split each line into a s
 
 Choose a file from the file list to show a preview of the parsed data:
 
-image::Screen Shot 2019-05-16 at 12.03.19 PM.png[]
+image::examine-csv.png[]
 
 If the parsing is not correct, choose a different option for the file format, delimiter, or end of line character.
 
@@ -74,10 +77,7 @@ For example, if your delimiter is a comma, but you have commas in some strings, 
 
 It is not necessary for every token to have enclosing characters; the parser will use enclosing characters when it encounters them.
 
-
-GraphStudio allows users to edit the header line of the parsing result to make the data mapping more intuitive. This doesn't affect the data loading because the header line will be ignored.
-
-image::edit-header.png[]
+You can edit the header line of the parsing result to make the data mapping more intuitive. This doesn't affect the data loading because the header line will be ignored.
 
 Once you are satisfied with the file parsing configuration, click the btn:[ADD] button to add the data file into the left working panel.
 
@@ -199,7 +199,9 @@ When selected, the dashed line becomes orange (active), and the right working pa
 
 image::1.png[]
 
-To map a column in the data file to a vertex or edge field, drag and drop a specific data point from the data file to a vertex or edge.
+To map a column in the data file to a vertex or edge field, drag and drop a row (representing a table in a CSV or a key in a JSON file) from the data file to a target on a vertex or edge.
+The target field is either an attribute of the vertex/edge, a primary id for a vertex or a source and target id for an edge.
+
 A green arrow appears to show the mapping.
 
 image::3.png[]
