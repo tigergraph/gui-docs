@@ -199,8 +199,9 @@ When selected, the dashed line becomes orange (active), and the right working pa
 
 image::1.png[]
 
-To map a column in the data file to a vertex or edge field, drag and drop a row (representing a table in a CSV or a key in a JSON file) from the data file to a target on a vertex or edge.
-The target field is either an attribute of the vertex/edge, a primary id for a vertex or a source and target id for an edge.
+Drag and drop from the left table to the right table to map the attributes to a target field.
+The left table contains the CSV columns or JSON keys.
+The target field is either an attribute of the vertex/edge, a primary id for a vertex, or a source and target id for an edge.
 
 A green arrow appears to show the mapping.
 
