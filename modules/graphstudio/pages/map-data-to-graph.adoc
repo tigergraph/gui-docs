@@ -27,7 +27,7 @@ Click the Add Data File button image:add_data_source_btn.png[] in the toolbar to
 
 image::choose-a-data-source-type.png[]
 
-* If you select *Local File*, no more configuration is needed. Skip the sections for external sources and go to btn:[Map Data To Graph].
+* If you select *Local File*, no more configuration is needed in this stage. Skip to <<add-local-data-file>>.
 * For *AWS S3*, skip to the section <<_create_s3_data_source>>.
 * For *Google Cloud Storage*, skip to the section <<_create_a_gcs_data_source>>.
 
@@ -44,35 +44,31 @@ This section contains subsections for each data source.
 
 === Add local data file
 
-After clicking btn:[Local File], you will be prompted to choose a local file to upload through the GUI.
+After clicking btn:[Local File], you will be prompted to choose one or more local files to upload through the GUI.
 
 image::choose-a-local-file.png[]
 
-Click the Upload File button image:upload_file_btn.png[] and choose the data files you want to upload to the server data folder, then click btn:[ADD].
-
-image::upload-files.png[]
-
-If all the files are uploaded successfully, the progress window will close automatically, otherwise the window will stay open to notify users of any errors.
+If all the files are uploaded successfully, a message of success will appear at the bottom of the screen.
+After you see that message, you may click btn:[Next].
 
 Once the files are uploaded to the server, they will appear in the "Files on server" list on the left side of the Add Data Files window.
+If you chose to upload JSON files, you will only see JSON files, and if you chose to upload CSV files, you will only see CSV files.
+
+image::local-csv-files.png[]
 
 [NOTE]
 ====
-*Data Files must be .csv files to allow data mapping in GraphStudio (.json file upload is allowed in TigerGraph V3.0.5+ through GraphStudio)*
-
-The Add Data File box will only upload files which end in ".csv". If you manually place files in the `<TigerGraph_root_dir>/data/gui/loading_data` folder, please don't put any files into subfolders because they will be ignored.
-
-In TigerGraph V3.0.5, you can upload files which end in ".json". This allows users to upload ".json" files to the filesystems and use a remote GSQL client, or GSQL web shell in TigerGraph Cloud to map data to the graph using GSQL commands. Currently, data mapping for ".json" files through GraphStudio UI is not supported.
+Data Files must be either .csv or .json files to allow data mapping in GraphStudio.
 ====
 
 ==== Configure the File Parser
 
 In this step, you tell GraphStudio how to parse your data file.
-If your data file is in tabular format, the parser will split each line into a series of _tokens_.
+If your data file is in tabular format, the parser will split each line into a series of _tokens_. If your file is in JSON format, first read <<load-a-json-file>>.
 
 Choose a file from the file list to show a preview of the parsed data:
 
-image::Screen Shot 2019-05-16 at 12.03.19 PM.png[]
+image::examine-csv.png[]
 
 If the parsing is not correct, choose a different option for the file format, delimiter, or end of line character.
 
@@ -81,10 +77,7 @@ For example, if your delimiter is a comma, but you have commas in some strings, 
 
 It is not necessary for every token to have enclosing characters; the parser will use enclosing characters when it encounters them.
 
-
-GraphStudio allows users to edit the header line of the parsing result to make the data mapping more intuitive. This doesn't affect the data loading because the header line will be ignored.
-
-image::edit-header.png[]
+You can edit the header line of the parsing result to make the data mapping more intuitive. This doesn't affect the data loading because the header line will be ignored.
 
 Once you are satisfied with the file parsing configuration, click the btn:[ADD] button to add the data file into the left working panel.
 
@@ -166,6 +159,20 @@ Confirm that the data has parsed correctly (see <<Configure the File Parser>>) a
 
 Continue with <<Map data files to vertex type or edge type>>.
 
+== Load a JSON file
+
+GraphStudio supports loading files in JSON format as well as in CSV format.
+Each line in the uploaded file must contain exactly one JSON object.
+
+Similar to loading a CSV or TSV, you will first see a preview of the JSON file so that you can check the parsing.
+
+After looking at the preview, you may edit the data key and data type for each of the JSON fields.
+
+image::json-data-types.png[]
+
+In this stage, you specify the data types for interpreting each JSON key as a potential object to load to a vertex or edge attribute.
+Here, you can also delete any keys that you do not want to load.
+
 == Map data files to vertex type or edge type
 
 In this step, you link (map) a data file to a target vertex type or edge type.
@@ -192,7 +199,9 @@ When selected, the dashed line becomes orange (active), and the right working pa
 
 image::1.png[]
 
-To map a column in the data file to a vertex or edge field, first select the row representing the data column in the left table, then click the target field in the right table.
+Drag and drop from the left table to the right table to map the attributes to a target field.
+The left table contains the CSV columns or JSON keys.
+The target field is either an attribute of the vertex/edge, a primary id for a vertex, or a source and target id for an edge.
 
 A green arrow appears to show the mapping.
 
