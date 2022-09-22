@@ -1,4 +1,5 @@
 = Actions
+:page-aliases: graphstudio:explore-graph/actions.adoc
 
 The Actions tab in GraphStudio is a hub for actions that affect the entire graph database.
 
