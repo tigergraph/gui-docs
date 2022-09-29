@@ -27,7 +27,7 @@ Click the Add Data File button image:add_data_source_btn.png[] in the toolbar to
 
 image::choose-a-data-source-type.png[]
 
-* If you select *Local File*, no more configuration is needed in this stage. Skip to <<add-local-data-file>>.
+* If you select *Local File*, no more configuration is needed in this stage. Skip to <<_add_local_data_file>>.
 * For *AWS S3*, skip to the section <<_create_s3_data_source>>.
 * For *Google Cloud Storage*, skip to the section <<_create_a_gcs_data_source>>.
 
@@ -64,7 +64,7 @@ Data Files must be either .csv or .json files to allow data mapping in GraphStud
 ==== Configure the File Parser
 
 In this step, you tell GraphStudio how to parse your data file.
-If your data file is in tabular format, the parser will split each line into a series of _tokens_. If your file is in JSON format, first read <<load-a-json-file>>.
+If your data file is in tabular format, the parser will split each line into a series of _tokens_. If your file is in JSON format, first read <<_load_a_json_file>>.
 
 Choose a file from the file list to show a preview of the parsed data:
 
@@ -94,40 +94,37 @@ Continue with <<Map data files to vertex type or edge type>>.
 TigerGraph creates a connection to S3 in order to access the file system in an S3 bucket.
 Only one file may be selected at a time.
 
-After you click the btn:[S3] data source icon, you will be prompted to first connect an S3 data source.
-
-image::choose-file-from-s3-bucket.png[]
-
-Click the Add new data source button image:upload_file_btn.png[] to bring up the new S3 data source window.
-Give a name to the data source and provide the access key id and secret access key to connect to S3.
-
-image::new-s3-data-source.png[]
-
-Click the btn:[ADD] button and the data source will appear in the Data Source list.
-
-
-Clicking the data source in the list expands a file tree listing all buckets and folders accessible by the credentials provided.
-
-Choose the file you want to add and change the parsing options if necessary. The first ten lines of the selected file appear as a preview.
-
-image::Screen Shot 2019-05-16 at 12.56.32 PM.png[]
-
 [NOTE]
 ====
-Data files, after decompression, must be in either csv or parquet format.
-====
+Data files, after decompression, must be in either CSV or Parquet format.
+If a file is in Parquet format, the data you are loading cannot use INT96 data types.
+Date in INT96 types are not loaded into TigerGraph and the respective attribute will be left empty. 
 
-[NOTE]
-====
 TigerGraph supports loading from archived and compressed S3 files directly.
 Currently supported file extensions include zip, tar.gz, tgz and tar.
 GraphStudio detects the file extension and automatically chooses the corresponding file format.
 If the file is encoded with one of these formats but has a non-standard file extension, you can manually specify the file format.
 ====
 
-Confirm that the data has parsed correctly (see <<Configure the File Parser>>) and click btn:[ADD] to add the data source to your project, where it will appear in the working panel.
 
-Continue with <<Map data files to vertex type or edge type>>.
+. After you click the btn:[S3] data source icon, you will be prompted to first connect an S3 data source.
++
+image::choose-file-from-s3-bucket.png[]
+
+. Click the Add new data source button image:upload_file_btn.png[] to bring up the new S3 data source window.
+Give a name to the data source and provide the access key id and secret access key to connect to S3.
++
+image::new-s3-data-source.png[]
+. Click the btn:[ADD] button and the data source will appear in the Data Source list.
+
+. Clicking the data source in the list expands a file tree listing all buckets and folders accessible by the credentials provided.
+
+. Choose the file you want to add and change the parsing options if necessary. The first ten lines of the selected file appear as a preview.
++
+image::Screen Shot 2019-05-16 at 12.56.32 PM.png[]
+
+. Confirm that the data has parsed correctly (see <<Configure the File Parser>>) and click btn:[ADD] to add the data source to your project, where it will appear in the working panel.
+. Continue with <<Map data files to vertex type or edge type>>.
 
 === Create a GCS data source
 
