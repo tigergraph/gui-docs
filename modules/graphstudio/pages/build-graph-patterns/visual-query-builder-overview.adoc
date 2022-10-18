@@ -7,7 +7,7 @@ image::vqb-overview.png[]
 
 == Basic Concepts
 
-When you create a graph structure, you are creating a subgraph representing part of the full graph.
+When you create a visual pattern, you are creating a subgraph representing part of the full graph.
 Any parts of the full graph that match your subgraph's structure are shown as results.
 
 Visual patterns are constructed by vertex patterns, edge patterns, widgets and pattern views.
