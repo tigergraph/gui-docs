@@ -2,6 +2,12 @@
 
 You have learnt all the basic concepts of the Visual Query Builder in the previous article. In this article we will walk you through building several visual patterns step by step, and then show you more graph analytics questions and how to solve them with visual patterns.‌
 
+== Video tutorials
+
+In addition to the examples below, TigerGraph has also created a YouTube playlist with 44 video examples of the Visual Query Builder applied to different graph problems.
+
+View the videos here: link:https://www.youtube.com/playlist?list=PLuTC1pZ149HZXsFBF_iGMYibDApK1Glhw[TigerGraph Visual Query Builder example playlist]
+
 == Example 1. Find all the departments with male employees
 
 Click image:add_pattern_btn.png[]in the pattern list pattern, input the pattern name, and click image:add-btn.png[]:
@@ -58,8 +64,8 @@ image::assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvwcxjavy9gzmh4fyzv_app
 
 Click  image:save_btn.png[image] in the toolbar to
 save the pattern, and
-click  image:start_loading.png[image] in the
-toolbar to run the pattern:assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvwdbsyr4slvpf3q_x3_run-pattern.png[image]
+click  image:start-loading-button.png[image] in the
+toolbar to run the pattern.
 
 You can also try to output the entire matched subgraphs.
 Click image:output-btn.png[image] in the toolbar
@@ -70,7 +76,7 @@ image::assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvwe_5_izo_dqy6pq3s_tog
 
 Click  image:output-btn.png[image] in the toolbar
 again to exit output toggle mode, then
-click  image:start_loading.png[image] to run the
+click  image:start-loading-button.png[image] to run the
 pattern:
 
 image::assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvwf5sghnsn1ueleppj_pattern-result-1.png[image]
@@ -132,7 +138,7 @@ Click image:output-btn.png[image] again to exit
 output toggle mode,
 click image:save_btn.png[image] to save the
 pattern, and
-click image:start_loading.png[image] to run the
+click image:start-loading-button.png[image] to run the
 pattern:
 
 image::run_triangle.png[image]
@@ -223,7 +229,7 @@ output toggle mode,
 click image:save_btn.png[image] to save the
 pattern:
 
-Click image:start_loading.png[image] . Because
+Click image:start-loading-button.png[image] . Because
 the pattern has one input parameter *ind*, the Pattern parameters
 section in the pattern list panel expands:
 
@@ -263,7 +269,7 @@ widget:
 
 image::assets_-lhvjxin4__6ba0t-qmu_-lvwnvp3dgnx-vok3v4n_-lvwspew3aygvwqpnad8_2-union.png[image]
 
-Click​image:https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LvhbTLpvz8Pj5ZBuKlD%2F-Lvly1LBfdXQxZvwuE-u%2Fwidget-btn.png?alt=media&token=c8f287b1-a243-4c7b-b648-a91a6c12b48b[image]in
+Click image:https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LvhbTLpvz8Pj5ZBuKlD%2F-Lvly1LBfdXQxZvwuE-u%2Fwidget-btn.png?alt=media&token=c8f287b1-a243-4c7b-b648-a91a6c12b48b[image] in
 the toolbar, and choose *Subtract*:
 
 image::3-subtract.png[image]

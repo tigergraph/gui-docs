@@ -5,7 +5,13 @@ Here, you can create visual patterns by dragging and dropping vertices and edges
 
 image::vqb-overview.png[]
 
-== Basic Concepts
+== Video tutorials
+
+TigerGraph has created an in-depth series of 44 video tutorials on different aspects of the Visual Query Builder and how they can be applied to answer questions about graph data.
+
+View the videos here: link:https://www.youtube.com/playlist?list=PLuTC1pZ149HZXsFBF_iGMYibDApK1Glhw[TigerGraph Visual Query Builder example playlist]
+
+== Basic concepts
 
 When you create a visual pattern, you are creating a subgraph representing part of the full graph.
 Any parts of the full graph that match your subgraph's structure are shown as results.
@@ -70,7 +76,7 @@ image::demo_5.png[]
 
 Now you have a first sight about how the visual patterns look like. Let's walk through all the concepts in depth.
 
-== Working Panel
+== Working panel
 
 The working panel is the central component of the Visual Query Builder. Your visual patterns are rendered here.
 
@@ -83,7 +89,7 @@ If you click the message indicating errors, the Console will switch to the Probl
 
 image::pattern-highlight-error.png[]
 
-== Pattern List
+== Pattern list
 
 The pattern list panel contains three sections:
 
@@ -193,7 +199,7 @@ Output: click this button, then click vertex patterns and edge patterns of the v
 
 |===
 
-== Configuration Panel
+== Configuration panel
 
 You can edit vertex patterns and edge patterns from the Configuration Panel.
 
@@ -211,7 +217,7 @@ The name supplied in the panel will be used as the vertex's JSON key when produc
 
 The dropdown under *Vertex Type* allows you to add or drop IDs or add an input parameter.
 
-=== Basic Info for edge pattern
+=== Basic Info section for edge patterns
 
 If you enter editing mode of an edge pattern and expand the Basic Info section,
 you can edit its name, decide whether or not to put it into result, or
@@ -570,8 +576,6 @@ Here is the previous pattern returned to its last saved state:
 image::save-as_last-saved-state.png[image]
 
 
-
-
 == Save as GSQL query
 
 You can view the GSQL query generated from your visual pattern and save
@@ -875,6 +879,7 @@ image::downward-import-error-dialog.png[image]
 Users can choose to either ignore the message and keep the pattern or delete it. If the user chooses to ignore the message and keep
 the pattern, the pattern will not be deleted, but it will not be displayed or accessible to the users.
 
-== Next Step
+== Next step
 
-Now you have a basic idea about all different functionalities of Visual Query Builder. Let's go to the next page to walk through how to build some visual patterns to solve your business questions!
+Now you have a basic idea about all different functionalities of Visual Query Builder.
+xref:build-graph-patterns/visual-pattern-examples.adoc[Go to the next page] to walk through how to build some visual patterns to solve your business questions!
