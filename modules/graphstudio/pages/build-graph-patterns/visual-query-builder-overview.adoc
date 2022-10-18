@@ -1,14 +1,14 @@
 = Visual Query Builder
 
-The Visual Query Builder (VQB) provides a visual approach to building your graph business logic. In the Build Graph Patterns page, you can create visual patterns in a drag-and-drop fashion to represent the questions you want to ask instead of writing GSQL queries.
-
-By adding the Visual Query Builder component, GraphStudio becomes a complete visual SDK for users to _build graph applications from end to end without writing a single line of code_!
+The Visual Query Builder (VQB), found on the Build Graph Patterns page, provides a visual approach to exploring your graph and using it to solve problems.
+Here, you can create visual patterns by dragging and dropping vertices and edges to represent the questions you want to ask instead of writing GSQL queries.
 
 image::vqb-overview.png[]
 
 == Basic Concepts
 
-A visual pattern is a declarative way of describing a template subgraph structure, and all the subgraph structures that the visual pattern is *homomorphic* with are valid matching results.
+When you create a visual pattern, you are creating a subgraph representing part of the full graph.
+Any parts of the full graph that match your subgraph's structure are shown as results.
 
 Visual patterns are constructed by vertex patterns, edge patterns, widgets and pattern views.
 
@@ -60,7 +60,7 @@ This is the visual pattern that matches the hometown of the most people having t
 
 image::demo_3_3.3.png[]
 
-This is the visual pattern matching all such three persons A, B and C, where A is B's friend, and A is C's friend, and B is C's manager:
+This is the visual pattern matching three people A, B and C, where A is B's friend, and A is C's friend, and B is C's manager:
 
 image::demo_4_3.3.png[]
 
@@ -79,11 +79,7 @@ If the pattern contains errors or unsaved changes, some warning messages will sh
 
 image::pattern-working-panel.png[]
 
-If you click the message indicating errors, the Console will switch to Problems tab:
-
-image::pattern-errors.png[]
-
-You can click the error messages. For some errors, the vertex patterns, edge patterns and widgets involved in the error will be marked red to facilitate your debugging:
+If you click the message indicating errors, the Console will switch to the Problems tab and (for some errors) the relevant vertex patterns, edge patterns and widgets will be marked red to facilitate your debugging:
 
 image::pattern-highlight-error.png[]
 
@@ -222,10 +218,9 @@ you can edit its name, decide whether or not to put it into result, or
 change its edge type. You can also specify this edge pattern as a regex match by providing Repeat as least (a non-negative integer) and Repeat at most (a positive integer). Due to current GSQL limitations, if you decide to change these numbers, you cannot give the edge pattern a name
 or put it into result.
 
-The name supplied in the panel will be used as the edge's JSON key when producing output and when the pattern is saved as a GSQL query. 
+The name supplied in the panel will be used as the edge's JSON key when producing output and when the pattern is saved as a GSQL query.
 
-When finished editing, you need to confirm the change. You can also
-cancel the change if you made a mistake:
+When finished with editing, confirm or cancel the change:
 
 image::basic-info-banner.png[image]
 
@@ -238,20 +233,21 @@ the selected vertex or edge pattern:
 
 image::non-edit-filter.png[image]
 
-Click image:edit.png[image] besides the filter
+Click image:edit.png[image] next to the filter
 expression and enter editing mode of the filter:
 
 image::assets_-lhvjxin4__6ba0t-qmu_-lvmjvt2mkzujjj4alns_-lvml2ar64-j4_zuavzr_filters.png[image]
 
-You can add multiple filters for each vertex and edge pattern, and they are AND relationship when executing the pattern.
-Building the filter is similar with building attribute filter in the xref:explore-graph/search-for-vertices.adoc[Explore Graph page].
+You can add multiple filters for each vertex and edge pattern.
+The filters are evaluated as if connected with an AND statement.
+Building the filter is similar to building an attribute filter in the xref:explore-graph/search-for-vertices.adoc[Explore Graph page].
 
 One thing special here is that you can refer to attributes on other vertex patterns and edge patterns. Choose *Attribute of vertex or edge* as expression type, then choose the name of the vertex or edge
 pattern whose attribute you want to refer to (see above why we need give a name to vertex or edge patterns), then choose the attribute you want to refer to.
 
 image::filter-remote-attr.png[image]
 
-When finished with editing, you need confirm or cancel the change:
+When finished with editing, confirm or cancel the change:
 
 image::confirm-filter.png[image]
 
@@ -263,12 +259,12 @@ patterns is not supported):
 
 image::att-non-edit-mode.png[image]
 
-Click image:edit.png[image] beside one attachment and enter editing mode for the attachment.
+Click image:edit.png[image] next to one attachment and enter editing mode for the attachment.
 You can edit both the attachment expression and attachment name:
 
 image::att-edit-mode.png[image]
 
-When finished with editing, you need to confirm or cancel the change:
+When finished with editing, confirm or cancel the change:
 
 image::att-confirm.png[image]
 
@@ -448,13 +444,13 @@ supported):
 
 image::order-section.png[image]
 
-Click image:edit.png[image] beside the ordering
+Click image:edit.png[image] next to the ordering
 and enter editing mode for the ordering. You can edit both the ordering
 expression and whether results are in ascending or descending order:
 
 image::edit-order.png[image]
 
-When finished with editing, you need to confirm the change.
+When finished with editing, confirm the change.
 
 You can refer to attachments in ordering expression. You can add
 multiple orderings, which follow the multi-key ordering rule (upper
@@ -481,7 +477,7 @@ the limit number:
 
 image::use-limit.png[image]
 
-When finished editing, you need confirm or cancel the change:
+When finished editing, confirm or cancel the change:
 
 image::limit-confirm.png[image]
 
@@ -550,9 +546,11 @@ image::assets_-lhvjxin4__6ba0t-qmu_-lvm0wj98fiup0wogjez_-lvm3eb9dlldguwxg6rb_pat
 == Save as 
 
 The 'Save as' feature allows users to save the current pattern as a new pattern under a new name.
-After clicking the 'Save as' button the user will be asked to input a unique name for the new pattern.
-Then, the user will be redirected to the new pattern, and the pattern the user saved as the new pattern will
-return to its last saved state.
+The new pattern contains all the undo history of the previous pattern, whilst the previous pattern loses its history.
+
+[CAUTION]
+To completely duplicate a pattern using Save As, first save it using the regular Save feature, then use Save As.
+After using Save As, any previous changes are abandoned in the original version and moved to the new version.
 
 For example let us say that the user saves the following pattern: 
 
@@ -563,10 +561,6 @@ and clicks on the 'Save as' button.
 
 image::save-as_pattern-with-changes.png[image]
 
-Here is the dialog that prompts the user to enter a name for the new pattern: 
-
-image::save-as_input-dialog.png[image]
-
 After entering the name the user gets redirected to the new pattern:
 
 image::save-as_new-pattern.png[image]
@@ -575,8 +569,7 @@ Here is the previous pattern returned to its last saved state:
 
 image::save-as_last-saved-state.png[image]
 
-The new pattern contains all the history (can undo and redo) of the previous pattern, whilst the previous pattern 
-loses its history. This imitates the behaviour of most text editors.
+
 
 
 == Save as GSQL query
@@ -634,10 +627,9 @@ image::assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvwcirpqnzwxjjmibcm_cli
 
 == Pick
 
-Pick is a fast way to build your visual pattern. You can pick from
-either graph schema or visual result.
+Pick is a fast way to build your visual pattern. You can pick from either the graph schema or visual result.
 
-Click image:pick-btn.png[image] , then click one
+Click image:pick-btn.png[image], then click one
 vertex type in the graph schema tab:
 
 image::assets_-lhvjxin4__6ba0t-qmu_-lvr5x32viax2_hmvxxm_-lvrfke7dyvs6rwkzzbk_pick-vertex-type.png[image]
@@ -708,9 +700,7 @@ GraphStudio generates a default name for each pattern view upon creation, and yo
 image::pattern-view-name-edit.png[image]
 
 To delete a *pattern view*, you will need to select the *pattern view* and then click on the 'Delete' button on the toolbar. Vertex and edge patterns within a *pattern view*
-can not be deleted before the *pattern view* itself has been deleted. If you attempt to do so an error message such as the one below will be shown:
-
-image::delete-vertex-pattern-in-pattern-view.png[image]
+can not be deleted before the *pattern view* itself has been deleted.
 
 === Examples
 
