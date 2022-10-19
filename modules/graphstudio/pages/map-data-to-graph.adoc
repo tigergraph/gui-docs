@@ -106,22 +106,17 @@ GraphStudio detects the file extension and automatically chooses the correspondi
 If the file is encoded with one of these formats but has a non-standard file extension, you can manually specify the file format.
 ====
 
+. After you click the btn:[S3] data source icon, you will be prompted for your:
 
-. After you click the btn:[S3] data source icon, you will be prompted to first connect an S3 data source.
-+
-image::choose-file-from-s3-bucket.png[]
+* AWS access key ID
+* AWS secret access key
 
-. Click the Add new data source button image:upload_file_btn.png[] to bring up the new S3 data source window.
-Give a name to the data source and provide the access key id and secret access key to connect to S3.
-+
-image::new-s3-data-source.png[]
-. Click the btn:[ADD] button and the data source will appear in the Data Source list.
+You also have the option to add an alias to the data source connection.
 
-. Clicking the data source in the list expands a file tree listing all buckets and folders accessible by the credentials provided.
 
-. Choose the file you want to add and change the parsing options if necessary. The first ten lines of the selected file appear as a preview.
-+
-image::Screen Shot 2019-05-16 at 12.56.32 PM.png[]
+. Identify your file as CSV or JSON format.
+
+. Enter the S3 URI.
 
 . Confirm that the data has parsed correctly (see <<Configure the File Parser>>) and click btn:[ADD] to add the data source to your project, where it will appear in the working panel.
 . Continue with <<Map data files to vertex type or edge type>>.
