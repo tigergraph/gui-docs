@@ -28,8 +28,7 @@ Click the Add Data File button image:add_data_source_btn.png[] in the toolbar to
 image::choose-a-data-source-type.png[]
 
 * If you select *Local File*, no more configuration is needed in this stage. Skip to <<_add_local_data_file>>.
-* For *AWS S3*, skip to the section <<_create_s3_data_source>>.
-* For *Google Cloud Storage*, skip to the section <<_create_a_gcs_data_source>>.
+* For *Amazon S3*, *Google Cloud Storage*, or *Azure Blob Storage*, open the relevant tab below.
 
 == Add data files
 
@@ -42,40 +41,34 @@ This section contains subsections for each data source.
 * AWS S3 - <<_create_s3_data_source>>
 * GCS - <<_create_a_gcs_data_source>>
 
-=== Add local data file
-
+[tabs]
+====
+Local File::
++
+--
 After clicking btn:[Local File], you will be prompted to choose one or more local files to upload through the GUI.
 
-image::choose-a-local-file.png[]
+image::files-on-server-browse.png[]
 
 If all the files are uploaded successfully, a message of success will appear at the bottom of the screen.
 After you see that message, you may click btn:[Next].
 
 Once the files are uploaded to the server, they will appear in the "Files on server" list on the left side of the Add Data Files window.
-If you chose to upload JSON files, you will only see JSON files, and if you chose to upload CSV files, you will only see CSV files.
 
-image::local-csv-files.png[]
-
-[NOTE]
-====
-Data Files must be either .csv or .json files to allow data mapping in GraphStudio.
-====
-
-==== Configure the File Parser
-
-In this step, you tell GraphStudio how to parse your data file.
-If your data file is in tabular format, the parser will split each line into a series of _tokens_. If your file is in JSON format, first read <<_load_a_json_file>>.
+image::files-on-server-parse.png[]
 
 Choose a file from the file list to show a preview of the parsed data:
 
 image::examine-csv.png[]
+
+If your data file is in tabular format, the parser will split each line into a series of _tokens_. If your file is in JSON format, first read <<_load_a_json_file>>.
 
 If the parsing is not correct, choose a different option for the file format, delimiter, or end of line character.
 
 The enclosing character is used to mark the boundaries of a token, overriding the delimiter character.
 For example, if your delimiter is a comma, but you have commas in some strings, then you can define single or double quotes as the enclosing character to mark the endpoints of your string tokens.
 
-It is not necessary for every token to have enclosing characters; the parser will use enclosing characters when it encounters them.
+It is not necessary for every token to have enclosing characters. The parser uses enclosing characters when it encounters them.
 
 You can edit the header line of the parsing result to make the data mapping more intuitive. This doesn't affect the data loading because the header line will be ignored.
 
@@ -87,24 +80,22 @@ If a file is no longer needed, you can remove it from the server by clicking the
 After removing a file from the server, you also need to manually remove data mapping using that file.
 Otherwise, a "file not on server" error will be triggered when loading data.
 
-Continue with <<Map data files to vertex type or edge type>>.
-
-=== Create S3 data source
-
+--
+Amazon S3::
++
+--
 TigerGraph creates a connection to S3 in order to access the file system in an S3 bucket.
 Only one file may be selected at a time.
 
 [NOTE]
-====
 Data files, after decompression, must be in either CSV or Parquet format.
 If a file is in Parquet format, the data you are loading cannot use INT96 data types.
-Date in INT96 types are not loaded into TigerGraph and the respective attribute will be left empty. 
 
 TigerGraph supports loading from archived and compressed S3 files directly.
 Currently supported file extensions include zip, tar.gz, tgz and tar.
 GraphStudio detects the file extension and automatically chooses the corresponding file format.
 If the file is encoded with one of these formats but has a non-standard file extension, you can manually specify the file format.
-====
+
 
 . After you click the btn:[S3] data source icon, you will be prompted for your:
 
@@ -118,16 +109,17 @@ You also have the option to add an alias to the data source connection.
 
 . Enter the S3 URI.
 
-. Confirm that the data has parsed correctly (see <<Configure the File Parser>>) and click btn:[ADD] to add the data source to your project, where it will appear in the working panel.
-. Continue with <<Map data files to vertex type or edge type>>.
-
-=== Create a GCS data source
-
+. Confirm that the data has parsed correctly and click btn:[ADD] to add the data source to your project, where it will appear in the working panel.
+--
+Google Cloud Storage::
++
+--
 After clicking btn:[Google Cloud Storage] when selecting a data source type, you will be prompted to enter a custom name for your GCS data source.
 
 image::add-data-source-from-gcs.png[]
 
-Underneath the name line, upload your GCS account key file. Google provides a guide on generating and downloading key files at this link: link:https://cloud.google.com/iam/docs/creating-managing-service-account-keys#getting_a_service_account_key[Getting a service account key].
+Browse your computer or drag and drop to upload your GCS account key file.
+Google provides a guide to generating and downloading key files at this link: link:https://cloud.google.com/iam/docs/creating-managing-service-account-keys#getting_a_service_account_key[Getting a service account key].
 
 After you enter your key, enter the gsutil URI for your data file in your Google Cloud Storage bucket.
 
@@ -140,20 +132,43 @@ The folder preview, like the file preview, is limited to the first ten lines of 
 If a folder contains more than one file and the first file has more than ten lines, only the first ten lines of the first file will appear in the preview.
 
 [NOTE]
-====
 TigerGraph supports loading from archived and compressed GCS files directly.
 Currently supported file extensions include zip, tar.gz, tgz and tar.
 GraphStudio detects the file extension and automatically chooses the corresponding file format.
 If the file is encoded with one of these formats but has a non-standard file extension, you can manually specify the file format.
-====
 
 Confirm that the data has parsed correctly (see <<Configure the File Parser>>) and click btn:[ADD] to add the data source to your project, where it will appear in the working panel.
 
-Continue with <<Map data files to vertex type or edge type>>.
+--
+Azure Blob Storage::
++
+--
+TigerGraph creates a connection to ABS in order to access the file system in a blob.
+Only one file may be selected at a time.
+
+[NOTE]
+Data files, after decompression, must be in either CSV or Parquet format.
+If a file is in Parquet format, the data you are loading cannot use INT96 data types.
+
+TigerGraph supports loading from archived and compressed Blob files directly.
+Currently supported file extensions include zip, tar.gz, tgz and tar.
+GraphStudio detects the file extension and automatically chooses the corresponding file format.
+If the file is encoded with one of these formats but has a non-standard file extension, you can manually specify the file format.
+
+. After you click the btn:[ABS] data source icon, you will be prompted for your Connection String.
+. Add an alias to the data source connection.
+
+. Identify your file as CSV or JSON format.
+
+. Enter the ABS URL.
+
+. Confirm that the data has parsed correctly and click btn:[ADD] to add the data source to your project, where it will appear in the working panel.
+--
+====
 
 == Load a JSON file
 
-GraphStudio supports loading files in JSON format as well as in CSV format.
+GraphStudio supports loading files in JSON format as well as in CSV or TSV format.
 Each line in the uploaded file must contain exactly one JSON object.
 
 Similar to loading a CSV or TSV, you will first see a preview of the JSON file so that you can check the parsing.
