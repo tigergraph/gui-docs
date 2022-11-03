@@ -7,7 +7,7 @@ You can configure Nginx settings on menu:Admin Portal[Management > Security > Ng
 Configurable settings include:
 
 * SSL configuration
-* Allowed CIDR list (whitelist IP)
+* Allowed CIDR list (allowlist IP)
 * Response header.
 
 == Allowed CIDR list
