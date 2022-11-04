@@ -99,13 +99,13 @@ TigerGraph creates a connection to S3 in order to access the file system in an S
 
 [NOTE]
 Data files, after decompression, must be in CSV format.
-If a file is in Parquet format, the data you are loading cannot use INT96 data types.
 
 TigerGraph supports loading from archived and compressed S3 files directly.
 Currently supported file extensions include zip, tar.gz, tgz and tar.
 GraphStudio detects the file extension and automatically chooses the corresponding file format.
 If the file is encoded with one of these formats but has a non-standard file extension, you can manually specify the file format.
 
+image::aws-add-data-source.png[]
 
 . After you click the btn:[S3] data source icon, you will be prompted for your:
 
@@ -152,24 +152,20 @@ Confirm that the data has parsed correctly (see <<Configure the File Parser>>) a
 Azure Blob Storage::
 +
 --
-TigerGraph creates a connection to ABS in order to access the file system in a blob.
+TigerGraph supports loading from archived and compressed Blob files directly.
+
+image::azure-add-data-source.png[]
 
 [NOTE]
 Data files, after decompression, must be in CSV format.
 
-TigerGraph supports loading from archived and compressed Blob files directly.
-Currently supported file extensions include zip, tar.gz, tgz and tar.
-GraphStudio detects the file extension and automatically chooses the corresponding file format.
-If the file is encoded with one of these formats but has a non-standard file extension, you can manually specify the file format.
+After you click the btn:[ABS] data source icon, you will be prompted for your Connection String and a custom alias for the connection (required). See link:https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=azure-portal#view-account-access-keys[View Account Access Keys] for instructions.
 
-. After you click the btn:[ABS] data source icon, you will be prompted for your Connection String.
-. Add an alias to the data source connection.
+Identify your file as CSV or JSON format, then enter the Blob URL.
 
-. Identify your file as CSV or JSON format.
+image::azure-blob-url.png[]
 
-. Enter the ABS URL.
-
-. Confirm that the data has parsed correctly and click btn:[ADD] to add the data source to your project, where it will appear in the working panel.
+Confirm that the data has parsed correctly and click btn:[ADD] to add the data source to your project, where it will appear in the working panel.
 --
 ====
 
