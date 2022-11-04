@@ -35,11 +35,19 @@ image::choose-a-data-source-type.png[]
 A data file is a file containing structured data to be loaded into the graph, creating vertex and/or edge instances.
 After specifying your data source type, the next step is to specify your data files.
 
-This section contains subsections for each data source.
+When you select a file to add, you may select a single file or a folder of files.
+All data files in this folder must share the same data schema.
+The folder preview, like the file preview, is limited to the first ten lines of uploaded data.
+If a folder contains more than one file and the first file has more than ten lines, only the first ten lines of the first file will appear in the preview.
 
-* Local File System - <<_add_local_data_file>>
-* AWS S3 - <<_create_s3_data_source>>
-* GCS - <<_create_a_gcs_data_source>>
+[NOTE]
+TigerGraph supports loading from archived and compressed files only through remote storage connections.
+Currently supported file extensions include `zip`, `tar.gz`, `tgz` and `tar`.
+GraphStudio detects the file extension and automatically chooses the corresponding file format.
+If the file is encoded with one of these formats but has a non-standard file extension, you can manually specify the file format.
+
+
+This section contains subsections for each data source.
 
 [tabs]
 ====
@@ -61,6 +69,8 @@ image::files-on-server-browse.png[]
 * Zip archives
 * Tar archives
 
+Compressed files are only supported in remote storage connections.
+
 A success message for each file appears after each upload.
 Once the files have finished, click btn:[Next].
 
@@ -72,9 +82,7 @@ Choose a file from the file list to show a preview of the parsed data:
 
 image::examine-csv.png[]
 
-If your data file is in tabular format, the parser will split each line into a series of _tokens_. If your file is in JSON format, first read <<_load_a_json_file>>.
-
-If the parsing is not correct, choose a different option for the file format, delimiter, or end of line character.
+If your data file is in tabular format, the parser will split each line into a series of _tokens_. If the parsing is not correct, choose a different option for the file format, delimiter, or end of line character.
 
 The enclosing character is used to mark the boundaries of a token, overriding the delimiter character.
 For example, if your delimiter is a comma, but you have commas in some strings, then you can define single or double quotes as the enclosing character to mark the endpoints of your string tokens.
@@ -100,25 +108,19 @@ TigerGraph creates a connection to S3 in order to access the file system in an S
 [NOTE]
 Data files, after decompression, must be in CSV format.
 
-TigerGraph supports loading from archived and compressed S3 files directly.
-Currently supported file extensions include zip, tar.gz, tgz and tar.
-GraphStudio detects the file extension and automatically chooses the corresponding file format.
-If the file is encoded with one of these formats but has a non-standard file extension, you can manually specify the file format.
-
 image::aws-add-data-source.png[]
 
-. After you click the btn:[S3] data source icon, you will be prompted for your:
+After you click the btn:[S3] data source icon, you will be prompted for your:
 
 * AWS access key ID
 * AWS secret access key
 * Data source connection alias (a name for you to give to the connection)
 
+Identify your file as CSV or JSON format.
 
-. Identify your file as CSV or JSON format.
+Enter the S3 URI. Follow the instructions here to retrieve it: link:https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html#accessing-a-bucket-using-S3-format[Accessing a bucket using S3 format]
 
-. Enter the S3 URI. Follow the instructions here to retrieve it: link:https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html#accessing-a-bucket-using-S3-format[Accessing a bucket using S3 format]
-
-. Confirm that the data has parsed correctly and click btn:[ADD] to add the file to your project, where it will appear in the working panel.
+Confirm that the data has parsed correctly and click btn:[ADD] to add the file to your project, where it will appear in the working panel.
 --
 Google Cloud Storage::
 +
@@ -136,17 +138,7 @@ image::gcs-data-source.png[]
 
 In addition to single files, TigerGraph also supports loading an entire folder by entering the gsutil URI for that folder.
 
-All data files in this folder must share the same data schema.
-The folder preview, like the file preview, is limited to the first ten lines of uploaded data.
-If a folder contains more than one file and the first file has more than ten lines, only the first ten lines of the first file will appear in the preview.
-
-[NOTE]
-TigerGraph supports loading from archived and compressed GCS files directly.
-Currently supported file extensions include zip, tar.gz, tgz and tar.
-GraphStudio detects the file extension and automatically chooses the corresponding file format.
-If the file is encoded with one of these formats but has a non-standard file extension, you can manually specify the file format.
-
-Confirm that the data has parsed correctly (see <<Configure the File Parser>>) and click btn:[ADD] to add the data source to your project, where it will appear in the working panel.
+Confirm that the data has parsed correctly and click btn:[ADD] to add the file to your project, where it will appear in the working panel.
 
 --
 Azure Blob Storage::
@@ -159,7 +151,8 @@ image::azure-add-data-source.png[]
 [NOTE]
 Data files, after decompression, must be in CSV format.
 
-After you click the btn:[ABS] data source icon, you will be prompted for your Connection String and a custom alias for the connection (required). See link:https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=azure-portal#view-account-access-keys[View Account Access Keys] for instructions.
+After you click the btn:[ABS] data source icon, you will be prompted for your Connection String and a custom alias for the connection (required).
+See link:https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=azure-portal#view-account-access-keys[View Account Access Keys] for instructions.
 
 Identify your file as CSV or JSON format, then enter the Blob URL.
 
