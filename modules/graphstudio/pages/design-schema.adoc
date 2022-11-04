@@ -2,7 +2,8 @@
 :experimental:
 
 == Design Schema
-GraphStudio supports modifying multiple graphs within one TigerGraph instance. Read more about Multigraph at xref:tigergraph-server:intro:multigraph-overview.adoc[MultiGraph - An Overview].
+GraphStudio supports modifying multiple graphs within one TigerGraph instance.
+Read more about this architecture, called MultiGraph, at xref:tigergraph-server:intro:multigraph-overview.adoc[MultiGraph - An Overview].
 
 Designing the graph schema is the first and most important step of solving a business problem. The graph schema is the model of the problem, and all the subsequent steps depend on the graph schema.
 
@@ -14,26 +15,30 @@ Only certain roles have the privilege to modify a graph schema.
 . Only the superuser, globaldesigner, and designer roles can modify a local graph schema.
 ====
 
-When there is no graph schema in the system, this page will show some hints:
-
-image::design-schema-no-graph-globalview.png[]
-
-Otherwise this page will visualize the schema:
+The main page visualizes the graph schema, showing user interface hints if no graph schema exists.
 
 image::schema.png[]
 
 Each circle represents a vertex type, and each link represents an edge type.
 You can drag the circles to change their positions and zoom in or out by scrolling.
 
-NOTE: The relationship between a vertex type and a vertex instance of a graph is like the relationship between a table and one record of a table in the relational database world.
-The relationship between an edge type and an edge instance is similar.
-In the Design Schema step, the user defines vertex types and edge types to model the data schema.
-After the schema has been created, the next two steps, Map Data To Graph and Load Data, are for loading data into the graph.
+[NOTE]
+====
+A graph schema is a description or plan for a graph rather than the graph itself.
+For example, a simple graph of cities and highways might only have one vertex type (`City`) and one edge type (`Highway`).
+Data for thousands of cities and tens of thousands of individual highway connections could then be loaded into that graph.
 
-=== Global View vs. Graph View
+After the Design Schema step, the next two steps, Map Data To Graph and Load Data, are for loading data into the graph.
+====
+
+== Global View vs. Graph View
+
+Global View allows you to see all global vertex and edge types.
+Global types are available for use in any graph.
+In contrast, Graph View only allows you to see vertex and edge types that are local to one specific graph.
 
 The superuser and globaldesigner roles can modify global vertex and edge types under Global View.
-Under global view, the toolbar area only contains "Publish schema", "Add a vertex type", "Add an edge type",  "Edit", "Delete", "Undo" and "Redo" buttons. There will be a warning message in the working panel saying user is under global view.
+Under global view, the toolbar area only contains "Publish schema", "Add a vertex type", "Add an edge type",  "Edit", "Delete", "Undo" and "Redo" buttons.
 
 image::screen-shot-2020-06-10-at-13.01.14.png[]
 
@@ -44,29 +49,29 @@ image::screen-shot-2020-06-10-at-13.01.14.png[]
 . Users other than superuser and globaldesigner cannot access global view.
 ====
 
-Users can modify a graph schema under graph view. In a graph, there is one more in the toolbar area - "View global vertex and edge types". And for global vertex and edge types used in a graph, a little global icon is attached to them.
+Users can modify a graph schema under graph view (viewing a specific graph rather than a global view of all vertices and edges).
+In graph view, there is one more icon in the toolbar area - "View global vertex and edge types".
+This adds a small globe icon next to any global vertex and edge types used in a graph.
+
+It is important to stay aware of which data types are global and which are local, because data loaded to a global type is accessible from any graph using that type.
 
 image::schema-local.png[]
 
-=== Add A Vertex Type
+== Add a vertex type
 
 Click the add vertex type
 button image:add_vertex_type.png[image] to add a
-vertex type. The working space will enter Add Vertex mode and the button
-color will change to
-green image:add-vertex-mode-on.png[image] . Click
-the button again to exit Add Vertex mode. The add vertex type panel in
-the right:
+vertex type. The working space will enter Add Vertex mode and open the add vertex type panel to the right:
 
 image:add-vertex-panel.png[image]
 
 In this window you specify a vertex type name and primary id name.
-GraphStudio will automatically select a color for your vertex type icon.
 
-In the Style section, you can change the color of your vertex icon.
+In the Style section, you can change the color of your vertex icon from the default chosen by GraphStudio.
 You can also replace the default circle using a file that you upload or choose from our icon library.
 
-*Adding and Deleting Attributes* +
+=== Vertex attributes
+
 If you want to have a vertex or edge type's primary ID as an attribute, check the "AS ATTRIBUTE" box. This will allow you to use the vertex or edge's primary ID  like any other attribute of the vertex or edge type in features such as filter, attachment and order.
 
 To add an attribute, click the green plus sign at the right of the
@@ -85,64 +90,66 @@ when accessing these attributes.
 
 image:attribute-with-index.png[image]
 
-Click the red minus sign to the right of the attribute to delete an
-existing attribute.
+Click the red minus sign to the right of the attribute to delete an existing attribute.
 
-Once you are satisfied with the vertex type settings, click the checkmark button at the top to add the vertex
-type. A new circle will appear in the working panel. You can drag the
-circle to any desired position.
+Once you are satisfied with the vertex type settings, click the checkmark button at the top to add the vertex type.
+A new vertex appears in the working panel, where you can arrange it visually however you prefer.
 
 WARNING: `PRIMARY KEY` and composite keys are not supported in GraphStudio. If you define a vertex type using the `PRIMARY KEY` syntax or with composite key, you will not be able to operate on the graph with that vertex type or the global schema in GraphStudio.
 
 [[add-an-edge-type-]]
-== Add An Edge Type
+== Add an edge type
 
 Click the add edge type button image:add_edge_type.png[image] to enter Add Edge mode and add an edge
 type.
 
 Each edge type has one or many source vertex types and target vertex
-types. First, click the source vertex type. A hint will appear on the
-vertex type circle:
+types.
+First, click the source vertex type.
+A hint will appear on the vertex type circle:
 
 image:click_edge_type_source_vertex.png[image]
 
-Then click the target vertex type. The add edge type panel will appear to the right:
+Click the target vertex type. The add edge type panel will appear to the right:
 
 image:add-edge-panel.png[image]
 
-You must specify an edge type name. The source vertex type and target
-vertex type are selected based on your clicking action. However, you can
-change that by choosing another vertex type in the dropdown list.
+The edge type name cannot be left blank.
 
-You can also click the green plus sign at the right of the source and
-target vertex types section to add more source and target vertex types
-of the edge type.
-
-image:edge-multi-pair.png[image]
-
-By default, the edge type is undirected. To make the edge type directed,
-mark the Directed checkbox:
-
-image:directed-edge.png[image]
-
-If Directed is checked, another checkbox will appear for you to choose
-whether the edge type should include reverse edges.
+By default, the edge type is undirected.
+To make the edge type directed, mark the Directed checkbox, which will bring up another checkbox will appear for you to choose whether the edge type should include reverse edges.
 Including reverse edges provides more flexibility when designing queries.
 
-Unselect the reverse edge checkbox ONLY IF your machine memory is very tight, because if there is no reverse edge, queries will not be able to traverse
+The source and target vertex types are selected based on the vertices you clicked, but you can change that by choosing another vertex type in the dropdown list.
+Click the green plus sign at the right of the source and
+target vertex types section to add more source and target vertex types.
+
+Unselect the reverse edge checkbox ONLY IF your machine memory is very limited, because if there is no reverse edge, queries will not be able to traverse
 backwards along this directed edge type from the target vertex to the
 source vertex.
-
-Editing edge type attributes is the same as editing vertex type
-attributes.
 
 Once you are satisfied with the edge type settings, click the checkmark button at the top to add the edge
 type, which will instantly appear in the working panel.
 
-You can add multiple edge types between the same source vertex type and
-target vertex type pair. Moreover, an edge can use the same vertex type
-for both its source vertex type and its target vertex type, e.g., a
-Friendship edge from a Person vertex to Person vertex.
+=== Edge attributes
+
+image::edge-attributes.png[]
+
+Add an attribute to your edge in the Attributes panel.
+Edge attributes work just like vertex attributes.
+
+The btn:[Discriminator] checkbox allows you to enable multiple edges with the same type to exist between the same vertex pair, as long as the discriminator attributes are unique.
+
+You cannot change an edge type to or from a Discriminator or non-Discriminator type if it is used in another graph.
+
+Non-Discriminator attributes can be added and dropped at will.
+However, modifying Discriminator attributes performs the same actions in the backend as dropping and recreating an edge.
+Therefore, data loaded to edges with Discriminator attributes will be lost upon attribute modification.
+
+[NOTE]
+Attribute values must be unique if multiple edges of the same type exist between the same vertex pair.
+TigerGraph does not support multiple identical edges between the same vertex pair because there would be no way to tell them apart.
+
 
 [[edit-vertex-or-edge-type-]]
 == Edit Vertex Or Edge Type
