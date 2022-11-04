@@ -206,6 +206,10 @@ image::3.png[]
 
 Repeat as needed to create all the mappings for this table-to-vertex/edge pair. Since many-to-one mapping is allowed, it is not necessary for one table to provide a mapping for every field in the target vertex/edge.
 
+[NOTE]
+Data must be loaded for all Discriminator attributes on an edge.
+Edges cannot have Discriminator attributes with no data loaded to them.
+
 === Using a Token Function
 
 GraphStudio gives you access to both a set of built-in functions and user-defined token functions to preprocess data file tokens before loading them in to the graph. For example, you can concatenate two columns in the data file and load them as an attribute. This section describes how to use these token functions.

@@ -33,6 +33,10 @@ After the Design Schema step, the next two steps, Map Data To Graph and Load Dat
 
 == Global View vs. Graph View
 
+Global View allows you to see all global vertex and edge types.
+Global types are available for use in any graph.
+In contrast, Graph View only allows you to see vertex and edge types that are local to one specific graph.
+
 The superuser and globaldesigner roles can modify global vertex and edge types under Global View.
 Under global view, the toolbar area only contains "Publish schema", "Add a vertex type", "Add an edge type",  "Edit", "Delete", "Undo" and "Redo" buttons.
 
@@ -134,16 +138,16 @@ image::edge-attributes.png[]
 Add an attribute to your edge in the Attributes panel.
 Edge attributes work just like vertex attributes.
 
-The btn:[Discriminator] checkbox allows you to enable multiple edges with the same attribute type to exist between the same vertex pair.
+The btn:[Discriminator] checkbox allows you to enable multiple edges with the same type to exist between the same vertex pair, as long as the discriminator attributes are unique.
 
-You cannot change an edge to become a Discriminator type if it is used in another graph.
+You cannot change an edge type to or from a Discriminator or non-Discriminator type if it is used in another graph.
 
 Non-Discriminator attributes can be added and dropped at will.
 However, modifying Discriminator attributes performs the same actions in the backend as dropping and recreating an edge.
 Therefore, data loaded to edges with Discriminator attributes will be lost upon attribute modification.
 
 [NOTE]
-Attribute values must be unique if multiple attributes of the same type exist between the same vertex pair.
+Attribute values must be unique if multiple edges of the same type exist between the same vertex pair.
 TigerGraph does not support multiple identical edges between the same vertex pair because there would be no way to tell them apart.
 
 
