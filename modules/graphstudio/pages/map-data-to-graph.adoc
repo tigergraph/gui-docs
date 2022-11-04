@@ -50,8 +50,19 @@ After clicking btn:[Local File], you will be prompted to choose one or more loca
 
 image::files-on-server-browse.png[]
 
-If all the files are uploaded successfully, a message of success will appear at the bottom of the screen.
-After you see that message, you may click btn:[Next].
+*Supported files:*
+
+* CSV
+* TSV
+* JSON Lines
+
+*Unsupported files:*
+
+* Zip archives
+* Tar archives
+
+A success message for each file appears after each upload.
+Once the files have finished, click btn:[Next].
 
 Once the files are uploaded to the server, they will appear in the "Files on server" list on the left side of the Add Data Files window.
 
@@ -85,10 +96,9 @@ Amazon S3::
 +
 --
 TigerGraph creates a connection to S3 in order to access the file system in an S3 bucket.
-Only one file may be selected at a time.
 
 [NOTE]
-Data files, after decompression, must be in either CSV or Parquet format.
+Data files, after decompression, must be in CSV format.
 If a file is in Parquet format, the data you are loading cannot use INT96 data types.
 
 TigerGraph supports loading from archived and compressed S3 files directly.
@@ -101,15 +111,14 @@ If the file is encoded with one of these formats but has a non-standard file ext
 
 * AWS access key ID
 * AWS secret access key
-
-You also have the option to add an alias to the data source connection.
+* Data source connection alias (a name for you to give to the connection)
 
 
 . Identify your file as CSV or JSON format.
 
-. Enter the S3 URI.
+. Enter the S3 URI. Follow the instructions here to retrieve it: link:https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html#accessing-a-bucket-using-S3-format[Accessing a bucket using S3 format]
 
-. Confirm that the data has parsed correctly and click btn:[ADD] to add the data source to your project, where it will appear in the working panel.
+. Confirm that the data has parsed correctly and click btn:[ADD] to add the file to your project, where it will appear in the working panel.
 --
 Google Cloud Storage::
 +
@@ -144,11 +153,9 @@ Azure Blob Storage::
 +
 --
 TigerGraph creates a connection to ABS in order to access the file system in a blob.
-Only one file may be selected at a time.
 
 [NOTE]
-Data files, after decompression, must be in either CSV or Parquet format.
-If a file is in Parquet format, the data you are loading cannot use INT96 data types.
+Data files, after decompression, must be in CSV format.
 
 TigerGraph supports loading from archived and compressed Blob files directly.
 Currently supported file extensions include zip, tar.gz, tgz and tar.
