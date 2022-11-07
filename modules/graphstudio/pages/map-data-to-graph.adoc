@@ -19,35 +19,40 @@ The main steps are
 . Map data file columns to vertex/edge fields
 . Publish data mapping
 
-== Select a data source type
+== Choose a data source type
 
-GraphStudio supports loading data from local files on the TigerGraph server, from files stored on Amazon S3, or from files stored on Google Cloud Storage (GCS).
+A data file is a file containing structured data to be loaded into the graph, creating vertex and/or edge instances.
+
+GraphStudio supports loading data from local files on the TigerGraph server or from files stored remotely on Amazon S3, Google Cloud Storage (GCS), or Azure Blob Storage (ABS).
 
 Click the Add Data File button image:add_data_source_btn.png[] in the toolbar to add data files.
 
 image::choose-a-data-source-type.png[]
 
-* If you select *Local File*, no more configuration is needed in this stage. Skip to <<_add_local_data_file>>.
-* For *Amazon S3*, *Google Cloud Storage*, or *Azure Blob Storage*, open the relevant tab below.
 
-== Add data files
+== Retrieve files from your data source
 
-A data file is a file containing structured data to be loaded into the graph, creating vertex and/or edge instances.
-After specifying your data source type, the next step is to specify your data files.
+If there are data files that are already present on the TigerGraph server (local files), GraphStudio lets you select them directly.
+To retrieve files from a remote source such as cloud storage, you must first establish a connection.
 
-When you select a file to add, you may select a single file or a folder of files.
-All data files in this folder must share the same data schema.
+=== Working with folders
+
+Remote data sources support selecting entire files at the same time.
+Local file upload does not currently support uploading a folder.
+
+If you select a folder, all data files in this folder must share the same data schema.
+
 The folder preview, like the file preview, is limited to the first ten lines of uploaded data.
 If a folder contains more than one file and the first file has more than ten lines, only the first ten lines of the first file will appear in the preview.
 
-[NOTE]
+=== Supported file extensions
+
 TigerGraph supports loading from archived and compressed files only through remote storage connections.
 Currently supported file extensions include `zip`, `tar.gz`, `tgz` and `tar`.
 GraphStudio detects the file extension and automatically chooses the corresponding file format.
 If the file is encoded with one of these formats but has a non-standard file extension, you can manually specify the file format.
 
-
-This section contains subsections for each data source.
+The following tabs contain instructions for each data source type.
 
 [tabs]
 ====
