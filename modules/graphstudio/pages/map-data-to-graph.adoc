@@ -2,18 +2,21 @@
 :pp: {plus}{plus}
 :experimental: true
 
-== Map data to graph
 
 After you have created a graph schema, the next major step is to map your data to the schema.
 Click "Map Data To Graph" on the left side menu bar.
+
+
 The working panel is split into a left panel and a right panel.
+Adjust the panel sizes with the Expand Panels buttons at the top: image:split-view.png[image]
+
 Before any data is mapped, the left panel will display only the graph schema.
 
 image::map-data-to-graph-overview.png[]
 
-The main steps are
+The main steps are:
 
-. Select a data source.
+. Choose a data source type
 . Add data file(s)
 . Map data file(s) to vertex/edge types
 . Map data file columns to vertex/edge fields
@@ -21,36 +24,36 @@ The main steps are
 
 == Choose a data source type
 
+The GraphStudio term "data source" is separate from the GSQL `DATA SOURCE` keyword.
+
+In GraphStudio, a data source is a link to where one or more data files are stored, either locally on the TigerGraph server or remotely in cloud storage (Amazon S3, Google Cloud Storage (GCS), or Azure Blob Storage (ABS))
 A data file is a file containing structured data to be loaded into the graph, creating vertex and/or edge instances.
 
-GraphStudio supports loading data from local files on the TigerGraph server or from files stored remotely on Amazon S3, Google Cloud Storage (GCS), or Azure Blob Storage (ABS).
+In the data mapping process, you are not loading data from files directly, but rather creating links to set up the process of loading the files in the next step.
+For example, if you connect to remote storage, you provide the metadata and access credentials necessary to access the files during the xref:load-data.adoc[loading process].
 
-Click the Add Data File button image:add_data_source_btn.png[] in the toolbar to add data files.
+Click the Add Data File button image:add_data_source_btn.png[] in the toolbar to begin the process of choosing a data source and addding the data files.
 
 image::choose-a-data-source-type.png[]
 
-
-== Retrieve files from your data source
-
-If there are data files that are already present on the TigerGraph server (local files), GraphStudio lets you select them directly.
-To retrieve files from a remote source such as cloud storage, you must first establish a connection.
-
-=== Working with folders
+=== Folders
 
 Remote data sources support selecting entire files at the same time.
 Local file upload does not currently support uploading a folder.
 
-If you select a folder, all data files in this folder must share the same data schema.
+If you select a folder, all of its data files must share the same data schema.
 
 The folder preview, like the file preview, is limited to the first ten lines of uploaded data.
 If a folder contains more than one file and the first file has more than ten lines, only the first ten lines of the first file will appear in the preview.
 
-=== Supported file extensions
+=== Compressed files
 
 TigerGraph supports loading from archived and compressed files only through remote storage connections.
 Currently supported file extensions include `zip`, `tar.gz`, `tgz` and `tar`.
 GraphStudio detects the file extension and automatically chooses the corresponding file format.
 If the file is encoded with one of these formats but has a non-standard file extension, you can manually specify the file format.
+
+== Data Loading
 
 The following tabs contain instructions for each data source type.
 
@@ -79,40 +82,12 @@ Compressed files are only supported in remote storage connections.
 A success message for each file appears after each upload.
 Once the files have finished, click btn:[Next].
 
-Once the files are uploaded to the server, they will appear in the "Files on server" list on the left side of the Add Data Files window.
-
-image::files-on-server-parse.png[]
-
-Choose a file from the file list to show a preview of the parsed data:
-
-image::examine-csv.png[]
-
-If your data file is in tabular format, the parser will split each line into a series of _tokens_. If the parsing is not correct, choose a different option for the file format, delimiter, or end of line character.
-
-The enclosing character is used to mark the boundaries of a token, overriding the delimiter character.
-For example, if your delimiter is a comma, but you have commas in some strings, then you can define single or double quotes as the enclosing character to mark the endpoints of your string tokens.
-
-It is not necessary for every token to have enclosing characters. The parser uses enclosing characters when it encounters them.
-
-You can edit the header line of the parsing result to make the data mapping more intuitive. This doesn't affect the data loading because the header line will be ignored.
-
-Once you are satisfied with the file parsing configuration, click the btn:[ADD] button to add the data file into the left working panel.
-
-If a file is no longer needed, you can remove it from the server by clicking the delete button image:delete_forever.png[] to the left of each file.
-
-[NOTE]
-After removing a file from the server, you also need to manually remove data mapping using that file.
-Otherwise, a "file not on server" error will be triggered when loading data.
+Confirm that the data has parsed correctly in the next step.
 
 --
 Amazon S3::
 +
 --
-TigerGraph creates a connection to S3 in order to access the file system in an S3 bucket.
-
-[NOTE]
-Data files, after decompression, must be in CSV format.
-
 image::aws-add-data-source.png[]
 
 After you click the btn:[S3] data source icon, you will be prompted for your:
@@ -123,51 +98,73 @@ After you click the btn:[S3] data source icon, you will be prompted for your:
 
 Identify your file as CSV or JSON format.
 
+image::load-data-csv-or-json.png[]
+
 Enter the S3 URI. Follow the instructions here to retrieve it: link:https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html#accessing-a-bucket-using-S3-format[Accessing a bucket using S3 format]
 
-Confirm that the data has parsed correctly and click btn:[ADD] to add the file to your project, where it will appear in the working panel.
+image::enter-s3-uri.png[]
+
+Confirm that the data has parsed correctly in the next step.
 --
 Google Cloud Storage::
 +
 --
-After clicking btn:[Google Cloud Storage] when selecting a data source type, you will be prompted to enter a custom name for your GCS data source.
-
 image::add-data-source-from-gcs.png[]
 
 Browse your computer or drag and drop to upload your GCS account key file.
 Google provides a guide to generating and downloading key files at this link: link:https://cloud.google.com/iam/docs/creating-managing-service-account-keys#getting_a_service_account_key[Getting a service account key].
 
-After you enter your key, enter the gsutil URI for your data file in your Google Cloud Storage bucket.
+After you enter your key, identify your file as CSV or JSON format.
+
+image::load-data-csv-or-json.png[]
+
+Eter the gsutil URI for your data file in your Google Cloud Storage bucket.
 
 image::gcs-data-source.png[]
 
-In addition to single files, TigerGraph also supports loading an entire folder by entering the gsutil URI for that folder.
-
-Confirm that the data has parsed correctly and click btn:[ADD] to add the file to your project, where it will appear in the working panel.
-
+Confirm that the data has parsed correctly in the next step.
 --
 Azure Blob Storage::
 +
 --
-TigerGraph supports loading from archived and compressed Blob files directly.
-
 image::azure-add-data-source.png[]
 
-[NOTE]
-Data files, after decompression, must be in CSV format.
 
 After you click the btn:[ABS] data source icon, you will be prompted for your Connection String and a custom alias for the connection (required).
 See link:https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=azure-portal#view-account-access-keys[View Account Access Keys] for instructions.
 
-Identify your file as CSV or JSON format, then enter the Blob URL.
+After you enter your key, identify your file as CSV or JSON format.
+
+image::load-data-csv-or-json.png[]
+
+Enter the Blob URL.
 
 image::azure-blob-url.png[]
 
-Confirm that the data has parsed correctly and click btn:[ADD] to add the data source to your project, where it will appear in the working panel.
+Confirm that the data has parsed correctly in the next step.
 --
 ====
 
-== Load a JSON file
+== Confirm data parsing
+
+Whether loading from a local file or remote storage, the last step is to check over a preview of the parsed data.
+In this example, the parser is working with a local file, but the process is identical for remote files as well.
+
+image::examine-csv.png[]
+
+=== CSV file parsing
+
+If your data file is in tabular format, the parser splits each line into a series of _tokens_. If the parsing is not correct, choose a different option for the file format, delimiter, or end of line character.
+
+The enclosing character is used to mark the boundaries of a token, overriding the delimiter character.
+For example, if your delimiter is a comma, but you have commas in some strings, then you can define single or double quotes as the enclosing character to mark the endpoints of your string tokens.
+
+It is not necessary for every token to have enclosing characters. The parser uses enclosing characters when it encounters them.
+
+You can edit the header line of the parsing result to give each column a more intuitive name, since you will will be referring to these names when loading data to the graph.
+The header name is ignored during data loading.
+
+=== JSON file parsing
 
 GraphStudio supports loading files in JSON format as well as in CSV or TSV format.
 Each line in the uploaded file must contain exactly one JSON object.
@@ -181,21 +178,23 @@ image::json-data-types.png[]
 In this stage, you specify the data types for interpreting each JSON key as a potential object to load to a vertex or edge attribute.
 Here, you can also delete any keys that you do not want to load.
 
+Once you are satisfied with the file parsing configuration, click the btn:[ADD] button to add the data file into the left working panel.
+
 == Map data files to vertex type or edge type
 
 In this step, you link (map) a data file to a target vertex type or edge type.
 The mapping can be many-to-many, which means one data file can map to multiple vertex and/or edge types, and multiple data files can map to the same vertex or edge type.
 Click the map data file to vertex or edge button image:map_file_to_ve.png[] to enter _map data file to vertex or edge_ mode.
 
-Then, click the data file icon. A hint will appear over the icon:
+First, click the data file icon.
 
 image::Screen Shot 2019-05-16 at 1.05.30 PM.png[]
 
-Next, click the target vertex type circle or edge type link. A dashed link will appear between the data file and the target vertex or edge type:
+Next, click the target vertex type circle or edge type link to create a dashed link representing the mapping:
 
 image::Screen Shot 2019-05-16 at 2.20.53 PM.png[]
 
-A red hint will appear if the target type has not yet received a mapping for its primary id(s).
+A red hint appears if the target type has not yet received a mapping for its primary id(s).
 
 == Map data columns to vertex or edge attributes
 
@@ -221,226 +220,43 @@ Repeat as needed to create all the mappings for this table-to-vertex/edge pair. 
 Data must be loaded for all Discriminator attributes on an edge.
 Edges cannot have Discriminator attributes with no data loaded to them.
 
-=== Using a Token Function
+=== Advanced data transformation
 
-GraphStudio gives you access to both a set of built-in functions and user-defined token functions to preprocess data file tokens before loading them in to the graph. For example, you can concatenate two columns in the data file and load them as an attribute. This section describes how to use these token functions.
+See the page on xref:data-transformation.adoc[] for information about making changes to the data during the loading process.
 
-Click the add token function button image:add_token_function_btn.png[] to open the Add Token Function window. Select a token function from the drop-down list under *Function name*, then click the btn:[ADD] button.
+Data transformation includes token functions, data filtering (equivalent to a WHERE clause during data loading), and mapping data to Map type attributes.
 
-For some functions, you may also specify the number of input parameters. (Most token functions have a fixed number of input parameters; gsql_concat can accept any positive number of inputs).
+=== Auto mapping
 
-image::add_token_function_window.png[]
+If the data file columns and the vertex/edge attributes have very similar names (only capitalization and hyphen differences), click the auto mapping button image:auto_mapping_btn.png[].
+All matching or similar columns will be mapped automatically.
 
-GraphStudio currently does not support creating new user-defined functions.  If a user-defined function has been added via the GSQL interface, it will be listed here. To use a user-defined token function, you must manually specify the number of input parameters. The C{pp} code is shown in the Description section for your reference:
 
-image::user_defined_token_functions.png[]
+=== Undo and redo
 
-A token function table will be added to the attribute mapping panel.
+You can undo or redo changes by clicking the Back or Forward buttons in the toolbar:  image:redo_undo_btn.png[image].
+The whole history since the time you entered the Map Data To Graph page is recorded.
 
-Token functions act as intermediate steps in the mapping. Create mappings from the data file table to the token function table, and then from the token function table to the vertex/attribute table.
+=== Delete options
 
-image::4.png[]
-
-=== Auto Mapping
-
-If the data file columns and the vertex/edge attributes have very similar names (only capitalization and hyphen differences), you can click the auto mapping button image:auto_mapping_btn.png[]. All similar columns will be mapped automatically.
-
-=== Map a constant value to an attribute or token function input
-
-Sometimes, a user may need to load a constant value to an id or attribute. Here we show how to do this in GraphStudio.
-
-==== Loading a constant to an attribute
-
-In the right working panel, double-click on the target id or attribute in the left column of the right table. In the example below, the attribute "label" has been double-clicked:
-
-image::6.png[]
-
-This will cause the Load Constant window to pop up. Type in the constant value, and click the Add button to apply the mapping.
-
-image::load_constant_panel.png[]
-
-After adding the constant value, the attribute's label will change to *id/attribute = "(your valid input value)"* .
-
-image::7.png[]
-
-To modify or remove a constant mapping, double-click the id/attribute again. In the Load Constant window, enter the new value, or erase the value if you want to remove the mapping. Click the Add button to apply.
-
-==== Use a constant input for a token function
-
-First add the token function. Then double-click on the target input (in the left column of the token function table). In the example below, "Input 0" has been double-clicked.
-
-image::double_click_token_function_input.png[]
-
-This will cause the Load Constant window to pop up. Type in the constant value and click the Add button to apply the mapping. After adding the constant value, the input's label will change to *Input = "(your input value)"* .
-
-image::token_function_with_constant_input.png[]
-
-The constant value can be modified or removed by double-clicking the label and editing the value in the Load Constant window.
-
-=== Add data filter
-
-You can add a data filter to a data mapping so that only data records which meet conditions that you specify will be loaded into the graph.
-This is equivalent to the `WHERE` clause in a GSQL load statement.
-
-You can add one data filter for each data mapping from a data file to a vertex type or edge type, and the data filter only applies to that one mapping. Consider this data mapping:
-
-image::8.png[]
-
-By default, there is no data filter. Click the Data Filter button image:filter (2) (1) (2).png[]to start creating a data filter. The Add Data Filter window will appear.  The window contains three parts:
-
-. The top section shows one row of sample data from your file, as a handy reference to the file's contents.
-. The middle sections shows what the data filter looks like when it is converted a to GSQL WHERE clause. For more details, see the *WHERE Clause* section in the xref:gsql-ref:ddl-and-loading:system-and-language-basics.adoc[GSQL Language Reference Part 1 - Defining Graphs and Loading Data]
-. The bottom section is where you define your data filter. The data filter will be converted to a GSQL WHERE clause and shown in real time.
-
-image::add_data_filter_window.png[]
-
-A data filter condition is a Boolean expression, which can be a nested set of conditions.
-TigerGraph data loader evaluates the condition for each line in your input file.
-If the condition evaluates to be true, then the line of data is loaded.
-
-First, click the Build Data Filter chooser (with default value "None"). A menu will appear, with many Boolean expression templates. Choose one of the options. If you plan to build a nested condition, start with your top level. The first several options are for comparison expressions:
-
-image::data_filter_choose_expression.png[]
-
-After this are several more options, using operators such as AND, OR, NOT, IN, BETWEEN...AND, IS NUMERIC, and IS EMPTY.
-
-image::data_filter_choose_operator.png[]
-
-Note that each of these expressions calls for 1, 2, 3, or a list of operands, and the operands themselves can be expressions. When you select an expression, additional choosers will appear below for you to specify the operand expressions.  The operand choices are context-sensitive, but typically they include
-
-* a Data Column from the input file
-* A constant value
-* If the operator is AND, OR, or NOT, then the operand can be another condition. Thus is how conditions can be nested.
-
-Suppose you are loading friendship edges where the input data fields are (person1, person2, friendship_start_date).  You want to load only the records where person1 is Tom and the friendship began on or before 2017-06-10. The data filter looks like the following:
-
-image::complete_data_filter.png[]
-
-After adding the data filter, the right working panel will look like this:
-
-image::9.png[]
-
-Hovering the mouse over the data filter indicator image:data_filter_indicator.png[image] will make the data filter condition appear. If you want to modify the data filter, click the Data Filter
-button image:filter (2) (1) (2).png[image] or double-click the data filter indicator.
-The Add Data Filter panel will appear.
-
-To remove a data filter, select "None" at the top level dropdown of the Build Data Filter section and then click btn:[ADD]. The data filter will be deleted.
-
-image:remove_data_filter.png[image]
-
-[[advanced-features-]]
-== Advanced Features
-
-More advanced data mapping features are grouped in the dropdown list in the three-dot menu image:more-data-mapping.png[image].
-
-=== Map data to a map type attribute
-
-Click  image:map-widget-btn.png[image] in the dropdown list, then choose key type and value type.
-The types must match the key type and value type of the attribute you are mapping towards.
-
-image:screen-shot-2020-01-21-at-5.41.40-pm.png[image]
-
-A Map widget will be added to the attribute mapping panel.
-
-image:screen-shot-2020-01-21-at-5.43.15-pm.png[image]
-
-Create the mapping from the data columns to the Map widget, and from the
-Map widget to the attribute.
-
-image:screen-shot-2020-01-21-at-5.44.41-pm.png[image]
-
-== Map data to a UDT type attribute
-
-Choose a UDT name from the dropdown list.
-The name must match the UDT type of the attribute you are mapping towards.
-
-image:screen-shot-2020-01-21-at-5.46.32-pm.png[image]
-
-A UDT widget will be added to the attribute mapping panel.
-
-image:screen-shot-2020-01-21-at-5.47.29-pm.png[image]
-
-Create the mapping from the data columns to the UDT widget, and from the UDT widget to the attribute.
-
-image:screen-shot-2020-01-21-at-5.47.42-pm.png[image]
-
-== Map data to a map type attribute with UDT value type
-
-If you want to map data to an attribute of map type with UDT value type,
-you have to combine a Map widget with a UDT widget.
-
-Choose UDT as the value type and then choose the UDT name when adding
-the Map widget.
-
-image:screen-shot-2020-01-21-at-5.50.41-pm.png[image]
-
-Create data mapping between data columns, the UDT widget, the Map
-widget, and the attribute.
-
-image:screen-shot-2020-01-21-at-5.53.30-pm.png[image]
-
-[[delete-options-]]
-== Delete options
-
-In the Map Data To Graph page, you can delete anything that you added.
+In the Map Data To Graph page, you can delete anything that you added, including data files, mapping between files and vertices/edges, mapping between data columns and vertex/edge attributes, and token functions.
 Choose what you want to delete, then click the delete
 button  image:delete_btn.png[image] . Press the
 "Shift" key to select multiple icons you want to delete. Note that you
 cannot delete vertex or edge types in this page.
 
-[[delete-data-files-]]
-=== Delete data files
 
-Select the data file icon(s), then click the delete button.
-
-image:screen-shot-2019-05-16-at-2.35.00-pm.png[image]
-
-[[delete-data-file-to-vertex-or-edge-mapping-]]
-== Delete data file to vertex or edge mapping
-
-Select the dashed green link(s) between data file and mapped vertex/edge
+For example, to delete a data file mapping, select the dashed green link(s) between the data file and the vertex/edge
 type, then click the delete button.
 
 image:screen-shot-2019-05-16-at-2.36.18-pm.png[image]
 
-[[delete-data-column-to-vertex-or-edge-attribute-mapping-]]
-== Delete data column to vertex or edge attribute mapping
 
-Select the green arrow(s) between data file table and vertex/edge
-attributes table, then click the delete button.
-
-image:5 (1).png[image]
-
-[[delete-token-functions-]]
-== Delete token functions
-
-Select the token function table(s), then click the delete button.
-
-image:delete_token_functions.png[image]
-
-[[undo-and-redo-]]
-== Undo and redo
-
-You can undo or redo changes by clicking the Back or Forward buttons,
-respectively:  image:redo_undo_btn.png[image] . The
-whole history since the time you entered the Map Data To Graph page is
-recorded.
+If you remove a file from the server, you also need to manually remove data mapping using that file.
+Otherwise, a "file not on server" error will be triggered when loading data.
 
 [[publish-data-mapping]]
 == Publish data mapping
 
-Once you are satisfied with the data loading procedure, click the
-publish schema
-button  image:publish_btn.png[image] to publish the
-data loading procedure to the TigerGraph system. It takes about 2 to 3
-seconds for publishing each data file mapping.
-
-[[expand-panels-]]
-=== Expand panels
-
-The following three buttons allow you to expand the left or right
-working panel:  image:split-view.png[image] .
-
-By default, the two panels have equal widths. Click the left button to
-expand the left working panel, or click the right button to expand the
-right working panel.
+Once you are satisfied with the data loading procedure, click the publish button image:publish_btn.png[image] to publish it to the TigerGraph system.
+It takes a few seconds to publish each data file mapping.
