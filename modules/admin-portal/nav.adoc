@@ -2,6 +2,7 @@
 ** xref:overview.adoc[]
 ** xref:dashboard.adoc[]
 ** xref:monitoring/README.adoc[]
+*** xref:monitoring/queries.adoc[]
 *** xref:monitoring/log-viewer.adoc[]
 ** Management
 *** xref:management/license.adoc[]
