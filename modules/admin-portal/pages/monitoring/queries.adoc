@@ -1,8 +1,10 @@
 = Queries
 
-The Query monitory page gives detailed information about the queries running on a cluster and their performance.
+The Query monitoring page gives detailed information about the queries running on a cluster and their performance.
 
 == Overview
+
+image::query-monitoring-overview.png[]
 
 In the Overview tab, you can view currently running queries broken down by node and graph.
 In the Action column for each query, there are buttons to view the individual query history and to stop the query entirely.
