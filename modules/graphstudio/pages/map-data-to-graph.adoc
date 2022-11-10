@@ -63,9 +63,9 @@ The following tabs contain instructions for each data source type.
 Local File::
 +
 --
-After clicking btn:[Local File], you will be prompted to choose one or more local files to upload through the GUI.
-
 image::files-on-server-browse.png[]
+
+After clicking btn:[Local File], you will be prompted to choose one or more local files to upload through the GUI.
 
 *Supported files:*
 
