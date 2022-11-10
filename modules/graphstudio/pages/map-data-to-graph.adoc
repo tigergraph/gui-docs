@@ -16,17 +16,17 @@ image::map-data-to-graph-overview.png[]
 
 The main steps are:
 
-. Choose a data source type
+. Add a data source
 . Add data file(s)
 . Map data file(s) to vertex/edge types
 . Map data file columns to vertex/edge fields
 . Publish data mapping
 
-== Choose a data source type
+== Data Source
 
 The GraphStudio term "data source" is separate from the GSQL `DATA SOURCE` keyword.
 
-In GraphStudio, a data source is a link to where one or more data files are stored, either locally on the TigerGraph server or remotely in cloud storage (Amazon S3, Google Cloud Storage (GCS), or Azure Blob Storage (ABS))
+In GraphStudio, a data source is a connection to where one or more data files are stored, either locally on the TigerGraph server or remotely in cloud storage (Amazon S3, Google Cloud Storage (GCS), or Azure Blob Storage (ABS))
 A data file is a file containing structured data to be loaded into the graph, creating vertex and/or edge instances.
 
 In the data mapping process, you are not loading data from files directly, but rather creating links to set up the process of loading the files in the next step.
@@ -36,15 +36,16 @@ Click the Add Data File button image:add_data_source_btn.png[] in the toolbar to
 
 image::choose-a-data-source-type.png[]
 
+== Data File
+
+A data file is the actual structured data that will be loaded into your graph to create vertices and edges.
+
 === Folders
 
 Remote data sources support selecting entire files at the same time.
 Local file upload does not currently support uploading a folder.
 
 If you select a folder, all of its data files must share the same data schema.
-
-The folder preview, like the file preview, is limited to the first ten lines of uploaded data.
-If a folder contains more than one file and the first file has more than ten lines, only the first ten lines of the first file will appear in the preview.
 
 === Compressed files
 
@@ -94,13 +95,13 @@ After you click the btn:[S3] data source icon, you will be prompted for your:
 
 * AWS access key ID
 * AWS secret access key
-* Data source connection alias (a name for you to give to the connection)
+* Connection alias (a name for you to give to the connection)
 
 Identify your file as CSV or JSON format.
 
 image::load-data-csv-or-json.png[]
 
-Enter the S3 URI. Follow the instructions here to retrieve it: link:https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html#accessing-a-bucket-using-S3-format[Accessing a bucket using S3 format]
+Enter the S3 URI. Follow the instructions here to retrieve it: link:https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html#accessing-a-bucket-using-S3-format[Accessing a bucket using S3 URI]
 
 image::enter-s3-uri.png[]
 
@@ -118,7 +119,7 @@ After you enter your key, identify your file as CSV or JSON format.
 
 image::load-data-csv-or-json.png[]
 
-Eter the gsutil URI for your data file in your Google Cloud Storage bucket.
+Enter the gsutil URI for your data file in your Google Cloud Storage bucket.
 
 image::gcs-data-source.png[]
 
@@ -148,7 +149,7 @@ Confirm that the data has parsed correctly in the next step.
 == Confirm data parsing
 
 Whether loading from a local file or remote storage, the last step is to check over a preview of the parsed data.
-In this example, the parser is working with a local file, but the process is identical for remote files as well.
+In this example, the parser is working with a local file, but the process is identical for remote files as well
 
 image::examine-csv.png[]
 
@@ -179,6 +180,12 @@ In this stage, you specify the data types for interpreting each JSON key as a po
 Here, you can also delete any keys that you do not want to load.
 
 Once you are satisfied with the file parsing configuration, click the btn:[ADD] button to add the data file into the left working panel.
+
+=== Folder parsing
+
+
+The folder preview, like the file preview, is limited to the first ten lines of uploaded data.
+If a folder contains more than one file and the first file has more than ten lines, only the first ten lines of the first file will appear in the preview.
 
 == Map data files to vertex type or edge type
 
