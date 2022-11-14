@@ -11,11 +11,11 @@
 *** xref:explore-graph/find-paths-between-vertices.adoc[]
 *** xref:explore-graph/run-gsql-queries.adoc[]
 *** xref:explore-graph/augment-visualization-result.adoc[]
-** xref:actions.adoc[]
 ** Build Graph Patterns
 *** xref:build-graph-patterns/visual-query-builder-overview.adoc[]
 *** xref:build-graph-patterns/visual-pattern-examples.adoc[]
 ** xref:write-queries.adoc[]
+** xref:actions.adoc[]
 ** xref:migrate-from-relational-database.adoc[]
 ** xref:export-and-import-solution.adoc[]
 ** xref:keyboard-shortcuts.adoc[]
