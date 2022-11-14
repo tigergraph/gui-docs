@@ -26,24 +26,25 @@ The main steps are:
 
 The GraphStudio term "data source" is separate from the GSQL `DATA SOURCE` keyword.
 
-In GraphStudio, a data source is a connection to where one or more data files are stored, either locally on the TigerGraph server or remotely in cloud storage (Amazon S3, Google Cloud Storage (GCS), or Azure Blob Storage (ABS))
+In GraphStudio, a data source is a connection to where one or more data files are stored, either locally on the TigerGraph server or remotely in cloud storage (Amazon S3, Google Cloud Storage (GCS), or Azure Blob Storage (ABS)).
 A data file is a file containing structured data to be loaded into the graph, creating vertex and/or edge instances.
 
 In the data mapping process, you are not loading data from files directly, but rather creating links to set up the process of loading the files in the next step.
 For example, if you connect to remote storage, you provide the metadata and access credentials necessary to access the files during the xref:load-data.adoc[loading process].
+If you upload a local file, you store that file on the TigerGraph server.
 
-Click the Add Data File button image:add_data_source_btn.png[] in the toolbar to begin the process of choosing a data source and addding the data files.
+Click the Add Data File button image:add_data_source_btn.png[] in the toolbar to begin the process of choosing a data source and adding the data files.
 
 image::choose-a-data-source-type.png[]
 
 == Data File
 
-A data file is the actual structured data that will be loaded into your graph to create vertices and edges.
+A data file is the actual structured data on the TigerGraph server that is loaded into your graph to create vertices and edges.
 
 === Folders
 
-Remote data sources support selecting entire files at the same time.
-Local file upload does not currently support uploading a folder.
+Remote data sources support selecting entire folders at the same time.
+Local file upload does not currently support uploading a folder from your browser to the server.
 
 If you select a folder, all of its data files must share the same data schema.
 
@@ -65,7 +66,8 @@ Local File::
 --
 image::files-on-server-browse.png[]
 
-After clicking btn:[Local File], you will be prompted to choose one or more local files to upload through the GUI.
+After clicking btn:[Local File], you will be prompted to choose one or more local files to upload through your browser to the TigerGraph server.
+If you have uploaded local files to the server previously, they appear in the file list in the left panel.
 
 *Supported files:*
 
@@ -78,10 +80,10 @@ After clicking btn:[Local File], you will be prompted to choose one or more loca
 * Zip archives
 * Tar archives
 
-Compressed files are only supported in remote storage connections.
+Compressed files are only supported through remote storage connections.
 
-A success message for each file appears after each upload.
-Once the files have finished, click btn:[Next].
+A success message for each file appears after each file is successfully uploaded to the TigerGraph server.
+Once the files have finished, choose the file or files you want to work with from the left panel and click btn:[Next].
 
 Confirm that the data has parsed correctly in the next step.
 
@@ -148,8 +150,8 @@ Confirm that the data has parsed correctly in the next step.
 
 == Confirm data parsing
 
-Whether loading from a local file or remote storage, the last step is to check over a preview of the parsed data.
-In this example, the parser is working with a local file, but the process is identical for remote files as well
+Whether loading from a local file on the server or from a file connected from remote storage, the last step is to check over a preview of the parsed data.
+In this example, the parser is working with a local file, but the process is identical for remote files as well.
 
 image::examine-csv.png[]
 
@@ -162,7 +164,7 @@ For example, if your delimiter is a comma, but you have commas in some strings, 
 
 It is not necessary for every token to have enclosing characters. The parser uses enclosing characters when it encounters them.
 
-You can edit the header line of the parsing result to give each column a more intuitive name, since you will will be referring to these names when loading data to the graph.
+You can edit the header line of the parsing result to give each column a more intuitive name, since you will be referring to these names when loading data to the graph.
 The header name is ignored during data loading.
 
 === JSON file parsing
