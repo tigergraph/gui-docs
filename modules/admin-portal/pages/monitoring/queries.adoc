@@ -11,12 +11,14 @@ In the Action column for each query, there are buttons to view the individual qu
 
 You can also see Queries Per Second (QPS), timeout, and latency.
 
+The sections in the Overview tab show the queries in each section over the last five minutes.
+
 At any point, click the Refresh icon in the upper right corner of the page to refresh the view with the latest statistics.
 
 == Current Query Performance
 
-The Current Query Performance tab shows the same information as the Current Running Queries section on the Overview page.
+The Current Query Performance tab shows the same information as the Current Running Queries section on the Overview page, except not limited to the last five minutes.
 
 == Historic Query Performance
 
-Click on the History icon next to any one query in the list to see a graph of its QPS, Timeout, and Latency over time.
+Click on the History icon next to any one query in the list to see a graph of its QPS, Timeout, and Latency over the last five minutes.
