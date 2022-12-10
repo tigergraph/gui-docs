@@ -11,9 +11,9 @@ image::my-profile-updated.png[]
 
 To change your password, click the key icon image:key.png[] in the Password card at the top.
 
-=== Secret Management
+=== Manage secrets
 
-Below the cards is the secret management section, where you can create and delete secrets, which are unique strings that can be used to generate authorization tokens.
+Below the cards, you can create and delete secrets, which are unique strings that can be used to generate authorization tokens.
 An alias is required for each secret.
 
 You can create as many secrets for each graph as you want, but remember to copy the secret value and save it at a secure location when you generate a secret.
@@ -123,7 +123,7 @@ When you grant local privileges, you have the ability to grant `READ_DATA`, `CRE
 
 Because of the granularity offered with this feature, the expanded window for some graphs is quite large.
 This example uses the ldbc_snb graph, which has too many vertex properties to see on one screen.
-Just the properties for one vertex type, Comment, is shown here.
+Just the properties for one vertex type, Comment, are shown here.
 
 image::ldbc_snb-local-permissions.png[]
 
@@ -150,7 +150,8 @@ In the _Role Management_ tab, users can view the role assignment of users, assig
 
 [CAUTION]
 ====
-Admin Portal does not indicate whether a user belongs a proxy group. You can find out more from GSQL client.
+Admin Portal does not indicate whether a user belongs a proxy group.
+You can find out more from the GSQL client.
 
 Admin Portal shows a combination of roles for proxy users.
 Proxy user which belongs to a proxy group inherits all the roles from the proxy group plus all the roles the proxy user has.
