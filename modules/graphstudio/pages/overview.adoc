@@ -134,10 +134,6 @@ Some features available in GSQL are not available in GraphStudio.
 * Fixed binary data types are not supported.
 * PRIMARY KEY and composite key are not supported.
 
-=== xref:map-data-to-graph.adoc[]
-
-* Cannot load JSON data.
-
 === xref:load-data.adoc[]
 
 * Data loading jobs written in a GSQL console are not shown in
