@@ -51,6 +51,10 @@ to the graph schema, the loading job, or queries.
 
 If you are using GraphStudio in the TigerGraph Cloud environment, you can directly access GraphStudio via your browser.
 
+On a Cloud cluster, go to the Tools menu and select GraphStudio.
+
+image:full-cluster-actions-dropdown.png[]
+
 === On-Premises
 For on-premises deployment, the server by default is listening on port 14240.
 Any machine connected to the server can access GraphStudio from a browser with the following address:
@@ -110,7 +114,7 @@ $ gadmin config set GUI.ClientIdleTimeSec [timeout]
 As of Jan 2020, the GraphStudio UI is certified on the following browsers:
 
 |===
-| Browser | Chrome | Safari | Firefox | Opera | Edge | Internet Explorer
+| | Chrome | Safari | Firefox | Opera | Edge | Internet Explorer
 
 | Supported version
 | 54.0+
@@ -133,10 +137,6 @@ Some features available in GSQL are not available in GraphStudio.
 
 * Fixed binary data types are not supported.
 * PRIMARY KEY and composite key are not supported.
-
-=== xref:map-data-to-graph.adoc[]
-
-* Cannot load JSON data.
 
 === xref:load-data.adoc[]
 
