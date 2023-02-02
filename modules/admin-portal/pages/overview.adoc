@@ -48,7 +48,7 @@ The layout of the Admin Portal is responsive to screen size.  The layout will au
 
 The full-screen version of the Admin Portal is shown below, with the Dashboard page selected.
 
-image::dashboard.png[]
+image::admin-portal-dashboard-overview.png[]
 
 == Page Header
 
