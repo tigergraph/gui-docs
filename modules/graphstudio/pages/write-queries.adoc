@@ -92,7 +92,7 @@ image:write-queries-run-install-query-with-param_3.3.png[image]
 
 == Run Configuration
 
-You can set runtime configurations of the GSQL query by clicking the small downward-pointing arrow button image:3.9.png[image] to the right of the Run Query button, then a drop-down menu will appear with the btn:[Run Configuration] button.
+You can set runtime configurations of the GSQL query by clicking the small downward-pointing arrow button image:3.9.png[image] to the right of the Run Query button. A drop-down menu will appear with the btn:[Run Configuration] button; click this button.
 
 image:write-queries-use-default-timeout_3.3.png[image]
 
