@@ -29,7 +29,7 @@ image::write-queries-toolbar_3.3.png[]
 * *Run*: Run the query. If the query is not installed, the query will run in interpreted mode. Note there is a performance penalty for running queries in interpreted mode.
 ** *Run Configuration:* Set the query runtime configurations.
 * *Delete*: Delete the selected query and its draft.
-* *Show query endpoint:* Show the RESTful endpoint to execute the query. Only installed queries can see their RESTful endpoints.
+* *Show query endpoint:* Show the RESTful endpoint for executing the query. Only installed queries have endpoints.
 * *Download:* Download the query as a gsql file.
 * *Discard query draft:* Delete the selected query draft.
 
