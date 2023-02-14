@@ -64,7 +64,7 @@ After saving a query as another query, you will be redirected to the new query, 
 
 You can run a query in interpreted mode if you have saved it as a draft without errors.
 Click the run query button image:start-loading-button.png[].
-Together with the query execution result, a warning message will appear to notify you of the performance concerns running the query in interpreted mode.
+Together with the query execution result, a warning message will appear to notify you of the performance concerns of running queries in interpreted mode.
 To speed up the query performance after you are satisfied with the query, follow the instructions in the next section to install the query.
 
 === Install Query
