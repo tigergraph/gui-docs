@@ -53,7 +53,7 @@ To edit an existing query, click on the query name in the list in the left panel
 === Save Query Draft
 
 Click the "save" buttonimage:save_btn.png[]in the toolbar to save changes as a draft.
-This is separate from installing a query, allowing you to save your progress if you navigate away from the GraphStudio page.
+A query draft is saved as is, regardless of syntax or semantic errors.  Draft queries are not installed.
 
 === Save as
 
