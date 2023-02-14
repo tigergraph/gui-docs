@@ -15,7 +15,7 @@ The Write Query page is horizontally divided into two parts:
 == Query Editing Panel
 :experimental:
 
-The Query Editing panel is divided into two sub-panels, one for select a query and the other for displaying the query for editing.
+The Query Editing panel is divided into two sub-panels, one for selecting a query and the other for displaying the query for editing.
 The Query Editor features syntax highlighting customized for the GSQL language and also performs real-time semantic checking.
 
 Above the query editing pane is a toolbar with the following buttons, from left to right:
