@@ -128,7 +128,7 @@ If you want to install all queries that you haven't installed yet, click the "In
 
 This is useful if you have imported several queries from the Graph Data Science library and want to install them all at once before running them.
 
-A popup window listing all queries to be installed will appear:
+A pop-up window listing all queries to be installed will appear:
 
 image:install_all_query_list.png[image]
 
