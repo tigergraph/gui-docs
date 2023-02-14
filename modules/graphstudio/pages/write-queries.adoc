@@ -26,7 +26,7 @@ image::write-queries-toolbar_3.3.png[]
 * *Save*: Save the current query draft.
 * *Save as*: Save the current query as a new query under a new name.
 * *Install*: Install the query into the database.
-* *Run*: Run the query. If the query is not installed, it will run the query in interpreted mode. Note there is performance penalty to run queries in interpreted mode.
+* *Run*: Run the query. If the query is not installed, the query will run in interpreted mode. Note there is a performance penalty for running queries in interpreted mode.
 ** *Run Configuration:* Set the query runtime configurations.
 * *Delete*: Delete the selected query and its draft.
 * *Show query endpoint:* Show the RESTful endpoint to execute the query. Only installed queries can see their RESTful endpoints.
