@@ -30,7 +30,7 @@ image::write-queries-toolbar_3.3.png[]
 ** *Run Configuration:* Set the query runtime configurations.
 * *Delete*: Delete the selected query and its draft.
 * *Show query endpoint:* Show the RESTful endpoint for executing the query. Only installed queries have endpoints.
-* *Download:* Download the query as a gsql file.
+* *Download:* Download the query as a GSQL file.
 * *Discard query draft:* Delete the selected query draft.
 
 === Create a query or add a query from the algorithm library
