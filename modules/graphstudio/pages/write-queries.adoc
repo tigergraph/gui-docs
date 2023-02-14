@@ -35,7 +35,7 @@ image::write-queries-toolbar_3.3.png[]
 
 === Create a query or add a query from the algorithm library
 
-To create a new query from scratch, simply click on the "New GSQL Query" button image:upload_file_btn.png[] in the bottom-right corner of the left sub-panel, and type in the name of the new query in the popup window.
+To create a new query from scratch, simply click on the "New GSQL Query" button image:upload_file_btn.png[] in the bottom-right corner of the left sub-panel, and type in the name of the new query in the pop-up window.
 
 By clicking btn:[Choose from library], you can import one of the pre-written xref:graph-ml:intro:index.adoc[TigerGraph Graph Data Science Library algorithms] to perform common graph data science tasks on your data such as pathfinding, community detection, classification, and more.
 
