@@ -52,18 +52,19 @@ To edit an existing query, click on the query name in the list in the left panel
 
 === Save Query Draft
 
-Click the "save" buttonimage:save_btn.png[]in the toolbar to save changes as a draft.
-A query draft is saved as is, regardless of syntax or semantic errors.  Draft queries are not installed.
+Click the "Save" buttonimage:save_btn.png[]in the toolbar to save changes as a draft.
+A query draft is saved as is, regardless of syntax or semantic errors.
+Draft queries are not installed.
 
 === Save as
 
-Click the 'Save as' button to save the current query as a new query under a different name. 
+Click the "Save as" button to save the current query as a new query under a different name.
 After saving a query as another query, you will be redirected to the new query, and the original current will return to its last saved state.
 
 === Run Query in Interpreted Mode
 
 You can run a query in interpreted mode if you have saved it as a draft without errors.
-Click the run query button image:start-loading-button.png[].
+Click the "Run" button image:start-loading-button.png[].
 Together with the query execution result, a warning message will appear to notify you of the performance concerns of running queries in interpreted mode.
 To speed up the query performance after you are satisfied with the query, follow the instructions in the next section to install the query.
 
@@ -111,7 +112,7 @@ The query will be deleted permanently.
 
 After finishing writing the GSQL queries and installing the queries, you can access the queries via REST endpoints.
 
-By clicking the "show query endpoint" button image:endpoint.png[image] , you can see the format of the endpoint to access this query, so that you can integrate the query with your applications.
+By clicking the "Show query endpoint" button image:endpoint.png[image] , you can see the format of the endpoint to access this query, so that you can integrate the query with your applications.
 
 image:show_query_endpoint.png[image]
 
@@ -121,8 +122,9 @@ You can download the selected query by clicking image:write-queries-toolbar-down
 
 == Delete query draft
 
-You can delete your query draft by clicking
-image:write-queries-toolbar-delete-query-draft_3.3.png[image] .
+You can delete your query draft by clicking the delete button at the end of the icon list:
+
+image::write-queries-toolbar-delete-query-draft_3.3.png[image]
 
 == Install All Queries
 
@@ -130,9 +132,9 @@ If you want to install all queries that you haven't installed yet, click the "In
 
 This is useful if you have imported several queries from the Graph Data Science library and want to install them all at once before running them.
 
-A pop-up window listing all queries to be installed will appear:
+A pop-up window listing all queries to be installed appears:
 
-image:install_all_query_list.png[image]
+image::install_all_query_list.png[image]
 
 Click the btn:[INSTALL] button. Installation may take several minutes depending on the number of queries to install.
 
