@@ -82,9 +82,10 @@ If the query has no parameters for you to set, it will run immediately and the r
 
 image:write-queries-run-query-installed_3.3.png[image]
 
-If the query requires parameters, the Enter Query Parameters panel will appear.
-Enter your parameter values and then click btn:[Run query] at the bottom of the panel.
-You may need to scroll the panel to the bottom to find the Run Query button.
+
+If the query does have input parameters, then the "Enter query parameters" pane will open on the left side of the query editing sub-panel.
+If there are several parameters, you may need to scroll down to see them all. After entering in all the values you wish to use, click the btn:[Run query] button at the bottom of the pane.
+
 
 The query will be executed, and the results will be shown in the Result Panel.
 
@@ -97,8 +98,9 @@ You can set runtime configurations of the GSQL query by clicking the small downw
 image:write-queries-use-default-timeout_3.3.png[image]
 
 This opens the Run Configuration panel, where you can set the GSQL query timeout.
-By default, it uses the timeout specified with gadmin server commands in the TigerGraph configuration.
-See the xref:tigergraph-server:system-management:management-commands.adoc[TigerGraph Server Command Glossary] for more information.
+
+By default, it uses the timeout specified with the `RESTPP.Factory.DefaultQueryTimeoutSec` server parameter, which is 16 seconds.
+See the xref:tigergraph-server:reference:configuration-parameters.adoc#_restpp[TigerGraph Server Command Glossary] for more information.
 
 == Delete Query
 
