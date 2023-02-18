@@ -77,7 +77,7 @@ image::install_query_progress.png[]
 
 == Run Query
 
-To run the query, click on the "run" button  image:run-installed-query.png[image] in the toolbar.
+To run the query, click on the "Run" button  image:run-installed-query.png[image] in the toolbar.
 If the query has no parameters for you to set, it will run immediately and the result will be shown in the Result panel.
 
 image:write-queries-run-query-installed_3.3.png[image]
