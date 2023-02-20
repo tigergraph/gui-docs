@@ -3,6 +3,8 @@
 
 On the Write Queries page, you can write and run custom queries with GSQL.
 
+You can also import pre-written graph data science algorithms from the xref:graph-ml:intro:index.adoc[] to use with your own data set.
+
 image::write-queries-overview_3.3.png[]
 
 The Write Query page is horizontally divided into two parts:
@@ -11,8 +13,9 @@ The Write Query page is horizontally divided into two parts:
 * Result, Log and Visualization Panel
 
 == Query Editing Panel
+:experimental:
 
-The Query Editing panel is divided into two sub-panels, one for select a query and the other for displaying the query for editing.
+The Query Editing panel is divided into two sub-panels, one for selecting a query and the other for displaying the query for editing.
 The Query Editor features syntax highlighting customized for the GSQL language and also performs real-time semantic checking.
 
 Above the query editing pane is a toolbar with the following buttons, from left to right:
@@ -23,16 +26,21 @@ image::write-queries-toolbar_3.3.png[]
 * *Save*: Save the current query draft.
 * *Save as*: Save the current query as a new query under a new name.
 * *Install*: Install the query into the database.
-* *Run*: Run the query. If the query is not installed, it will run the query in interpreted mode. Note there is performance penalty to run queries in interpreted mode.
+* *Run*: Run the query. If the query is not installed, the query will run in interpreted mode. Note there is a performance penalty for running queries in interpreted mode.
 ** *Run Configuration:* Set the query runtime configurations.
 * *Delete*: Delete the selected query and its draft.
-* *Show query endpoint:* Show the RESTFul endpoint to execute the query. Only installed queries can see their RESTFul endpoints.
-* *Download:* Download the query as a gsql file.
+* *Show query endpoint:* Show the RESTful endpoint for executing the query. Only installed queries have endpoints.
+* *Download:* Download the query as a GSQL file.
 * *Discard query draft:* Delete the selected query draft.
 
-=== Add Or Edit Query
+=== Create a query or add a query from the algorithm library
 
-To create a new query, simply click on the "New GSQL Query" button image:upload_file_btn.png[] in the bottom-right corner of the left sub-panel, and type in the name of the new query in the popup window:
+To create a new query from scratch, simply click on the "New GSQL Query" button image:upload_file_btn.png[] in the bottom-right corner of the left sub-panel, and type in the name of the new query in the pop-up window.
+
+By clicking btn:[Choose from library], you can import one or more of the pre-written xref:graph-ml:intro:index.adoc[TigerGraph Graph Data Science Library algorithms] to perform common graph data science tasks on your data such as pathfinding, community detection, classification, and more.
+
+[NOTE]
+If you import the same query from the library more than once, installation will fail.
 
 image::create-new-query-3.6.png[]
 
@@ -44,48 +52,41 @@ To edit an existing query, click on the query name in the list in the left panel
 
 === Save Query Draft
 
-Click the "save" buttonimage:save_btn.png[]in the toolbar to save changes as a draft.
-This is separate from installing a query.
+Click the "Save" buttonimage:save_btn.png[]in the toolbar to save changes as a draft.
+A query draft is saved as is, regardless of syntax or semantic errors.
+Draft queries are not installed.
 
 === Save as
 
-Click the 'Save as' button to save the current query as a new query under a different name. 
+Click the "Save as" button to save the current query as a new query under a different name.
 After saving a query as another query, you will be redirected to the new query, and the original current will return to its last saved state.
-
-=== Graph Data Science Library Queries
-
-GraphStudio is connected to the xref:graph-ml:intro:index.adoc[Graph Data Science Library] and can import machine learning algorithms directly from a curated library.
-Click btn:[Choose Query] on the Add New Query window to see the query choices.
-Select any queries that you would like to install.
-After installation, they will appear in the GSQL Queries window just like user-generated queries.
-
-[NOTE]
-If you use the Data Science Library to install a query that is already installed, installation will fail.
 
 === Run Query in Interpreted Mode
 
-You can run a query in interpreted mode if you have saved it without errors.
-Click the run query button image:start-loading-button.png[].
-Together with the query execution result, a warning message will appear to notify user of the performance concerns running the query in interpreted mode. To speed up the query performance after you are satisfied with the GSQL query developed in interpreted mode, you can follow the instructions in the next section "Install Query".
-
+You can run a query in interpreted mode if you have saved it as a draft without errors.
+Click the "Run" button image:start-loading-button.png[].
+Together with the query execution result, a warning message will appear to notify you of the performance concerns of running queries in interpreted mode.
+To speed up the query performance after you are satisfied with the query, follow the instructions in the next section to install the query.
 
 === Install Query
 
-Saving a query enables the "install query" button image:publish_btn.png[].
+Saving a query enables the "Install Query" button image:publish_btn.png[].
 Click it to install the query, a process which will take about a minute.
+This improves performance compared to running a query in interpreted mode.
 
 image::install_query_progress.png[]
 
 == Run Query
 
-To run the query, click on the "run" button  image:run-installed-query.png[image] in the toolbar.
-If the query has no parameters, it will run directly and the result will be shown in the Result panel.
+To run the query, click on the "Run" button  image:run-installed-query.png[image] in the toolbar.
+If the query has no parameters for you to set, it will run immediately and the result will be shown in the Result panel.
 
 image:write-queries-run-query-installed_3.3.png[image]
 
-If the query requires parameters, the Enter Query Parameters panel will appear.
-Enter your parameter values and then click btn:[Run query] at the bottom of the panel.
-You may need to scroll the panel to the bottom to find the Run Query button.
+
+If the query does have input parameters, then the "Enter query parameters" pane will open on the left side of the query editing sub-panel.
+If there are several parameters, you may need to scroll down to see them all. After entering in all the values you wish to use, click the btn:[Run query] button at the bottom of the pane.
+
 
 The query will be executed, and the results will be shown in the Result Panel.
 
@@ -93,12 +94,14 @@ image:write-queries-run-install-query-with-param_3.3.png[image]
 
 == Run Configuration
 
-You can set runtime configurations of the GSQL query by clicking the small image:3.9.png[image] button to the right of the Run Query button, then a drop-down menu will appear with the btn:[Run Configuration] button.
+You can set runtime configurations of the GSQL query by clicking the small downward-pointing arrow button image:3.9.png[image] to the right of the Run Query button. A menu will appear with the btn:[Run Configuration] button; click this button.
 
 image:write-queries-use-default-timeout_3.3.png[image]
 
 This opens the Run Configuration panel, where you can set the GSQL query timeout.
-By default, it uses the timeout specified with gadmin server commands in the TigerGraph configuration.
+
+By default, it uses the timeout specified with the `RESTPP.Factory.DefaultQueryTimeoutSec` server parameter, which is 16 seconds.
+See the xref:tigergraph-server:reference:configuration-parameters.adoc#_restpp[TigerGraph Server Command Glossary] for more information.
 
 == Delete Query
 
@@ -109,7 +112,7 @@ The query will be deleted permanently.
 
 After finishing writing the GSQL queries and installing the queries, you can access the queries via REST endpoints.
 
-By clicking the "show query endpoint" button image:endpoint.png[image] , you can see the format of the endpoint to access this query, so that you can integrate the query with your applications.
+By clicking the "Show query endpoint" button image:endpoint.png[image] , you can see the format of the endpoint to access this query, so that you can integrate the query with your applications.
 
 image:show_query_endpoint.png[image]
 
@@ -119,16 +122,19 @@ You can download the selected query by clicking image:write-queries-toolbar-down
 
 == Delete query draft
 
-You can delete your query draft by clicking
-image:write-queries-toolbar-delete-query-draft_3.3.png[image] .
+You can delete your query draft by clicking the delete button at the end of the icon list:
+
+image::write-queries-toolbar-delete-query-draft_3.3.png[image]
 
 == Install All Queries
 
 If you want to install all queries that you haven't installed yet, click the "Install all queries" button image:install_all_queries.png[image] in the GSQL Queries toolbar. 
 
-After some verification time, a pop up window listing all queries to be installed will show:
+This is useful if you have imported several queries from the Graph Data Science library and want to install them all at once before running them.
 
-image:install_all_query_list.png[image]
+A pop-up window listing all queries to be installed appears:
+
+image::install_all_query_list.png[image]
 
 Click the btn:[INSTALL] button. Installation may take several minutes depending on the number of queries to install.
 
