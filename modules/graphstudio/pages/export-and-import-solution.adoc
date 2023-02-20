@@ -27,7 +27,7 @@ The command file creates the exported graph, including its local vertex, edge, a
 
 [NOTE]
 ====
-This `ExportedGraph.zip` file is identical to what is produced by running the xref:tigergraph-server:import-export:database-import-export.adoc[database export command] with the template option.
+This `ExportedGraph.zip` file is identical to what is produced by running the xref:3.8@tigergraph-server:import-export:database-import-export.adoc[database export command] with the template option.
 ====
 
 The `gui/` folder contains all user icons and a json file that describes the layout of the schema in GraphStudio.
