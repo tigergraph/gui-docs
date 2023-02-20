@@ -23,7 +23,7 @@ The exported tarball file includes two folders: *graph/* and *gui/*. The *graph/
 
 [NOTE]
 ====
-Note that this ExportedGraph.zip file is identical to what is produced by running the xref:tigergraph-server:import-export:database-import-export.adoc[database export command] with the template option.
+Note that this ExportedGraph.zip file is identical to what is produced by running the xref:3.5@tigergraph-server:import-export:database-import-export.adoc[database export command] with the template option.
 ====
 
 The *gui/* folder includes a folder that contains all user icons and a json file that describes the layout of the schema in GraphStudio.
