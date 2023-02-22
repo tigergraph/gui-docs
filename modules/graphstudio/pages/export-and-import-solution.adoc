@@ -1,4 +1,4 @@
-= Export And Import Solution
+= Export and Import Solution
 :experimental:
 
 == Export and Import
@@ -52,5 +52,11 @@ In order to optimize the time required for import, the imported queries will not
 
 [WARNING]
 ====
-Importing a solution will overwrite the current solution. The existing schema, loading jobs, queries and data files will be erased before the new solution is imported.
+Please be extra cautious when importing databases as it can overwrite the current solution, resulting in the deletion of existing schemas, load jobs, queries, and data files.
+Importing a new solution cannot be undone to restore the previous state, regardless of whether the import succeeds or fails.
+
+Therefore, create a complete backup beforehand in case you need to restore the database: xref:tigergraph-server:backup-and-restore:backup-cluster.adoc[]
+
+For security purposes, TigerGraph has two `gadmin` commands, `GSQL.UDF.Policy.Enable` and `GSQL.UDF.Policy.HeaderAllowlist` to prevent malicious code execution during import.
+Please refer to the section on xref:gsql-ref:querying:func/query-user-defined-functions.adoc#udf-security[UDF Security] to ensure that UDFs comply with the security specifications. This will help you import the solution successfully.
 ====
