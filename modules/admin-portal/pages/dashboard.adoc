@@ -2,9 +2,17 @@
 
 == Dashboard Page
 
-The Dashboard page has three main parts: Overall statistics, the time range picker, and several charts.
+The Dashboard page is divided into two tabs: Overview and Cluster Monitoring.
 
-image::dashboard-page.png[]
+image::admin-portal-dashboard-overview.png[]
+
+image:admin-portal-dashboard-cluster-monitoring.png[]
+
+
+== Overview tab
+
+== Cluster monitoring tab
+
 
 === Overall Cluster Statistics
 
