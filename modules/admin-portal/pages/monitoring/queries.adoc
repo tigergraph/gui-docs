@@ -9,7 +9,7 @@ image::query-monitoring-overview.png[]
 In the Overview tab, you can view currently running queries broken down by node and graph.
 In the Action column for each query, there are buttons to view the individual query history and to stop the query entirely.
 
-You can also see Queries Per Second (QPS), timeout, and latency.
+You can also see Queries Per Second (QPS), timeout (fraction of the query calls which timed out and therefore did not finish), and latency (minimum, maximum, and average time to complete a query).
 
 The sections in the Overview tab show the queries in each section over the last five minutes.
 

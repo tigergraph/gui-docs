@@ -1,55 +1,38 @@
 = Dashboard
 
-== Dashboard Page
+The Dashboard page is divided into two tabs: Overview and Historic Cluster Monitoring.
 
-The Dashboard page is divided into two tabs: Overview and Cluster Monitoring.
+== Overview
 
-image::admin-portal-dashboard-overview.png[]
+image::overview-dependency-view.png[]
 
-image:admin-portal-dashboard-cluster-monitoring.png[]
+The Overview tab shows a map of all services that are part of the TigerGraph system and how they relate to each other.
 
+Each one of them can be restarted individually or all at once. This is equivalent to the `start`, `stop`, and `restart` commands in the `gadmin` xref:tigergraph-server:system-management:management-commands.adoc[].
 
-== Overview tab
+Click the Table view button to see the services in the form of a table instead of a map.
 
-== Cluster monitoring tab
+image::service-monitor-table-view.png[]
 
+== Historic cluster monitoring
 
-=== Overall Cluster Statistics
+image:historic-cluster-monitoring.png[]
 
-image::overall-cluster-statistics.png[]
+The cluster monitoring page shows resources used by different system components over time.
 
-Below the page header, you can see system statistics like the number of nodes and number of graphs.
-These statistics are refreshed live, with a default refresh interval of one minute.
-
-=== Time Range Picker
-
-image::time_range_picker.png[]
-
-The next card lets you set the time range to be used for the statistics in the charts below.
+Use the time range picker at the top to set the time range to be used for the statistics in the charts.
 Selecting "Now" as the end time will keep the statistics regularly updated.
 
-The sliding bar on the right is another way to adjust the time range. Click and drag an endpoint to adjust the start or end time.
-
 Changing any of these selections will trigger a request for statistics data and the chart will be re-rendered accordingly.
-You may need to wait about thirty seconds for the screen to update.
+You may need to wait several seconds for the screen to update.
 If the screen does not update after a while, try resizing the browser window to trigger a refresh.
-
-=== Charts
-
-Each chart displays some statistic or states information on the vertical axis and time on the horizontal axis.
-
-The Cluster Monitoring section lists all machines within the TigerGraph cluster.
 
 The GSQL Query Performance section lists all queries accessible to the current user.
 If you click on a query name, the display will expand to show detailed charts about that query.
 
 image::charts_list (1).png[]
 
-The Query Monitoring Panel includes three charts:
 
-* QPS (number of queries completed per second)
-* Timeout (fraction of the query calls which timed out and therefore did not finish)
-* Latency (minimum, maximum, and average time to complete a query)
 
 image::query_performance_charts (1).png[]
 
