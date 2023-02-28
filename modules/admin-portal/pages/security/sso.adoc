@@ -4,6 +4,7 @@
 
 The settings on this page are related to set up Single Sign-on (SSO) on TigerGraph. This page does not appear on the Admin Portal for TigerGraph Cloud solutions because of the unified xref:master@cloud:security:manage-database-users.adoc[User Authentication] system present in TigerGraph Cloud.
 
+Consult the xref:tigergraph-server:user-access:sso.adoc[] page on the TigerGraph Server documentation to read more about the supported SSO methods and the configurations required.
 
 image::sso-page.png[]
 
@@ -53,6 +54,8 @@ It is recommended that you enable as many of the options as possible for maximum
 However, some identity providers do not support enabling certain options at the same time.
 Refer to your identity provider's documentation to determine which options to use:
 
-* link:https://auth0.com/docs/configure/saml-configuration/customize-saml-assertions#saml-assertion-attributes[Auth0]
-* link:https://developer.okta.com/docs/reference/api/apps/#settings-9[Okta]
-* link:https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/add-application-portal-setup-sso[Azure Active Directory (AD)]
+* https://www.okta.com/[Okta]
+* https://auth0.com/[Auth0]
+* https://docs.microsoft.com/en-us/azure/active-directory/[Azure Active Directory (Azure AD)]
+* https://docs.pingidentity.com/bundle/pingfederate-110/page/ikr1564002999528.html[PingFederate]
+* https://learn.microsoft.com/en-us/windows-server/identity/active-directory-federation-services[Active Directory Federation Services (AD FS)]
