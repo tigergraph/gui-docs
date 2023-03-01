@@ -35,28 +35,16 @@ http://<tigergraph_server_ip_address>:14240/admin/
 
 If user authentication has been enabled, users need to log in to access the Admin Portal.
 
-If you are already at GraphStudio, click the btn:[Admin] button at the right end of the top menu bar to navigate to Admin Portal.
+If you are already at GraphStudio, click the nine-dot TigerGraph Suite button in the top menu bar to navigate to Admin Portal.
 
-== Page Layout
-
-The Admin Portal has three pages: Dashboard, Monitor, and Management. All the pages share the same Header, and Navigation Menu.
-
-[NOTE]
-====
-The layout of the Admin Portal is responsive to screen size.  The layout will automatically adjust for devices with small screens like phones and tablets.
-====
-
-The full-screen version of the Admin Portal is shown below, with the Dashboard page selected.
-
-image::admin-portal-dashboard-overview.png[]
-
-== Page Header
+== Design controls
 
 The user menu is accessible from the User icon image:account_btn.png[] in the header.
 
 image::admin-user-menu-updated.png[]
 
-You can switch between a dark theme and a light theme. The light theme is shown below:
+You can switch between a dark theme and a light theme, as well as changing the user language.
+The light theme is shown below:
 
 image::light-theme.png[]
 
@@ -65,14 +53,6 @@ To sign out of Admin Portal, click on the *Sign out* button in the Account menu.
 Clicking on the *Help* button will take you to the documentation page containing this guide.
 
 You can navigate to GraphStudio by clicking on the btn:[GraphStudio] button in the upper right corner.
-
-== Cluster service status
-
-The bottom of the navigation menu shows the cluster service status.
-
-image::service-status.png[]
-
-See the xref:tigergraph-server:intro:internal-architecture.adoc[Glossary] section for information on these services.
 
 == Session Timeout
 
