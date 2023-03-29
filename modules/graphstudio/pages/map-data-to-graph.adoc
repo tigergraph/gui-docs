@@ -31,6 +31,13 @@ image::choose-a-data-source-type.png[]
 * For *AWS S3*, skip to the section <<_create_s3_data_source>>.
 * For *Google Cloud Storage*, skip to the section <<_create_a_gcs_data_source>>.
 
+[WARNING]
+.Visibility of Local Files
+====
+When the Local File data source option is used, these files will be visible to any user with access to GraphStudio for this database.
+For sensitive data, we strongly recommend using one of the cloud storage options coupled with their cloud access security features.
+====
+
 == Add data files
 
 A data file is a file containing structured data to be loaded into the graph, creating vertex and/or edge instances.
