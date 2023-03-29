@@ -29,6 +29,12 @@ The GraphStudio term "data source" is separate from the GSQL `DATA SOURCE` keywo
 In GraphStudio, a data source is a connection to where one or more data files are stored, either locally on the TigerGraph server or remotely in cloud storage (Amazon S3, Google Cloud Storage (GCS), or Azure Blob Storage (ABS)).
 A data file is a file containing structured data to be loaded into the graph, creating vertex and/or edge instances.
 
+[WARNING]
+.Visibility of Local Files
+====
+When the Local File data source option is used, these files will be visible to any user with access to GraphStudio for this database. For sensitive data, we strongly recommend using one of the cloud storage options coupled with their cloud access security features.
+====
+
 In the data mapping process, you are not loading data from files directly, but rather creating links to set up the process of loading the files in the next step.
 For example, if you connect to remote storage, you provide the metadata and access credentials necessary to access the files during the xref:load-data.adoc[loading process].
 If you upload a local file, you store that file on the TigerGraph server.
