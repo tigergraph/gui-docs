@@ -30,15 +30,17 @@ You can click the swap icon (two green arrows) on the right to switch the starti
 
 === Set Conditions For Paths
 
-GraphStudio provides three types of path searches:
+GraphStudio provides two types of path searches:
 
 . One shortest path: search for and highlight the shortest path between the two vertices.
 . All shortest paths: search for and highlight all shortest paths between the two vertices.
-. All paths: search for and highlight all valid paths between the two vertices.
+//. All paths: search for and highlight all valid paths between the two vertices.
+
+Note: The *All paths* option has been removed.
 
 Since path-finding queries may have high computational cost if the graph is very large, a parameter is available to limit the path length.
 
-image::path_types.png[]
+image::path_types_2_options.png[]
 
 In addition to the search type and the maximal length, you can also specify the valid vertex types and edge types and their attribute conditions which may be included in the paths.
 
