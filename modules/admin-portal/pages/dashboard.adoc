@@ -1,25 +1,32 @@
 = Dashboard
+:experimental:
 
 The Dashboard page is divided into two tabs: Overview and Historic Cluster Monitoring.
 
 == Overview
 
-image::overview-dependency-view.png[]
-
 The Overview tab shows a map of all services that are part of the TigerGraph system and how they relate to each other.
+
+image::overview-dependency-view.png[]
+_Service monitoring map_
 
 Each one of them can be restarted individually or all at once. This is equivalent to the `start`, `stop`, and `restart` commands in the `gadmin` xref:tigergraph-server:system-management:management-commands.adoc[].
 
-Click the Table view button to see the services in the form of a table instead of a map.
+Below the map is the Resource Monitor table which summarizes the status of each node in this cluster.
+
+Click the btn:[Table view] button to see the services in the form of a table instead of a map.
 
 image::service-monitor-table-view.png[]
+_Service monitoring table_
 
 == Historic cluster monitoring
 
+The Cluster Monitoring page shows resources used by different system components over time.
+
 image:historic-cluster-monitoring.png[]
+_Cluster monitoring page_
 
-The cluster monitoring page shows resources used by different system components over time.
-
+=== Selecting the time range
 Use the time range picker at the top to set the time range to be used for the statistics in the charts.
 Selecting "Now" as the end time will keep the statistics regularly updated.
 
@@ -32,17 +39,19 @@ If you click on a query name, the display will expand to show detailed charts ab
 
 image::charts_list (1).png[]
 
-
-
 image::query_performance_charts (1).png[]
+_Query monitoring panel_
 
-The Machine Monitoring Panel includes four charts.
-The first three charts break down the information among five processing-focused components (GSE, GPE, RESTPP, GSQL, GUI).
-The last chart breaks down information among three components which may have large storage needs (GStore, Log files, and Apache Kafka).
-
-* Service status: ON, Warm Up, OFF status for the given component
-* CPU Usage: percentage of available CPU time used by the given component
-* Memory Usage: GB used by the given component
-* Disk Usage: GB used by the given component
+=== Machine Monitor
+The Machine Monitoring panel includes four charts.
 
 image::cluster-monitoring.png[]
+_Machine monitoring panel_
+
+. Service status: ON, Warm Up, OFF status for the given component
+. CPU Usage: percentage of available CPU time used by the given component
+. Memory Usage: GB used by the given component
+. Disk Usage: GB used by the given component
+
+The first three charts break down the information among five processing-focused components (GSE, GPE, RESTPP, GSQL, GUI).
+The last chart breaks down information among three components which may have large storage needs (GStore, Log files, and Apache Kafka).

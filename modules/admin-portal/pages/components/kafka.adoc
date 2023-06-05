@@ -1,0 +1,18 @@
+= Kafka
+:server-name: Kafka
+:experimental:
+
+You can configure Kafka settings on the menu:Admin Portal[Management > Components > Kafka] page.
+
+
+
+
+image::kafka-component-mgmt.png[]
+
+The following parameters can be changed in Admin Portal:
+
+* Maximum number of concurrent Kafka loading jobs
+* Maximum number of Kafka tasks per CPU
+
+include::partial$change-configuration.adoc[]
+

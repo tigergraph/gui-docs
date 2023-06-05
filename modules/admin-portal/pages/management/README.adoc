@@ -1,0 +1,20 @@
+= Management
+
+The Management section of Admin Portal differs slightly for TigerGraph Cloud vs. TigerGraph self-managed.
+
+The following types of management are available on both platforms:
+
+* xref:management/user-management.adoc[]: Manage users, privileges, and data access
+
+* xref:components/README.adoc[Component Configuration]: See and change configuation settings for various components of the TigerGraph system
+
+The following types of management are available only on the self-managed (on-premises) edition of TigerGraph:
+
+* xref:management/license.adoc[License Management]: See details about and update a license key
+
+* xref:security/sso.adoc[Security Management]: Configure SSO and LDAP.
+
+For TigerGraph Cloud, these security settings are managed at the
+xref:master@cloud:security:index.adoc[Cloud organization level] rather than at the cluster level.
+
+

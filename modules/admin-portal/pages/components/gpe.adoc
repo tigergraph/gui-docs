@@ -1,0 +1,17 @@
+= GPE
+:server-name: GPE
+:experimental:
+
+You can configure GPE settings on the menu:Admin Portal[Management > Security > GPE] page.
+
+The GPE is the execution engine for graph processing requests in the database.
+
+
+image::gpe-component-mgmt.png[]
+
+The following parameters can be changed in Admin Portal:
+
+* Maximum GPE memory per node (MB)
+
+include::partial$change-configuration.adoc[]
+

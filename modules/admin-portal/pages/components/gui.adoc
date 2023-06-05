@@ -1,9 +1,22 @@
 = Application Server (GUI)
 :server-name: Application
+:experimental:
 
-You can configure Application Server (GUI) settings through this page.
-Application Server is the backend component powering both GraphStudio and Admin Portal.
+To access the GUI component management page, navigate to menu:Admin Portal[Management > Components > GUI]
+
+The Application Server is the backend component powering both GraphStudio and Admin Portal.
 
 image::gui-page.png[]
+
+The following parameters can be changed in the Admin Portal:
+
+* Query return size (bytes)
+* Maximum client-side ideal time (seconds)
+* Cookie duration (seconds)
+* Maximum temporary file retention time (day)
+* HTTP request timeout (seconds)
+* HTTP request maximum retry count (default 4)
+* HTTP request maximum retry wait time (seconds)
+* HTTP request minimum retry wait time (seconds)
 
 include::partial$change-configuration.adoc[]
