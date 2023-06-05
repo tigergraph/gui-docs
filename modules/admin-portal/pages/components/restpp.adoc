@@ -2,12 +2,17 @@
 :server-name: RESTPP
 :experimental:
 
-Configure RESTPP settings on the RESTPP component page:
+You can configure RESTPP settings on the menu:Admin Portal[Management > Conponents > RESTPP] page.
 
 image::restpp-page.png[]
 
 The following parameters are configurable in Admin Portal:
 
-* Default query timeout
+* Default query timeout (seconds)
+* Maximum concurrent running xref:tigergraph-server:system-management:workload-management.adoc#_limit_number_of_current_built_in_heavy_queries["heavy" built-in queries]
+* Maximum concurrent running queries
+* Maximum delay queue size
+
+See xref:tigergraph-server:system-management:workload-management.adoc[Workload Management] for more information about some of these settings.
 
 include::partial$change-configuration.adoc[]

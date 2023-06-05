@@ -1,12 +1,12 @@
 = Logs
 
-The log page contains the search panel, the file directory panel, and the content panel. The content panel either displays log content or search results.
+The Logs page contains a search panel, a file directory panel, and a content panel. The content panel either displays log content or search results.
 
-image::image (6).png[]
+image::logs-monitoring-page.png[]
 
 [WARNING]
 ====
-Due to IP address blocking, an error message may appear with some ad blocker software.
+Due to IP address blocking, an error message may appear if you have an ad blocker installed on your browser.
 Please turn off your ad blocker when using Admin Portal.
 ====
 
@@ -16,32 +16,40 @@ In the file directory panel, all machines will be listed in a tree structure. Cl
 
 image::file-listing.png[]
 
-Choose one single log file by clicking on it, and the content will be shown in the display panel. The title will show the machine id and the path of the opened log file. To the very right, there is a download button  image:download-log-btn.png[]  for downloading the selected log file. Loaded log lines will add to the end of the file (the latest log content) and the system will keep pulling to update the log.
+Choose one single log file by clicking on it, and the content will be shown in the display panel.
+The title will show the machine ID and the path of the opened log file. To the right, there is a download button image:download-log-btn.png[] for downloading the selected log file.
+Loaded log lines will add to the end of the file (the latest log content) and the system will keep pulling to update the log.
 
 [CAUTION]
 ====
-Note that it displays up to 32 MB of the log file before the latest line of the chosen log file. If users want to read the entire log file, users need to download the file.
+Note that the display panel will only show the tail end of the chosen log file, up to 32 MB. If you wish to read the entire log file, download the file.
 ====
 
-image::display-log (1).png[]
+image::display-log.png[]
 
 == Search logs
 
-image:search-panel.png[image]
+If your browser window is wide, you will see the search panel at the top.
 
-In the search panel, a user needs to provide the following three pieces of information:
+image:log-search-panel.png[image]
+
+If your browser window is narrow, the search panel collapsed. Click the btn:[Search] button to open it.
+
+image:log-search-button.png[]
+
+In the search panel, you need to provide the following three pieces of information:
 
 * Pattern
 * Node
 * Component
 
-Without at a pattern and at least one node and one component, the search will not be performed.
+Without a pattern and at least one node and one component, the search will not be performed.
 
-Use the expand or collapse buttons for more space to view the log content, if necessary. image:collapse-btn.png[image]image:expand-btn.png[image]
+Use the expand image:expand-btn.png[image] or collapse image:collapse-btn.png[image] buttons for more space to view the log content, if necessary.
 
 image:search-result.png[image]
 
-The title of each search result contains the machine id, the file path
+The title of each search result contains the machine ID, the file path
 and the number of lines of content which match the pattern. The detailed
 log line content will also be shown:
 

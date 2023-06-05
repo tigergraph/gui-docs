@@ -1,5 +1,8 @@
 = Monitor
 
-Monitor section in Admin Portal provides functionality for monitoring the TigerGraph cluster. The current functionality includes log management, where you can view, search and download the logs.
+The Monitor section of the Admin Portal provides functionality for monitoring a TigerGraph cluster.
+There are two monitoring services: log monitoring and query monitoring
 
 * xref:monitoring/log-viewer.adoc[Monitor logs]
+
+* xref:monitoring/queries.adoc[Monitor queries]

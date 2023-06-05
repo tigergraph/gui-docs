@@ -3,7 +3,7 @@
 :description: The Nginx configuration page.
 :experimental:
 
-You can configure Nginx settings on menu:Admin Portal[Management > Security > Nginx] page.
+You can configure Nginx settings on the menu:Admin Portal[Management > Components > Nginx] page.
 Configurable settings include:
 
 * SSL configuration
