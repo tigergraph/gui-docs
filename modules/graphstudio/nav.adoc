@@ -16,6 +16,7 @@
 *** xref:build-graph-patterns/visual-query-builder-overview.adoc[]
 *** xref:build-graph-patterns/visual-pattern-examples.adoc[]
 ** xref:write-queries.adoc[]
+** xref:write-open-cypher-queries-in-tigergraph.adoc[]
 ** xref:actions.adoc[]
 ** xref:migrate-from-relational-database.adoc[]
 ** xref:export-and-import-solution.adoc[]

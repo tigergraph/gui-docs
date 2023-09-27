@@ -1,0 +1,43 @@
+= Write openCypher Queries in TigerGraph
+:experimental:
+
+OpenCypher is a popular graph query language, and TigerGraph now supports the use of openCypher queries.
+
+This allows users who are familiar with openCypher to query TigerGraph's graph database in a more familiar way.
+
+On this page, we will go through the steps of writing openCypher queries in both GraphStudio and GSQL Web Shell.
+
+
+
+== Writing openCypher Queries in GraphStudio
+:experimental:
+
+To write openCypher queries in GraphStudio, follow these steps:
+
+** Open GraphStudio and navigate to the "Write Queries" menu.
+
+image::openCypher_writeQueriesMenu.png[]
+
+** Click on the
+
+image::openCypher_GreenPlusButton.png[]
+
+and select "openCypher" as the query type, then click “Create”.
+
+image::openCypher_AddQueryType.png[]
+
+** Write your openCypher query in the query editor.
+
+[,console]
+----
+CREATE DISTRIBUTED OPENCYPHER QUERY get_user_by_id() FOR GRAPH communication_mau {
+MATCH (u:user)
+WHERE u.id = "test"
+Return u
+}
+----
+** Click “Save query draft” and "Run query" to execute your query.
+
+** Click “Install Query”  to install the openCypher query to the server
+
+
