@@ -1,9 +1,10 @@
 = Write openCypher Queries in TigerGraph
 :experimental:
 
-OpenCypher is a popular graph query language, and TigerGraph now supports the use of openCypher queries.
+OpenCypher is a popular graph query language.
+Starting from TigerGraph v3.9, TigerGraph support most OpenCypher syntax, within the GSQL environment.
 
-This allows users who are familiar with openCypher to query TigerGraph's graph database in a more familiar way.
+This allows users who are familiar with openCypher to get started querying TigerGraph quickly and easily.
 
 On this page, we will go through the steps of writing openCypher queries in both GraphStudio and GSQL Web Shell.
 
@@ -14,30 +15,41 @@ On this page, we will go through the steps of writing openCypher queries in both
 
 To write openCypher queries in GraphStudio, follow these steps:
 
-** Open GraphStudio and navigate to the "Write Queries" menu.
-
+. Open GraphStudio and navigate to the "Write Queries" menu.
++
 image::openCypher_writeQueriesMenu.png[]
 
-** Click on the
-
+. Click on the Add (plus symbol) button
++
 image::openCypher_GreenPlusButton.png[]
-
-and select "openCypher" as the query type, then click “Create”.
-
++
+and select "openCypher" as the query type, then click “CREATE”.
++
 image::openCypher_AddQueryType.png[]
 
-** Write your openCypher query in the query editor.
-
+. Write your openCypher query in the query editor.
++
+.initial openCypher query template
+[,console]
+----
+CREATE DISTRIBUTED OPENCYPHER QUERY query_name() FOR GRAPH graph_name {
+// Insert your openCypher code here
+}
+----
++
+.Example
 [,console]
 ----
 CREATE DISTRIBUTED OPENCYPHER QUERY get_user_by_id() FOR GRAPH communication_mau {
-MATCH (u:user)
-WHERE u.id = "test"
-Return u
+  MATCH (u:user)
+  WHERE u.id = "test"
+  RETURN u
 }
 ----
-** Click “Save query draft” and "Run query" to execute your query.
+. Click “Save query draft”.
 
-** Click “Install Query”  to install the openCypher query to the server
+. Now run your query as your would for standard GSQL queries.
+.. If you want to run your query in interpreted mode, click "Run Query".
+.. If you want to install the query first for higher performance, click “Install Query”, wait for the installation to finish, then click "Run Query".
 
 
