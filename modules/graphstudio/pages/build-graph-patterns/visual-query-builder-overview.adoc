@@ -1,7 +1,10 @@
 = Visual Query Builder
 
-IMPORTANT: In our ongoing efforts to refine and optimize GraphStudio, Build Graph Patterns will begin deprecation as of v3.9.3 and will not be supported in future versions of GraphStudio.
-Please visit our Insights documentation on xref:3.7@insights:widgets:index.adoc[] for graph and results visualization.
+IMPORTANT: In our ongoing efforts to refine and improve our products and tools,
+we are focusing on Insights as the tool of choice for building queries visually.
+We therefore are deprecating GraphStudio's Build Graph Patterns (Visual Query Builder) as of v3.9.3.
+It will be discontinued in a future version of GraphStudio.
+Please visit our Insights documentation on xref:insights:widgets:index.adoc[] for graph and results visualization.
 
 The Visual Query Builder (VQB), found on the Build Graph Patterns page, provides a visual approach to exploring your graph and using it to solve problems.
 Here, you can create visual patterns by dragging and dropping vertices and edges to represent the questions you want to ask instead of writing GSQL queries.

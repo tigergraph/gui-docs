@@ -1,7 +1,10 @@
 = Visual Pattern Examples
 
-IMPORTANT: In our ongoing efforts to refine and optimize GraphStudio, Build Graph Patterns will begin deprecation as of v3.9.3 and will not be supported in future versions of GraphStudio.
-Please visit our Insights documentation on xref:3.7@insights:widgets:index.adoc[] for graph and results visualization.
+IMPORTANT: In our ongoing efforts to refine and improve our products and tools,
+we are focusing on Insights as the tool of choice for building queries visually.
+We therefore are deprecating GraphStudio's Build Graph Patterns (Visual Query Builder) as of v3.9.3.
+It will be discontinued in a future version of GraphStudio.
+Please visit our Insights documentation on xref:insights:widgets:index.adoc[] for graph and results visualization.
 
 You have learnt all the basic concepts of the Visual Query Builder in the previous article. In this article we will walk you through building several visual patterns step by step, and then show you more graph analytics questions and how to solve them with visual patterns.‌
 
