@@ -36,7 +36,7 @@ When the Local File data source option is used, these files will be visible to a
 ====
 
 In the data mapping process, you are not loading data from files directly, but rather creating links to set up the process of loading the files in the next step.
-For example, if you connect to remote storage, you provide the metadata and access credentials necessary to access the files during the xref:load-data[loading process].
+For example, if you connect to remote storage, you provide the metadata and access credentials necessary to access the files during the xref:load-data.adoc[loading process].
 If you upload a local file, you store that file on the TigerGraph server.
 
 Click the Add Data File button image:add_data_source_btn.png[] in the toolbar to begin the process of choosing a data source and adding the data files.
