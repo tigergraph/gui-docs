@@ -1,7 +1,7 @@
 = Load Data
 :experimental:
 
-After mapping data files to the graph schema, you can start loading data. Click btn:[Load Data] on the left side menu bar to go to the Load Data page.
+After mapping data files to the graph schema, you can start loading data. Click "Load Data" on the left side menu bar to go to the Load Data page.
 
 image::load-data.png[]
 
