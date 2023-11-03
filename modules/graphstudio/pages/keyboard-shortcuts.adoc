@@ -16,9 +16,9 @@ The page lists the keyboard shortcuts for common actions in GraphStudio.
 
 === Graph Canvas
 
-In order to use these shortcuts, make sure you first select the graph canvas with the tab key. When the graph canvas is selected, the edges of the canvas will be highlighted with a blue box:
+In order to use these shortcuts, make sure you first select the graph canvas. When the graph canvas is selected, the edges of the canvas will be highlighted with a blue box.
 
-image::https://lh4.googleusercontent.com/0pf-4dosA1NMkyPjur6CwgeM_zYLUiggWMUk-FTc935-Yo8EIn99kpDnUXsmNBayQaHoujtRy_RbFkELU2toIwLGhSonzEGUof8eM5Cxdaln6MRkriUUv5qHXh3Zculdq8ym7rA_[View when the graph canvas is selected]
+//image::https://lh4.googleusercontent.com/0pf-4dosA1NMkyPjur6CwgeM_zYLUiggWMUk-FTc935-Yo8EIn99kpDnUXsmNBayQaHoujtRy_RbFkELU2toIwLGhSonzEGUof8eM5Cxdaln6MRkriUUv5qHXh3Zculdq8ym7rA_[View when the graph canvas is selected]
 
 |===
 | Action (as of October 2023) | Shortcut
@@ -75,9 +75,9 @@ image::https://lh4.googleusercontent.com/0pf-4dosA1NMkyPjur6CwgeM_zYLUiggWMUk-FT
 
 === Graph Canvas
 
-In order to use these shortcuts, make sure you first select the graph canvas with the tab key. When the graph canvas is selected, the edges of the canvas will be highlighted with a blue box:
+In order to use these shortcuts, make sure you first select the graph canvas. When the graph canvas is selected, the edges of the canvas will be highlighted with a blue box.
 
-image::https://lh4.googleusercontent.com/0pf-4dosA1NMkyPjur6CwgeM_zYLUiggWMUk-FTc935-Yo8EIn99kpDnUXsmNBayQaHoujtRy_RbFkELU2toIwLGhSonzEGUof8eM5Cxdaln6MRkriUUv5qHXh3Zculdq8ym7rA_[View when the graph canvas is selected]
+//image::https://lh4.googleusercontent.com/0pf-4dosA1NMkyPjur6CwgeM_zYLUiggWMUk-FTc935-Yo8EIn99kpDnUXsmNBayQaHoujtRy_RbFkELU2toIwLGhSonzEGUof8eM5Cxdaln6MRkriUUv5qHXh3Zculdq8ym7rA_[View when the graph canvas is selected]
 
 |===
 | Action (as of October 2023) | Shortcut
