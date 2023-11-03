@@ -3,118 +3,71 @@
 
 The page lists the keyboard shortcuts for common actions in GraphStudio.
 
-== Windows
-
-=== Application
+== Application
 
 |===
-| Action | Shortcut
+| Action | Windows | Mac
 
 | Switch focus
 | kbd:[Tab]
+| kbd:[Tab]
 |===
 
-=== Graph Canvas
+== Graph Canvas
 
 In order to use these shortcuts, make sure you first select the graph canvas. When the graph canvas is selected, the edges of the canvas will be highlighted with a blue box.
 
 //image::https://lh4.googleusercontent.com/0pf-4dosA1NMkyPjur6CwgeM_zYLUiggWMUk-FTc935-Yo8EIn99kpDnUXsmNBayQaHoujtRy_RbFkELU2toIwLGhSonzEGUof8eM5Cxdaln6MRkriUUv5qHXh3Zculdq8ym7rA_[View when the graph canvas is selected]
 
 |===
-| Action (as of October 2023) | Shortcut
+| Action (as of October 2023) | Windows | Mac
 
 | Select vertex or edge
+| kbd:[Click]
 | kbd:[Click]
 
 | Additive Select
 | kbd:[Shift + Click]
+| kbd:[Shift + Click]
 
 | Area Select
+| kbd:[Shift + Click + Drag]
 | kbd:[Shift + Click + Drag]
 
 | Show global types menu
 | kbd:[Ctrl + G]
-
-| Create a vertex
-| kbd:[V + Click]
-
-| Create an edge
-| Select source vertex, then drag from highlight halo around vertex to target vertex
-
-| Delete
-| Hover/Click, then kbd:[Del]
-
-| Undo
-| kbd:[Ctrl + Z]
-
-| Redo
-| kbd:[Ctrl + Shift + Z]
-
-| Save
-| kbd:[Ctrl + S]
-
-| Zoom in/out
-| Mouse wheel
-
-| Reset viewport
-| kbd:[Ctrl + Shift + R]
-
-
-|===
-
-== Mac
-
-=== Application
-
-|===
-| Action | Shortcut
-
-| Switch focus
-| Tab
-|===
-
-=== Graph Canvas
-
-In order to use these shortcuts, make sure you first select the graph canvas. When the graph canvas is selected, the edges of the canvas will be highlighted with a blue box.
-
-//image::https://lh4.googleusercontent.com/0pf-4dosA1NMkyPjur6CwgeM_zYLUiggWMUk-FTc935-Yo8EIn99kpDnUXsmNBayQaHoujtRy_RbFkELU2toIwLGhSonzEGUof8eM5Cxdaln6MRkriUUv5qHXh3Zculdq8ym7rA_[View when the graph canvas is selected]
-
-|===
-| Action (as of October 2023) | Shortcut
-
-| Select vertex or edge
-| kbd:[Click]
-
-| Additive Select
-| kbd:[Shift + Click]
-
-| Area Select
-| kbd:[Shift + Click + Drag]
-
-| Show global types menu
 | kbd:[Cmd + G]
 
 | Create a vertex
 | kbd:[V + Click]
+| kbd:[V + Click]
 
 | Create an edge
+| Select source vertex, then drag from highlight halo around vertex to target vertex
 | Select source vertex, then drag from highlight halo around vertex to target vertex
 
 | Delete
 | Hover/Click, then kbd:[Del]
+| Hover/Click, then kbd:[Del]
 
 | Undo
+| kbd:[Ctrl + Z]
 | kbd:[Cmd + Z]
 
 | Redo
+| kbd:[Ctrl + Shift + Z]
 | kbd:[Cmd + Shift + Z]
 
 | Save
+| kbd:[Ctrl + S]
 | kbd:[Cmd + S]
 
 | Zoom in/out
 | Mouse wheel
+| Mouse wheel
 
 | Reset viewport
+| kbd:[Ctrl + Shift + R]
 | kbd:[Cmd + Shift + R]
+
 |===
