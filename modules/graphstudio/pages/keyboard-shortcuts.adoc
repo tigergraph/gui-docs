@@ -21,16 +21,45 @@ In order to use these shortcuts, make sure you first select the graph canvas wit
 image::https://lh4.googleusercontent.com/0pf-4dosA1NMkyPjur6CwgeM_zYLUiggWMUk-FTc935-Yo8EIn99kpDnUXsmNBayQaHoujtRy_RbFkELU2toIwLGhSonzEGUof8eM5Cxdaln6MRkriUUv5qHXh3Zculdq8ym7rA_[View when the graph canvas is selected]
 
 |===
-| Action | Shortcut
+| Action (as of October 2023) | Shortcut
 
-| Pick a vertex/edge
-| Ctrl + Alt + P
+| Select vertex or edge
+| kbd:[Click]
 
-| Switch hover over vertex/edge (must have picked a vertex/edge first)
-| Ctrl + Alt + W/A/S/D
+| Additive Select
+| kbd:[Shift + Click]
 
-| Edit/show a vertex
-| Ctrl + Alt + C
+| Area Select
+| kbd:[Shift + Click + Drag]
+
+| Show global types menu
+| kbd:[Ctrl + G]
+
+| Create a vertex
+| kbd:[V + Click]
+
+| Create an edge
+| Select source vertex, then drag from highlight halo around vertex to target vertex
+
+| Delete
+| Hover/Click, then kbd:[Del]
+
+| Undo
+| kbd:[Ctrl + Z]
+
+| Redo
+| kbd:[Ctrl + Shift + Z]
+
+| Save
+| kbd:[Ctrl + S]
+
+| Zoom in/out
+| Mouse wheel
+
+| Reset viewport
+| kbd:[Ctrl + Shift + R]
+
+
 |===
 
 == Mac
@@ -51,14 +80,41 @@ In order to use these shortcuts, make sure you first select the graph canvas wit
 image::https://lh4.googleusercontent.com/0pf-4dosA1NMkyPjur6CwgeM_zYLUiggWMUk-FTc935-Yo8EIn99kpDnUXsmNBayQaHoujtRy_RbFkELU2toIwLGhSonzEGUof8eM5Cxdaln6MRkriUUv5qHXh3Zculdq8ym7rA_[View when the graph canvas is selected]
 
 |===
-| Action | Shortcut
+| Action (as of October 2023) | Shortcut
 
-| Pick a vertex/edge
-| Ctrl + Option + P
+| Select vertex or edge
+| kbd:[Click]
 
-| Switch hover over vertex/edge (must have picked a vertex/edge first)
-| Ctrl + Option + W/A/S/D
+| Additive Select
+| kbd:[Shift + Click]
 
-| Edit/show a vertex
-| Ctrl + Option  + C
+| Area Select
+| kbd:[Shift + Click + Drag]
+
+| Show global types menu
+| kbd:[Cmd + G]
+
+| Create a vertex
+| kbd:[V + Click]
+
+| Create an edge
+| Select source vertex, then drag from highlight halo around vertex to target vertex
+
+| Delete
+| Hover/Click, then kbd:[Del]
+
+| Undo
+| kbd:[Cmd + Z]
+
+| Redo
+| kbd:[Cmd + Shift + Z]
+
+| Save
+| kbd:[Cmd + S]
+
+| Zoom in/out
+| Mouse wheel
+
+| Reset viewport
+| kbd:[Cmd + Shift + R]
 |===
