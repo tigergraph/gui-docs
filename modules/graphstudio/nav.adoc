@@ -2,7 +2,7 @@
 ** xref:overview.adoc[]
 ** xref:user-access-management.adoc[]
 ** xref:design-schema.adoc[]
-** xref:Newload-data.adoc[]
+** xref:load-data.adoc[]
 *** xref:data-transformation.adoc[]
 ** xref:explore-graph/README.adoc[]
 *** xref:explore-graph/graph-exploration-panel.adoc[]

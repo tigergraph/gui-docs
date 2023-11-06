@@ -1,20 +1,307 @@
 = Load Data
 :experimental:
 
-After mapping data files to the graph schema, you can start loading data. Click "Load Data" on the left side menu bar to go to the Load Data page.
+After you have created a graph schema, the next major step is to load your data to the schema.
+Click btn:[Load Data] on the left side menu bar.
 
-image::load-data.png[]
+//TODO: Rewrite this
+Since 3.9.3, we have merged the “Map Data to Graph” and “Load Data” pages into one single page.
+This enhancement will simplify your workflow by eliminating the need to switch between different pages, allowing you to seamlessly handle your data mapping and loading tasks within a single view.
+With this update, you can now perform all necessary data operations more efficiently, saving you time and effort.
 
-The "Load Data" interface is separated into three parts:
+image::NewLoad-Data_v393.png[]
 
-* Data Mapping Overview
- ** Provides a general view of the graph and the data mapping.
- ** Shows the loading progress of each data file.
-* Toolbar (above Data Mapping)
- ** Start/pause/resume/stop data loading buttons.
-* Statistics
- ** Graph statistics: displays the numbers of vertices and edges in total and per type, with real-time loading progress.
- ** Loading statistics: displays the total number of vertices and edges loader vs. time.
+The working panel is split into a *Left Working Panel* and a *Right Working Panel*.
+
+You can adjust the panel sizes with the btn:[Expand Panels] buttons:
+
+image::LoadDataUI_expandPanelButtons.png[]
+
+* Toolbar (above the left working panel)
+** Start/pause/resume/stop data loading buttons.
+** Save data mapping
+** Add data source
+** Create/Delete data mapping
+** Redo/undo data mapping operations
+* Left working panel
+** Provides a general view of the graph and the data mapping.
+** Shows the loading progress of each data file.
+* Right working panel
+** Graph statistics: displays the numbers of vertices and edges in total and per type, with real-time loading progress.
+** Overall Loading statistics: displays the total number of vertices and edges loader vs. time.
+** Individual loading job statistics: displays the data loading statistics if a data source is selected in the left working panel.
+
+image::LoadDataUI_LoadingDatStats.png[]
+
+** Mapping edit panel when a mapping is selected in the left working panel.
+
+image::LoadDataUI_MappingEditPanel.png[]
+
+Before any data is mapped, the left panel will display only the graph schema.
+
+.To load data into TigerGraph, you will need to:
+. Add a data source
+. Add data file(s)
+. Map data file(s) to vertex/edge types
+. Map data file columns to vertex/edge fields
+. Publish data mapping
+. Run and monitor the loading job(s)
+
+== Add a Data Source
+
+In GraphStudio, a "data source" is a connection to where one or more data files are stored, either locally on the TigerGraph server or remotely in cloud storage (Amazon S3, Google Cloud Storage (GCS), or Azure Blob Storage (ABS).
+
+A "data file" is a file containing structured data to be loaded into the graph to be used to create vertex and/or edge instances.
+
+NOTE: The GraphStudio term "data source" is separate from the GSQL `DATA SOURCE` keyword.
+
+[WARNING]
+.Visibility of Local Files
+====
+When the Local File data source option is used, these files will be visible to any user with access to GraphStudio for this database.
+For sensitive data, we strongly recommend using one of the cloud storage options coupled with their cloud access security features.
+====
+
+In the "data mapping" process, you are not loading data from files directly, but rather creating links to set up the process of loading the files in the next step.
+
+For example, if you connect to remote storage, you provide the metadata and access credentials necessary to access the files during the loading process.
+If you upload a local file, you store that file on the TigerGraph server.
+
+Click the btn:[Add Data File] button image:add_data_source_btn.png[] in the toolbar to begin the process of choosing a data source and adding the data files.
+
+image::LoadDataUI_LoadDataSource.png[]
+
+== Data File
+A data file is the actual structured data on the TigerGraph server that is loaded into your graph to create vertices and edges.
+
+=== Folders
+Remote data sources support selecting entire folders at the same time.
+Local file upload does not currently support uploading a folder from your browser to the server.
+
+If you select a folder, all of its data files must share the same data schema.
+
+=== Compressed files
+TigerGraph supports loading from archived and compressed files only through remote storage connections.
+
+.Currently supported file extensions include:
+* `zip`
+* `tar.gz`
+* `tgz`
+* `tar`
+
+GraphStudio detects the file extension and automatically chooses the corresponding file format.
+If the file is encoded with one of these formats but has a non-standard file extension, you can manually specify the file format.
+
+== Data Loading
+The following tabs contain instructions for each data source type.
+
+[tabs]
+====
+Local File::
++
+--
+image::files-on-server-browse.png[]
+
+After clicking btn:[Local File], you will be prompted to choose one or more local files to upload through your browser to the TigerGraph server.
+
+If you have uploaded local files to the server previously, they appear in the file list in the left panel.
+
+* Supported files:
+** CSV
+** TSV
+** JSON Lines
+* Unsupported files:
+** Zip archives
+** Tar archives
+
+Compressed files are only supported through remote storage connections.
+
+A success message for each file appears after each file is successfully uploaded to the TigerGraph server.
+Once the files have finished, choose the file or files you want to work with from the left panel and click btn:[Next].
+
+Confirm that the data has parsed correctly in the next step.
+
+--
+Amazon S3::
++
+--
+image::aws-add-data-source.png[]
+
+After you click the btn:[S3] data source icon, you will be prompted for your:
+
+* AWS access key ID
+* AWS secret access key
+* Connection alias (a name for you to give to the connection)
+
+Identify your file as CSV or JSON format.
+
+image::load-data-csv-or-json.png[]
+
+Enter the S3 URI. Follow the instructions here to retrieve it: link:https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html#accessing-a-bucket-using-S3-format[Accessing a bucket using S3 URI]
+
+image::enter-s3-uri.png[]
+
+Confirm that the data has parsed correctly in the next step.
+
+--
+Google Cloud Storage::
++
+--
+image::add-data-source-from-gcs.png[]
+
+Browse your computer or drag and drop to upload your GCS account key file.
+Google provides a guide to generating and downloading key files at this link: link:https://cloud.google.com/iam/docs/creating-managing-service-account-keys#getting_a_service_account_key[Getting a service account key].
+
+After you enter your key, identify your file as CSV or JSON format.
+
+image::load-data-csv-or-json.png[]
+
+Enter the gsutil URI for your data file in your Google Cloud Storage bucket.
+
+image::gcs-data-source.png[]
+
+Confirm that the data has parsed correctly in the next step.
+
+--
+Azure Blob Storage: ::
++
+--
+image::azure-add-data-source.png[]
+
+
+After you click the btn:[ABS] data source icon, you will be prompted for your Connection String and a custom alias for the connection (required).
+See link:https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=azure-portal#view-account-access-keys[View Account Access Keys] for instructions.
+
+After you enter your key, identify your file as CSV or JSON format.
+
+image::load-data-csv-or-json.png[]
+
+Enter the Blob URL.
+
+image::azure-blob-url.png[]
+
+Confirm that the data has parsed correctly in the next step.
+--
+====
+
+== Confirm Data Parsing
+Whether loading from a local file on the server or from a file connected from remote storage, the last step is to check over a preview of the parsed data.
+In this example, the parser is working with a local file, but the process is identical for remote files as well.
+
+image::examine-csv.png[]
+
+=== CSV file parsing
+If your data file is in tabular format, the parser splits each line into a series of tokens.
+If the parsing is not correct, choose a different option for the file format, delimiter, or end of line character.
+
+The enclosing character is used to mark the boundaries of a token, overriding the delimiter character.
+For example, if your delimiter is a comma, but you have commas in some strings, then you can define single or double quotes as the enclosing character to mark the endpoints of your string tokens.
+
+It is not necessary for every token to have enclosing characters.
+The parser uses enclosing characters when it encounters them.
+
+You can edit the header line of the parsing result to give each column a more intuitive name, since you will be referring to these names when loading data to the graph.
+The header name is ignored during data loading.
+
+=== JSON file parsing
+GraphStudio supports loading files in JSON or JSONL format as well as in CSV or TSV format.
+Each line in the uploaded file must contain exactly one JSON object.
+
+Similar to loading a CSV or TSV, you will first see a preview of the JSON file so that you can check the parsing.
+
+After looking at the preview, you may edit the data key and data type for each of the JSON fields.
+
+image:LoadDataUI_ChooseTypesOfData.png[]
+
+In this stage, you specify the data types for interpreting each JSON key as a potential object to load to a vertex or edge attribute. Here, you can also delete any keys that you do not want to load.
+
+Once you are satisfied with the file parsing configuration, click the btn:[ADD] button to add the data file into the left working panel.
+
+=== Folder parsing
+The folder preview, like the file preview, is limited to the first ten lines of uploaded data.
+If a folder contains more than one file and the first file has more than ten lines, only the first ten lines of the first file will appear in the preview.
+
+=== Map data files to vertex type or edge type
+In this step, you link (map) a data file to a target vertex type or edge type.
+The mapping can be many-to-many, which means one data file can map to multiple vertex and/or edge types, and multiple data files can map to the same vertex or edge type.
+
+Click the map data file to vertex or edge button: image:map_file_to_ve.png[] to enter map data file to vertex or edge mode.
+
+First, click the data file icon:
+
+image::Screen Shot 2019-05-16 at 1.05.30 PM.png[]
+
+Next, click the target vertex type circle or edge type link to create a dashed link representing the mapping:
+
+image::Screen Shot 2019-05-16 at 2.20.53 PM.png[]
+
+A red hint appears if the target type has not yet received a mapping for its primary id(s).
+
+== Map data columns to vertex or edge attributes
+In this step, you link particular columns of a data file to particular ids or attributes of a vertex type or edge type.
+
+First, choose one data mapping from one data file to one vertex or edge type (represented as a dashed green link on the left working panel).
+
+When selected, the dashed line becomes orange (active), and the right working panel will show two tables with the data file and target vertex or edge fields.
+
+image::1.png[]
+
+Drag and drop from the left table to the right table to map the attributes to a target field.
+The left table contains the CSV columns or JSON keys.
+The target field is either an attribute of the vertex/edge, a primary id for a vertex, or a source and target id for an edge.
+
+A green arrow appears to show the mapping:
+
+image::3.png[]
+
+Repeat as needed to create all the mappings for this table-to-vertex/edge pair.
+Since many-to-one mapping is allowed, it is not necessary for one table to provide a mapping for every field in the target vertex/edge.
+
+NOTE: Data must be loaded for all Discriminator attributes on an edge.
+Edges cannot have Discriminator attributes with no data loaded to them.
+
+=== Advanced Data Transformation
+See the page on xref:gui:graphstudio:data-transformation.adoc[Data Transformation] for information about making changes to the data during the loading process.
+
+Data transformation includes token functions, data filtering (equivalent to a WHERE clause during data loading), mapping data to Map and UDT type attributes.
+
+=== Auto Mapping
+If the data file columns and the vertex/edge attributes have very similar names (only capitalization and hyphen differences), click the auto mapping button:
+image:auto_mapping_btn.png[]
+
+All matching or similar columns will be mapped automatically.
+
+=== Undo and Redo
+You can undo or redo changes by clicking the Back or Forward buttons in the toolbar:
+image:redo_undo_btn.png[image]
+
+The whole history since the time you entered the Map Data To Graph page is recorded.
+
+=== Delete Options
+In the Map Data To Graph page, you can delete anything that you added, including data files, mapping between files and vertices/edges, mapping between data columns and vertex/edge attributes, and token functions.
+
+Choose what you want to delete, then click the delete button: image:delete_btn.png[image]
+
+Press the  kbd:[shift] key to select multiple icons you want to delete.
+
+Note that you cannot delete vertex or edge types in this page.
+
+For example, to delete a data file mapping, select the dashed green link(s) between the data file and the vertex/edge type, then click the btn:[delete] button.
+
+image::LoadDataUI_RemoveEdges.png[]
+
+If you remove a file from the server, you also need to manually remove data mapping using that file.
+Otherwise, a "file not on server" error will be triggered when loading data.
+
+=== Publish Data Mapping
+Once you are satisfied with the data loading procedure, click the btn:[save] button:
+
+image::LoadDataUI_SaveButton.png[]
+
+to publish it to the TigerGraph system.
+It takes a few seconds to publish each data file mapping.
+
+== Load Data
 
 [CAUTION]
 ====
@@ -23,49 +310,53 @@ To display real-time graph statistics, this page checks the number of vertices a
 To maximize loading performance, move to a different page after starting loading, and only come back here occasionally to check the progress.
 ====
 
-== Loading
-
 The toolbar at the top of the window has buttons to start/resume, pause, and stop loading data files respectively:
 
-image:start-loading-button.png[] image:pause-loading-button.png[] image:stop-loading-button.png[]
+image::LoadDataUI_PlayPauseStopButton.png[]
 
 By default, these actions apply to all data files if none are selected.
-
 To start, pause, resume, or stop loading individual files, select them by clicking.
-Hold kbd:[Shift] and click to select more than one file.
+
+Hold kbd:[shift] and click to select more than one file.
 
 A bar will appear over each data file to show its loading progress.
 
+File Loading: ::
++
+image::LoadDataUI_LoadingProgress.png[]
 
-image::load-data-in-progress.png[]
+File Paused and Last Modified: ::
++
+image::LoadDataUI_LastMod.png[]
 
-image::load-data-paused.png[]
+File Finished: ::
++
+image::LoadDataUI_FinishedLoading.png[]
 
+File Stopped: ::
++
 image::load-data-stopped.png[]
 
 == Statistics Panel
-
-The Statistics panel contains two tabs: Graph Statistics (1st tab) and Data Loading Statistics (2nd tab).
+The Statistics panel contains two tabs:
 
 image::Screen Shot 2019-05-16 at 6.00.53 PM.png[]
 
-=== Graph Statistics
+Graph Statistics (1st tab) and Data Loading Statistics (2nd tab).
 
+=== Graph Statistics
 If no data file is selected, the Statistics panel will show Graph Statistics by default.
 
 image::Screen Shot 2019-05-16 at 6.07.42 PM.png[]
 
-The table at the top shows the number of vertices and edges of each type and the total number of vertices and edges in the graph.
-The line chart at the bottom shows the number of vertices and edges loaded over time.
+The table at the top shows the number of vertices and edges of each type and the total number of vertices and edges in the graph. The line chart at the bottom shows the number of vertices and edges loaded over time.
 
 === Data Loading Statistics
-
 If you click on one data file, the Statistics panel will change to show Data Loading Statistics:
 
 image::loading_statistics.png[]
 
-The table at the top shows the detailed loading information of the selected data file, including:
-
+.The table at the top shows the detailed loading information of the selected data file, including:
 * Status (RUNNING, PAUSED, STOPPED, etc)
 * Loaded percentage (for files on server) or loaded size (for S3 file)
 * Loading speed
@@ -78,16 +369,15 @@ The table at the top shows the detailed loading information of the selected data
 
 The area chart in the middle shows the real-time loading speed for the selected data file in lines per second.
 
-The pie chart at the bottom shows the distribution of data lines, among three categories:
-
+.The pie chart at the bottom shows the distribution of data lines, among three categories:
 * Loaded lines
 * Missing token lines (the lines contain fewer tokens than required by the data mapping)
 * Oversize lines (some tokens are too large)
 
 [CAUTION]
 ====
-The number of loaded lines doesn't mean all these lines are successfully loaded.
+The number of loaded lines does not mean all these lines are successfully loaded.
 
-Some issues during Data Mapping (like mapping a non-numeric column to an integer attribute) or because of dirty data may cause some of these lines not to be loaded. +
+Some issues during Data Mapping (like mapping a non-numeric column to an integer attribute) or because of dirty data may cause some of these lines not to be loaded.
 ====
 
