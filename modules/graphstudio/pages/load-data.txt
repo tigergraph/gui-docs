@@ -1,0 +1,93 @@
+= Load Data
+:experimental:
+
+After mapping data files to the graph schema, you can start loading data. Click "Load Data" on the left side menu bar to go to the Load Data page.
+
+image::load-data.png[]
+
+The "Load Data" interface is separated into three parts:
+
+* Data Mapping Overview
+ ** Provides a general view of the graph and the data mapping.
+ ** Shows the loading progress of each data file.
+* Toolbar (above Data Mapping)
+ ** Start/pause/resume/stop data loading buttons.
+* Statistics
+ ** Graph statistics: displays the numbers of vertices and edges in total and per type, with real-time loading progress.
+ ** Loading statistics: displays the total number of vertices and edges loader vs. time.
+
+[CAUTION]
+====
+To display real-time graph statistics, this page checks the number of vertices and edges every 10 seconds, which adds overhead.
+
+To maximize loading performance, move to a different page after starting loading, and only come back here occasionally to check the progress.
+====
+
+== Loading
+
+The toolbar at the top of the window has buttons to start/resume, pause, and stop loading data files respectively:
+
+image:start-loading-button.png[] image:pause-loading-button.png[] image:stop-loading-button.png[]
+
+By default, these actions apply to all data files if none are selected.
+
+To start, pause, resume, or stop loading individual files, select them by clicking.
+Hold kbd:[Shift] and click to select more than one file.
+
+A bar will appear over each data file to show its loading progress.
+
+
+image::load-data-in-progress.png[]
+
+image::load-data-paused.png[]
+
+image::load-data-stopped.png[]
+
+== Statistics Panel
+
+The Statistics panel contains two tabs: Graph Statistics (1st tab) and Data Loading Statistics (2nd tab).
+
+image::Screen Shot 2019-05-16 at 6.00.53 PM.png[]
+
+=== Graph Statistics
+
+If no data file is selected, the Statistics panel will show Graph Statistics by default.
+
+image::Screen Shot 2019-05-16 at 6.07.42 PM.png[]
+
+The table at the top shows the number of vertices and edges of each type and the total number of vertices and edges in the graph.
+The line chart at the bottom shows the number of vertices and edges loaded over time.
+
+=== Data Loading Statistics
+
+If you click on one data file, the Statistics panel will change to show Data Loading Statistics:
+
+image::loading_statistics.png[]
+
+The table at the top shows the detailed loading information of the selected data file, including:
+
+* Status (RUNNING, PAUSED, STOPPED, etc)
+* Loaded percentage (for files on server) or loaded size (for S3 file)
+* Loading speed
+* Average loading speed
+* Number of loaded lines
+* Number of missing token lines
+* Number of oversize lines
+* Loading start time
+* Loading duration
+
+The area chart in the middle shows the real-time loading speed for the selected data file in lines per second.
+
+The pie chart at the bottom shows the distribution of data lines, among three categories:
+
+* Loaded lines
+* Missing token lines (the lines contain fewer tokens than required by the data mapping)
+* Oversize lines (some tokens are too large)
+
+[CAUTION]
+====
+The number of loaded lines doesn't mean all these lines are successfully loaded.
+
+Some issues during Data Mapping (like mapping a non-numeric column to an integer attribute) or because of dirty data may cause some of these lines not to be loaded. +
+====
+
