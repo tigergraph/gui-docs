@@ -12,11 +12,8 @@ GraphStudio provides the following features:
 The *Design Schema* page is where users edit their graph schema.
 Users are able to add and edit the attributes and fields of every vertex and edge they add to the schema.
 
-=== xref:map-data-to-graph.adoc[]
-The *Map Data To Graph* page is where users add data from external files and map it to the corresponding vertices or edges in the schema.
-
 === xref:load-data.adoc[]
-The *Load Data* page is where users load their data from their data source to the database as specified in the mapping stage.
+The *Load Data* page is where users load their data from their data source to the database and map it to the corresponding vertices or edges in the schema.
 
 === xref:explore-graph/README.adoc[]
 The *Explore Graph* page is where users can explore their graph data and uncover insights based on their data.
