@@ -237,7 +237,7 @@ image::Screen Shot 2019-05-16 at 2.20.53 PM.png[]
 
 A red hint appears if the target type has not yet received a mapping for its primary id(s).
 
-== Map data columns to vertex or edge attributes
+== Map Data Columns
 In this step, you link particular columns of a data file to particular ids or attributes of a vertex type or edge type.
 
 First, choose one data mapping from one data file to one vertex or edge type (represented as a dashed green link on the left working panel).
