@@ -1,0 +1,116 @@
+= ZoomChart License Expiry and Deprecation Upgrade Instructions
+
+== Overview
+TigerGraph's license to use and distribute the ZoomCharts visualization library embedded within certain versions of GraphStudio will expire *December 31, 2023*.
+New versions of the TigerGraph Suite which *does not* use ZoomCharts has been developed and was released with TigerGraph 3.9.3.
+
+== Upgrade GraphStudio
+
+*We encourage you to perform an  upgrade as soon as possible to take advantage of the latest features and improvements in TigerGraph Suite.*
+Failure to upgrade before the expiry date may result in the display of a "License Expired" label in your graph visualizations.
+
+NOTE: No other features will be affected and this upgrade will not affect production use or result in any downtime for the upgrading system.
+
+
+If you have any questions or require assistance during the upgrade process, please don't hesitate to reach out to our support team at support@tigergraph.com. We are here to help you.
+
+Please follow the steps below based on your current database version.
+
+== Database Version 3.6.2, 3.6.3, or 3.6.4
+. Login to your TigerGraph instance's backend and change the current user to "tigergraph_system_user" (e.g., `sudo su tigergraph`).
+. Download the provided package to your database server and make sure under the TigerGraph installed path (e.g., `/home/tigergraph`).
++
+[console, ]
+----
+curl -O https://tools-patch.s3.us-west-2.amazonaws.com/gst_363/gst-upgrade.tar.gz
+----
+or
++
+[console, ]
+----
+wget https://tools-patch.s3.us-west-2.amazonaws.com/gst_363/gst-upgrade.tar.gz
+----
+. Verify the hash code and integrity of your downloaded files to match the checksum: `7a0aa398182d1fe0156e49844a6a209c`
++
+[console, ]
+----
+md5sum gst-upgrade.tar.gz
+----
+. Unzip the package to reveal the upgrade script.
++
+[console, ]
+----
+tar -xvf gst-upgrade.tar.gz
+----
+. Run the upgrade script using the following command
++
+[console, ]
+----
+bash upgrade.sh
+----
+
+
+== Database Version 3.9.0, 3.9.1, or 3.9.2
+. Login to your TigerGraph instance's backend and change the current user to "tigergraph_system_user" (e.g., `sudo su tigergraph`).
+. Download the provided package to your database server and make sure it is under the TigerGraph installed path (e.g., `/home/tigergraph`).
++
+[console, ]
+----
+curl -O https://app-tools-information.s3.us-west-2.amazonaws.com/3.9.x/tools-all-signed-1.0.3806.0.tar.gz
+----
+or
++
+[console, ]
+----
+wget https://app-tools-information.s3.us-west-2.amazonaws.com/3.9.x/tools-all-signed-1.0.3806.0.tar.gz
+----
+. Verify the hash code and integrity of your downloaded files to match the checksum: `b68cc810562921d20621c4af96fe2615`
++
+[console, ]
+----
+md5sum tools-all-signed-1.0.3806.0.tar.gz
+----
+. Unzip the package to reveal the upgrade script.
++
+[console, ]
+----
+tar -xvf tools-all-signed-1.0.3806.0.tar.gz
+----
+. Run the upgrade script using the following command:
++
+[console, ]
+----
+bash upgrade.sh
+----
+
+
+== Database Version 3.9.3
+. Download the provided package to your local system.
++
+[console, ]
+----
+curl -O https://app-tools-information.s3.us-west-2.amazonaws.com/3.9.x/tools-all-signed-1.0.3806.0.tar.gz
+----
+or
++
+[console, ]
+----
+wget https://app-tools-information.s3.us-west-2.amazonaws.com/3.9.x/tools-all-signed-1.0.3806.0.tar.gz
+----
+. Verify the hash code and integrity of your downloaded files to match the checksum: `b68cc810562921d20621c4af96fe2615`
++
+[console, ]
+----
+md5sum tools-all-signed-1.0.3806.0.tar.gz
+----
+. Login to the Admin Portal and access the "Upgrade TigerGraph Suite" page.
+. Upload the TOOLS package using the manual upgrade button.
++
+image:zoomchartManualUpgrade.png[]
++
+The tools package will upgrade successfully once the process is finished.
+
+
+
+
+

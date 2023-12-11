@@ -6,6 +6,8 @@ Additional Patents pending.
 
 This TigerGraph software program uses some third-party software components that are licensed under their own terms.
 
+WARNING: TigerGraph’s license to use and distribute the ZoomCharts visualization library embedded within certain versions of GraphStudio will expire December 31, 2023. Please see xref:gui:graphstudio:zoomChart-licenseExpiry-Upgrade.adoc[] for more details.
+
 This list of software components uses abbreviations to refer to common licenses, e.g., "MIT". A dictionary for these abbreviations is provided at the end of this document.+++<table>++++++<thead>++++++<tr>++++++<th style="text-align:left">+++Third Party Component+++</th>+++
       +++<th style="text-align:left">+++License+++</th>++++++</tr>++++++</thead>+++
   +++<tbody>++++++<tr>++++++<td style="text-align:left">+++Zoomcharts
