@@ -2,7 +2,7 @@
 
 TigerGraph GraphStudio™ is an intuitive, browser-based interface for graph-based application development tasks.
 
-WARNING: TigerGraph’s license to use and distribute the ZoomCharts visualization library embedded within certain versions of GraphStudio will expire December 31, 2023. Please see xref:gui:graphstudio:zoomChart-licenseExpiry-Upgrade.adoc[] for more details.
+WARNING: TigerGraph’s license to use and distribute the ZoomCharts visualization library embedded within certain versions of GraphStudio expires on December 31, 2023. Please see xref:gui:graphstudio:graphstudio-zoomchart-update.adoc[] for more details.
 
 == Feature Overview
 
