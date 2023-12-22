@@ -1,0 +1,112 @@
+= GraphStudio Update Instructions for ZoomCharts Expiration Issue
+
+== Overview
+To simplify third party software licensing for TigerGraph Inc. and its users for the long term, TigerGraph will no longer be licensing the ZoomCharts visualization library after December 31, 2023.
+This is purely a licensing issue and is not related to the functionality or performance of ZoomCharts.
+
+* New versions of the TigerGraph Suite which do use ZoomCharts has been developed for the 3.6 and 3.9 versions of TigerGraph.
+
+* TigerGraph 3.9.3 already uses the new version.
+
+* TigerGraph Cloud instances have been updated or will update before the end of 2023.
+
+*We encourage you to perform an update as soon as possible to take advantage of the latest features and improvements in TigerGraph Suite.*
+Failure to update before the expiration date may result in the display of a "License Expired" label in your graph visualizations.
+
+NOTE: No other features will be affected and this upgrade will not affect production use or result in any downtime for the upgrading system.
+
+If you have any questions or require assistance during the upgrade process, please don't hesitate to reach out to our support team at support@tigergraph.com. We are here to help you.
+
+== Update Instructions
+
+Please follow the steps below based on your current database version.
+
+== Database Version 3.6.2, 3.6.3, or 3.6.4
+. Login to your TigerGraph instance's backend server and change the current user to "tigergraph_system_user" (e.g., `sudo su tigergraph`).
+. Download the following package to your database server to the root folder of the TigerGraph installation (e.g., `/home/tigergraph`).
++
+[console, ]
+----
+curl -O https://tools-patch.s3.us-west-2.amazonaws.com/gst_363/gst-upgrade.tar.gz
+----
+or
++
+[console, ]
+----
+wget https://tools-patch.s3.us-west-2.amazonaws.com/gst_363/gst-upgrade.tar.gz
+----
+. Verify that the MD5 checksum of your downloaded package matches the following hash code: `7a0aa398182d1fe0156e49844a6a209c`
++
+[console, ]
+----
+md5sum gst-upgrade.tar.gz
+----
+. From the `tigergraph` installation directory, unzip the package to reveal the upgrade script.
++
+[console, ]
+----
+tar -xvf gst-upgrade.tar.gz
+----
+. Run the upgrade script using the following command
++
+[console, ]
+----
+bash upgrade.sh
+----
++
+.Result
+[console, ]
+----
+The file tools-all.tar.gz exists in the current path.
+The current user is tigergraph, start upgrade the tools ...
+
+### Connecting to local server 127.0.0.1 ...
+
+### Connecting to local server 127.0.0.1 ...
+the tools already update successful, but you should clear the backup files manually after confirmed the result ...
+----
+
+== Database Version 3.9.0, 3.9.1, or 3.9.2
+. Login to your TigerGraph instance's backend server and change the current user to "tigergraph_system_user" (e.g., `sudo su tigergraph`).
+. Download the following package to your database server to the root folder of the TigerGraph installation (e.g., `/home/tigergraph`).
++
+[console, ]
+----
+curl -O https://app-tools-information.s3.us-west-2.amazonaws.com/3.9.x/tools-all-signed-1.0.3806.0.tar.gz
+----
+or
++
+[console, ]
+----
+wget https://app-tools-information.s3.us-west-2.amazonaws.com/3.9.x/tools-all-signed-1.0.3806.0.tar.gz
+----
+. Verify that the MD5 checksum of your downloaded package matches the following hash code: `b68cc810562921d20621c4af96fe2615`
++
+[console, ]
+----
+md5sum tools-all-signed-1.0.3806.0.tar.gz
+----
+. From the `tigergraph` installation directory, unzip the package to reveal the upgrade script.
++
+[console, ]
+----
+tar -xvf tools-all-signed-1.0.3806.0.tar.gz
+----
+. Run the upgrade script using the following command:
++
+[console, ]
+----
+bash upgrade.sh
+----
++
+.Result
+[console, ]
+----
+The file tools-all.tar.gz exists in the current path.
+The current user is tigergraph, start upgrade the tools ...
+
+### Connecting to local server 127.0.0.1 ...
+
+### Connecting to local server 127.0.0.1 ...
+the tools already update successful, but you should clear the backup files manually after confirmed the result ...
+----

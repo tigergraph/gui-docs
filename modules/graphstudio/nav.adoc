@@ -21,6 +21,7 @@
 ** xref:export-and-import-solution.adoc[]
 ** xref:keyboard-shortcuts.adoc[]
 ** xref:known-issues.adoc[]
+** xref:graphstudio-zoomchart-update.adoc[ZoomChart Update]
 ** xref:patent-and-third-party-notice.adoc[]
 ** xref:license.adoc[]
 
