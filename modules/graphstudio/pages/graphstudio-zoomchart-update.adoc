@@ -41,7 +41,7 @@ wget https://tools-patch.s3.us-west-2.amazonaws.com/gst_363/gst-upgrade.tar.gz
 ----
 md5sum gst-upgrade.tar.gz
 ----
-. From the root folder, unzip the package to reveal the upgrade script.
+. From the `tigergraph` installation directory, unzip the package to reveal the upgrade script.
 +
 [console, ]
 ----
@@ -86,7 +86,7 @@ wget https://app-tools-information.s3.us-west-2.amazonaws.com/3.9.x/tools-all-si
 ----
 md5sum tools-all-signed-1.0.3806.0.tar.gz
 ----
-. From the root folder, unzip the package to reveal the upgrade script.
+. From the `tigergraph` installation directory, unzip the package to reveal the upgrade script.
 +
 [console, ]
 ----
