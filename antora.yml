@@ -5,5 +5,6 @@ display_version: "3.9 LTS"
 start_page: intro:index.adoc
 
 nav:
+- modules/intro/nav.adoc
 - modules/graphstudio/nav.adoc
 - modules/admin-portal/nav.adoc
