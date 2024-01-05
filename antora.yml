@@ -2,7 +2,7 @@ name: gui
 title: GraphStudio and Admin Portal
 version: 3.9
 display_version: "3.9 LTS"
-start_page: graphstudio:overview.adoc
+start_page: intro:index.adoc
 
 nav:
 - modules/graphstudio/nav.adoc

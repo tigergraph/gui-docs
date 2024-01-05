@@ -1,0 +1,19 @@
+= Admin Portal and GraphStudio
+
+[.home-card,cols="2",grid=none,frame=none]
+|===
+a|
+*Admin Portal*
+
+~Descrrption~
+
+xref:gui:admin-portal:overview.adoc[Admin Portal]
+
+a|
+*GraphStudio*
+
+~Descrrption~
+
+xref:gui:graphstudio:overview.adoc[GraphStudio]
+
+|===
