@@ -1,18 +1,20 @@
 = Admin Portal and GraphStudio
+:description: An overview directory of admin portal and graphStudio.
+:experimental:
 
 [.home-card,cols="2",grid=none,frame=none]
 |===
 a|
 *Admin Portal*
 
-~Descrrption~
+The TigerGraph Admin Portal is a browser-based DevOps tool that provides users an overview of a running TigerGraph system from an application and infrastructure point of view.
 
 xref:gui:admin-portal:overview.adoc[Admin Portal]
 
 a|
 *GraphStudio*
 
-~Descrrption~
+TigerGraph GraphStudio™ is an intuitive, browser-based interface for graph-based application development tasks.
 
 xref:gui:graphstudio:overview.adoc[GraphStudio]
 
