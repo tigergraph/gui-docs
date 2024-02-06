@@ -8,10 +8,10 @@
 image:guiDownload-homecard.png[alt=admin,width=74,height=74]
 *Admin Portal*
 
-The TigerGraph xref:gui:admin-portal:overview.adoc[Admin Portal] is a browser-based DevOps tool that provides users an overview of a running TigerGraph system from an application and infrastructure point of view.
+xref:gui:admin-portal:overview.adoc[Admin Portal] is a browser-based DevOps tool that provides users an overview of a running TigerGraph system from an application and infrastructure point of view.
 ¦
 image:graphstudio-homecard.png[alt=graphstudio,width=74,height=74]
 *GraphStudio*
 
-TigerGraph xref:gui:graphstudio:overview.adoc[Graph Studio] is an intuitive, browser-based interface for graph-based application development tasks.
+xref:gui:graphstudio:overview.adoc[Graph Studio] is an intuitive, browser-based interface for graph-based application development tasks.
 |===
