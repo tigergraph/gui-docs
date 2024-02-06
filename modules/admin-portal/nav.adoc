@@ -21,3 +21,4 @@
 *** xref:security/mfa.adoc[]
 ** xref:gsql-output-file.adoc[Query Output File Download]
 ** xref:known-issues.adoc[]
+* xref:gui:intro:legacy-tg-versions.adoc[]
