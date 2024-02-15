@@ -13,5 +13,5 @@ xref:gui:admin-portal:overview.adoc[Admin Portal] is a browser-based DevOps tool
 image:graphstudio-homecard.png[alt=graphstudio,width=74,height=74]
 *GraphStudio*
 
-xref:gui:graphstudio:overview.adoc[Graph Studio] is an intuitive, browser-based interface for graph-based application development tasks.
+xref:gui:graphstudio:overview.adoc[GraphStudio] is an intuitive, browser-based interface for graph-based application development tasks.
 |===
