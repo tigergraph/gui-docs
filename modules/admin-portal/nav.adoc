@@ -14,6 +14,7 @@
 **** xref:components/kafka.adoc[]
 **** xref:components/nginx.adoc[]
 **** xref:components/restpp.adoc[]
+**** xref:gui:admin-portal:components/cdc.adoc[]
 ** Security
 *** xref:security/ldap.adoc[]
 *** xref:security/sso.adoc[]

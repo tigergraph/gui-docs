@@ -8,3 +8,4 @@ In the Components section, you can change the configurations for certain compone
 * xref:components/kafka.adoc[Kafka] (New in v3.9.2)
 * xref:components/nginx.adoc[NGINX]
 * xref:components/restpp.adoc[RESTPP]
+* xref:gui:admin-portal:components/cdc.adoc[]
