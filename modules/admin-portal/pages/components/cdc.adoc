@@ -1,3 +1,10 @@
 = Change Data Capture (CDC)
 
+CDC equips TigerGraph users with the capability to automatically capture and stream data changes to external Kafka systems maintained by the user.
+For more details see xref:tigergraph-server:system-management:change-data-capture/cdc-overview.adoc[].
+
+To access the CDC component management page, navigate to menu:Admin Portal[Management > Components > CDC].
+
+The CDC page in the Admin Portal allows you to change the value of certain CDC configuration parameters.
+
 image:CDCinAdminPortal.png[]
