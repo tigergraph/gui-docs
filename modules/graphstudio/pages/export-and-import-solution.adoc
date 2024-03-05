@@ -17,11 +17,20 @@ Click btn:[Export Current Solution] to start to export the whole solution as a t
 
 image::export-solution.png[]
 
-Select the desired content to export in the pop-up dialog box. By default, it will export the schema, the loading jobs, and the queries. You can also choose to only export specific graphs and decide whether to include the graph data. Please note that exporting graph data may take more time. The exported file also includes metadata that describes the layout of your schema design as well as user-created icons to preserve the design of your GraphStudio solution.
+Select the desired content to export in the pop-up dialog box.
+By default, it will export the schema, the loading jobs, and the queries.
+You can also choose to only export specific graphs and decide whether to include the graph data.
+
+[NOTE]
+====
+Exporting graph data may take more time.
+====
+
+The exported file also includes metadata that describes the layout of your schema design as well as user-created icons to preserve the design of your GraphStudio solution.
 
 image::export-options.png[]
 
-The tar file includes two folders: *graph/* and *gui/*. The *graph/* folder includes an `ExportedGraph.zip` file that contains, but is not limited to, the following files:
+The tar file includes two folders: `*graph/*` and `*gui/*`. The `*graph/*` folder includes an `ExportedGraph.zip` file that contains, but is not limited to, the following files:
 
 * `DBImportExport_<graphName>.gsql` command file for each graph called <graphName> in a MultiGraph system.
 The command file creates the exported graph, including its local vertex, edge, and tuple types, along with its loading jobs, data source file objects and queries.
