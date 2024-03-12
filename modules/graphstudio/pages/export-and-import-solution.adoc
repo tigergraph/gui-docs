@@ -23,7 +23,8 @@ You can also choose to only export specific graphs and decide whether to include
 
 [NOTE]
 ====
-Exporting graph data may take more time.
+* Exporting graph data may take more time.
+* In a cluster environment, the process of exporting data from GraphStudio involves the replication of all data onto a single node. However, if the volume of data is substantial, this process may encounter failures. We recommend utilizing this functionality only for smaller data sizes (less than 10GB).
 ====
 
 The exported file also includes metadata that describes the layout of your schema design as well as user-created icons to preserve the design of your GraphStudio solution.
