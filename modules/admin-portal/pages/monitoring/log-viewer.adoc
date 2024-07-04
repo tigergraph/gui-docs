@@ -2,6 +2,11 @@
 
 The Logs page contains a search panel, a file directory panel, and a content panel. The content panel either displays log content or search results.
 
+[NOTE]
+====
+The `superuser` role is required to access logs.
+====
+
 image::logs-monitoring-page.png[]
 
 [WARNING]
