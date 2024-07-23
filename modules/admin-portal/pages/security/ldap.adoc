@@ -1,7 +1,7 @@
 = LDAP
 :experimental:
 
-The LDAP page does not appear on the Admin Portal for TigerGraph Cloud solutions because of the unified xref:master@cloud:security:manage-db-users.adoc[User Authentication] system present in TigerGraph Cloud.
+The LDAP page does not appear on the Admin Portal for TigerGraph Cloud solutions because of the unified xref:cloud:security:manage-db-users.adoc[User Authentication] system present in TigerGraph Cloud.
 
 == LDAP Page
 
