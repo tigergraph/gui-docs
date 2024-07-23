@@ -2,7 +2,7 @@
 :description: Admin portal SSO page.
 :experimental:
 
-The settings on this page are related to set up Single Sign-on (SSO) on TigerGraph. This page does not appear on the Admin Portal for TigerGraph Cloud solutions because of the unified xref:master@cloud:security:manage-database-users.adoc[User Authentication] system present in TigerGraph Cloud.
+The settings on this page are related to set up Single Sign-on (SSO) on TigerGraph. This page does not appear on the Admin Portal for TigerGraph Cloud solutions because of the unified xref:cloud:security:manage-database-users.adoc[User Authentication] system present in TigerGraph Cloud.
 
 
 image::sso-page.png[]
