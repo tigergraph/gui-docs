@@ -15,6 +15,6 @@ The following types of management are available only on the self-managed (on-pre
 * xref:security/sso.adoc[Security Management]: Configure SSO and LDAP.
 
 For TigerGraph Cloud, these security settings are managed at the
-xref:master@cloud:security:index.adoc[Cloud organization level] rather than at the cluster level.
+xref:cloud:security:index.adoc[Cloud organization level] rather than at the cluster level.
 
 
