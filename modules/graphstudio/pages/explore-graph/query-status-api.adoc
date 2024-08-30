@@ -91,7 +91,7 @@ Parameters:
 |===
 | Name | Required | Description
 
-| `request_id`
+| `requestid`
 | Yes
 | The ID of the query from the response of restpp endpoint request to run link:https://docs.tigergraph.com/gsql-ref/current/querying/query-operations#_detached_mode_async_option[Detatched Qeury]
 
