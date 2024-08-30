@@ -105,10 +105,7 @@ Response:
 <1> The query ID associated with the given query status JSON
 object.
 <2> The timestamp for the start time of the given query.
-<3> The timestamp for when the given query times out. The
-default timeout limit is 16 seconds and can be set using
-the xref:index.adoc#_gsql_query_timeout[`GSQL-TIMEOUT`]
-header.
+<3> The timestamp for when the given query times out.
 <4> URL of the given query.
 <5> Elapsed real time of the given query measured in
 milliseconds. For completed queries, the value shows the total runtime
