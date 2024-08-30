@@ -130,6 +130,10 @@ image::ldbc_snb-local-permissions.png[]
 Parent privileges override child privileges, so setting privileges for the graph automatically sets privileges for all vertex and edge types.
 Setting privileges for a vertex or edge type automatically sets privileges for all attributes.
 
+In addition, you can grant `CREATE_QUERY` permission to create queries, and you can also assign different capabilities such as `OWNER`, `UPDATE_QUERY`, `DROP_QUERY`, `INSTALL_QUERY`, and `EXECUTE_QUERY` for different types of queries.
+
+image::user-query-permissions.png[]
+
 The results can be filtered with the btn:[Add a filter] button, which is useful for large and complex graphs.
 Enter text into this field to only return vertices and attributes that match the filter.
 
