@@ -1,7 +1,7 @@
 name: gui
 title: GraphStudio and Admin Portal
-version: 3.11.0
-display_version: "3.11.0 Preview"
+version: 3.11
+display_version: "3.11 Preview"
 start_page: intro:index.adoc
 
 nav:
