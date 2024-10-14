@@ -11,6 +11,7 @@
 *** xref:explore-graph/find-paths-between-vertices.adoc[]
 *** xref:explore-graph/run-gsql-queries.adoc[]
 *** xref:explore-graph/augment-visualization-result.adoc[]
+*** xref:explore-graph/query-status-api.adoc[]
 ** Build Graph Patterns (Deprecated)
 *** xref:build-graph-patterns/visual-query-builder-overview.adoc[]
 *** xref:build-graph-patterns/visual-pattern-examples.adoc[]

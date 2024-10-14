@@ -1,0 +1,119 @@
+= Query Status Api
+:experimental:
+
+After you run queries in link:https://docs.tigergraph.com/gsql-ref/current/querying/query-operations#_detached_mode_async_option[Detached Mode] via RESTPP endpoint call with the GSQL-ASYNC header set to true, 
+you can use the query status api to get status and result of the related 
+request_id(just the same with what you can get from the link:https://docs.tigergraph.com/tigergraph-server/current/api/built-in-endpoints#_check_query_status_detached_mode[Query Status Api] of restpp) along with GPE logs accordingly.
+
+====
+GET /api/queries/<graphName>/query_status?requestid=<requestid>
+====
+
+This endpoint need authentication of gui, so you can use it in brower after you login Graph Studio(brower will take the cookie as identity automatically).
+
+==== Sample request:
+
+[tabs]
+====
+Request::
++
+--
+[source,bash]
+----
+curl -X GET "http://localhost:14240/api/queries/MyGraph/query_status?requestid=17.RESTPP_1_1.1719383758395.N"
+----
+--
+Response::
++
+--
+[source,javascript]
+----
+{
+  "error": false,
+  "message": "",
+  "results": [
+    {
+      "requestid": "17.RESTPP_1_1.1719383758395.N", <1>
+      "startTime": "2024-06-26 06:35:58.395", <2>
+      "expirationTime": "2024-06-26 06:36:14.395", <3>
+      "url": "/query/MyGraph/all_connection", <4>
+      "elapsedTime": 7, <5>
+      "status": "success", <6>
+      "results": [
+        {
+          "@@edgeList": [
+            {
+              "attributes": {},
+              "directed": true,
+              "e_type": "INFECTED_BY",
+              "from_id": "4100000006",
+              "from_type": "Patient",
+              "to_id": "4100000007",
+              "to_type": "Patient"
+            },
+            {
+              "attributes": {},
+              "directed": true,
+              "e_type": "reverse_INFECTED_BY",
+              "from_id": "4100000006",
+              "from_type": "Patient",
+              "to_id": "4100000041",
+              "to_type": "Patient"
+            }
+          ]
+        }
+      ],
+      "processLogs": {
+        "m1": [
+          {
+            "line": "I0626 06:35:58.396185 14134 servicebase.hpp:205] Request|MyGraph::default,17.RESTPP_1_1.1719383758395.N,YNN,16,0,0,0,S,|Received", <7>
+            "path": "/home/tigergraph/tigergraph/log/gpe/INFO.20240626-023538.12880", <8>
+            "offset": 2539791, <9>
+            "lineNumber": 17086 <10>
+          },
+          {
+            "line": "I0626 06:35:58.396270 13600 engineservicerequest.hpp:321] Request|MyGraph::default,17.RESTPP_1_1.1719383758395.N,YNN,16,0,0,0,S,|HoldQueryState to block rebuild initialization.",
+            "path": "/home/tigergraph/tigergraph/log/gpe/INFO.20240626-023538.12880",
+            "offset": 2539929,
+            "lineNumber": 17087
+          }
+        ]
+      }
+    }
+  ]
+}
+----
+--
+====
+
+Parameters:
+
+|===
+| Name | Required | Description
+
+| `requestid`
+| Yes
+| The ID of the query from the response of restpp endpoint request to run link:https://docs.tigergraph.com/gsql-ref/current/querying/query-operations#_detached_mode_async_option[Detatched Qeury]
+
+| `graphName`
+| Yes
+| The graphName related to the query.
+|===
+
+Response: 
+
+<1> The query ID associated with the given query status JSON
+object.
+<2> The timestamp for the start time of the given query.
+<3> The timestamp for when the given query times out.
+<4> URL of the given query.
+<5> Elapsed real time of the given query measured in
+milliseconds. For completed queries, the value shows the total runtime
+of the request. For ongoing queries, it shows the amount of time taken
+so far.
+<6> The status of the given query. Possible values are
+`“success”`, `“timeout”`, `“aborted”`, or `“running”`.
+<7> The log content related to the query.
+<8> The log file path of the log content.
+<9> The offset in bytes of the log content in the log file.
+<10> The line number of the log content in the log file. 
