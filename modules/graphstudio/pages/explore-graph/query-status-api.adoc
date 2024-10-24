@@ -1,17 +1,17 @@
-= Query Status Api
+= Query Status API
 :experimental:
 
-After you run queries in link:https://docs.tigergraph.com/gsql-ref/current/querying/query-operations#_detached_mode_async_option[Detached Mode] via RESTPP endpoint call with the GSQL-ASYNC header set to true, 
-you can use the query status api to get status and result of the related 
-request_id(just the same with what you can get from the link:https://docs.tigergraph.com/tigergraph-server/current/api/built-in-endpoints#_check_query_status_detached_mode[Query Status Api] of restpp) along with GPE logs accordingly.
+After you run queries in link:https://docs.tigergraph.com/gsql-ref/current/querying/query-operations#_detached_mode_async_option[Detached Mode] via the RESTPP endpoint with the GSQL-ASYNC header set to true, you can use the Query Status API to obtain the status and results of the related request_id. This is similar to what you can retrieve from the RESTPP link:https://docs.tigergraph.com/tigergraph-server/current/api/built-in-endpoints#_check_query_status_detached_mode[Query Status API] , along with the GPE logs.
 
 ====
 GET /api/queries/<graphName>/query_status?requestid=<requestid>
 ====
 
-This endpoint need authentication of gui, so you can use it in brower after you login Graph Studio(brower will take the cookie as identity automatically).
+== Authentication
 
-==== Sample request:
+This endpoint requires GUI authentication. You can use it in a browser after logging into Graph Studio, as the browser will automatically handle the cookie for identity verification.
+
+== Sample Request:
 
 [tabs]
 ====
@@ -26,7 +26,7 @@ curl -X GET "http://localhost:14240/api/queries/MyGraph/query_status?requestid=1
 Response::
 +
 --
-[source,javascript]
+[source,json]
 ----
 {
   "error": false,
@@ -86,34 +86,25 @@ Response::
 --
 ====
 
-Parameters:
 
+== Parameters
 |===
-| Name | Required | Description
-
-| `requestid`
-| Yes
-| The ID of the query from the response of restpp endpoint request to run link:https://docs.tigergraph.com/gsql-ref/current/querying/query-operations#_detached_mode_async_option[Detatched Qeury]
-
-| `graphName`
-| Yes
-| The graphName related to the query.
+| Name       | Required | Description                                                                 
+| requestid  | Yes      | The ID of the query from the response of the RESTPP endpoint request to run the Detached Query 
+| graphName  | Yes      | The name of the graph related to the query                                   
 |===
-
-Response: 
-
-<1> The query ID associated with the given query status JSON
-object.
-<2> The timestamp for the start time of the given query.
-<3> The timestamp for when the given query times out.
-<4> URL of the given query.
-<5> Elapsed real time of the given query measured in
-milliseconds. For completed queries, the value shows the total runtime
-of the request. For ongoing queries, it shows the amount of time taken
-so far.
-<6> The status of the given query. Possible values are
-`“success”`, `“timeout”`, `“aborted”`, or `“running”`.
-<7> The log content related to the query.
-<8> The log file path of the log content.
-<9> The offset in bytes of the log content in the log file.
-<10> The line number of the log content in the log file. 
+== Response Fields
+|===
+| Field         | Description                                                                                                      
+| requestid     | The query ID associated with the given query status JSON object.                                                 
+| startTime     | The timestamp for the start time of the given query.                                                             
+| expirationTime| The timestamp for when the given query times out.                                                                
+| url           | The URL of the given query.                                                                                      
+| elapsedTime   | The elapsed real time of the given query measured in milliseconds. For completed queries, the value shows the total runtime of the request. For ongoing queries, it shows the amount of time taken so far. 
+| status        | The status of the given query. Possible values are “success”, “timeout”, “aborted”, or “running”.                
+| results       | The results of the query, including any relevant data such as edge lists.                                       
+| processLogs   | The log content related to the query.                                                                            
+| path          | The log file path of the log content.                                                                            
+| offset        | The offset in bytes of the log content in the log file.                                                          
+| lineNumber    | The line number of the log content in the log file.                                                              
+|===
