@@ -1,6 +1,10 @@
 = Management
+:experimental:
 
 The Management section of Admin Portal differs slightly for TigerGraph Cloud vs. TigerGraph self-managed.
+
+image:admin-portal-onprem.png[width=200]
+
 
 The following types of management are available on both platforms:
 
@@ -14,7 +18,30 @@ The following types of management are available only on the self-managed (on-pre
 
 * xref:security/sso.adoc[Security Management]: Configure SSO and LDAP.
 
+* xref:#_upgrading_the_tools_suite[]
+
 For TigerGraph Cloud, these security settings are managed at the
 xref:cloud:security:index.adoc[Cloud organization level] rather than at the cluster level.
+
+== Upgrading the Tools Suite
+
+The self-managed version of the Admin Portal makes it easy to upgrade the any or all parts of the Tools Suite (GraphStudio, Admin Portal, Insights, and others).
+
+Select btn:[Management > Upgrade TigerGraph Suite].
+From there, you have the option of btn:[Manual Upgrade] or btn:[Online Check for Upgrade].
+
+*Manual Upgrade* means you have downloaded a tools package from TigerGraph's download portal link:https://dl.tigergraph.com[].
+
+*Online Check for Upgrade* will automatically search for the newest version of TigeGraph Tools that is compatible with your database version.
+
+image:newer-tools-found.png[]
+
+The user interface will guide you through the steps. Once the tool package has been unzipped and is ready, it will take 1 to 2 minutes to perform the upgrade.
+
+[NOTE]
+====
+All users should exit the tools before performing the upgrade.
+====
+
 
 
