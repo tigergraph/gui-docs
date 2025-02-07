@@ -58,7 +58,7 @@ image::edge-table-ex.png[]
 
 [NOTE]
 ==== 
-If a user does not have the **APP_ACCESS_DATA** privileges, **Export PNG** and **Export CSV** buttons will be disabled.
+If a user does not have the **APP_ACCESS_DATA** privilege, **Export PNG** and **Export CSV** buttons will be disabled.
 ====
 
 === Locate vertex
