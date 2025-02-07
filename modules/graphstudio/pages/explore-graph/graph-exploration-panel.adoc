@@ -56,6 +56,13 @@ Below is an example:
 
 image::edge-table-ex.png[]
 
+
+[NOTE]
+==== 
+If a user does not have the **APP_ACCESS_DATA** privilege, **Export PNG** and **Export CSV** buttons will be disabled.
+====
+ 
+
 === Locate vertex
 
 The Locate Vertex In Result feature image:locate_vertex_btn.png[] searches for and then zooms in on vertices that match the given value for ID and/or attribute.
