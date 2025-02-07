@@ -56,6 +56,11 @@ Below is an example:
 
 image::edge-table-ex.png[]
 
+[NOTE]
+==== 
+If a user does not have the **APP_ACCESS_DATA** privileges, **Export PNG** and **Export CSV** buttons will be disabled.
+====
+
 === Locate vertex
 
 The Locate Vertex In Result feature image:locate_vertex_btn.png[] searches for and then zooms in on vertices that match the given value for ID and/or attribute.
@@ -139,6 +144,7 @@ image::explore-view-menu.png[Explorer View Menu]
 In edit mode, click the Add New Vertex button image:add_vertex_type.png[] to add a new vertex to the graph database. The Add New Vertex window will pop up. Choose a vertex type and then fill in values for the ID and the attributes. Click ADD and the vertex will be inserted into the TigerGraph database. It will also be shown in the Graph Exploration Panel.
 
 image::add_new_vertex.png[]
+
 
 [NOTE]
 ====
