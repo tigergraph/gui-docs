@@ -41,7 +41,11 @@ First, use the xref:security/sso.adoc[SSO documentation] to set up SSO in Admin 
 Next, follow these steps:
 
 . Enter the Identity Provider's Entity ID and Identity Provider SSO URL you copied in Step 9 of the previous section.
-. At the bottom of the screen, for the *Authentication Context* section, use `urn:oasis:names:tc:SAML:2.0:ac:classes:Password`
+. At the bottom of the screen, for the *Authentication Context* section, if SSO should always be authenticated by password, use `urn:oasis:names:tc:SAML:2.0:ac:classes:Password`
++
+If all authentication methods are allowed, then leave this empty.
++
+For more options, see the OASIS standard link:https://docs.oasis-open.org/security/saml/v2.0/saml-authn-context-2.0-os.pdf[Authentication Context for SAML V2.0], Section 3.4: Schemas.
 
 Before Azure and TigerGraph can successfully communicate, the Azure AD groups need to be correctly mapped to TigerGraph proxy groups with the appropriate roles.
 The TigerGraph proxy group is created with the `key=value` proxy rule. The key and value should match the SSO user claims in the SAML response.
