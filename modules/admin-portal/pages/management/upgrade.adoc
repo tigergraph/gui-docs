@@ -1,0 +1,52 @@
+= Upgrade TigerGraph Suite
+:experimental:
+
+AdminPortal provides a convenient way to upgrade your entire TigerGraph Suite, including GraphStudio, Insights, AdminPortal, GSQL Shell, and GraphQL, without the need to re-install TigerGraph. You can choose between a manual upgrade or an online check for upgrade. This guide will walk you through both options.
+
+[NOTE]
+====
+This feature only aviailable for non-TigerGraph Cloud deployments.
+====
+
+== Manual Upgrade
+
+The manual upgrade option allows you to perform a manual installation by uploading a downloaded TigerGraph Suite package.
+
+=== Steps for Manual Upgrade:
+
+1. **Download the TigerGraph Suite Package:**
+   - Visit https://dl.tigergraph.com[TigerGraph Download Page], select the `Tools` tab and download the latest TigerGraph Suite package.
++
+[NOTE]
+====
+Make sure to download the correct package for your TigerGraph Server version.
+====
+
+2. **Initiate Manual Upgrade:**
+   - In the AdminPortal, navigate to the upgrade page.
+   - Click the btn:[Manual Upgrade] button.
+   - An input file dialog will appear. Select the downloaded tools package from your local machine.
+
+3. **Upload and Install:**
+   - The system will upload the package and start the upgrade process.
+   - Follow the on-screen instructions to complete the installation.
+
+== Online Upgrade
+
+The online check for upgrade option allows you to automatically check if there is a newer TigerGraph Suite version available and upgrade to it.
+
+[NOTE]
+====
+Active internet connection is required for online upgrade.
+====
+
+=== Steps for Online Upgrade:
+
+1. **Initiate Online Check:**
+   - In the AdminPortal, navigate to the upgrade page.
+   - Click the btn:[Online Check for Upgrade] button.
+
+2. **Automatic Check and Upgrade:**
+   - The system will automatically check for the latest TigerGraph Suite version.
+   - If a newer version is available, the system will download and install the upgrade.
+   - Follow the on-screen instructions to complete the upgrade process.

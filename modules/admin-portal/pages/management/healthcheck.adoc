@@ -1,0 +1,43 @@
+= Health Check
+:experimental:
+
+The Health Check tool in TigerGraph AdminPortal is designed to help you monitor and maintain the health of your TigerGraph database. By running health checks regularly, you can ensure optimal performance and stability for your database. This tool not only identifies potential issues but also provides recommendations for resolving them.
+
+[CAUTION]
+====
+The Health Check tool is in preview mode and is not yet fully supported. Please use it with caution and report any issues to TigerGraph Support.
+====
+
+== Running a Health Check
+
+=== Step 1: Access the Health Check Tool
+
+1. Navigate to the `Health Check` page from the AdminPortal navigation menu.
+
+2. Click the `Health-Check` button and select relevant categories to start the health check process.
+
++
+[NOTE]
+====
+Some categories only apply to specific versions of TigerGraph. If a category is not applicable to your version, it will be disabled.
+====
+
+3. View Health Check Results:
+   - Once the health check is complete, the results will be displayed.
+   - The tool will provide a detailed report of the health status of your TigerGraph database.
+
+4. Follow Recommendations:
+   - Review the recommendations provided by the tool for resolving any issues found.
+   - Implement the suggested actions to maintain or improve the health of your database.
+
+
+== Benefits of Regular Health Checks
+
+- **Performance Optimization:**
+  Regular health checks help identify performance bottlenecks and provide insights for optimization.
+
+- **Stability Assurance:**
+  By addressing potential issues proactively, you ensure the stability and reliability of your TigerGraph database.
+
+- **Preventive Maintenance:**
+  Health checks act as preventive maintenance, helping you avoid unexpected downtimes and data issues.

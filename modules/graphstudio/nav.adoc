@@ -11,9 +11,6 @@
 *** xref:explore-graph/find-paths-between-vertices.adoc[]
 *** xref:explore-graph/run-gsql-queries.adoc[]
 *** xref:explore-graph/augment-visualization-result.adoc[]
-** Build Graph Patterns (Deprecated)
-*** xref:build-graph-patterns/visual-query-builder-overview.adoc[]
-*** xref:build-graph-patterns/visual-pattern-examples.adoc[]
 ** xref:write-queries.adoc[]
 ** xref:write-open-cypher-queries-in-tigergraph.adoc[]
 ** xref:actions.adoc[]

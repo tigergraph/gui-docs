@@ -199,6 +199,11 @@ image::table-view.png[]
 
 Table rows can be sorted by any column with primitive type values. You can also download the table as a CSV file by clicking the download button next to the table name.
 
+[NOTE]
+====
+`APP_ACCESS_DATA` permission is required to download the table as a CSV file.
+====
+
 == View logs
 
 If a query ran successfully, the Query Log will show a success message.
