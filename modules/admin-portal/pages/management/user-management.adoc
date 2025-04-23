@@ -13,6 +13,11 @@ To change your password, click the key icon image:key.png[] in the Password card
 
 === Manage secrets
 
+[NOTE]
+====
+Before 3.9.3, users were required to have the `EXECUTE_LOADINGJOB` privilege in order to create a secret.
+====
+
 Below the cards, you can create and delete secrets, which are unique strings that can be used to generate authorization tokens.
 An alias is required for each secret.
 
