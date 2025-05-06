@@ -26,7 +26,15 @@ Read more at: xref:tigergraph-server:user-access:index.adoc[].
 
 == All Users
 
-The All Users tab displays information on all users.
+The All Users tab displays information on all users. The table in the tab displays the following columns:
+
+* *Name*: The username of the user account
+* *Proxy User*: Indicates whether the user is a proxy user (Yes/No)
+* *Role*: The assigned role(s) for the user, showing both global and graph-specific roles
+* *Actions*: Contains buttons to change password and delete the user
+
+image::all-users-updated.png[]
+
 Only users with user or proxy groups management permission can access this tab.
 Users with user management permissions (`READ_USER` and `WRITE_USER` privileges) can:
 
@@ -41,8 +49,6 @@ Users with proxy groups management permission (`READ_PROXYGROUP`, `WRITE_PROXYGR
 * delete proxy groups
 
 To see a list of all privileges, see xref:tigergraph-server:reference:list-of-privileges.adoc[List of Privileges].
-
-image::all-users-updated.png[]
 
 [NOTE]
 ====
@@ -59,12 +65,21 @@ Click image:change-others-password-btn.png[] to edit another user's username and
 
 Click image:delete_btn.png[] to delete a user.
 
+Click a role name in the *Role* column to see all privileges assigned to that role.
+
+image::role-all-privileges.png[]
+
 === Proxy groups
 
 Proxy groups manage user access based on an aspect of their account identity set up as part of SSO or LDAP.
 For example, different proxy groups could correspond to different teams, and each team could be granted different access levels to different graphs.
 
-Click the Proxy Group tab at the left under User to see all proxy groups:
+Click the Proxy Group tab at the left under User to see all proxy groups. The table in the tab displays the following columns:
+
+* *Group Name*: The name of the proxy group
+* *Proxy Rule*: The rule that defines the proxy group
+* *Role*: The assigned role(s) for the proxy group, showing both global and graph-specific roles
+* *Actions*: Contains buttons to edit the proxy rule and delete the proxy group
 
 image::proxy-groups.png[]
 
