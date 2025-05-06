@@ -11,14 +11,14 @@ In the Action column for each query, there are buttons to view the individual qu
 
 You can also the top queries ranked by QPS (queries per second), timeout (fraction of the query calls which timed out and therefore did not finish), and latency (minimum, maximum, and average time to complete a query).
 
-The sections in the Overview tab show the queries in each section over the last five minutes.
+The sections in the Overview tab show the queries in each section over the last fifteen minutes.
 
 At any point, click the Refresh icon in the upper right corner of the page to refresh the view with the latest statistics.
 
 == Current Query Performance
 
-The Current Query Performance tab shows the same information as the Current Running Queries section on the Overview page, except not limited to the last five minutes.
+The Current Query Performance tab shows the same information as the Current Running Queries section on the Overview page, except not limited to the last fifteen minutes.
 
 == Historic Query Performance
 
-Click on the History icon next to any one query in the list to see a graph of its QPS, Timeout, and Latency over the last five minutes.
+Click on the History icon next to any one query in the list to see a graph of its QPS, Timeout, and Latency over the last fifteen minutes.
