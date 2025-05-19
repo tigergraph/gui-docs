@@ -101,7 +101,7 @@ image:write-queries-use-default-timeout_3.3.png[image]
 This opens the Run Configuration panel, where you can set the GSQL query timeout.
 
 By default, it uses the timeout specified with the `RESTPP.Factory.DefaultQueryTimeoutSec` server parameter, which is 16 seconds.
-See the xref:tigergraph-server:reference:configuration-parameters.adoc#_restpp[TigerGraph Server Command Glossary] for more information.
+See the xref:{page-component-version}@tigergraph-server:reference:configuration-parameters.adoc#_restpp[TigerGraph Server Command Glossary] for more information.
 
 == Delete Query
 
