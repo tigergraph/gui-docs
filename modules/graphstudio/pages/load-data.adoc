@@ -261,7 +261,7 @@ NOTE: Data must be loaded for all Discriminator attributes on an edge.
 Edges cannot have Discriminator attributes with no data loaded to them.
 
 === Advanced Data Transformation
-See the page on xref:gui:graphstudio:data-transformation.adoc[Data Transformation] for information about making changes to the data during the loading process.
+See the page on xref:graphstudio:data-transformation.adoc[Data Transformation] for information about making changes to the data during the loading process.
 
 Data transformation includes token functions, data filtering (equivalent to a WHERE clause during data loading), mapping data to Map and UDT type attributes.
 
