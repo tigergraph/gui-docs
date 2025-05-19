@@ -6,7 +6,7 @@ This is a tutorial for configuring SAML-2.0 based Single Sign-on (SSO) with Azur
 == Prerequisites
 
 . TigerGraph must be xref:admin-portal:components/nginx.adoc[configured with SSL].
-. xref:tigergraph-server:user-access:enabling-user-authentication.adoc[GSQL authentication must be enabled] by changing the password of the GSQL default user.
+. xref:{page-component-version}@tigergraph-server:user-access:enabling-user-authentication.adoc[GSQL authentication must be enabled] by changing the password of the GSQL default user.
 . An Azure AD Tenant must be granted `Application Administrator` to follow the tutorial.
 . An Azure AD Tenant must be granted `Conditional Access Administrator` to take the next step to configure two-factor authentication (2FA).
 
