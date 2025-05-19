@@ -3,7 +3,7 @@
 
 == Design Schema
 GraphStudio supports modifying multiple graphs within one TigerGraph instance.
-Read more about this architecture, called MultiGraph, at xref:tigergraph-server:intro:multigraph-overview.adoc[MultiGraph - An Overview].
+Read more about this architecture, called MultiGraph, at xref:{page-component-version}@tigergraph-server:intro:multigraph-overview.adoc[MultiGraph - An Overview].
 
 Designing the graph schema is the first and most important step of solving a business problem. The graph schema is the model of the problem, and all the subsequent steps depend on the graph schema.
 

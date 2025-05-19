@@ -27,7 +27,7 @@ Once you refresh the page or go to another page and come back, the actual secret
 image::secret-management.png[]
 
 With token authentication enabled, use the secrets to request tokens and add the tokens in the HTTP request headers to call TigerGraph REST endpoints.
-Read more at: xref:tigergraph-server:user-access:index.adoc[].
+Read more at: xref:{page-component-version}@tigergraph-server:user-access:index.adoc[].
 
 == All Users
 
@@ -45,7 +45,7 @@ Users with proxy groups management permission (`READ_PROXYGROUP`, `WRITE_PROXYGR
 * change proxy rules
 * delete proxy groups
 
-To see a list of all privileges, see xref:tigergraph-server:reference:list-of-privileges.adoc[List of Privileges].
+To see a list of all privileges, see xref:{page-component-version}@tigergraph-server:reference:list-of-privileges-legacy.adoc[List of Privileges].
 
 image::all-users-updated.png[]
 
@@ -83,15 +83,15 @@ Click image:edit.png[] to edit the proxy rule of an existing proxy group.
 
 Click image:delete_btn.png[] to delete a proxy group.
 
-Read more about proxy groups at xref:tigergraph-server:user-access:index.adoc[].
+Read more about proxy groups at xref:{page-component-version}@tigergraph-server:user-access:index.adoc[].
 
 == User-defined roles
 
 The _User-defined roles_ tab lists all user-defined roles and allows users with sufficient privileges to create new roles. Users must have the `READ_ROLE` privilege on at least one graph to access this tab. This section describes the procedures to create, edit, and drop roles, as well as assign roles to users in TigerGraph.
-To learn more about roles and privileges in TigerGraph's role-based access control system, see xref:tigergraph-server:user-access:index.adoc[].
+To learn more about roles and privileges in TigerGraph's role-based access control system, see xref:{page-component-version}@tigergraph-server:user-access:index.adoc[].
 
 To create/edit/delete a role, a user must also have the `WRITE_ROLE` privilege on that graph.
-See more details in xref:tigergraph-server:user-access:access-control-model.adoc[].
+See more details in xref:{page-component-version}@tigergraph-server:user-access:access-control-model.adoc[].
 
 All user-defined roles that you can view appear in a table:
 

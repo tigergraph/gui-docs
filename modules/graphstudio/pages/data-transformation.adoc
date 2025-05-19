@@ -74,7 +74,7 @@ image::8.png[]
 By default, there is no data filter. Click the Data Filter button image:filter (2) (1) (2).png[]to start creating a data filter. The Add Data Filter window will appear.  The window contains three parts:
 
 . The top section shows one row of sample data from your file, as a handy reference to the file's contents.
-. The middle sections shows what the data filter looks like when it is converted a to GSQL WHERE clause. For more details, see the *WHERE Clause* section in the xref:gsql-ref:ddl-and-loading:system-and-language-basics.adoc[GSQL Language Reference Part 1 - Defining Graphs and Loading Data]
+. The middle sections shows what the data filter looks like when it is converted a to GSQL WHERE clause. For more details, see the *WHERE Clause* section in the xref:{page-component-version}@gsql-ref:ddl-and-loading:creating-a-loading-job.adoc[] page.
 . The bottom section is where you define your data filter. The data filter will be converted to a GSQL WHERE clause and shown in real time.
 
 image::add_data_filter_window.png[]
