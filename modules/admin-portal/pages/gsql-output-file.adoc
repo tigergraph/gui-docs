@@ -24,7 +24,7 @@ You can select a specific machine in the cluster to download the output file fro
 After selecting the machine, provide the absolute file path to the file you want to download.
 For example: `/home/tigergraph/tigergraph/data/files/v.csv`.
 
-Make sure the provided file path is allowed by the xref:tigergraph-server:security:file-output-policy.adoc[GSQL file output policy].
+Make sure the provided file path is allowed by the xref:{page-component-version}@tigergraph-server:security:file-output-policy.adoc[GSQL file output policy].
 When a file path is not allowed by the policy, you will not be able to preview or download the file.
 
 WARNING: On TigerGraph Cloud, the file output policy is set to only allow file outputs to `/home/tigergraph/gsql_output/` and its subfolders.

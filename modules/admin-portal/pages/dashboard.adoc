@@ -10,7 +10,7 @@ The Overview tab shows a map of all services that are part of the TigerGraph sys
 image::overview-dependency-view.png[]
 _Service monitoring map_
 
-Each one of them can be restarted individually or all at once. This is equivalent to the `start`, `stop`, and `restart` commands in the `gadmin` xref:tigergraph-server:system-management:management-commands.adoc[].
+Each one of them can be restarted individually or all at once. This is equivalent to the `start`, `stop`, and `restart` commands in the `gadmin` xref:{page-component-version}@tigergraph-server:system-management:management-commands.adoc[].
 
 Below the map is the Resource Monitor table which summarizes the status of each node in this cluster.
 
