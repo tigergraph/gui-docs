@@ -45,7 +45,7 @@ Users with proxy groups management permission (`READ_PROXYGROUP`, `WRITE_PROXYGR
 * change proxy rules
 * delete proxy groups
 
-To see a list of all privileges, see xref:{page-component-version}@tigergraph-server:reference:list-of-privileges-legacy.adoc[List of Privileges].
+To see a list of all privileges, see xref:{page-component-version}@tigergraph-server:reference:list-of-privileges.adoc[List of Privileges].
 
 image::all-users-updated.png[]
 
