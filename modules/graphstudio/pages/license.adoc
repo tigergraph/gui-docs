@@ -10,9 +10,9 @@ image::screen-shot-2019-05-16-at-11.41.47-am.png[]
 
 Without a valid license, it is not possible to navigate to the Design Schema, Map Data To Graph, Load Data, Explore Graph, Build Graph Patterns or Write Queries pages.
 
-=== Update a TigerGraph License Key +++<a id="TigerGraphGraphStudioUIGuide-ApplyingaGraphStudioLicenseKey">++++++</a>+++
+=== Update a TigerGraph License Key
 
-Click theimage:update_license_btn.png[]link on the bottom of the license status to go to Admin Portal license page to update a TigerGraph license key:
+Click the image:update_license_btn.png[] link on the bottom of the license status to go to Admin Portal license page to update a TigerGraph license key:
 
 image::no-license.png[]
 
