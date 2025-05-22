@@ -417,8 +417,7 @@ singleValueAttributeOfVertexOrEdge is non deterministic and could be either "Emi
 
 (san jose)<-[born_in]-(Emily)-[person_has_skill]->(human resource)
 
-|san jose |sumPHeight = 511 |Kevin.height + Kevin.height + Emily.height 
-= 173 + 173 + 165
+|san jose |sumPHeight = 511 |Kevin.height + Kevin.height + Emily.height = 173 + 173 + 165
 
 |san jose |minPBirthyear = 1991 |Min(Kevin.birthYear, Kevin.birthYear,
 Emily.birthYear)

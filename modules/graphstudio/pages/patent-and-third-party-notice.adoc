@@ -1,5 +1,5 @@
 = GraphStudio Patent and Third Party Notice
-:description: v3.0, June 2020
+:description: list of GraphStudio patents and 3rd party components
 
 U.S. Pat. No. 9953106, 9977837, 10120956. +
 Additional Patents pending.
@@ -289,7 +289,7 @@ This list of software components uses abbreviations to refer to common licenses,
         +++<p>+++Licensed under MIT+++</p>++++++</td>++++++</tr>++++++</tbody>++++++</table>+++
 
 [discrete]
-==== License Abbreviations
+== License Abbreviations
 
 The following table explains the license abbreviations used in the list of TigerGraph Third Party Software. A link is provided to an official source for each license. The copy of each license is also available from TigerGraph and is included in the doc/legal folder of the product package.+++<table>++++++<thead>++++++<tr>++++++<th style="text-align:left">+++License Abbreviation+++</th>+++
       +++<th style="text-align:left">+++License Detail+++</th>++++++</tr>++++++</thead>+++
