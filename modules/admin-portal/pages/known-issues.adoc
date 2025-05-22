@@ -1,5 +1,7 @@
 = Known Issues
+:description: List of known issues for GraphStudio
 
+== Admin Portal
 [discrete]
 === Solution import from version lower than v3.1 is not compatible with v3.1
 

@@ -1,5 +1,7 @@
 = Known Issues
+:description: List of known issues for GraphStudio
 
+== GraphStudio
 [discrete]
 === GraphStudio Metadata is not replicated using Cross-Region Replication (CRR)
 
