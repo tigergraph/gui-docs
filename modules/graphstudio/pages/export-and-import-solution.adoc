@@ -72,3 +72,89 @@ Therefore, create a complete backup beforehand in case you need to restore the d
 For security purposes, TigerGraph has two `gadmin` commands, `GSQL.UDF.Policy.Enable` and `GSQL.UDF.Policy.HeaderAllowlist` to prevent malicious code execution during import.
 Please refer to the section on xref:{page-component-version}@gsql-ref:querying:func/query-user-defined-functions.adoc#_udf_security[UDF Security] to ensure that UDFs comply with the security specifications. This will help you import the solution successfully.
 ====
+
+=== Install Pre-Built Solution
+
+==== Step 1: Download Solution
+
+Download the pre-built solution package by clicking the download button.
+
+image::download_prebuilt_solution.png[]
+
+==== Step 2: Enable UDF (Optional)
+
+By default, TigerGraph does not enable solutions with User-Defined Functions (UDF). You will need to enable UDF manually if required.
+
+*This step is required only for the following solutions:*
+
+- Application Fraud
+- Entity Resolution
+
+[source,sh]
+----
+gadmin config set GSQL.UDF.Policy.Enable false
+gadmin config set GSQL.UDF.EnablePutExpr true
+gadmin config set GSQL.UDF.EnablePutTokenBank true
+gadmin config set GSQL.UDF.EnablePutTgExpr true
+gadmin config apply -y
+gadmin restart -y
+----
+
+==== Step 3: Import Solution
+
+Follow the instructions in the <<Import>> section above to import the downloaded solution file.
+
+==== Step 4: Setup Queries for Insights Application (Optional)
+
+*This step is required for solutions with insights applications:*
+
+- Transaction Fraud
+- Mule Account Detection
+- Application Fraud
+- Network Infrastructure
+
+{empty}
+
+After importing the solution, you may need to configure queries for the insights application to enable proper visualization and functionality.
+
+Step 4.1: Install Queries
+
+By default, imported queries run in interpreted mode. For optimal performance, install the queries first.
+For detailed instructions, see xref:write-queries.adoc#install-all-queries[Install All Queries].
+
+Step 4.2: Preprocess Data
+
+Some solutions require running specific queries to preprocess the data before the insights application can display results properly.
+
+*This preprocessing step is required only for the following solutions:*
+
+- Mule Account Detection
+- Transaction Fraud
+
+{empty}
+
+Use the GSQL web shell or command line to run the corresponding preprocessing queries.
+
+*Mule Account Detection*
+
+[source,gsql]
+----
+use graph Mule_Account_Detection
+run query account_account_with_weights()
+run query tg_wcc_account_with_weights()
+run query tg_pagerank_wt_account()
+run query tg_shortest_path_length_account()
+----
+
+*Transaction Fraud*
+
+[source,gsql]
+----
+use graph Transaction_Fraud
+run query merchant_merchant_with_weights()
+run query card_card_with_weights()
+run query tg_wcc_card_weight_based()
+run query tg_wcc_merchant_weight_based()
+run query tg_pagerank_wt_merchant()
+run query tg_pagerank_wt_card()
+----
