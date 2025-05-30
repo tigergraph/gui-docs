@@ -57,9 +57,22 @@ Click btn:[Import an Existing Solution] to upload a previously exported tar file
 
 image::import-solution.png[]
 
+After uploading the file, you will see a dialog to customize the import options.
+
+image::import-options.png[]
+
 [NOTE]
 ====
-In order to optimize the time required for import, the imported queries will not be installed but saved as drafts. You need to install them manually.
+Enable UDF is optional. If you do not enable UDF, some solutions may fail to install if their queries or loading jobs require UDFs.
+If you check the `Enable UDF` option, UDF will be enabled automatically when importing the solution, and will be disabled after the import is complete.
+====
+
+[NOTE]
+====
+Install queries is optional. If you do not check the `Install Queries` option, the imported queries will not be installed but saved as drafts.
+You can install them manually later.
+If you check the `Install Queries` option, the imported queries will be installed automatically.
+If you have a large number of queries, this may take a long time.
 ====
 
 [WARNING]
@@ -68,9 +81,6 @@ Please be extra cautious when importing databases as it can overwrite the curren
 Importing a new solution cannot be undone to restore the previous state, regardless of whether the import succeeds or fails.
 
 Therefore, create a complete backup beforehand in case you need to restore the database: xref:{page-component-version}@tigergraph-server:backup-and-restore:backup-cluster.adoc[]
-
-For security purposes, TigerGraph has two `gadmin` commands, `GSQL.UDF.Policy.Enable` and `GSQL.UDF.Policy.HeaderAllowlist` to prevent malicious code execution during import.
-Please refer to the section on xref:{page-component-version}@gsql-ref:querying:func/query-user-defined-functions.adoc#_udf_security[UDF Security] to ensure that UDFs comply with the security specifications. This will help you import the solution successfully.
 ====
 
 === Install Pre-Built Solution
@@ -83,12 +93,16 @@ image::download_prebuilt_solution.png[]
 
 ==== Step 2: Enable UDF (Optional)
 
+If your tigergraph version is 4.2.1 or later, you can skip this step as we provide enable UDF option when import solution.
+
 By default, TigerGraph does not enable solutions with User-Defined Functions (UDF). You will need to enable UDF manually if required.
 
 *This step is required only for the following solutions:*
 
 - Application Fraud
 - Entity Resolution
+
+Enable UDF by running the following commands in command line:
 
 [source,sh]
 ----
@@ -97,7 +111,18 @@ gadmin config set GSQL.UDF.EnablePutExpr true
 gadmin config set GSQL.UDF.EnablePutTokenBank true
 gadmin config set GSQL.UDF.EnablePutTgExpr true
 gadmin config apply -y
-gadmin restart -y
+gadmin restart gsql -y
+----
+
+After importing the solution, you can disable UDF by running the following command:
+[source,sh]
+----
+gadmin config set GSQL.UDF.Policy.Enable true
+gadmin config set GSQL.UDF.EnablePutExpr false
+gadmin config set GSQL.UDF.EnablePutTokenBank false
+gadmin config set GSQL.UDF.EnablePutTgExpr false
+gadmin config apply -y
+gadmin restart gsql -y
 ----
 
 ==== Step 3: Import Solution
@@ -118,6 +143,8 @@ Follow the instructions in the <<Import>> section above to import the downloaded
 After importing the solution, you may need to configure queries for the insights application to enable proper visualization and functionality.
 
 Step 4.1: Install Queries
+
+If your tigergraph version is 4.2.1 or later, we already provider install queries when import solution, so you may skip this step.
 
 By default, imported queries run in interpreted mode. For optimal performance, install the queries first.
 For detailed instructions, see xref:write-queries.adoc#install-all-queries[Install All Queries].
