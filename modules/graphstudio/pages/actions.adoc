@@ -25,9 +25,8 @@ image::rebuild-all-graph-data.png[]
 
 Rebuilding graph data is a function performed automatically by the graph engine to write the data in memory to storage.
 
-The rebuild process runs frequently when dirty segments need writing to storage.
-A detection thread continuously checks for dirty segments. If no dirty segments are found, no rebuild task is scheduled. The rebuild process usually runs automatically.
-You can manually trigger a rebuild via the Actions tab if needed. Manual triggering is rarely required but useful during technical support.
+The rebuild process runs automatically when dirty segments need to be written to storage. 
+If necessary, you can manually trigger a rebuild through the Actions tab, though this is rarely required and mainly used for technical support.
 
 * Force: computationally expensive and slow. Produces consistent data on disk.
 
