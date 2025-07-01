@@ -26,12 +26,12 @@ Read more at: xref:{page-component-version}@tigergraph-server:user-access:index.
 
 == All Users
 
-The All Users tab displays information on all users. The table in the tab displays the following columns:
+The *All Users* tab displays information for all user accounts. The table in this tab includes the following columns:
 
-* *Name*: The username of the user account
+* *Name*: The username for the account
 * *Proxy User*: Indicates whether the user is a proxy user (Yes/No)
 * *Role*: The assigned role(s) for the user, showing both global and graph-specific roles
-* *Actions*: Contains buttons to change password and delete the user
+* *Actions*: Provides buttons to change the user's password and delete the user account
 
 image::all-users-updated.png[]
 
@@ -65,7 +65,7 @@ Click image:change-others-password-btn.png[] to edit another user's username and
 
 Click image:delete_btn.png[] to delete a user.
 
-Click a role name in the *Role* column to see all privileges assigned to that role.
+To view all privileges assigned to a specific role, click the role name in the *Role* column.
 
 image::role-all-privileges.png[]
 
@@ -74,7 +74,7 @@ image::role-all-privileges.png[]
 Proxy groups manage user access based on an aspect of their account identity set up as part of SSO or LDAP.
 For example, different proxy groups could correspond to different teams, and each team could be granted different access levels to different graphs.
 
-Click the Proxy Group tab at the left under User to see all proxy groups. The table in the tab displays the following columns:
+To view all proxy groups, click the ~Proxy Group~ tab located on the left, under *User*. The table in this tab displays the following columns:
 
 * *Group Name*: The name of the proxy group
 * *Proxy Rule*: The rule that defines the proxy group
