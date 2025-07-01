@@ -74,7 +74,7 @@ image::role-all-privileges.png[]
 Proxy groups manage user access based on an aspect of their account identity set up as part of SSO or LDAP.
 For example, different proxy groups could correspond to different teams, and each team could be granted different access levels to different graphs.
 
-To view all proxy groups, click the ~Proxy Group~ tab located on the left, under *User*. The table in this tab displays the following columns:
+To view all proxy groups, click the *Proxy Group* tab located on the left, under *User*. The table in this tab displays the following columns:
 
 * *Group Name*: The name of the proxy group
 * *Proxy Rule*: The rule that defines the proxy group
