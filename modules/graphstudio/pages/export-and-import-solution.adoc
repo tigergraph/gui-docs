@@ -53,7 +53,7 @@ The `gui/` folder contains all user icons and a json file that describes the lay
 
 === Import
 
-Click btn:[Import an Existing Solution] to upload a previously exported tar file.
+Click btn:[Import an Existing Solution] to upload a previously exported `.tar` file.
 
 image::import-solution.png[]
 
@@ -63,29 +63,31 @@ image::import-options.png[]
 
 [NOTE]
 ====
-Enable UDF is optional. If you do not enable UDF, some solutions may fail to install if their queries or loading jobs require UDFs.
-If you check the `Enable UDF` option, UDF will be enabled automatically when importing the solution, and will be disabled after the import is complete.
+Enabling User-Defined Functions (UDF) is optional. If you do not enable UDF, some solutions may fail to install if their queries or loading jobs require UDFs.
+When you select the `Enable UDF` option, UDF will be enabled automatically during the import and disabled after the import is complete.
 ====
 
 [NOTE]
 ====
-Install queries is optional. If you do not check the `Install Queries` option, the imported queries will not be installed but saved as drafts.
+Installing queries is optional. If you do not check the `Install Queries` option, the imported queries will not be installed but saved as drafts.
 You can install them manually later.
-If you check the `Install Queries` option, the imported queries will be installed automatically.
-If you have a large number of queries, this may take a long time.
+If you select the `Install Queries` option, the imported queries will be installed automatically.
+For a large number of queries, this process may take a long time.
 ====
 
 [WARNING]
 ====
-Please be extra cautious when importing databases as it can overwrite the current solution, resulting in the deletion of existing schemas, load jobs, queries, and data files.
-Importing a new solution cannot be undone to restore the previous state, regardless of whether the import succeeds or fails.
+Importing a solution can overwrite your current database, deleting existing schemas, loading jobs, queries, and data files.
+This action cannot be undone, regardless of whether the import succeeds or fails.
 
-Therefore, create a complete backup beforehand in case you need to restore the database: xref:{page-component-version}@tigergraph-server:backup-and-restore:backup-cluster.adoc[]
+Before importing, create a complete backup in case you need to restore the database. See the xref:{page-component-version}@tigergraph-server:backup-and-restore:backup-cluster.adoc[Back up a Database Cluster] page.
 ====
 
-=== Install Pre-Built Solution
+=== Install a Pre-Built Solution
 
-==== Step 1: Download Solution
+Follow these steps to install a pre-built solution package in TigerGraph:
+
+==== Step 1: Download the Solution
 
 Download the pre-built solution package by clicking the download button.
 
@@ -93,16 +95,16 @@ image::download_prebuilt_solution.png[]
 
 ==== Step 2: Enable UDF (Optional)
 
-If your tigergraph version is 4.2.1 or later, you can skip this step as we provide enable UDF option when import solution.
+If you are using TigerGraph version *4.2.1* or later, you can skip this step because the import dialog includes an option to enable UDF.
 
 By default, TigerGraph does not enable solutions with User-Defined Functions (UDF). You will need to enable UDF manually if required.
 
 *This step is required only for the following solutions:*
 
-- Application Fraud
-- Entity Resolution
+* Application Fraud
+* Entity Resolution
 
-Enable UDF by running the following commands in command line:
+To enable UDF, run the following commands:
 
 [source,sh]
 ----
@@ -114,7 +116,8 @@ gadmin config apply -y
 gadmin restart gsql -y
 ----
 
-After importing the solution, you can disable UDF by running the following command:
+After importing the solution, disable UDF by running:
+
 [source,sh]
 ----
 gadmin config set GSQL.UDF.Policy.Enable true
@@ -125,18 +128,18 @@ gadmin config apply -y
 gadmin restart gsql -y
 ----
 
-==== Step 3: Import Solution
+==== Step 3: Import the Solution
 
 Follow the instructions in the <<Import>> section above to import the downloaded solution file.
 
 ==== Step 4: Setup Queries for Insights Application (Optional)
 
-*This step is required for solutions with insights applications:*
+This step is required for solutions that include an Insights application, such as:
 
-- Transaction Fraud
-- Mule Account Detection
-- Application Fraud
-- Network Infrastructure
+* Transaction Fraud
+* Mule Account Detection
+* Application Fraud
+* Network Infrastructure
 
 {empty}
 
@@ -144,19 +147,18 @@ After importing the solution, you may need to configure queries for the insights
 
 Step 4.1: Install Queries
 
-If your tigergraph version is 4.2.1 or later, we already provider install queries when import solution, so you may skip this step.
+If you are using TigerGraph version *4.2.1* or later, you can skip this step because the import dialog includes an option to install queries.
 
 By default, imported queries run in interpreted mode. For optimal performance, install the queries first.
 For detailed instructions, see xref:write-queries.adoc#install-all-queries[Install All Queries].
 
 Step 4.2: Preprocess Data
 
-Some solutions require running specific queries to preprocess the data before the insights application can display results properly.
+Some solutions require you to run specific queries to preprocess data before the Insights application can display results properly.
+This preprocessing step is required only for:
 
-*This preprocessing step is required only for the following solutions:*
-
-- Mule Account Detection
-- Transaction Fraud
+* Mule Account Detection
+* Transaction Fraud
 
 {empty}
 
