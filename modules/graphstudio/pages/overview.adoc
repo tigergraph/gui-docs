@@ -91,10 +91,6 @@ GraphStudio supports English, Simplified Chinese, and Japanese user interface la
 
 image:language-picker.png[]
 
-The user interface dark theme is enabled by default. The light theme looks like this:
-
-image:gui-light-theme.png[]
-
 == GraphStudio Session Timeout
 
 GraphStudio has a default session timeout of 1 week. If, during this
