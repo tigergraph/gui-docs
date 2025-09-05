@@ -1,7 +1,7 @@
 name: gui
 title: GraphStudio and Admin Portal
 version: "4.2"
-display_version: "4.2 Pre"
+display_version: "4.2"
 start_page: intro:index.adoc
 
 nav:

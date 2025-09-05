@@ -53,22 +53,137 @@ The `gui/` folder contains all user icons and a json file that describes the lay
 
 === Import
 
-Click btn:[Import an Existing Solution] to upload a previously exported tar file.
+Click btn:[Import an Existing Solution] to upload a previously exported `.tar` file.
 
 image::import-solution.png[]
 
+After uploading the file, you will see a dialog to customize the import options.
+
+image::import-options.png[]
+
 [NOTE]
 ====
-In order to optimize the time required for import, the imported queries will not be installed but saved as drafts. You need to install them manually.
+Enabling User-Defined Functions (UDF) is optional. If you do not enable UDF, some solutions may fail to install if their queries or loading jobs require UDFs.
+When you select the `Enable UDF` option, UDF will be enabled automatically during the import and disabled after the import is complete.
+====
+
+[NOTE]
+====
+Installing queries is optional. If you do not check the `Install Queries` option, the imported queries will not be installed but saved as drafts.
+You can install them manually later.
+If you select the `Install Queries` option, the imported queries will be installed automatically.
+For a large number of queries, this process may take a long time.
 ====
 
 [WARNING]
 ====
-Please be extra cautious when importing databases as it can overwrite the current solution, resulting in the deletion of existing schemas, load jobs, queries, and data files.
-Importing a new solution cannot be undone to restore the previous state, regardless of whether the import succeeds or fails.
+Importing a solution can overwrite your current database, deleting existing schemas, loading jobs, queries, and data files.
+This action cannot be undone, regardless of whether the import succeeds or fails.
 
-Therefore, create a complete backup beforehand in case you need to restore the database: xref:{page-component-version}@tigergraph-server:backup-and-restore:backup-cluster.adoc[]
-
-For security purposes, TigerGraph has two `gadmin` commands, `GSQL.UDF.Policy.Enable` and `GSQL.UDF.Policy.HeaderAllowlist` to prevent malicious code execution during import.
-Please refer to the section on xref:{page-component-version}@gsql-ref:querying:func/query-user-defined-functions.adoc#_udf_security[UDF Security] to ensure that UDFs comply with the security specifications. This will help you import the solution successfully.
+Before importing, create a complete backup in case you need to restore the database. See the xref:{page-component-version}@tigergraph-server:backup-and-restore:backup-cluster.adoc[Back up a Database Cluster] page.
 ====
+
+=== Install a Pre-Built Solution
+
+Follow these steps to install a pre-built solution package in TigerGraph:
+
+==== Step 1: Download the Solution
+
+Download the pre-built solution package by clicking the download button.
+
+image::download_prebuilt_solution.png[]
+
+==== Step 2: Enable UDF (Optional)
+
+If you are using TigerGraph version *4.2.1* or later, you can skip this step because the import dialog includes an option to enable UDF.
+
+By default, TigerGraph does not enable solutions with User-Defined Functions (UDF). You will need to enable UDF manually if required.
+
+*This step is required only for the following solutions:*
+
+* Application Fraud
+* Entity Resolution
+
+To enable UDF, run the following commands:
+
+[source,sh]
+----
+gadmin config set GSQL.UDF.Policy.Enable false
+gadmin config set GSQL.UDF.EnablePutExpr true
+gadmin config set GSQL.UDF.EnablePutTokenBank true
+gadmin config set GSQL.UDF.EnablePutTgExpr true
+gadmin config apply -y
+gadmin restart gsql -y
+----
+
+After importing the solution, disable UDF by running:
+
+[source,sh]
+----
+gadmin config set GSQL.UDF.Policy.Enable true
+gadmin config set GSQL.UDF.EnablePutExpr false
+gadmin config set GSQL.UDF.EnablePutTokenBank false
+gadmin config set GSQL.UDF.EnablePutTgExpr false
+gadmin config apply -y
+gadmin restart gsql -y
+----
+
+==== Step 3: Import the Solution
+
+Follow the instructions in the <<Import>> section above to import the downloaded solution file.
+
+==== Step 4: Setup Queries for Insights Application (Optional)
+
+This step is required for solutions that include an Insights application, such as:
+
+* Transaction Fraud
+* Mule Account Detection
+* Application Fraud
+* Network Infrastructure
+
+{empty}
+
+After importing the solution, you may need to configure queries for the insights application to enable proper visualization and functionality.
+
+Step 4.1: Install Queries
+
+If you are using TigerGraph version *4.2.1* or later, you can skip this step because the import dialog includes an option to install queries.
+
+By default, imported queries run in interpreted mode. For optimal performance, install the queries first.
+For detailed instructions, see xref:write-queries.adoc#install-all-queries[Install All Queries].
+
+Step 4.2: Preprocess Data
+
+Some solutions require you to run specific queries to preprocess data before the Insights application can display results properly.
+This preprocessing step is required only for:
+
+* Mule Account Detection
+* Transaction Fraud
+
+{empty}
+
+Use the GSQL web shell or command line to run the corresponding preprocessing queries.
+
+*Mule Account Detection*
+
+[source,gsql]
+----
+use graph Mule_Account_Detection
+run query account_account_with_weights()
+run query tg_wcc_account_with_weights()
+run query tg_pagerank_wt_account()
+run query tg_shortest_path_length_account()
+----
+
+*Transaction Fraud*
+
+[source,gsql]
+----
+use graph Transaction_Fraud
+run query merchant_merchant_with_weights()
+run query card_card_with_weights()
+run query tg_wcc_card_weight_based()
+run query tg_wcc_merchant_weight_based()
+run query tg_pagerank_wt_merchant()
+run query tg_pagerank_wt_card()
+----
