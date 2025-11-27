@@ -8,6 +8,7 @@ This page lists all LTS (Long-Term Support) and previous versions of TigerGraph 
 
 
 Documentation will be available on our legacy documentation website.
+
 * 3.8
 * 3.7
 * 3.5
