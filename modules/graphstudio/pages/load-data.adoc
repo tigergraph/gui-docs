@@ -353,7 +353,7 @@ The table at the top shows the number of vertices and edges of each type and the
 
 If you click this button, it refetches real-time Graph Statistics.
 
-image::load_data_refetch_button2.png
+image::load_data_refetch_button2.png[]
 
 === Data Loading Statistics
 If you click on one data file, the Statistics panel will change to show Data Loading Statistics:
