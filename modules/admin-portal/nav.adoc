@@ -17,7 +17,7 @@
 **** xref:admin-portal:components/cdc.adoc[]
 ** Security
 *** xref:security/ldap.adoc[]
-*** xref:security/sso.adoc[]
+*** xref:security/sso.adoc[Single Sign-on (SSO)]
 *** xref:security/sso-aad.adoc[]
 *** xref:admin-portal:security/sso-oidc-okta.adoc[SSO.OIDC via Okta]
 *** xref:security/mfa.adoc[]
