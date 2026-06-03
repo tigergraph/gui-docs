@@ -30,6 +30,28 @@ image::sso-file-upload.png[]
 +
 image::self-sign.png[]
 
+[NOTE]
+====
+In 4.2.3, SAML SSO supports uploading a full X.509 certificate chain for the Service Provider (SP).
+
+A certificate chain can contain multiple certificates, such as the server certificate, intermediate certificate(s), and root certificate, concatenated in a single file.
+
+Example:
+
+[source,text]
+----
+-----BEGIN CERTIFICATE-----
+MIID4zCCAc... server cert
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIE0DCCAr... intermediate cert
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIFEzCCAv... root cert
+-----END CERTIFICATE-----
+----
+====
+
 == Identity provider information
 These fields provide information on your identity provider.
 You should be able to obtain the correct values for these fields from your identity provider.
@@ -37,6 +59,13 @@ You should be able to obtain the correct values for these fields from your ident
 * Entity ID
 * SSO URL
 * X509 certificate
++
+[NOTE]
+====
+In 4.2.3, SAML SSO supports uploading a full X.509 certificate chain for the Identity Provider (IdP).
+
+A certificate chain can contain the identity provider certificate together with any intermediate and root certificates in a single file.
+====
 
 == Security options
 
