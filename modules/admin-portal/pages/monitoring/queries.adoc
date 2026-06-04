@@ -6,19 +6,23 @@ The Query monitoring page gives detailed information about the queries running o
 
 In 4.2.3, access to the Query Monitoring page is controlled by user privileges instead of roles.
 
-* Users with `READ_DATA` privilege on at least one graph can access
-  the Query Monitoring page. The *Monitor > Queries* menu is
-  visible only to these users.
+* The *Monitor > Queries* menu is visible only to users with
+  `READ_DATA` privilege on at least one graph.
 ** Users with global `READ_DATA` privilege or superuser access can
    view queries across all graphs.
-** Users with graph-scoped `READ_DATA` privilege can view queries
-   only for the graphs they have access to.
-** If a user does not have `READ_DATA` privilege on any graph, an
-   *Insufficient Privileges* dialog is displayed with the message:
-   "You do not have READ_DATA privilege on any graph."
+** Users with `READ_DATA` privilege on specific graphs can view
+  queries only for those graphs.
 * Users with `READ_QUERY` privilege can view specific queries.
 * Users with `DELETE_DATA` privilege for a graph can abort queries
   running on that graph.
+
+[NOTE]
+====
+If a user does not have `READ_DATA` privilege on any graph, an
+*Insufficient Privileges* dialog is displayed with the message:
+"You do not have READ_DATA privilege on any graph."
+====
+
 
 == Overview
 
