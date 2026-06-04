@@ -29,6 +29,25 @@ image::sso-file-upload.png[]
 +
 image::self-sign.png[]
 
+[NOTE]
+====
+When uploading an X509 certificate:
+
+* Including the `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` markers is recommended, but not required.
+* Empty lines in the certificate file are allowed.
+* Certificate files do not need to follow a specific file extension format. If the certificate is displayed correctly after upload, the certificate has been processed successfully.
+
+Example certificate format:
+
+[source,text]
+----
+-----BEGIN CERTIFICATE-----
+MIIEJjCCAw6gAwIBAgICB+YwDQYJKoZIhvcNAQELBQAwgasxCzAJBgNVBAYTAlVT
+2LVRSChoH+HDdQ==
+-----END CERTIFICATE-----
+----
+====
+
 == Identity provider information
 These fields provide information on your identity provider.
 You should be able to obtain the correct values for these fields from your identity provider.
