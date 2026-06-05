@@ -2,6 +2,27 @@
 
 The Query monitoring page gives detailed information about the queries running on a cluster and their performance.
 
+== Access control
+
+In 4.2.3, access to the Query Monitoring page is controlled by user privileges instead of roles.
+
+* The *Monitor > Queries* menu is visible only to users with
+  `READ_DATA` privilege on at least one graph.
+** Users with global `READ_DATA` privilege or superuser access can
+   view queries across all graphs, which are listed under the *All*
+   option in the graph dropdown.
+** Users with `READ_DATA` privilege on specific graphs can view
+  queries only for those graphs and do not see the *All* option
+   in the graph dropdown.
+* Users with `DELETE_DATA` privilege for a graph can abort queries
+  running on that graph.
+
+[NOTE]
+====
+If a user does not have READ_DATA privilege on any graph, the page displays an error message indicating that they lack the required privilege.
+====
+
+
 == Overview
 
 image::query-monitoring-overview.png[]
