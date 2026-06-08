@@ -2,12 +2,14 @@
 :server-name: RESTPP
 :experimental:
 
-You can configure RESTPP settings on the menu:Admin Portal[Management > Conponents > RESTPP] page.
+You can configure RESTPP settings on the menu:Admin Portal[Management > Components > RESTPP] page.
 
-image::restpp-page.png[]
+image::restpp-page-new.png[]
+//image::restpp-page.png[]
 
 The following parameters are configurable in Admin Portal:
 
+* Enable Authentication
 * Default query timeout (seconds)
 * Maximum concurrent running xref:{page-component-version}@tigergraph-server:system-management:workload-management.adoc#_limit_number_of_concurrent_heavy_queries["heavy" built-in queries]
 * Maximum concurrent running queries
