@@ -41,14 +41,14 @@ If you are already at GraphStudio, click the nine-dot TigerGraph Suite button in
 
 The user menu is accessible from the User icon image:account_btn.png[] in the header.
 
-image::admin-user-menu-updated.png[]
+image::admin-user-menu-new.png[]
+//image::admin-user-menu-updated.png[]
 
-You can switch between a dark theme and a light theme, as well as changing the user language.
-The light theme is shown below:
+From the user menu, you can change the user language and access additional user options.
 
 image::light-theme.png[]
 
-To sign out of Admin Portal, click on the *Sign out* button in the Account menu.
+To sign out of Admin Portal, click on the *Log out* button in the user menu.
 
 Clicking on the *Help* button will take you to the documentation page containing this guide.
 
