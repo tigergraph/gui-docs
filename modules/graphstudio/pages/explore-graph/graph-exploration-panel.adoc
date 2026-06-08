@@ -3,7 +3,7 @@
 
 The Graph Exploration panel displays the result of your Graph Exploration actions. After you have a subgraph displayed in the Graph Exploration Panel, you can use the buttons in the Explorer View Menu or the options in the bottom right corner to customize the display. Additionally, you can make modifications to the graph database itself in edit mode.
 
-image::explore-view-menu.png[Explorer View Menu]
+image::graph-explore-revised.png[Explorer View Menu]
 
 image::ex-panel-options.png[Options in the bottom right corner]
 
