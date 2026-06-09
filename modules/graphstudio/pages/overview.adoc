@@ -30,20 +30,6 @@ In this way, users will not need to understand any GSQL to build queries, run qu
 The *Write Queries* page is where users can write and test out custom GSQL queries using a text-based query editor.
 The query editor validates the user's query syntax and notifies the user of any errors.
 
-== GraphStudio Online Test Drive
-
-Visit TigerGraph Test Drive demos at:
-link:https://testdrive.tigergraph.com[https://testdrive.tigergraph.com/]
-
-The GraphStudio online Test Drive features several instances of the
-TigerGraph system, each one targeting a different use case. Each copy of
-TigerGraph has a GraphStudio interface and is preloaded with
-application-specific queries and synthetic data. These demo applications
-are provided in a read-only mode. Users can explore and play with
-pre-installed queries. Users on these demo systems cannot save changes
-to the graph schema, the loading job, or queries.
-
-
 == GraphStudio Availability
 
 === Cloud
