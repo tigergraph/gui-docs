@@ -3,7 +3,7 @@
 
 The Graph Exploration panel displays the result of your Graph Exploration actions. After you have a subgraph displayed in the Graph Exploration Panel, you can use the buttons in the Explorer View Menu or the options in the bottom right corner to customize the display. Additionally, you can make modifications to the graph database itself in edit mode.
 
-image::explore-view-menu.png[Explorer View Menu]
+image::graph-explore-revised[Explorer View Menu]
 
 image::ex-panel-options.png[Options in the bottom right corner]
 
@@ -34,8 +34,8 @@ You can export the current visualization result as a png file or a zip file cont
 image::download-dropdown.png[]
 
 You can select different export types by clicking on different items.
-When you choose to Export PNG, your browser will automatically download a picture named `export.png`.
-Below is an example of an exported .png file.
+When you choose to Export PNG, your browser will automatically download a picture named `export.png`. You can also use this option to save a screenshot of the current exploration result. 
+Below is an example of an exported .png file. 
 
 
 image::export.png[]
@@ -102,10 +102,6 @@ image::save_exploration_result.png[]
 In the future, you can open a previously saved exploration result by clicking the Open Exploration History button image:open_exploration_result.png[] and choose one result from the list:
 
 image::exploration_history.png[]
-
-=== Save screenshot
-
-When you find something interesting during exploration and want to save the result as a picture, you can click the Save Screenshot button image:screenshot_btn.png[] . The exploration result will be saved as a PNG picture to your local file system.
 
 === Change settings
 
