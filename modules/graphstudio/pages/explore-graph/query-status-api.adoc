@@ -1,7 +1,10 @@
 = Query Status API
 :experimental:
 
-After you run queries in link:https://docs.tigergraph.com/gsql-ref/current/querying/query-operations#_detached_mode_async_option[Detached Mode] via the RESTPP endpoint with the GSQL-ASYNC header set to true, you can use the Query Status API to obtain the status and results of the related request_id. This is similar to what you can retrieve from the RESTPP link:https://docs.tigergraph.com/tigergraph-server/current/api/built-in-endpoints#_check_query_status_detached_mode[Query Status API] , along with the GPE logs.
+After submitting a query in xref:https://docs.tigergraph.com/gsql-ref/current/querying/query-operations#_detached_mode_async_option[Detached Mode] using the `GSQL-ASYNC` header, you can use the Query Status API to monitor the query by its `requestid`.
+
+Unlike the link:https://docs.tigergraph.com/tigergraph-server/current/api/built-in-endpoints#_check_query_status_detached_mode[RESTPP `query_status`] endpoint, which only returns status information from the node that receives the request, this endpoint provides additional information to help monitor asynchronous queries, including query status details, query results (when available), and related GPE log entries.
+
 
 ====
 GET /api/queries/<graphName>/query_status?requestid=<requestid>
@@ -103,7 +106,7 @@ Response::
 | elapsedTime   | The elapsed real time of the given query measured in milliseconds. For completed queries, the value shows the total runtime of the request. For ongoing queries, it shows the amount of time taken so far. 
 | status        | The status of the given query. Possible values are “success”, “timeout”, “aborted”, or “running”.                
 | results       | The results of the query, including any relevant data such as edge lists.                                       
-| processLogs   | The log content related to the query.                                                                            
+| processLogs | GPE log entries associated with the query request.                                                                     
 | path          | The log file path of the log content.                                                                            
 | offset        | The offset in bytes of the log content in the log file.                                                          
 | lineNumber    | The line number of the log content in the log file.                                                              
