@@ -1,7 +1,7 @@
 = Query Status API
 :experimental:
 
-After submitting a query in xref:https://docs.tigergraph.com/gsql-ref/current/querying/query-operations#_detached_mode_async_option[Detached Mode] using the `GSQL-ASYNC` header, you can use the Query Status API to monitor the query by its `requestid`.
+After submitting a query in link:https://docs.tigergraph.com/gsql-ref/current/querying/query-operations#_detached_mode_async_option[Detached Mode] using the `GSQL-ASYNC` header, you can use the Query Status API to monitor the query by its `requestid`.
 
 Unlike the link:https://docs.tigergraph.com/tigergraph-server/current/api/built-in-endpoints#_check_query_status_detached_mode[RESTPP `query_status`] endpoint, which only returns status information from the node that receives the request, this endpoint provides additional information to help monitor asynchronous queries, including query status details, query results (when available), and related GPE log entries.
 
