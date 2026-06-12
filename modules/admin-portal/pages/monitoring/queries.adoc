@@ -25,7 +25,8 @@ If a user does not have READ_DATA privilege on any graph, the page displays an e
 
 == Overview
 
-image::query-monitoring-overview.png[]
+image::query-monitoring-overview-new.png[]
+//image::query-monitoring-overview.png[]
 
 In the Overview tab, you can view currently running queries broken down by node and graph.
 In the Action column for each query, there are buttons to view the individual query history and to stop the query entirely.
