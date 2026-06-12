@@ -15,7 +15,8 @@ In a GSQL query, users can print any output from the query to a file available t
 In Admin Portal, click btn:[Others] on the left side navigation, and click btn:[GSQL Output File].
 After users print the query result into a file, they can preview or download the output files through this page.
 
-image::gsql-output-file-initial.png[GSQL output file page]
+image::gsql-output-file-initial.png-new[GSQL output file page]
+//image::gsql-output-file-initial.png[GSQL output file page]
 
 === Select nodes and provide file path
 
@@ -34,5 +35,6 @@ This policy cannot be changed on for an TigerGraph Cloud instance for security r
 
 Once you provide a valid file path, you will be able to preview and download the file.
 
-image::file-in-preview.png[File in preview]
+image::file-in-preview.png-new[File in preview]
+//image::file-in-preview.png[File in preview]
 
