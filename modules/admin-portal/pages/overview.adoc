@@ -46,7 +46,8 @@ image::admin-user-menu-new.png[]
 
 From the user menu, you can change the user language and access additional user options.
 
-image::light-theme.png[]
+image::light-theme-new.png[]
+//image::light-theme.png[]
 
 To sign out of Admin Portal, click on the *Log out* button in the user menu.
 
