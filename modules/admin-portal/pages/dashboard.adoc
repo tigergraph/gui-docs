@@ -5,25 +5,28 @@ The Dashboard page is divided into two tabs: Overview and Historic Cluster Monit
 
 == Overview
 
-The Overview tab shows a map of all services that are part of the TigerGraph system and how they relate to each other.
+The Overview tab provides a Service Monitor that displays the services running in the TigerGraph system and their dependencies.
 
-image::overview-dependency-view.png[]
+You can view services in either Dependency view or Table view.
+
+image::overview-dependency-view-new.png[]
+//image::overview-dependency-view.png[]
 _Service monitoring map_
 
-Each one of them can be restarted individually or all at once. This is equivalent to the `start`, `stop`, and `restart` commands in the `gadmin` xref:{page-component-version}@tigergraph-server:system-management:management-commands.adoc[].
+Each service can be restarted individually or all at once. This is equivalent to the `start`, `stop`, and `restart` commands in the `gadmin` xref:{page-component-version}@tigergraph-server:system-management:management-commands.adoc[].
 
-Below the map is the Resource Monitor table which summarizes the status of each node in this cluster.
+Click the btn:[Table view] button to display service status, CPU usage, memory usage, and available actions in a tabular format.
 
-Click the btn:[Table view] button to see the services in the form of a table instead of a map.
-
-image::service-monitor-table-view.png[]
+image::service-monitor-table-view-new.png[]
+//image::service-monitor-table-view.png[]
 _Service monitoring table_
 
 == Historic cluster monitoring
 
-The Cluster Monitoring page shows resources used by different system components over time.
+The Historic Cluster Monitoring tab displays resource utilization and service statistics over time.
 
-image:historic-cluster-monitoring.png[]
+image::historic-cluster-monitoring-new.png[]
+//image:historic-cluster-monitoring.png[]
 _Cluster monitoring page_
 
 === Selecting the time range
@@ -43,15 +46,18 @@ image::query_performance_charts (1).png[]
 _Query monitoring panel_
 
 === Machine Monitor
+
 The Machine Monitoring panel includes four charts.
 
-image::cluster-monitoring.png[]
+image::cluster-monitoring-new.png[]
+//image::cluster-monitoring.png[]
 _Machine monitoring panel_
 
-. Service status: ON, Warm Up, OFF status for the given component
-. CPU Usage: percentage of available CPU time used by the given component
-. Memory Usage: GB used by the given component
-. Disk Usage: GB used by the given component
+. Service status: ON, Warm Up, or OFF status for the selected component.
+. CPU Usage: Percentage of available CPU time used by the selected component.
+. Memory Usage: Amount of memory used by the selected component, measured in GB.
+. Disk Usage: Amount of disk space used by the selected component, measured in GB.
 
-The first three charts break down the information among five processing-focused components (GSE, GPE, RESTPP, GSQL, GUI).
-The last chart breaks down information among three components which may have large storage needs (GStore, Log files, and Apache Kafka).
+The first three charts break down information among the core TigerGraph services (GSE, GPE, RESTPP, GSQL, and GUI).
+
+The Disk Usage chart shows storage utilization for components that typically consume disk space, such as GStore, log files, and Apache Kafka.
