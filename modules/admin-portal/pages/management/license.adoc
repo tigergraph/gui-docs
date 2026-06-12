@@ -9,7 +9,8 @@ Update your TigerGraph license key on the License page.
 
 Click btn:[SELECT FILE] and choose the license text file, then click btn:[UPDATE]. The license details will appear in the main view:
 
-image::license-valid.png[]
+image::license-valid-new.png[]
+//image::license-valid.png[]
 
 GraphStudio is not available with all licenses. If it is greyed out, it means GraphStudio is not enabled in the provided license.
 
@@ -17,4 +18,5 @@ To upgrade your license to enable GraphStudio access, please contact sales@tiger
 
 Click btn:[More details...] to show more information about the license:
 
-image::license-with-detail-updated.png[]
+image::license-with-detail-updated-new.png[]
+//image::license-with-detail-updated.png[]
