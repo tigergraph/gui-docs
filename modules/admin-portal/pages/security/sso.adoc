@@ -7,7 +7,8 @@ The settings on this page are related to set up Single Sign-on (SSO) on TigerGra
 
 Consult the xref:{page-component-version}@tigergraph-server:user-access:sso-with-oidc.adoc[SSO Configuration] page on the TigerGraph Server documentation to read more about the supported SSO methods and the configurations required.
 
-image::sso-page.png[]
+image::sso-page-new.png[]
+//image::sso-page.png[]
 
 == Service provider information
 When you configure SSO on TigerGraph with a trusted identity provider, TigerGraph is the service provider.
@@ -24,11 +25,11 @@ There are two ways of providing the X509 certificate and private key:
 * Upload files.
  ** Click the file upload button next to the input box, and a drop-down menu for uploading files will appear. Click the upload file option to upload the desired file.
 +
-image::sso-file-upload.png[]
+image::sso-file-upload-new.png[]
 * Generate a self-signed certificate.
  ** Click the file upload button next to the input box, and a drop-down for uploading files will appear. Click the btn:[Self sign] button. There will be a pop-up box to fill in the information. Items marked with * are required.
 +
-image::self-sign.png[]
+image::self-sign-new.png[]
 
 [NOTE]
 ====
