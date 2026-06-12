@@ -3,7 +3,8 @@
 
 The Management section of Admin Portal differs slightly for TigerGraph Cloud vs. TigerGraph self-managed.
 
-image:admin-portal-onprem.png[width=200]
+image:admin-portal-onprem-new.png[width=200]
+//image:admin-portal-onprem.png[width=200]
 
 
 The following types of management are available on both platforms:
