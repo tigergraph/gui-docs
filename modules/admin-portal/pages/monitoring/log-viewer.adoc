@@ -1,6 +1,6 @@
 = Logs
 
-The Logs page contains a search panel, a file directory panel, and a content panel. The content panel either displays log content or search results.
+The Logs page contains a search panel, a file directory panel, and a content panel. The content panel can display log content or search results. You can browse log files by node and component, search logs across selected nodes and components, and download log files for offline analysis.
 
 image::logs-monitoring-page.png[]
 
@@ -12,52 +12,61 @@ Please turn off your ad blocker when using Admin Portal.
 
 == Open a log file from the file directory
 
-In the file directory panel, all machines will be listed in a tree structure. Click a machine ID to show the components, and click again to show log files and folders.
+In the file directory panel, log files are organized by node and component. Expand a node to view its components, and then expand a component to view the available log files.
 
-image::file-listing.png[]
+[cols="1,1"]
+|===
+a|
+image::file-listing-1-new.png[]
+_Node and component selection_
 
-Choose one single log file by clicking on it, and the content will be shown in the display panel.
-The title will show the machine ID and the path of the opened log file. To the right, there is a download button image:download-log-btn.png[] for downloading the selected log file.
-Loaded log lines will add to the end of the file (the latest log content) and the system will keep pulling to update the log.
+a|
+image::file-listing-2-new.png[]
+_Log file selection_
+
+|===
+
+Choose a log file by clicking on it, and the content will be shown in the display panel.
+The title shows the machine ID and the path of the opened log file. To the right, there is a download button image:download-log-btn.png[] for downloading the selected log file.
+
+The display panel shows the latest available log content and automatically refreshes as new log entries are generated.
 
 [CAUTION]
 ====
 Note that the display panel will only show the tail end of the chosen log file, up to 32 MB. If you wish to read the entire log file, download the file.
 ====
 
-image::display-log.png[]
+image::display-log-new.png[]
 
 == Search logs
 
 If your browser window is wide, you will see the search panel at the top.
 
-image:log-search-panel.png[image]
+image::log-search-panel-new.png[]
 
 If your browser window is narrow, the search panel collapses. Click the image:search-btn.png[image] button to open it.
 
-image:log-search-button.png[]
+image::log-search-button-new.png[]
 
-In the search panel, you need to provide the following three pieces of information:
+In the search panel, you can specify the following search criteria:
 
 * Pattern
-* Node
-* Component
+* One or more nodes
+* One or more components
 
-Without a pattern and at least one node and one component, the search will not be performed.
+Without a pattern and at least one node and one component selected, the search will not be performed.
 
 Use the expand image:expand-btn.png[image] or collapse image:collapse-btn.png[image] buttons for more space to view the log content, if necessary.
 
-image:search-result.png[image]
+image::search-result-new.png[]
 
-The title of each search result contains the machine ID, the file path
-and the number of lines of content which match the pattern. The detailed
-log line content will also be shown:
+The title of each search result contains the machine ID, the file path, and the line number where the matching content was found. Matching log entries are displayed below each result.
 
-image:single-search-result.png[image]
+image::single-search-result-new.png[]
 
-Clicking on a single search result will show the log content in the display panel and highlight the matching log line.
+Clicking a search result opens the corresponding log file in the display panel and highlights the matching log line.
 
-image:line-highlight-log (1).png[image]
+image::line-highlight-log (1)-new.png[]
 
 == Read-Only Access to Logs
 
@@ -82,7 +91,7 @@ The following privileges control access to logs in TigerGraph:
 
 [separator=¦]
 |===
-¦ Privilege Name ¦ Object ¦ Plural Objects ¦ Scope  ¦ Default Roles
+¦ Privilege Name ¦ Object ¦ Plural Objects ¦ Scope ¦ Default Roles
 
 ¦ APP_ACCESS_LOG ¦ LOG ¦ LOGS ¦ GLOBAL ¦ superuser, globaldesigner
 |===
@@ -93,7 +102,7 @@ The `READ_LOG` privilege grants *read-only access* to logs, preventing modificat
 
 [separator=¦]
 |===
-¦ Privilege Name ¦ Object ¦ Plural Objects ¦ Scope  ¦ Default Roles
+¦ Privilege Name ¦ Object ¦ Plural Objects ¦ Scope ¦ Default Roles
 
 ¦ READ_LOG ¦ LOG ¦ LOGS ¦ GLOBAL ¦ None
 |===
@@ -102,13 +111,13 @@ The `READ_LOG` privilege grants *read-only access* to logs, preventing modificat
 
 Users with the appropriate privileges can access logs through *GraphStudio* or the *TigerGraph Cloud Portal*:
 
-1. *View Logs:* Access real-time updates for GSQL query logs and system logs.
-2. *Search Logs:* Use the search panel to filter logs by patterns, nodes, and components.
-3. *Download Options:* Download log files for offline analysis to identify and resolve issues effectively.
+. *View Logs:* Access real-time updates for GSQL query logs and system logs.
+. *Search Logs:* Use the search panel to filter logs by patterns, nodes, and components.
+. *Download Options:* Download log files for offline analysis to identify and resolve issues effectively.
 
 [NOTE]
 ====
 * These tools are designed to provide developers with the ability to debug, optimize queries, and monitor system health without requiring intervention from administrative users.
-* Logs are dynamically updated in real time, granting developers to track changes and identify issues promptly.
+* Logs are dynamically updated in real time, granting developers the ability to track changes and identify issues promptly.
 * The access provided is strictly *read-only*, maintaining system security and log integrity.
 ====
