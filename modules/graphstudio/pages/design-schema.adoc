@@ -265,10 +265,10 @@ are the following:
 .. Remove mappings to deleted vertex types and edge types.
 .. Remove mappings to deleted or modified attributes.
 .. New vertex types, edge types and new attributes won't be mapped.
-.. After the schema is successfully published, GraphStudio will instruct
-you to go to the Map Data To Graph page to verify and publish the
-revised data mapping. If any mapping is not correct, you can fix it. You *must publish* the migrated data mapping; otherwise, it will be lost.
+.. After the schema is successfully saved, GraphStudio will instruct
+you to go to the Map Data To Graph page to verify and save the
+revised data mapping. If any mapping is not correct, you can fix it. You *must save* the migrated data mapping; otherwise, it will be lost.
 
-If you have published some data mapping through GraphStudio, then after schema is changed successfully, a pop up window will guide you to go to the Map Data To Graph page to confirm and publish the migrated data mapping:
+If you have saved some data mapping through GraphStudio, then after the schema is changed successfully, a pop-up window will guide you to go to the Map Data To Graph page to confirm and save the migrated data mapping:
 
 image:migrate_data_mapping.png[image]
