@@ -38,9 +38,10 @@ Global types are available for use in any graph.
 In contrast, Graph View only allows you to see vertex and edge types that are local to one specific graph.
 
 The superuser and globaldesigner roles can modify global vertex and edge types under Global View.
-Under global view, the toolbar area only contains "Publish schema", "Add a vertex type", "Add an edge type",  "Edit", "Delete", "Undo" and "Redo" buttons.
+Under global view, the toolbar area only contains "Save schema", "Add a vertex type", "Add an edge type", "Edit", "Delete", "Undo", and "Redo" buttons.
 
-image::screen-shot-2020-06-10-at-13.01.14.png[]
+image::global-view-toolbar-save-schema.png[]
+//image::screen-shot-2020-06-10-at-13.01.14.png[]
 
 [CAUTION]
 ====
@@ -200,23 +201,21 @@ CAUTION: Only a superuser or globaldesigner can modify
 global types in a graph. The view global vertex and edge types button
 will be disabled for other users.
 
-[[publish-schema-]]
-== Publish schema
+[[save-schema-]]
+== Save schema
 
-Once you are satisfied with the graph schema, click the publish schema
-button image:publish_btn.png[image] to publish the
-schema to the TigerGraph system. If you are publishing a brand new
-schema, a progress bar will appear:
+Once you are satisfied with the graph schema, click the save schema button image:save-btn.png[image] to save the schema to the TigerGraph system.
+If you are publishing a brand new schema, a progress bar will appear:
 
 image:installing_schema_enterprise.png[image]
 
 == Change or edit an existing schema
 
-If a schema already exists, *Publish Schema* image:publish_btn.png[image] will modify the existing schema.
+If a schema already exists, *Save Schema* image:save-btn.png[image] will modify the existing schema.
 
 [WARNING]
 ====
-If you have already loaded data into or created queries for an existing graph, *Publish Schema* will only retain your existing data in some circumstances.
+If you have already loaded data into or created queries for an existing graph, *Save Schema* will only retain your existing data in some circumstances.
 ====
 
 If the change to a vertex or edge type is to add or remove attributes or attribute indexes, GraphStudio will employ a GSQL SCHEMA_CHANGE job and retain any graph data you already loaded.
@@ -242,8 +241,8 @@ is as you expect:
 
 image:affected_ve_types.png[image]
 
-Finally, when you click publish schema
-button  image:publish_btn.png[image] , a pop up
+Finally, when you click the save schema
+button image:save-btn.png[image], a pop up
 window will summarize your changes to the schema. The vertex and edge
 types that will be removed are highlighted. Make sure you confirm the
 changes before continue:
@@ -255,8 +254,7 @@ Click continue button, and GraphStudio will start changing your schema:
 image:changing_schema.png[image]
 
 If you have already created a data mapping and written queries,
-GraphStudio will try its best to preserve your work when you publish
-your modified schema:
+GraphStudio will try its best to preserve your work when you save your modified schema:
 
 . All your queries will be saved as query drafts, so you can install the queries again after you change your schema. If a query has a conflict with the new schema (e.g., referring to a vertex type that is deleted), you need to fix it before installing the query.
 . GraphStudio will migrate your data mapping based on your changes to
@@ -267,10 +265,10 @@ are the following:
 .. Remove mappings to deleted vertex types and edge types.
 .. Remove mappings to deleted or modified attributes.
 .. New vertex types, edge types and new attributes won't be mapped.
-.. After the schema is successfully published, GraphStudio will instruct
-you to go to the Map Data To Graph page to verify and publish the
-revised data mapping. If any mapping is not correct, you can fix it. You *must publish* the migrated data mapping; otherwise, it will be lost.
+.. After the schema is successfully saved, GraphStudio will instruct
+you to go to the Map Data To Graph page to verify and save the
+revised data mapping. If any mapping is not correct, you can fix it. You *must save* the migrated data mapping; otherwise, it will be lost.
 
-If you have published some data mapping through GraphStudio, then after schema is changed successfully, a pop up window will guide you to go to the Map Data To Graph page to confirm and publish the migrated data mapping:
+If you have saved some data mapping through GraphStudio, then after the schema is changed successfully, a pop-up window will guide you to go to the Map Data To Graph page to confirm and save the migrated data mapping:
 
 image:migrate_data_mapping.png[image]
