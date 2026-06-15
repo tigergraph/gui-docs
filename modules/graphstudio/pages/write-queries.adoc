@@ -122,12 +122,6 @@ image:show_query_endpoint.png[image]
 
 You can download the selected query by clicking image:write-queries-toolbar-download-single-query_3.3.png[image] or download all your queries as a tar file by clicking image:write-queries-toolbar-download-all-queries_3.3.png[image]
 
-== Delete query draft
-
-You can delete your query draft by clicking the delete button at the end of the icon list:
-
-image::write-queries-toolbar-delete-query-draft_3.3.png[image]
-
 == Install All Queries
 
 If you want to install all queries that you haven't installed yet, click the "Install all queries" button image:install_all_queries.png[image] in the GSQL Queries toolbar. 
