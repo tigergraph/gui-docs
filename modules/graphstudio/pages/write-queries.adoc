@@ -20,12 +20,14 @@ The Query Editor features syntax highlighting customized for the GSQL language a
 
 Above the query editing pane is a toolbar with the following buttons, from left to right:
 
-image::write-queries-toolbar_3.3.png[]
+image::write-queries-toolbar.png[]
+//image::write-queries-toolbar_3.3.png[]
 
 * *Expand/Collapse*: Expand or collapse the Query Editing panel to or from full page mode. The icon changes depending on whether the panel is currently expanded or collapsed.
 * *Save*: Save the current query draft.
 * *Save as*: Save the current query as a new query under a new name.
 * *Install*: Install the query into the database.
+* *Console*: Open or close the xref:#_result_panel[Result Panel], which displays query execution results and logs.
 * *Run*: Run the query. If the query is not installed, the query will run in interpreted mode. Note there is a performance penalty for running queries in interpreted mode.
 ** *Run Configuration:* Set the query runtime configurations.
 * *Delete*: Delete the selected query and its draft.
