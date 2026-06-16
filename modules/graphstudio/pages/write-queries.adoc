@@ -96,14 +96,30 @@ image:write-queries-run-install-query-with-param_3.3.png[image]
 
 == Run Configuration
 
-You can set runtime configurations of the GSQL query by clicking the small downward-pointing arrow button image:3.9.png[image] to the right of the Run Query button. A menu will appear with the btn:[Run Configuration] button; click this button.
+You can configure runtime settings for a GSQL query by clicking the downward-pointing arrow button to the right of the Run Query button. A menu appears with the *Run Configuration* option.
 
-image:write-queries-use-default-timeout_3.3.png[image]
+image:run-configuration-panel.png[image]
 
-This opens the Run Configuration panel, where you can set the GSQL query timeout.
+The Run Configuration panel allows you to configure runtime settings for the query before execution.
 
-By default, it uses the timeout specified with the `RESTPP.Factory.DefaultQueryTimeoutSec` server parameter, which is 16 seconds.
-See the xref:{page-component-version}@tigergraph-server:reference:configuration-parameters.adoc#_restpp[TigerGraph Server Command Glossary] for more information.
+The following runtime options are available:
+
+* *Query Profile*: Enables query profiling and displays query execution details after the query completes.
+* *Timeout*: Sets the query timeout value in seconds.
+* *Memory Limit*: Sets a memory limit for query execution.
+* *GSQL Replica*: Selects the GSQL replica used for query execution.
+
+Click *Apply Default* to restore the default runtime settings.
+
+By default, GraphStudio uses the timeout specified by the `RESTPP.Factory.DefaultQueryTimeoutSec` server parameter. See the xref:management:command-line:gadmin-command.adoc[TigerGraph Server Command Glossary] for more information.
+
+=== View Query Profile Results
+
+When Query Profile is enabled, GraphStudio displays a visual query execution profile after query execution completes.
+
+The profile view shows execution stages, execution timing, scheduling information, and topology statistics to help analyze query execution flow and performance.
+
+image:query-profile-visualization.png[image]
 
 == Delete Query
 
