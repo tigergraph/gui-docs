@@ -111,7 +111,7 @@ The following runtime options are available:
 
 Click *Apply Default* to restore the default runtime settings.
 
-By default, GraphStudio uses the timeout specified by the `RESTPP.Factory.DefaultQueryTimeoutSec` server parameter. See the xref:management:command-line:gadmin-command.adoc[TigerGraph Server Command Glossary] for more information.
+By default, GraphStudio uses the timeout specified by the `RESTPP.Factory.DefaultQueryTimeoutSec` server parameter. See the xref:{page-component-version}@tigergraph-server:reference:configuration-parameters.adoc#_restpp[TigerGraph Server Command Glossary] for more information.
 
 === View Query Profile Results
 
