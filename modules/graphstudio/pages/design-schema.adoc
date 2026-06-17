@@ -113,20 +113,23 @@ of the Embedding Attributes panel:
 
 image::embedding_attr_1.png[]
 
-Provide a name for the embedding attribute. The following fields are
+Provide an `Attribute name` for the embedding attribute. This name is used when referencing the embedding attribute in schema definitions, loading jobs, and vector search operations.
+The following fields are
 configurable when creating an embedding attribute:
 
-Set the *Dimension* to match the output size of your AI model,
-for example, 128.
+Set the *Dimension* to match the output size of your AI model.
+Supported values range from 1 to 4096. For example, a model that produces 128-dimensional vectors should use a dimension of 128.
 
-Choose a *Metric* for the similarity search: *COSINE*, *L2*, or *IP*.
+Choose a *Metric* for the similarity search: `COSINE`,`L2`, or `IP`.
 
-The *Index type* is set to *HNSW* by default and *Data type* is set
-to *FLOAT* by default.
+The *Index type* determines how vector similarity searches are performed.
+`HNSW` is currently the default and only supported index type.
+
+`FLOAT` is currently the default and only supported *data type*.
 
 image::embedding_attr_2.png[]
 
-Click the *−* button to the right of an embedding attribute to remove it.
+To remove an embedding attribute, Click the *−* button to the right of the attribute entry.
 
 For more information on embedding attribute
 fields, see xref:{page-component-version}@gsql-ref:vector:vector-search.adoc[Vector Database Operations].
