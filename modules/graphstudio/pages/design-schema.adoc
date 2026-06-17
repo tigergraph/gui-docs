@@ -132,7 +132,7 @@ image::embedding_attr_2.png[]
 To remove an embedding attribute, Click the *−* button to the right of the attribute entry.
 
 For more information on embedding attribute
-fields, see xref:{page-component-version}@gsql-ref:vector:vector-search.adoc[Vector Database Operations].
+fields, see xref:{page-component-version}@gsql-ref:vector:vector.adoc[Vector Database Operations].
 
 [[add-an-edge-type-]]
 == Add an edge type
