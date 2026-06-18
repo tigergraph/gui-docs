@@ -117,9 +117,17 @@ By default, GraphStudio uses the timeout specified by the `RESTPP.Factory.Defaul
 
 When Query Profile is enabled, GraphStudio displays a visual query execution profile after query execution completes.
 
-The profile view shows execution stages, execution timing, scheduling information, and topology statistics to help analyze query execution flow and performance.
+The Profile tab shows a visual flow diagram of each statement in the query.
+Each block displays the memory consumed, execution time, and the number of vertices and edges accessed.
+The orange bar indicates the relative execution time across statements.
+
+image::profile_tab1.png[]
+
+The *Profile Overview* panel on the right displays a summary of the query execution, including total time, time breakdown by stage, topology access counts, and memory usage.
 
 image:query-profile-visualization.png[image]
+
+For supported query types, how to enable profiling via GSQL or REST API, and current limitations, see xref:gsql-ref:4.2:querying/query-optimizer/query-profiling.adoc[Query Profiling].
 
 == Delete Query
 
@@ -179,6 +187,10 @@ from top to bottom, are the following:
 
 | image:visualize_log.png[image]  
 |View logs: Show the log for the most recent query run.
+
+| image:icon.png[image] 
+|View query profile: Display the query execution profile for the most recent query run.
+
 |===
 
 == View schema
