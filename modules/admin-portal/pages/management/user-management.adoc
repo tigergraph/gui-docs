@@ -136,6 +136,10 @@ When you grant local privileges, you have the ability to grant `READ_DATA`, `CRE
 * Vertex or edge level: Grants access to all data on the specified vertices and edges, but not others.
 * Data level: Grants access to the specified attributes on the specified vertices and edges, but not other attributes on those or other vertices or edges.
 
+For examples of granting type-level privileges using RBAC syntax, see xref:{page-component-version}@tigergraph-server:user-access:role-management.adoc#_grant_type_level_privilege_to_a_role[Grant type-level privilege to a role].
+
+For examples of granting attribute-level privileges using RBAC syntax, see xref:{page-component-version}@tigergraph-server:user-access:role-management.adoc#_grant_attribute_level_privilege_to_a_role[Grant attribute-level privilege to a role].
+
 Because of the granularity offered with this feature, the expanded window for some graphs is quite large.
 This example uses the ldbc_snb graph, which has too many vertex properties to see on one screen.
 Just the properties for one vertex type, Comment, are shown here.
