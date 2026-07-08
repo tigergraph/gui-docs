@@ -136,10 +136,6 @@ When you grant local privileges, you have the ability to grant `READ_DATA`, `CRE
 * Vertex or edge level: Grants access to all data on the specified vertices and edges, but not others.
 * Data level: Grants access to the specified attributes on the specified vertices and edges, but not other attributes on those or other vertices or edges.
 
-For examples of granting type-level privileges using RBAC syntax, see xref:{page-component-version}@tigergraph-server:user-access:role-management.adoc#_grant_type_level_privilege_to_a_role[Grant type-level privilege to a role].
-
-For examples of granting attribute-level privileges using RBAC syntax, see xref:{page-component-version}@tigergraph-server:user-access:role-management.adoc#_grant_attribute_level_privilege_to_a_role[Grant attribute-level privilege to a role].
-
 Because of the granularity offered with this feature, the expanded window for some graphs is quite large.
 This example uses the ldbc_snb graph, which has too many vertex properties to see on one screen.
 Just the properties for one vertex type, Comment, are shown here.
@@ -155,6 +151,42 @@ image::user-query-permissions.png[]
 
 The results can be filtered with the btn:[Add a filter] button, which is useful for large and complex graphs.
 Enter text into this field to only return vertices and attributes that match the filter.
+
+== Grant type-level privilege to a role
+
+Type-level privileges allow users to access all attributes of a specific vertex or edge type in a graph. Grant these privileges through the Admin Portal before users access the graph from GraphStudio.
+
+To grant a type-level privilege:
+
+. Navigate to *User Management* > *User-defined Roles*.
+. Create a new role or edit an existing role.
+. Under *Local privileges*, select the target graph.
+. Expand the graph to display the available vertex and edge types.
+. Select the required vertex or edge type.
+. Grant the required data privilege (`READ_DATA`, `CREATE_DATA`, or `UPDATE_DATA`).
+. Click *Save* to save the role.
+. Navigate to *Role Management*.
+. Assign the role to the required user.
+
+After the role is assigned, the user can access all attributes of the selected vertex or edge type in GraphStudio.
+
+== Grant attribute-level privilege to a role
+
+Attribute-level privileges allow users to access specific attributes of a vertex or edge type in a graph. Grant these privileges through the Admin Portal before users access the graph from GraphStudio.
+
+To grant an attribute-level privilege:
+
+. Navigate to *User Management* > *User-defined Roles*.
+. Create a new role or edit an existing role.
+. Under *Local privileges*, select the target graph.
+. Expand the required vertex or edge type to display its attributes.
+. Select the required attribute or attributes.
+. Grant the required data privilege (`READ_DATA`, `CREATE_DATA`, or `UPDATE_DATA`).
+. Click *Save* to save the role.
+. Navigate to *Role Management*.
+. Assign the role to the required user.
+
+After the role is assigned, the user can access only the selected attributes of the vertex or edge type in GraphStudio.
 
 === Edit a user-defined role
 
