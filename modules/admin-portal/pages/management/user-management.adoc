@@ -152,41 +152,65 @@ image::user-query-permissions.png[]
 The results can be filtered with the btn:[Add a filter] button, which is useful for large and complex graphs.
 Enter text into this field to only return vertices and attributes that match the filter.
 
-== Grant type-level privilege to a role
+==== Grant type-level privilege to a role
 
 Type-level privileges allow users to access all attributes of a specific vertex or edge type in a graph. Grant these privileges through the Admin Portal before users access the graph from GraphStudio.
 
+Consider the following schema:
+
+[source,gsql]
+----
+CREATE VERTEX person(id UINT PRIMARY KEY, name STRING)
+CREATE VERTEX city(id UINT PRIMARY KEY, name STRING)
+CREATE GRAPH G1(person, city)
+----
+
+Suppose a GraphStudio user needs to access all attributes of the `city` vertex type in graph `G1`. Grant the `READ_DATA` privilege on the `city` vertex type through the Admin Portal.
+
 To grant a type-level privilege:
 
-. Navigate to *User Management* > *User-defined Roles*.
+. Navigate to *User Management*.
+. Open the *User-defined Roles* tab.
 . Create a new role or edit an existing role.
-. Under *Local privileges*, select the target graph.
+. Under *Local privileges*, select graph `G1`.
 . Expand the graph to display the available vertex and edge types.
-. Select the required vertex or edge type.
-. Grant the required data privilege (`READ_DATA`, `CREATE_DATA`, or `UPDATE_DATA`).
-. Click *Save* to save the role.
-. Navigate to *Role Management*.
+. Select the `city` vertex type.
+. Grant the `READ_DATA` privilege.
+. Save the role.
+. Open the *Role Management* tab.
 . Assign the role to the required user.
 
-After the role is assigned, the user can access all attributes of the selected vertex or edge type in GraphStudio.
+After the role is assigned, the user can access all attributes of the `city` vertex type in GraphStudio.
 
-== Grant attribute-level privilege to a role
+==== Grant attribute-level privilege to a role
 
 Attribute-level privileges allow users to access specific attributes of a vertex or edge type in a graph. Grant these privileges through the Admin Portal before users access the graph from GraphStudio.
 
+Consider the following schema:
+
+[source,gsql]
+----
+CREATE VERTEX person(id UINT PRIMARY KEY, name STRING)
+CREATE VERTEX city(id UINT PRIMARY KEY, name STRING)
+CREATE GRAPH G1(person, city)
+----
+
+Suppose a GraphStudio user needs to access only the `id` and `name` attributes of the `person` vertex type in graph `G1`. Grant the `READ_DATA` privilege on the `id` and `name` attributes through the Admin Portal.
+
 To grant an attribute-level privilege:
 
-. Navigate to *User Management* > *User-defined Roles*.
+. Navigate to *User Management*.
+. Open the *User-defined Roles* tab.
 . Create a new role or edit an existing role.
-. Under *Local privileges*, select the target graph.
-. Expand the required vertex or edge type to display its attributes.
-. Select the required attribute or attributes.
-. Grant the required data privilege (`READ_DATA`, `CREATE_DATA`, or `UPDATE_DATA`).
-. Click *Save* to save the role.
-. Navigate to *Role Management*.
+. Under *Local privileges*, select graph `G1`.
+. Expand the `person` vertex type to display its attributes.
+. Select the `id` and `name` attributes.
+. Grant the `READ_DATA` privilege.
+. Save the role.
+. Open the *Role Management* tab.
 . Assign the role to the required user.
 
-After the role is assigned, the user can access only the selected attributes of the vertex or edge type in GraphStudio.
+After the role is assigned, the user can access only the selected attributes of the `person` vertex type in GraphStudio.
 
 === Edit a user-defined role
 
