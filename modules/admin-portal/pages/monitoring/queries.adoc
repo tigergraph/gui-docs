@@ -14,7 +14,7 @@ In 4.3, access to the Query Monitoring page is controlled by user privileges ins
 ** Users with `READ_DATA` privilege on specific graphs can view
   queries only for those graphs and do not see the *All* option
    in the graph dropdown.
-* Users with `DELETE_DATA` privilege for a graph can abort queries
+* Users with `READ_DATA` privilege for a graph can abort queries
   running on that graph.
 
 [NOTE]
