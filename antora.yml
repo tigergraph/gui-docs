@@ -5,6 +5,7 @@ display_version: "4.3.0-rc1"
 start_page: intro:index.adoc
 
 nav:
+- modules/tools-release-notes/nav.adoc
 - modules/intro/nav.adoc
 - modules/graphstudio/nav.adoc
 - modules/admin-portal/nav.adoc
