@@ -3,9 +3,20 @@
 :toc:
 :toclevels: 2
 
-
 == Jul 2026
-=== 2026-07-01
+=== 2026-07-06
+====  Explore Graph Improvements
+
+* Explore Neighbours now displays only vertex types that are reachable through directed graph edges, making graph traversal more intuitive and reducing confusion.
+* Fixed an issue where the graph visualization could disappear after selecting an edge in Explore Graph when working with newly created graphs and expanded vertices.
+
+==== Insights Improvements
+
+* Added support for customizable chart colors, including predefined color palettes, custom series colors, and persistent color settings across supported chart types.
+* Improved global variable selection by displaying all available variables with their data types and disabling incompatible options, making parameter selection more transparent and easier to understand.
+
+== June 2026
+=== 2026-06-01
 ==== GraphStudio & Explore Graph Improvements
 
 * Improved query result handling in GraphStudio by retaining results from multiple executions in separate tabs, allowing users to switch between prior results without rerunning queries. Results now persist across GraphStudio page navigation within the same browser session.
