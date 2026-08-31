@@ -69,7 +69,7 @@ Click btn:[Self Signed] to fill in the information to generate a self-signed cer
 
 image::ssl-uploading.png[]
 
-Since configuration change requires restarting the server service, a pop-up box will appear to confirm whether to restart the service.
+For configuration changes made through the Admin Portal, a pop-up box will appear asking whether to restart the service.
 After clicking the btn:[OK] button, the configuration changes and server restart process will take several moments.
 You will be notified after all the process is completed.
 
