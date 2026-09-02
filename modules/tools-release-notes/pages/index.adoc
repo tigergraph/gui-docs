@@ -3,6 +3,22 @@
 :toc:
 :toclevels: 2
 
+== Sept 2026
+=== 2026-09-02
+==== GraphStudio Improvements
+
+* Improved graph selection persistence in GraphStudio so the selected graph remains consistent across sidebar navigation, Design Schema, and pages opened from Home in a new tab. Fixed incorrect Global View warnings and session sign-in issues when navigating between pages and tabs.
+
+==== Administration & Security Enhancements
+
+* Improved Role Details for custom roles by displaying configured graph, vertex, edge, and attribute privileges, including `READ_DATA`, `CREATE_DATA`, `UPDATE_DATA`, and `DELETE_DATA`.
+
+==== Insights Improvements
+
+* Improved query-backed dropdown behavior in Insights by displaying a loading indicator while options are loading, applying the default and first selected values correctly, and updating connected visualizations after loading.
+* Improved parameter dropdown positioning in Insights Graph widgets so menus remain associated with their fields when scrolling, resizing widgets, or switching queries.
+* Improved the Duplicate action in Insights Action Forms by displaying a loading state and disabling the action until duplication completes, preventing duplicate widgets during slow connections. Duplicated forms now retain input values for supported types including `INT`, `STRING`, `BOOL`, `DATETIME`, and `DOUBLE`.k
+
 == Jul 2026
 === 2026-07-06
 ====  Explore Graph Improvements
