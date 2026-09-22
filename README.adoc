@@ -1,4 +1,4 @@
-= Contributing to GraphStudio/Admin Portal Docs
+[= Contributing to GraphStudio/Admin Portal Docs
 
 It takes commitment from both writers and devs, as well as collaboration to create and maintain good documentation. Part of that commitment is to contribute to the documentation.
 
