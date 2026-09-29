@@ -1,6 +1,16 @@
 = Explore Graph
 
-After data has been loaded, the Explore Graph page allows you to explore the graph in the following ways:
+After data has been loaded, the Explore Graph page allows you to explore
+and analyze the graph using an interactive graph visualization.
+
+Explore Graph is available in two interfaces:
+
+* <<_classic_explore_graph,Classic Explore Graph>>
+* <<_new_explore_graph,New Explore Graph>>
+
+== Classic Explore Graph
+
+You can use Classic Explore Graph to perform the following operations:
 
 * xref:explore-graph/search-for-vertices.adoc[Search for vertices in a graph]
 * xref:explore-graph/expand-from-vertices.adoc[Discover nearby vertices]
@@ -85,3 +95,134 @@ Also, Undo/Redo do not include layout and display change (e.g., positioning of o
 * *Change settings*: Select which attribute values to display with each vertex or edge type. Enable/disable popup display of all attributes when the cursor hovers over a vertex or edge.
 
 The Parameter Panel can be hidden by clicking its corresponding button in the Explore Graph Menu.
+
+== New Explore Graph
+
+Click *Try Now* on the Classic Explore Graph banner to experience the
+New Explore Graph.
+
+image::explore-graph-new-landing.png[New Explore Graph landing page]
+
+The New Explore Graph provides a redesigned interface for exploring and
+analyzing graph data.
+
+The new interface provides a pattern search bar and an *+ Add Vertex*
+button to start an exploration.
+
+The pattern search, graph canvas, filtering mechanism, canvas controls,
+and graph algorithms in the New Explore Graph are shared with the
+Insights graph widget. For details on how pattern search works, how
+filters apply, canvas controls, and supported algorithms, see
+xref:{page-component-version}@insights:widgets:graph-widget.adoc[Graph Widget].
+
+=== Pattern Search and Graph Visualization
+
+image::explore-graph-pattern-search.png[Pattern search]
+
+Use the pattern search bar to explore the graph. Matching vertices and
+edges are displayed on the canvas.
+
+=== Edit Mode
+
+Edit mode allows you to modify graph data directly from the Explore
+Graph interface.
+
+==== Add vertices
+
+You can add vertices to the graph from the Explore Graph interface.
+
+image::explore-graph-add-vertex.png[Add vertex]
+
+==== Add edges
+
+You can add edges between vertices in the graph.
+
+image::explore-graph-add-edge.png[Add edge]
+
+==== Edit attributes
+
+You can edit the attributes of vertices and edges from the Explore Graph
+interface.
+
+image::explore-graph-edit-attributes.png[Edit attributes]
+
+==== Delete vertices and edges
+
+You can delete selected vertices and edges from the graph.
+
+[WARNING]
+====
+Deleting vertices or edges permanently removes the data from the graph
+database. Deleted data cannot be restored using the *Undo* feature.
+====
+
+=== Result Panel
+
+Click the image:result-panel-button.png[Result Panel,20] button to open the Result panel.
+The Result panel displays the exploration results in a table, with
+three views:
+
+* *All* -- Displays all objects in the exploration result.
+* *Vertices* -- Displays the vertices in the exploration result.
+* *Edges* -- Displays the edges in the exploration result.
+
+image::explore-graph-result-panel.png[Result panel]
+
+=== Filters Panel
+
+Click the image:filter-button.png[Filter,20] button to open the Filters panel.
+The Filters panel displays the distribution of attribute values and
+the number of filters currently applied.
+
+image::explore-graph-filters.png[Filters panel]
+
+=== Query Configuration
+
+Use Query Configuration to control how graph exploration results are
+returned.
+
+The available options include:
+
+* *Order by*
+* *Limit*
+* *Path hops*
+* *Timeout*
+* *Memory limit*
+
+image::explore-graph-query-configuration.png[Query Configuration]
+
+=== Graph Analytics
+
+[NOTE]
+====
+Graph Analytics is a Preview feature and may change in future releases.
+====
+
+Select an algorithm, such as *PageRank*, and configure the required
+parameters before running it.
+
+image::explore-graph-analytics.png[Graph Analytics]
+
+=== Graph Configuration
+
+Use Graph Configuration to customize the appearance of the graph.
+
+Click the image:general-button.png[General,20] button to open the Graph configuration.
+The *General* tab provides settings for the graph visualization, such
+as tooltip display, label positions, and number formatting.
+
+image::explore-graph-style-general.png[General style settings]
+
+The *Vertices & Edges* tab allows you to configure styles for individual
+vertex and edge types.
+
+You can also define conditional styles for graph objects.
+
+image::explore-graph-style-vertices-edges.png[Vertices and edges style settings]
+
+=== Canvas Controls
+
+image::explore-graph-canvas-controls.png[Canvas controls]
+
+Zoom, fit-to-screen, and layout controls are available on the graph
+canvas.
