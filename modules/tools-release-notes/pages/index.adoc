@@ -3,6 +3,16 @@
 :toc:
 :toclevels: 2
 
+== Oct 2026
+=== 2026-10-07
+==== GraphStudio Improvements
+
+* Updated GraphStudio to support Snowflake data source authentication using private-key authentication, allowing users to connect and load Snowflake data into their graphs.
+
+==== Insights Improvements
+
+* Fixed an issue where an application shared with a local user as a Viewer could open to a blank page. Shared applications and their widgets now load correctly for Viewer users.
+
 == Sept 2026
 === 2026-09-02
 ==== GraphStudio Improvements
