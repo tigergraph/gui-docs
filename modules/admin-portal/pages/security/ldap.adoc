@@ -1,4 +1,5 @@
-= LDAP
+= LDAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image:enterprise-edition-only.png[Enterprise Edition Only,140]
+:description: LDAP.
 :experimental:
 
 The LDAP page does not appear on the Admin Portal for TigerGraph Cloud solutions because of the unified xref:cloud:security:manage-db-users.adoc[User Authentication] system present in TigerGraph Cloud.
