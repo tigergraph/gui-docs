@@ -1,6 +1,8 @@
-= Single Sign-on (SSO)
+= Single Sign-on (SSO)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image:enterprise-edition-only.png[Enterprise Edition Only,140]
+:navtitle: Single Sign-on (SSO)
+:reftext: Single Sign-on (SSO)
 :description: Admin portal SSO page.
-:experimental:
+:experimental
 
 The settings on this page are related to set up Single Sign-on (SSO) on TigerGraph. This page does not appear on the Admin Portal for TigerGraph Cloud solutions because of the unified xref:main@savanna:administration:index.adoc[User/Access Management] system present in TigerGraph Savanna.
 
