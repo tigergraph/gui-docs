@@ -1,4 +1,6 @@
 = Single Sign-on (SSO)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image:enterprise-edition-only.png[Enterprise Edition Only,140]
+:navtitle: Single Sign-on (SSO)
+:reftext: Single Sign-on (SSO)
 :description: Admin portal SSO page.
 :experimental:
 
